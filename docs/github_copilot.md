@@ -1,4 +1,4 @@
-[English](./github-copilot.md) | [简体中文](./github-copilot.zh-CN.md) · [← Back](../README.md)
+[English](./github_copilot.md) | [简体中文](./github_copilot.zh-CN.md) · [← Back](../README.md)
 
 # Integrate with GitHub Copilot
 
