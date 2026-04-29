@@ -23,6 +23,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **AstrBot**     | Open-source agent assistant for Feishu, Telegram and more, extensible with skills, plugins, and MCPs.       | [Guide](./docs/astrbot.md)     |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
 | **Hermes**      | Open-source self-improving AI agent built by Nous Research.                                                 | [Guide](./docs/hermes.md)      |
+| **nanobot** | Open-source lightweight AI agent with chat platform integration, memory, MCP, and more. | [Guide](./docs/nanobot.md) |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 
 ## Resources
