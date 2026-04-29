@@ -13,6 +13,7 @@
 | **Claude Code** | 运行在终端内的 AI 编程助手。 | [指南](./docs/claude_code.zh-CN.md) |
 | **OpenCode** | 开源 AI 编程助手，提供终端、网页等多种运行形式。 | [指南](./docs/opencode.zh-CN.md) |
 | **OpenClaw** | 开源个人 AI 助手，可接入飞书、微信等聊天工具，并通过 Skill 扩展能力。 | [指南](./docs/openclaw.zh-CN.md) |
+| **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 
 ## 相关资源
 
