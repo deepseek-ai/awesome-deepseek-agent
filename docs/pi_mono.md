@@ -35,30 +35,58 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
 {
   "providers": {
     "deepseek": {
-      "baseUrl": "https://api.deepseek.com/v1",
+      "baseUrl": "https://api.deepseek.com",
       "api": "openai-completions",
       "apiKey": "$DEEPSEEK_API_KEY",
       "models": [
         {
           "id": "deepseek-v4-pro",
-          "name": "DeepSeek-V4-Pro",
-          "contextWindow": 1048576,
-          "maxTokens": 32768,
+          "name": "DeepSeek V4 Pro",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "cost": {
+            "input": 1.74,
+            "output": 3.48,
+            "cacheRead": 0.145,
+            "cacheWrite": 0
+          },
           "compat": {
-            "thinkingFormat": "deepseek"
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
           }
         },
         {
           "id": "deepseek-v4-flash",
-          "name": "DeepSeek-V4-Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 32768,
+          "name": "DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "cost": {
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.028,
+            "cacheWrite": 0
+          },
           "compat": {
-            "thinkingFormat": "deepseek"
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
           }
         }
       ]
@@ -82,8 +110,6 @@ Windows users:
 ```powershell
 $env:DEEPSEEK_API_KEY="<your DeepSeek API Key>"
 ```
-
-> **Tip:** The `apiKey` field also supports shell command resolution for secure key management. Replace `"$DEEPSEEK_API_KEY"` with a command like `"!pass show api/deepseek"` if you use a password manager.
 
 #### 3. Run and Select Model
 

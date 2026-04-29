@@ -34,7 +34,7 @@ Crush supports custom providers via OpenAI-compatible APIs. Add DeepSeek to your
   "providers": {
     "deepseek": {
       "type": "openai-compat",
-      "base_url": "https://api.deepseek.com/v1",
+      "base_url": "https://api.deepseek.com",
       "api_key": "$DEEPSEEK_API_KEY",
       "models": [
         {
