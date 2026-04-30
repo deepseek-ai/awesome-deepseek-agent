@@ -19,6 +19,7 @@
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
+| **Oh My Pi** | 基于 Pi 分支扩展的终端 AI 编程 Agent，提供 OMP 专用工具、模型角色、MCP、插件与 Agent 工作流。 | [指南](./docs/oh-my-pi.zh-CN.md) |
 | **OpenClaw**    | 开源个人 AI 助手，可接入飞书、微信等聊天工具，并通过 Skill 扩展能力。 | [指南](./docs/openclaw.zh-CN.md)    |
 | **AstrBot** | 开源的 Agent 助手，支持接入 QQ、微信、飞书等消息平台，并可通过 Skill、插件和 MCP 扩展能力。 | [指南](./docs/astrbot.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
