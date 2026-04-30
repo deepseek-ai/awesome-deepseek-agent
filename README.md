@@ -25,7 +25,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **OpenClaw**    | Open-source personal AI assistant that plugs into chat tools (Feishu, WeChat) and is extensible via Skills. | [Guide](./docs/openclaw.md)    |
 | **AstrBot**     | Open-source agent assistant for Feishu, Telegram and more, extensible with skills, plugins, and MCPs.       | [Guide](./docs/astrbot.md)     |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
-| **GenericAgent** | A minimal, self-evolving autonomous agent framework with a core of only ~3K lines of code. | [Guide](./docs/generic_agent.md) |
+| **GenericAgent** | Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption. | [Guide](./docs/generic_agent.md) |
 | **Hermes**      | Open-source self-improving AI agent built by Nous Research.                                                 | [Guide](./docs/hermes.md)      |
 | **nanobot** | Open-source lightweight AI agent with chat platform integration, memory, MCP, and more. | [Guide](./docs/nanobot.md) |
 | **Crush**       | Glamorous open-source AI coding agent for the terminal with multi-model support and LSP integration.        | [Guide](./docs/crush.md)       |
