@@ -10,6 +10,14 @@
   </a>
 </p>
 
+<p align="center">
+  <img alt="Tday Agents 设置 — 将 DeepSeek 绑定到每个 harness" src="https://github.com/user-attachments/assets/77499913-ef2b-40a0-a0d3-88b779e337a0" width="800" />
+</p>
+
+<p align="center">
+  <img alt="Tday Providers 设置" src="https://github.com/user-attachments/assets/1964db7f-2db3-4eed-92a7-65eb172d33ed" width="800" />
+</p>
+
 #### 1. 安装 Tday
 
 从 [Tday Releases](https://github.com/unbug/tday/releases/latest) 页面下载对应平台的最新版本：

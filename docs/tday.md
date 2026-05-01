@@ -10,6 +10,14 @@
   </a>
 </p>
 
+<p align="center">
+  <img alt="Tday Agents settings — bind DeepSeek to every harness" src="https://github.com/user-attachments/assets/77499913-ef2b-40a0-a0d3-88b779e337a0" width="800" />
+</p>
+
+<p align="center">
+  <img alt="Tday Providers settings" src="https://github.com/user-attachments/assets/1964db7f-2db3-4eed-92a7-65eb172d33ed" width="800" />
+</p>
+
 #### 1. Install Tday
 
 Download the latest release for your platform from the [Tday Releases](https://github.com/unbug/tday/releases/latest) page:
