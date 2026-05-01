@@ -31,6 +31,7 @@
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
+| **MateClaw** | 个人 AI 操作系统 —— 同一个 DeepSeek 大脑跨 Web 与即时通讯渠道（钉钉、飞书、企业微信、Telegram、Discord、QQ、Slack），内置 Skills、Memory、MCP、Tool Guard 与 Wiki 引擎，基于 Spring AI Alibaba。 | [指南](./docs/mateclaw.zh-CN.md) |
 
 ## 相关资源
 
