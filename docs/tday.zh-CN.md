@@ -4,6 +4,12 @@
 
 [Tday](https://github.com/unbug/tday) 是一个桌面启动器，通过浏览器式标签页同时运行多种编程 Agent（Pi、Claude Code、Codex、OpenCode 等），并提供统一的供应商配置、本地推理服务自动发现、跨 Agent 的长期记忆与 Token 用量分析。DeepSeek 是 Tday 内置的一等供应商。
 
+<p align="center">
+  <a href="https://x.com/i/status/2049935301808935356">
+    <img alt="Tday 演示" src="https://github.com/user-attachments/assets/5d7ac6d9-cf0a-4eb3-b865-71ffbd11806b" width="800" />
+  </a>
+</p>
+
 #### 1. 安装 Tday
 
 从 [Tday Releases](https://github.com/unbug/tday/releases/latest) 页面下载对应平台的最新版本：

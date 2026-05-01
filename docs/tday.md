@@ -4,6 +4,12 @@
 
 [Tday](https://github.com/unbug/tday) is a desktop launcher that runs every coding-agent harness (Pi, Claude Code, Codex, OpenCode, …) inside browser-style tabs, with one shared provider config, auto-discovered local inference servers, unified long-term memory, and cross-agent token analytics. DeepSeek is a first-class built-in provider.
 
+<p align="center">
+  <a href="https://x.com/i/status/2049935301808935356">
+    <img alt="Tday Demo" src="https://github.com/user-attachments/assets/5d7ac6d9-cf0a-4eb3-b865-71ffbd11806b" width="800" />
+  </a>
+</p>
+
 #### 1. Install Tday
 
 Download the latest release for your platform from the [Tday Releases](https://github.com/unbug/tday/releases/latest) page:
