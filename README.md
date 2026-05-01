@@ -31,6 +31,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
+| <img src="https://h1.appinn.me/file/1775785742057_20.ico" alt="Icon" width="64" height="auto" /><br>**Ai-Assistant** | [Open Source] Novel Writing & AI Programming Assistant. <br>Aggregates top large models from home and abroad(DeepSeek/Gemini/Claude/Kimi/ChatGPT, etc.) <br>Self research PC-Gui: A lightweight desktop GUI framework built for AI, natively supporting real-time typewriter streaming output like Gemini! | [Guide](https://github.com/jiqi136/Ai-Assistant) |
 
 ## Resources
 
