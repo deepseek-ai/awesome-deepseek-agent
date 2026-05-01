@@ -31,6 +31,7 @@
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
+| **Tday** | 桌面启动器，通过浏览器式标签页同时运行多种编程 Agent（Pi、Claude Code、Codex、OpenCode），并提供统一的供应商配置、本地推理自动发现、跨 Agent 长期记忆与 Token 用量分析。 | [指南](./docs/tday.zh-CN.md) |
 
 ## 相关资源
 
