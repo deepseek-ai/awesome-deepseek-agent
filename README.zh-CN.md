@@ -16,6 +16,7 @@
 | 工具            | 简介                                                                  | 指南                                |
 | --------------- | --------------------------------------------------------------------- | ----------------------------------- |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
+| **Cline** | 运行在 VS Code 中的 AI 编程助手扩展，支持多种 API 供应商。 | [指南](./docs/cline.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
