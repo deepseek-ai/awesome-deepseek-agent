@@ -31,3 +31,62 @@ Reload your shell and start Hermes configuration:
 - Enter the Base URL as `https://api.deepseek.com`
 - Select the `deepseek-v4-pro` model
 - Continue with the remaining options
+
+#### 3. Thinking Mode and Common Errors
+
+##### About Thinking Mode
+
+DeepSeek models have Thinking Mode enabled by default. During tool-calling turns, the model generates `reasoning_content` (chain-of-thought), and per the [DeepSeek Thinking Mode documentation](https://api-docs.deepseek.com/guides/thinking_mode), this `reasoning_content` must be passed back in subsequent requests.
+
+Hermes sets `display.show_reasoning` to `false` by default, which strips `reasoning_content` from the conversation history. This can cause an HTTP 400 error.
+
+##### Handling the 400 Error
+
+If you encounter the following error at runtime:
+
+```
+HTTP 400: The `reasoning_content` in the thinking mode must be passed back to the API.
+```
+
+This means `reasoning_content` is not being correctly passed back. Here are two solutions:
+
+**Option A: Disable Thinking Mode (Recommended)**
+
+Edit `~/.hermes/config.yaml` and add the following under the `model` section:
+
+```yaml
+model:
+  default: deepseek-v4-pro
+  provider: custom
+  base_url: https://api.deepseek.com
+  api_mode: chat_completions
+  api_key: <your-deepseek-api-key>
+  extra_body:
+    thinking:
+      type: disabled
+```
+
+With this option, DeepSeek no longer generates `reasoning_content`, avoiding the passback conflict entirely while also saving context tokens.
+
+**Option B: Keep Thinking Mode**
+
+If you want to keep the reasoning process, enable `show_reasoning` to ensure `reasoning_content` is preserved in the conversation history:
+
+```yaml
+model:
+  default: deepseek-v4-pro
+  provider: custom
+  base_url: https://api.deepseek.com
+  api_mode: chat_completions
+  api_key: <your-deepseek-api-key>
+  extra_body:
+    thinking:
+      type: enabled
+
+display:
+  show_reasoning: true
+```
+
+With this option, Hermes preserves and forwards `reasoning_content`, but the terminal will display the reasoning process and context consumption will increase.
+
+Restart Hermes after modifying the configuration for changes to take effect.
