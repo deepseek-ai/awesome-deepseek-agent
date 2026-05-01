@@ -12,7 +12,7 @@ Cline is an AI coding assistant that runs as a VS Code extension, supporting mul
 - Find the **Cline** extension in the results.
 
 <div align="center">
-<img src="./assets/cline_step_1.png" width="1024" border="1" />
+<img src="./assets/cline_step_1.png" width="250" border="1" />
 </div>
 
 #### 2. Install and Trust the Extension
@@ -25,7 +25,7 @@ Cline is an AI coding assistant that runs as a VS Code extension, supporting mul
 - In the Cline settings, select **Bring my own API Key**.
 
 <div align="center">
-<img src="./assets/cline_step_3.png" width="1024" border="1" />
+<img src="./assets/cline_step_3.png" width="250" border="1" />
 </div>
 
 #### 4. Configure API Provider
@@ -39,13 +39,13 @@ Cline is an AI coding assistant that runs as a VS Code extension, supporting mul
 > **Note:** `deepseek-reasoner` and `deepseek-chat` models will be deprecated soon. Please wait for Cline to officially add `deepseek-v4-pro` and `deepseek-v4-flash` models.
 
 <div align="center">
-<img src="./assets/cline_step_4_a.png" width="1024" border="1" />
+<img src="./assets/cline_step_4_a.png" width="250" border="1" />
 </div>
 
 After configuration, you can start using Cline:
 
 <div align="center">
-<img src="./assets/cline_step_5_a.png" width="1024" border="1" />
+<img src="./assets/cline_step_5_a.png" width="250" border="1" />
 </div>
 
 **Method 2: OpenAI Compatible**
@@ -57,11 +57,11 @@ After configuration, you can start using Cline:
 - (Optional) Click **Model Configuration** to adjust window size, temperature, pricing, and limits.
 
 <div align="center">
-<img src="./assets/cline_step_4_b.png" width="1024" border="1" />
+<img src="./assets/cline_step_4_b.png" width="250" border="1" />
 </div>
 
 After configuration, you can start using Cline:
 
 <div align="center">
-<img src="./assets/cline_step_5_b.png" width="1024" border="1" />
+<img src="./assets/cline_step_5_b.png" width="250" border="1" />
 </div>

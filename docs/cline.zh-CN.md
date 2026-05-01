@@ -12,7 +12,7 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 - 在搜索结果中找到 **Cline** 扩展。
 
 <div align="center">
-<img src="./assets/cline_step_1.png" width="1024" border="1" />
+<img src="./assets/cline_step_1.png" width="250" border="1" />
 </div>
 
 #### 2. 安装并信任扩展
@@ -25,7 +25,7 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 - 在 Cline 设置中，选择 **Bring my own API Key**。
 
 <div align="center">
-<img src="./assets/cline_step_3.png" width="1024" border="1" />
+<img src="./assets/cline_step_3.png" width="250" border="1" />
 </div>
 
 #### 4. 配置 API 供应商
@@ -39,13 +39,13 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 > **注意：** `deepseek-reasoner` 和 `deepseek-chat` 模型即将废弃，请等待 Cline 官方添加 `deepseek-v4-pro` 和 `deepseek-v4-flash` 模型。
 
 <div align="center">
-<img src="./assets/cline_step_4_a.png" width="1024" border="1" />
+<img src="./assets/cline_step_4_a.png" width="250" border="1" />
 </div>
 
 配置完成后即可开始使用：
 
 <div align="center">
-<img src="./assets/cline_step_5_a.png" width="1024" border="1" />
+<img src="./assets/cline_step_5_a.png" width="250" border="1" />
 </div>
 
 **方法二：OpenAI Compatible**
@@ -57,11 +57,11 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 - （选做）点击 **Model Configuration**，调整窗口大小、温度、价格和限量等参数。
 
 <div align="center">
-<img src="./assets/cline_step_4_b.png" width="1024" border="1" />
+<img src="./assets/cline_step_4_b.png" width="250" border="1" />
 </div>
 
 配置完成后即可开始使用：
 
 <div align="center">
-<img src="./assets/cline_step_5_b.png" width="1024" border="1" />
+<img src="./assets/cline_step_5_b.png" width="250" border="1" />
 </div>
