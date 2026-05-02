@@ -1,0 +1,113 @@
+[English](./dscli.md) | [简体中文](./dscli.zh-CN.md) · [← 返回](../README.zh-CN.md)
+
+# 接入 dscli
+
+dscli 是一个 AI 增强的开发者工具箱，运行在终端内。它直接对接 DeepSeek API，支持 AI 对话与工具调用（文件操作、Git、代码搜索等）、代码补全等功能。
+
+- **GitCode：** <https://gitcode.com/dscli/dscli>
+
+#### 1. 安装 Go
+
+- 安装 [Go](https://go.dev/dl/) 1.21 及以上版本。
+
+#### 2. 安装 dscli
+
+```bash
+# 使用 go install 安装（推荐）
+go install gitcode.com/dscli/dscli@latest
+
+# 或从源码克隆并构建
+git clone https://gitcode.com/dscli/dscli.git
+cd dscli
+make install
+```
+
+验证安装：
+
+```bash
+dscli version
+```
+
+#### 3. 获取 DeepSeek API Key
+
+在 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 获取你的 API Key。
+
+#### 4. 配置
+
+设置 API Key 环境变量：
+
+```bash
+export DEEPSEEK_API_KEY="sk-..."
+```
+
+可选环境变量：
+
+| 变量 | 说明 | 默认值 |
+|---|---|---|
+| `DEEPSEEK_API_KEY` | DeepSeek API 密钥（必需） | — |
+| `DEEPSEEK_BASE_URL` | API 地址 | `https://api.deepseek.com` |
+| `MODEL_DEEPSEEK_CHAT` | Chat 模型名称 | `deepseek-v4-flash` |
+| `MODEL_DEEPSEEK_REASONER` | Reasoner 模型名称 | `deepseek-v4-pro` |
+
+配置文件存储在 `~/.dscli/` 目录下：
+- `dscli.env` — 环境变量覆盖配置
+- `sqlite.db` — 对话历史数据库
+- `dscli.log` — 日志文件
+
+#### 5. 使用 dscli
+
+**AI 对话与工具调用：**
+
+```bash
+# 基本对话（Markdown 格式输出）
+echo "帮我创建一个包含 HTTP 服务器的 main.go 文件" | dscli chat
+
+# 使用 Pro 模型进行复杂分析
+echo "分析这段代码的性能瓶颈" | dscli chat --model deepseek-v4-pro
+
+# Org 模式输出
+echo "解释这个算法" | dscli chat --mode org
+
+# 流式输出
+echo "写一个反转链表的函数" | dscli chat --stream
+```
+
+**代码补全：**
+
+```bash
+echo "func fibonacci(n int) int {" | dscli fim
+```
+
+**查看模型和余额：**
+
+```bash
+# 查看可用模型
+dscli models
+
+# 查看账户余额
+dscli balance
+
+# JSON 格式输出
+dscli models --format json
+dscli balance --format json
+```
+
+#### 核心特性
+
+- **工具调用** — AI 可直接读写文件、执行 Git 命令、搜索代码等
+- **项目感知** — 自动识别 Git 仓库根目录，按项目隔离对话历史
+- **多格式输出** — 支持 Markdown（默认）和 Org 模式
+- **流式输出** — 通过 `--stream` 实现逐 Token 实时输出
+- **SQLite 存储** — 持久化对话历史，支持上下文感知的连续对话
+
+#### 快捷键 / 参数
+
+| 参数 | 说明 |
+|---|---|
+| `--model` | 使用的模型：`deepseek-v4-flash`（默认）或 `deepseek-v4-pro` |
+| `--mode` | 输出模式：`markdown`（默认）或 `org` |
+| `--stream` | 启用流式输出 |
+| `--histsize` | 加载的历史消息数量（默认：8） |
+| `--verbose` | 启用详细/调试输出 |
+| `--no-color` | 禁用颜色输出 |
+| `--no-timestamp` | 禁用时间戳显示 |
