@@ -1,20 +1,27 @@
 [English](./ccx.md) | [简体中文](./ccx.zh-CN.md) · [← Back](../README.zh-CN.md)
 
-# 通过 CCX 接入 Codex CLI / Codex App
+# 通过 CCX 接入 DeepSeek — Claude Code CLI & Codex CLI/App
 
-[CCX](https://github.com/BenedictKing/ccx) 是一个高性能的 AI API 代理与协议转换网关。它通过本地 `/v1/messages` 透传和 `/v1/responses` → `/v1/chat/completions` 协议转换，使 Codex CLI 和 Codex App 能够使用 DeepSeek 模型 — 弥合了 Codex 的 Responses API 与 DeepSeek 的 Chat Completions API 之间的鸿沟。
+[CCX](https://github.com/BenedictKing/ccx) 是一个高性能的 AI API 代理与协议转换网关。通过统一的本地端点，让多种工具都能使用 DeepSeek 模型：
+
+| 端点                 | 协议                                        | 目标工具              |
+| -------------------- | ------------------------------------------- | --------------------- |
+| `/v1/messages`       | Claude Messages API 透传                    | **Claude Code CLI**   |
+| `/v1/responses`      | Responses → Chat Completions 协议转换       | **Codex CLI / App**   |
+| `/v1/chat/completions` | OpenAI Chat Completions 透传              | 任何 OpenAI 兼容工具   |
+
+一个 CCX 实例同时服务三条路径 — 只需添加一个 DeepSeek 渠道，所有使用上述协议的工即可直接使用。
 
 ## 工作原理
 
-Codex CLI 和 Codex App 原生使用 OpenAI Responses API（`/v1/responses`），而 DeepSeek 提供的是 Chat Completions API（`/v1/chat/completions`）。CCX 位于两者之间：
-
-- 将 `/v1/messages` 请求直接转发至上游（兼容 Claude 协议透传）
-- 将 `/v1/responses` 请求转换为 `/v1/chat/completions` 请求，使 DeepSeek 模型成为 Codex 可用的模型
-
 ```text
-Codex CLI / Codex App  →  CCX (:3000)  →  DeepSeek API
-     /v1/responses           /v1/chat/completions
+Claude Code CLI ──→  /v1/messages ──→  CCX (:3000)  ──→  DeepSeek API
+Codex CLI/App  ──→  /v1/responses ──→  CCX (:3000)  ──→  DeepSeek API
+                                            │
+                          /v1/chat/completions (透传)
 ```
+
+CCX 在内部处理协议差异：Claude Messages 请求被转换为 Chat Completions 再发往上游 DeepSeek 渠道，Responses 请求同样映射为 Chat Completions。工具侧看到的是原生端点，DeepSeek 收到的则是标准的 Chat Completions 调用。
 
 #### 1. 部署 CCX
 
@@ -44,36 +51,53 @@ docker run -d --name ccx \
 
 在浏览器中打开 CCX 管理面板 `http://localhost:3000`，进入 **渠道管理**，添加新渠道：
 
-| 字段             | 值                                            |
-| ---------------- | --------------------------------------------- |
-| **类型**         | OpenAI Chat                                   |
-| **名称**         | DeepSeek                                      |
-| **Base URL**     | `https://api.deepseek.com/v1/chat/completions` |
-| **API Key**      | `<你的 DeepSeek API Key>`                      |
-| **Models**       | `deepseek-v4-pro`, `deepseek-v4-flash`         |
+| 字段             | 值                                              |
+| ---------------- | ----------------------------------------------- |
+| **类型**         | OpenAI Chat                                     |
+| **名称**         | DeepSeek                                        |
+| **Base URL**     | `https://api.deepseek.com/v1/chat/completions`  |
+| **API Key**      | `<你的 DeepSeek API Key>`                        |
+| **Models**       | `deepseek-v4-pro`, `deepseek-v4-flash`           |
 
 从 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 获取 API Key。
 
-启用渠道并设置优先级后，渠道即可开始处理请求。
+启用渠道并设置优先级后，渠道即可在所有三个端点上处理请求。
 
-#### 3. 配置 Codex CLI
+#### 3. 场景 A：Claude Code CLI
 
-在终端中设置以下环境变量：
+Claude Code CLI 使用 Messages API。将其指向 CCX 的 `/v1/messages` 端点：
+
+```bash
+export ANTHROPIC_API_KEY="your-strong-proxy-key"
+export ANTHROPIC_BASE_URL="http://localhost:3000/v1/messages"
+```
+
+验证：
+
+```bash
+claude --model deepseek-v4-pro "你好"
+```
+
+Claude Code CLI 发送 `/v1/messages` 请求，CCX 将其转换并路由至 DeepSeek 渠道。
+
+#### 4. 场景 B：Codex CLI
+
+Codex CLI 使用 OpenAI Responses API。将其指向 CCX 的 `/v1` 基础路径：
 
 ```bash
 export OPENAI_API_KEY="your-strong-proxy-key"
 export OPENAI_BASE_URL="http://localhost:3000/v1"
 ```
 
-运行 Codex CLI，它会将 CCX 作为 API 端点，CCX 会将 `/v1/responses` 请求路由至 DeepSeek 渠道。
-
-验证模型可用：
+验证：
 
 ```bash
 codex --model deepseek-v4-pro "你好"
 ```
 
-#### 4. 配置 Codex App（VS Code / JetBrains）
+Codex CLI 发送 `/v1/responses` 请求，CCX 将其转换为 `/v1/chat/completions` 发往 DeepSeek。
+
+#### 5. 场景 C：Codex App（VS Code / JetBrains）
 
 在 Codex 扩展的设置中配置：
 
@@ -85,20 +109,19 @@ codex --model deepseek-v4-pro "你好"
 
 保存后，Codex App 会将 Responses API 请求发送至 CCX，CCX 自动翻译为 DeepSeek 兼容的 Chat Completions 调用。
 
-#### 5. 可选：验证配置
-
-直接测试接口：
+#### 6. 可选：验证配置
 
 ```bash
 curl http://localhost:3000/v1/models \
   -H "Authorization: Bearer your-strong-proxy-key"
 ```
 
-如果返回的模型列表中包含 `deepseek-v4-pro` 和 `deepseek-v4-flash`，说明配置成功。
+如果返回的模型列表中包含 `deepseek-v4-pro` 和 `deepseek-v4-flash`，说明渠道状态正常。
 
 #### 故障排查
 
-- `401 Unauthorized`：确认 CCX 的 `PROXY_ACCESS_KEY` 与 Codex CLI/App 中设置的 Key 一致。
+- `401 Unauthorized`：确认工具中设置的 Key 与 CCX `.env` 中的 `PROXY_ACCESS_KEY` 一致。
 - `Model not found`：确认 CCX 渠道中的模型名称完全匹配 `deepseek-v4-pro` 或 `deepseek-v4-flash`。
-- `Connection refused`：确认 CCX 正在 3000 端口运行，且 `OPENAI_BASE_URL` 指向正确的地址。
+- `Connection refused`：确认 CCX 正在 3000 端口运行，且 Base URL 指向正确的地址。
 - 渠道显示 unhealthy：在 CCX 管理面板中检查 DeepSeek API Key 是否正确，以及网络是否能访问 `api.deepseek.com`。
+- Claude Code 报错响应格式异常：确认 `ANTHROPIC_BASE_URL` 以 `/v1/messages` 结尾（而非仅 `/v1`）。
