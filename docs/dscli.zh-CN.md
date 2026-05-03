@@ -40,15 +40,6 @@ dscli version
 export DEEPSEEK_API_KEY="sk-..."
 ```
 
-可选环境变量：
-
-| 变量 | 说明 | 默认值 |
-|---|---|---|
-| `DEEPSEEK_API_KEY` | DeepSeek API 密钥（必需） | — |
-| `DEEPSEEK_BASE_URL` | API 地址 | `https://api.deepseek.com` |
-| `MODEL_DEEPSEEK_CHAT` | Chat 模型名称 | `deepseek-v4-flash` |
-| `MODEL_DEEPSEEK_REASONER` | Reasoner 模型名称 | `deepseek-v4-pro` |
-
 配置文件存储在 `~/.dscli/` 目录下：
 - `dscli.env` — 环境变量覆盖配置
 - `sqlite.db` — 对话历史数据库
@@ -100,11 +91,19 @@ dscli balance --format json
 - **流式输出** — 通过 `--stream` 实现逐 Token 实时输出
 - **SQLite 存储** — 持久化对话历史，支持上下文感知的连续对话
 
+#### IDE 集成
+
+dscli 提供编辑器插件，让你在编辑器中无缝使用 AI 辅助：
+
+- **Emacs** — [dscli.el](https://gitcode.com/dscli/dscli.el)
+- **Vim** — [dscli.vim](https://gitcode.com/dscli/dscli.vim)
+- **VSCode** — [dscli.vscode](https://gitcode.com/dscli/dscli.vscode)
+
 #### 快捷键 / 参数
 
 | 参数 | 说明 |
 |---|---|
-| `--model` | 使用的模型：`deepseek-v4-flash`（默认）或 `deepseek-v4-pro` |
+| `--model` | 使用的模型：`deepseek-v4-pro`（默认）或 `deepseek-v4-flash` |
 | `--mode` | 输出模式：`markdown`（默认）或 `org` |
 | `--stream` | 启用流式输出 |
 | `--histsize` | 加载的历史消息数量（默认：8） |

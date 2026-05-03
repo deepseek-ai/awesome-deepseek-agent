@@ -40,15 +40,6 @@ Set your API key as an environment variable:
 export DEEPSEEK_API_KEY="sk-..."
 ```
 
-Optional environment variables:
-
-| Variable | Description | Default |
-|---|---|---|
-| `DEEPSEEK_API_KEY` | Your DeepSeek API key (required) | — |
-| `DEEPSEEK_BASE_URL` | API base URL | `https://api.deepseek.com` |
-| `MODEL_DEEPSEEK_CHAT` | Chat model name | `deepseek-v4-flash` |
-| `MODEL_DEEPSEEK_REASONER` | Reasoner model name | `deepseek-v4-pro` |
-
 Configuration files are stored under `~/.dscli/`:
 - `dscli.env` — environment overrides
 - `sqlite.db` — chat history database
@@ -100,11 +91,19 @@ dscli balance --format json
 - **Streaming** — real-time token-by-token output with `--stream`
 - **SQLite storage** — persistent chat history for context-aware conversations
 
+#### IDE Integration
+
+dscli provides editor plugins for seamless in-editor AI assistance:
+
+- **Emacs** — [dscli.el](https://gitcode.com/dscli/dscli.el)
+- **Vim** — [dscli.vim](https://gitcode.com/dscli/dscli.vim)
+- **VSCode** — [dscli.vscode](https://gitcode.com/dscli/dscli.vscode)
+
 #### Shortcuts / Flags
 
 | Flag | Description |
 |---|---|
-| `--model` | Model to use: `deepseek-v4-flash` (default) or `deepseek-v4-pro` |
+| `--model` | Model to use: `deepseek-v4-pro` (default) or `deepseek-v4-flash` |
 | `--mode` | Output mode: `markdown` (default) or `org` |
 | `--stream` | Enable streaming output |
 | `--histsize` | Number of history messages to load (default: 8) |
