@@ -66,7 +66,7 @@ Codex CLI/App defaults to `gpt-5` / `gpt-5-mini` as model names. Configure **mod
 | Requested Model  | Redirect To           |
 | ---------------- | --------------------- |
 | `gpt-5`          | `deepseek-v4-pro`     |
-| `gpt-5-mini`     | `deepseek-v4-flash`   |
+| `gpt-5-mini`     | `mini`                |
 
 Fill in the Model Mapping section in the CCX channel settings to set up the redirection.
 
