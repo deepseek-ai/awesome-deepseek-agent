@@ -31,6 +31,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
+| **deepclaude** | Shell script that runs Claude Code's agent loop with DeepSeek V4 Pro. Supports remote control via local proxy. | [Guide](./docs/deepclaude.md) |
 
 ## Resources
 
