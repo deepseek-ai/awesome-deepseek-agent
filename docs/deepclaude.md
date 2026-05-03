@@ -1,14 +1,14 @@
 [← Back](../README.md)
 
-# cheapclaude
+# deepclaude
 
 A shell script that runs Claude Code's autonomous agent loop with DeepSeek V4 Pro — same UX, 17x cheaper.
 
-**GitHub:** [github.com/aattaran/cheapclaude](https://github.com/aattaran/cheapclaude)
+**GitHub:** [github.com/aattaran/deepclaude](https://github.com/aattaran/deepclaude)
 
 ## What it does
 
-Claude Code is the best autonomous coding agent — but it costs $200/month with usage caps. cheapclaude swaps the model to DeepSeek V4 Pro ($0.87/M output) while keeping Claude Code's tool loop, file editing, bash execution, and autonomous multi-step coding.
+Claude Code is the best autonomous coding agent — but it costs $200/month with usage caps. deepclaude swaps the model to DeepSeek V4 Pro ($0.87/M output) while keeping Claude Code's tool loop, file editing, bash execution, and autonomous multi-step coding.
 
 Supports DeepSeek (direct), OpenRouter, and Fireworks AI as backends.
 
@@ -31,43 +31,43 @@ export DEEPSEEK_API_KEY="sk-your-key-here"
 setx DEEPSEEK_API_KEY "sk-your-key-here"
 ```
 
-#### 2. Download cheapclaude
+#### 2. Download deepclaude
 
 ```bash
-git clone https://github.com/aattaran/cheapclaude.git
-cd cheapclaude
-chmod +x cheapclaude.sh   # Linux/Mac only
+git clone https://github.com/aattaran/deepclaude.git
+cd deepclaude
+chmod +x deepclaude.sh   # Linux/Mac only
 ```
 
 #### 3. Run it
 
 **Linux / Mac:**
 ```bash
-./cheapclaude.sh
+./deepclaude.sh
 ```
 
 **Windows:**
 ```powershell
-powershell -ExecutionPolicy Bypass -File cheapclaude.ps1
+powershell -ExecutionPolicy Bypass -File deepclaude.ps1
 ```
 
 ## Commands
 
 ```bash
-cheapclaude                      # DeepSeek V4 Pro (default)
-cheapclaude -b or                # OpenRouter (cheapest, US servers)
-cheapclaude -b fw                # Fireworks AI (fastest, US servers)
-cheapclaude -b anthropic         # Normal Claude Code
-cheapclaude --remote             # Remote control (browser) + DeepSeek
-cheapclaude --remote -b or       # Remote control + OpenRouter
-cheapclaude --status             # Show keys and backends
-cheapclaude --cost               # Pricing comparison
-cheapclaude --benchmark          # Latency test
+deepclaude                      # DeepSeek V4 Pro (default)
+deepclaude -b or                # OpenRouter (cheapest, US servers)
+deepclaude -b fw                # Fireworks AI (fastest, US servers)
+deepclaude -b anthropic         # Normal Claude Code
+deepclaude --remote             # Remote control (browser) + DeepSeek
+deepclaude --remote -b or       # Remote control + OpenRouter
+deepclaude --status             # Show keys and backends
+deepclaude --cost               # Pricing comparison
+deepclaude --benchmark          # Latency test
 ```
 
 ## Remote Control
 
-`cheapclaude --remote` starts a Claude Code remote-control session with DeepSeek as the brain. It launches a local HTTP proxy that routes model API calls to DeepSeek while keeping Anthropic's bridge auth intact.
+`deepclaude --remote` starts a Claude Code remote-control session with DeepSeek as the brain. It launches a local HTTP proxy that routes model API calls to DeepSeek while keeping Anthropic's bridge auth intact.
 
 ```
 claude remote-control
