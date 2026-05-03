@@ -8,7 +8,7 @@ dscli is an AI-enhanced developer toolbox that runs in the terminal. It connects
 
 #### 1. Install Go
 
-- Install [Go](https://go.dev/dl/) 1.21+.
+- Install [Go](https://go.dev/dl/) 1.26+.
 
 #### 2. Install dscli
 
@@ -34,33 +34,32 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 
 #### 4. Configure
 
-Set your API key as an environment variable:
+Set your API key in `~/.dscli/config.dscli` via `dscli config edit` or `vim ~/.dscli/config.dscli`:
 
-```bash
-export DEEPSEEK_API_KEY="sk-..."
+```text
+deepseek-api-key = sk-...
 ```
 
 Configuration files are stored under `~/.dscli/`:
-- `dscli.env` — environment overrides
+
+- `config.dscli` — dscli config file, key = value # comment format
 - `sqlite.db` — chat history database
-- `dscli.log` — log file
+- `skills` - global skills
 
 #### 5. Use dscli
 
 **AI Chat with tool calling:**
 
 ```bash
-# Basic chat (Markdown output)
+# Single line chat
 echo "Create a main.go file with an HTTP server" | dscli chat
 
-# Use the pro model for complex analysis
-echo "Analyze the performance bottlenecks in this code" | dscli chat --model deepseek-v4-pro
-
-# Org-mode output
-echo "Explain this algorithm" | dscli chat --mode org
-
-# Stream output
-echo "Write a function to reverse a linked list" | dscli chat --stream
+# Multiple lines
+dscli chat <<EOF
+Create a main.go file with an HTTP server, get listen port and
+ address from environment, for /websocket endpoint do websocket,
+for any question not clear ask me directly.
+EOF
 ```
 
 **Code completion:**
@@ -102,7 +101,7 @@ dscli provides editor plugins for seamless in-editor AI assistance:
 #### Shortcuts / Flags
 
 | Flag | Description |
-|---|---|
+| --- | --- |
 | `--model` | Model to use: `deepseek-v4-pro` (default) or `deepseek-v4-flash` |
 | `--mode` | Output mode: `markdown` (default) or `org` |
 | `--stream` | Enable streaming output |
