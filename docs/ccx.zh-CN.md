@@ -61,6 +61,15 @@ docker run -d --name ccx \
 
 从 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 获取 API Key。
 
+Codex CLI/App 默认使用 `gpt-5` / `gpt-5-mini` 作为模型名，因此需要在渠道中配置**模型重定向**，将 OpenAI 模型名映射到 DeepSeek：
+
+| 请求模型       | 重定向到              |
+| -------------- | --------------------- |
+| `gpt-5`        | `deepseek-v4-pro`     |
+| `gpt-5-mini`   | `deepseek-v4-flash`   |
+
+在 CCX 渠道设置中填写 Model Mapping（模型映射）即可完成重定向。
+
 启用渠道并设置优先级后，渠道即可在所有三个端点上处理请求。
 
 #### 3. 场景 A：Claude Code CLI
@@ -92,10 +101,10 @@ export OPENAI_BASE_URL="http://localhost:3000/v1"
 验证：
 
 ```bash
-codex --model deepseek-v4-pro "你好"
+codex "你好"
 ```
 
-Codex CLI 发送 `/v1/responses` 请求，CCX 将其转换为 `/v1/chat/completions` 发往 DeepSeek。
+Codex CLI 默认使用 `gpt-5` 作为模型名，CCX 根据渠道的模型重定向规则将其映射为 `deepseek-v4-pro` 发往 DeepSeek。也可显式指定模型：`codex --model deepseek-v4-pro "你好"`。
 
 #### 5. 场景 C：Codex App（VS Code / JetBrains）
 
@@ -105,9 +114,9 @@ Codex CLI 发送 `/v1/responses` 请求，CCX 将其转换为 `/v1/chat/completi
 | ----------------- | ----------------------------- |
 | **API Key**       | `your-strong-proxy-key`       |
 | **Base URL**      | `http://localhost:3000/v1`    |
-| **Model**         | `deepseek-v4-pro`             |
+| **Model**         | `gpt-5`（CCX 自动重定向到 `deepseek-v4-pro`） |
 
-保存后，Codex App 会将 Responses API 请求发送至 CCX，CCX 自动翻译为 DeepSeek 兼容的 Chat Completions 调用。
+保存后，Codex App 发送的 Responses API 请求中默认模型为 `gpt-5`，CCX 根据渠道重定向规则自动映射为 `deepseek-v4-pro`，并翻译为 Chat Completions 调用发往 DeepSeek。
 
 #### 6. 可选：验证配置
 

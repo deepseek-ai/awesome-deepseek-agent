@@ -61,6 +61,15 @@ Open the CCX admin console at `http://localhost:3000`, navigate to **Channels**,
 
 Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
+Codex CLI/App defaults to `gpt-5` / `gpt-5-mini` as model names. Configure **model redirection** in the channel so CCX remaps them to DeepSeek:
+
+| Requested Model  | Redirect To           |
+| ---------------- | --------------------- |
+| `gpt-5`          | `deepseek-v4-pro`     |
+| `gpt-5-mini`     | `deepseek-v4-flash`   |
+
+Fill in the Model Mapping section in the CCX channel settings to set up the redirection.
+
 Enable the channel, set its priority, and it is ready to serve requests across all three endpoints.
 
 #### 3. Scenario A: Claude Code CLI
@@ -92,10 +101,10 @@ export OPENAI_BASE_URL="http://localhost:3000/v1"
 Verify:
 
 ```bash
-codex --model deepseek-v4-pro "hello"
+codex "hello"
 ```
 
-Codex CLI sends `/v1/responses` requests; CCX translates them to `/v1/chat/completions` for DeepSeek.
+Codex CLI defaults to `gpt-5` as the model name; CCX remaps it to `deepseek-v4-pro` via the channel's model redirection rules. You can also specify the model explicitly: `codex --model deepseek-v4-pro "hello"`.
 
 #### 5. Scenario C: Codex App (VS Code / JetBrains)
 
@@ -105,9 +114,9 @@ In the Codex extension settings, set:
 | ------------------- | ---------------------------- |
 | **API Key**         | `your-strong-proxy-key`      |
 | **Base URL**        | `http://localhost:3000/v1`   |
-| **Model**           | `deepseek-v4-pro`            |
+| **Model**           | `gpt-5` (CCX auto-redirects to `deepseek-v4-pro`) |
 
-After saving, Codex App sends Responses API requests to CCX, which translates them into DeepSeek-compatible Chat Completions calls.
+After saving, Codex App sends Responses API requests with `gpt-5` as the default model; CCX remaps it to `deepseek-v4-pro` via the channel redirection rules and translates the call to Chat Completions for DeepSeek.
 
 #### 6. Optional: Verify the Setup
 
