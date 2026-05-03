@@ -66,7 +66,6 @@ Codex CLI/App 默认使用 `gpt-5` / `gpt-5-mini` 作为模型名，因此需要
 | 请求模型       | 重定向到              |
 | -------------- | --------------------- |
 | `gpt-5`        | `deepseek-v4-pro`     |
-| `gpt-5-mini`   | `deepseek-v4-flash`   |
 | `mini`         | `deepseek-v4-flash`   |
 
 在 CCX 渠道设置中填写 Model Mapping（模型映射）即可完成重定向。
