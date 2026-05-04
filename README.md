@@ -31,7 +31,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
-| **Morph** | Reusable / secure / cute open-source AI Agent. | [Guide](./docs/mistermorph.md) / [日本語](./docs/mistermorph.ja.md) |
+| **Morph** | Reusable / secure / cute open-source AI Agent. | [Guide](./docs/mistermorph.md) |
 
 ## Resources
 

@@ -31,7 +31,7 @@
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
-| **Morph** | 复用 / 安全 / 可爱的开源 AI Agent。 | [指南](./docs/mistermorph.zh-CN.md) / [日本語](./docs/mistermorph.ja.md) |
+| **Morph** | 复用 / 安全 / 可爱的开源 AI Agent。 | [指南](./docs/mistermorph.zh-CN.md) |
 
 ## 相关资源
 
