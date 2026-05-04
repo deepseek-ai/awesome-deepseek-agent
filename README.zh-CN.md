@@ -29,6 +29,7 @@
 | **nanobot** | 开源轻量级 AI 智能体，支持接入聊天工具，记忆，MCP等。 | [指南](./docs/nanobot.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
+| **Prosophor** | C++ 原生的主动式 Agentic CLI，具备基于插件的主动触发架构和多 LLM 支持。 | [指南](./docs/prosophor.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 
