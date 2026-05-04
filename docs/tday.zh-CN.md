@@ -4,18 +4,27 @@
 
 [Tday](https://github.com/unbug/tday) 是一个桌面启动器，通过浏览器式标签页同时运行多种编程 Agent（Pi、Claude Code、Codex、OpenCode 等），并提供统一的供应商配置、本地推理服务自动发现、跨 Agent 的长期记忆与 Token 用量分析。DeepSeek 是 Tday 内置的一等供应商。
 
-<p align="center">
+<a href="https://github.com/unbug/tday/releases"><img src="https://img.shields.io/badge/release-latest-blue"></a>
+
+<p>
   <a href="https://x.com/i/status/2049935301808935356">
-    <img alt="Tday 演示" src="https://github.com/user-attachments/assets/5d7ac6d9-cf0a-4eb3-b865-71ffbd11806b" width="800" />
+    <img src="https://github.com/user-attachments/assets/ba6c8041-173f-44bb-90d6-cd72071260df">
   </a>
 </p>
 
-<p align="center">
-  <img alt="Tday Agents 设置 — 将 DeepSeek 绑定到每个 harness" src="https://github.com/user-attachments/assets/77499913-ef2b-40a0-a0d3-88b779e337a0" width="800" />
+<p>
+  <img src="https://github.com/user-attachments/assets/c196629b-5ee4-46dd-b1e3-d0ba86ab66b9">
+  <img src="https://github.com/user-attachments/assets/27bf23af-a5f6-4457-8cc7-7f6085829733">
 </p>
 
-<p align="center">
-  <img alt="Tday Providers 设置" src="https://github.com/user-attachments/assets/1964db7f-2db3-4eed-92a7-65eb172d33ed" width="800" />
+<p>
+  <img src="https://github.com/user-attachments/assets/9dc6b149-80d4-4175-839a-3102960f2457">
+  <img src="https://github.com/user-attachments/assets/4990e941-0b65-4d25-9d3e-b46e3dd1f67e">
+</p>
+
+<p>
+  <img src="https://github.com/user-attachments/assets/2512a05f-e373-469f-859c-16b745da82a4">
+  <img src="https://github.com/user-attachments/assets/01c3ef52-3080-4d73-811d-0cb7759d275d">
 </p>
 
 #### 1. 安装 Tday

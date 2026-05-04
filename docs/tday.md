@@ -4,18 +4,27 @@
 
 [Tday](https://github.com/unbug/tday) is a desktop launcher that runs every coding-agent harness (Pi, Claude Code, Codex, OpenCode, …) inside browser-style tabs, with one shared provider config, auto-discovered local inference servers, unified long-term memory, and cross-agent token analytics. DeepSeek is a first-class built-in provider.
 
-<p align="center">
+<a href="https://github.com/unbug/tday/releases"><img src="https://img.shields.io/badge/release-latest-blue"></a>
+
+<p>
   <a href="https://x.com/i/status/2049935301808935356">
-    <img alt="Tday Demo" src="https://github.com/user-attachments/assets/5d7ac6d9-cf0a-4eb3-b865-71ffbd11806b" width="800" />
+    <img src="https://github.com/user-attachments/assets/ba6c8041-173f-44bb-90d6-cd72071260df">
   </a>
 </p>
 
-<p align="center">
-  <img alt="Tday Agents settings — bind DeepSeek to every harness" src="https://github.com/user-attachments/assets/77499913-ef2b-40a0-a0d3-88b779e337a0" width="800" />
+<p>
+  <img src="https://github.com/user-attachments/assets/c196629b-5ee4-46dd-b1e3-d0ba86ab66b9">
+  <img src="https://github.com/user-attachments/assets/27bf23af-a5f6-4457-8cc7-7f6085829733">
 </p>
 
-<p align="center">
-  <img alt="Tday Providers settings" src="https://github.com/user-attachments/assets/1964db7f-2db3-4eed-92a7-65eb172d33ed" width="800" />
+<p>
+  <img src="https://github.com/user-attachments/assets/9dc6b149-80d4-4175-839a-3102960f2457">
+  <img src="https://github.com/user-attachments/assets/4990e941-0b65-4d25-9d3e-b46e3dd1f67e">
+</p>
+
+<p>
+  <img src="https://github.com/user-attachments/assets/2512a05f-e373-469f-859c-16b745da82a4">
+  <img src="https://github.com/user-attachments/assets/01c3ef52-3080-4d73-811d-0cb7759d275d">
 </p>
 
 #### 1. Install Tday
