@@ -103,6 +103,8 @@ Codex CLI speaks the OpenAI Responses API. Configure a channel of type **DeepSee
 
 ![DeepSeek Chat channel usage stats](../assets/ccx/chat-channel-config.png)
 
+![Responses → Chat protocol translation model redirect](../assets/ccx/codex-responses-redirect.png)
+
 Point Codex CLI at CCX's `/v1` base:
 
 ```bash
@@ -131,10 +133,6 @@ In the Codex extension settings, set:
 After saving, Codex App sends Responses API requests with `gpt-5` as the default model; CCX remaps it to `deepseek-v4-pro` via the channel redirection rules and translates the call to Chat Completions for DeepSeek.
 
 #### 6. Optional: View Request Logs
-
-CCX includes built-in log monitoring to inspect model routing, latency, and response status per request in real time:
-
-![Request log monitoring](../assets/ccx/log-monitoring.png)
 
 Channel real-time usage stats showing test request latency and throughput:
 
