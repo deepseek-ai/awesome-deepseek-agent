@@ -50,7 +50,7 @@ docker run -d --name ccx \
 
 ##### 2.1 Codex CLI/App: Responses Channel
 
-For Codex CLI/App, open the Responses channel page, for example `http://localhost:3000/channels/responses` (replace `3000` with your CCX port), and add a Chat service type. This Base URL is the upstream DeepSeek URL stored in CCX, not the local URL used by Codex:
+First, add a Chat service type in the Codex Responses channel page, for example `http://localhost:3000/channels/responses` (replace `3000` with your CCX port). This configures DeepSeek as an OpenAI Chat-compatible upstream. The Base URL is the upstream DeepSeek URL stored in CCX, not the local URL used by Codex:
 
 | Field                 | Value                                      |
 | --------------------- | ------------------------------------------ |
@@ -60,14 +60,18 @@ For Codex CLI/App, open the Responses channel page, for example `http://localhos
 | **API Key**           | `<your DeepSeek API Key>`                  |
 | **Models**            | `deepseek-v4-pro`, `deepseek-v4-flash`     |
 
-Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model redirection:
+After saving, **edit** the **DeepSeek Chat** channel you just created and turn on **Normalize non-standard Chat roles** in the edit dialog. This maps to CCX's `normalizeNonstandardChatRoles` option: after Codex Responses requests are converted to Chat Completions, roles unsupported by DeepSeek, such as `developer`, are normalized to `user` before being sent upstream; `function` messages with `tool_call_id` are normalized to `tool`.
+
+![Enable Normalize non-standard Chat roles](assets/ccx/codex-edit-channel-switch.png)
+
+Then configure Model Mapping in the same edit dialog. Common Codex CLI/App requested models include `gpt-5` / `mini`, so you can map different Codex model tiers to the corresponding DeepSeek models:
 
 | Requested Model  | Redirect To           |
 | ---------------- | --------------------- |
 | `gpt-5`          | `deepseek-v4-pro`     |
 | `mini`           | `deepseek-v4-flash`   |
 
-Configure Model Mapping for the Responses Chat service:
+Add the mappings above in the Responses Chat service Model Mapping section:
 
 ![Responses Chat service model redirection](assets/ccx/codex-responses-redirect.png)
 
@@ -75,7 +79,7 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 
 ##### 2.2 Claude Code CLI: Messages Channel
 
-For Claude Code CLI, open the Messages channel page, for example `http://localhost:3000/channels/messages` (replace `3000` with your CCX port), and add a Claude service type backed by DeepSeek's Anthropic-compatible endpoint:
+For Claude Code CLI, open the Claude Messages channel page, for example `http://localhost:3000/channels/messages` (replace `3000` with your CCX port), and add a Claude service type backed by DeepSeek's Anthropic-compatible endpoint:
 
 | Field                    | Value                                      |
 | ------------------------ | ------------------------------------------ |
@@ -85,7 +89,7 @@ For Claude Code CLI, open the Messages channel page, for example `http://localho
 | **API Key**              | `<your DeepSeek API Key>`                  |
 | **Models**               | `deepseek-v4-pro`, `deepseek-v4-flash`     |
 
-Claude Code CLI uses its default Opus 4.7 model, with `opus` / `sonnet` / `haiku` aliases available for redirection:
+Claude Code CLI sends requests with Claude model names such as Opus 4.7 by default. DeepSeek's official Anthropic-compatible endpoint may handle some model names automatically; for more predictable routing, it is recommended to configure model redirection explicitly in CCX:
 
 | Requested Model  | Redirect To           |
 | ---------------- | --------------------- |
@@ -93,13 +97,13 @@ Claude Code CLI uses its default Opus 4.7 model, with `opus` / `sonnet` / `haiku
 | `sonnet`         | `deepseek-v4-pro`     |
 | `haiku`          | `deepseek-v4-flash`   |
 
-Configure Model Mapping for the Messages Claude service:
+Recommended: configure Model Mapping for the Messages Claude service:
 
 ![Claude Code channel model redirection](assets/ccx/channel-test-success-alt.png)
 
 #### 3. Scenario A: Claude Code CLI
 
-Claude Code CLI speaks the Messages API. Use the Claude channel configured above with the Anthropic-compatible DeepSeek Base URL, Key, and model remapping rules.
+Claude Code CLI speaks the Messages API. Use the Claude channel configured above with the Anthropic-compatible DeepSeek Base URL and Key; model remapping is recommended.
 
 Point Claude Code CLI at the local CCX gateway root:
 
@@ -114,7 +118,7 @@ Verify:
 claude "hello"
 ```
 
-Claude Code CLI sends `/v1/messages` requests with its default Opus 4.7 model; CCX applies the model redirection rules, translates the request, and routes it to the DeepSeek channel.
+Claude Code CLI sends `/v1/messages` requests with Claude model names such as Opus 4.7. If model redirection is configured, CCX applies those rules before routing the request to the DeepSeek channel; otherwise, the requested model name is left for DeepSeek's official endpoint to handle.
 
 The Claude Code channel dashboard shows Messages traffic and token metrics:
 
@@ -141,7 +145,7 @@ Verify:
 codex "hello"
 ```
 
-Codex CLI defaults to `gpt-5` as the model name; CCX remaps it to `deepseek-v4-pro` via the channel's model redirection rules. You can also specify the model explicitly: `codex --model deepseek-v4-pro "hello"`.
+When Codex CLI requests `gpt-5`, CCX remaps it to `deepseek-v4-pro` via the channel's model redirection rules. You can also specify the model explicitly: `codex --model deepseek-v4-pro "hello"`.
 
 The Responses channel dashboard shows traffic and token metrics:
 
@@ -161,7 +165,7 @@ In the Codex extension settings, set:
 | **Base URL**        | `http://localhost:3000/v1`   |
 | **Model**           | `gpt-5` (CCX auto-redirects to `deepseek-v4-pro`) |
 
-After saving, Codex App sends Responses API requests with `gpt-5` as the default model; CCX remaps it to `deepseek-v4-pro` via the channel redirection rules and translates the call to Chat Completions for DeepSeek.
+After saving, if Codex App sends Responses API requests with `gpt-5`, CCX remaps it to `deepseek-v4-pro` via the channel redirection rules and translates the call to Chat Completions for DeepSeek.
 
 #### 6. Optional: Verify Model List
 
