@@ -69,7 +69,7 @@ Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model red
 
 Configure Model Mapping for the Responses Chat service:
 
-![Responses Chat service model redirection](../assets/ccx/codex-responses-redirect.png)
+![Responses Chat service model redirection](assets/ccx/codex-responses-redirect.png)
 
 Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
@@ -95,7 +95,7 @@ Claude Code CLI uses its default Opus 4.7 model, with `opus` / `sonnet` / `haiku
 
 Configure Model Mapping for the Messages Claude service:
 
-![Claude Code channel model redirection](../assets/ccx/channel-test-success-alt.png)
+![Claude Code channel model redirection](assets/ccx/channel-test-success-alt.png)
 
 #### 3. Scenario A: Claude Code CLI
 
@@ -118,11 +118,11 @@ Claude Code CLI sends `/v1/messages` requests with its default Opus 4.7 model; C
 
 The Claude Code channel dashboard shows Messages traffic and token metrics:
 
-![Claude Code channel usage stats](../assets/ccx/redirect-editing-chat.png)
+![Claude Code channel usage stats](assets/ccx/redirect-editing-chat.png)
 
 Messages request logs show protocol, model redirection, and latency:
 
-![Messages request logs](../assets/ccx/messages-channel-config.png)
+![Messages request logs](assets/ccx/messages-channel-config.png)
 
 #### 4. Scenario B: Codex CLI
 
@@ -145,11 +145,11 @@ Codex CLI defaults to `gpt-5` as the model name; CCX remaps it to `deepseek-v4-p
 
 The Responses channel dashboard shows traffic and token metrics:
 
-![DeepSeek Chat channel usage stats](../assets/ccx/chat-channel-config.png)
+![DeepSeek Chat channel usage stats](assets/ccx/chat-channel-config.png)
 
 Responses request logs show protocol, model redirection, and latency:
 
-![Responses request logs](../assets/ccx/channel-test-success.png)
+![Responses request logs](assets/ccx/channel-test-success.png)
 
 #### 5. Scenario C: Codex App (VS Code / JetBrains)
 
