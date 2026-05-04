@@ -34,10 +34,11 @@ mistermorph install
 ```yaml
 llm:
   provider: deepseek
-  endpoint: https://api.deepseek.com
   model: deepseek-v4-pro
   api_key: ${DEEPSEEK_API_KEY}
 ```
+
+使用 DeepSeek 官方 API 时，`provider` 写 `deepseek`。只有接入自定义 OpenAI-compatible endpoint 时，才需要把 `provider` 写成 `openai`。
 
 然后在 shell 中设置 DeepSeek API Key：
 
@@ -52,7 +53,6 @@ export DEEPSEEK_API_KEY="sk-..."
 ```yaml
 llm:
   provider: deepseek
-  endpoint: https://api.deepseek.com
   model: deepseek-v4-flash
   api_key: ${DEEPSEEK_API_KEY}
 ```
@@ -78,13 +78,11 @@ Morph 支持命名 LLM profile。当你希望将不同任务路由到不同 Deep
 ```yaml
 llm:
   provider: deepseek
-  endpoint: https://api.deepseek.com
   model: deepseek-v4-flash
   api_key: ${DEEPSEEK_API_KEY}
   profiles:
     deepseek_pro:
       provider: deepseek
-      endpoint: https://api.deepseek.com
       model: deepseek-v4-pro
       api_key: ${DEEPSEEK_API_KEY}
       reasoning_effort: high

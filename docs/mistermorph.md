@@ -34,10 +34,11 @@ Then edit `~/.morph/config.yaml` and configure the LLM provider:
 ```yaml
 llm:
   provider: deepseek
-  endpoint: https://api.deepseek.com
   model: deepseek-v4-pro
   api_key: ${DEEPSEEK_API_KEY}
 ```
+
+For DeepSeek's official API, use `provider: deepseek`. Use `provider: openai` only when you point Morph at a custom OpenAI-compatible endpoint.
 
 Then set your DeepSeek API key in the shell:
 
@@ -52,7 +53,6 @@ For a faster and lower-cost default, use `deepseek-v4-flash` instead:
 ```yaml
 llm:
   provider: deepseek
-  endpoint: https://api.deepseek.com
   model: deepseek-v4-flash
   api_key: ${DEEPSEEK_API_KEY}
 ```
@@ -78,13 +78,11 @@ Morph also supports named LLM profiles. This is useful when you want to route di
 ```yaml
 llm:
   provider: deepseek
-  endpoint: https://api.deepseek.com
   model: deepseek-v4-flash
   api_key: ${DEEPSEEK_API_KEY}
   profiles:
     deepseek_pro:
       provider: deepseek
-      endpoint: https://api.deepseek.com
       model: deepseek-v4-pro
       api_key: ${DEEPSEEK_API_KEY}
       reasoning_effort: high
