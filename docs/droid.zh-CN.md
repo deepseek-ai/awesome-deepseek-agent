@@ -22,7 +22,7 @@ npm install -g droid
 
 #### 2. 配置 DeepSeek 为自定义模型
 
-打开 `~/.factory/settings.json`，在 `customModels` 中添加：
+打开 `~/.factory/settings.json`，先删除内置的程序再添加如下：
 
 ```json
 {

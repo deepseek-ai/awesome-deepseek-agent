@@ -22,7 +22,7 @@ npm install -g droid
 
 #### 2. Configure DeepSeek as a Custom Model
 
-Open `~/.factory/settings.json` and add to `customModels`:
+Open `~/.factory/settings.json`, first delete the built-in programs and add the following:
 
 ```json
 {
