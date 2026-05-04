@@ -61,12 +61,15 @@ docker run -d --name ccx \
 
 从 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 获取 API Key。
 
-Codex CLI/App 默认使用 `gpt-5` / `gpt-5-mini` 作为模型名，因此需要在渠道中配置**模型重定向**，将 OpenAI 模型名映射到 DeepSeek：
+Codex CLI/App 默认使用 `gpt-5` / `mini` 作为模型名，**必须**配置模型重定向。Claude Code CLI 使用 `opus` / `sonnet` / `haiku`，重定向为推荐（也可直接 `--model deepseek-v4-pro`）：
 
-| 请求模型       | 重定向到              |
-| -------------- | --------------------- |
-| `gpt-5`        | `deepseek-v4-pro`     |
-| `mini`         | `deepseek-v4-flash`   |
+| 请求模型       | 重定向到              | 适用工具           |
+| -------------- | --------------------- | ------------------ |
+| `gpt-5`        | `deepseek-v4-pro`     | Codex CLI/App      |
+| `mini`         | `deepseek-v4-flash`   | Codex CLI/App      |
+| `opus`         | `deepseek-v4-pro`     | Claude Code CLI（推荐）|
+| `sonnet`       | `deepseek-v4-pro`     | Claude Code CLI（推荐）|
+| `haiku`        | `deepseek-v4-pro`     | Claude Code CLI（推荐）|
 
 在 CCX 渠道设置中填写 Model Mapping（模型映射）即可完成重定向。
 

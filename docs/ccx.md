@@ -61,12 +61,15 @@ Open the CCX admin console at `http://localhost:3000`, navigate to **Channels**,
 
 Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
-Codex CLI/App defaults to `gpt-5` / `gpt-5-mini` as model names. Configure **model redirection** in the channel so CCX remaps them to DeepSeek:
+Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model redirection. Claude Code CLI uses `opus` / `sonnet` / `haiku` — redirection is recommended but optional (you can also pass `--model deepseek-v4-pro` directly). Configure **model redirection** in the channel:
 
-| Requested Model  | Redirect To           |
-| ---------------- | --------------------- |
-| `gpt-5`          | `deepseek-v4-pro`     |
-| `mini`           | `deepseek-v4-flash`   |
+| Requested Model  | Redirect To           | Used By            |
+| ---------------- | --------------------- | ------------------ |
+| `gpt-5`          | `deepseek-v4-pro`     | Codex CLI/App      |
+| `mini`           | `deepseek-v4-flash`   | Codex CLI/App      |
+| `opus`           | `deepseek-v4-pro`     | Claude Code CLI (推荐) |
+| `sonnet`         | `deepseek-v4-pro`     | Claude Code CLI (推荐) |
+| `haiku`          | `deepseek-v4-pro`     | Claude Code CLI (推荐) |
 
 Fill in the Model Mapping section in the CCX channel settings to set up the redirection.
 
