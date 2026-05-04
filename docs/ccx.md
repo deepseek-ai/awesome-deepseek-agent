@@ -73,11 +73,14 @@ Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model red
 
 Fill in the Model Mapping section in the CCX channel settings to set up the redirection.
 
+Model redirection examples in the channel editor:
+
+![DeepSeek channel model redirection](../assets/ccx/redirect-editing-chat.png)
+![Claude Code channel model redirection](../assets/ccx/messages-channel-config.png)
+
 #### 3. Scenario A: Claude Code CLI
 
-Claude Code CLI speaks the Messages API. Configure a channel of type **Claude Code** with your DeepSeek Base URL, Key, and model remapping rules. The channel management interface shows request count, average latency, and success rate:
-
-![Claude Messages channel usage stats](../assets/ccx/messages-channel-config.png)
+Claude Code CLI speaks the Messages API. Configure a channel of type **Claude Code** with your DeepSeek Base URL, Key, and model remapping rules:
 
 Point Claude Code CLI at CCX's `/v1/messages` endpoint:
 
@@ -132,6 +135,11 @@ After saving, Codex App sends Responses API requests with `gpt-5` as the default
 CCX includes built-in log monitoring to inspect model routing, latency, and response status per request in real time:
 
 ![Request log monitoring](../assets/ccx/log-monitoring.png)
+
+Channel real-time usage stats showing test request latency and throughput:
+
+![Channel real-time stats](../assets/ccx/channel-test-success.png)
+![Channel real-time stats](../assets/ccx/channel-test-success-alt.png)
 
 #### 7. Optional: Verify Model List
 
