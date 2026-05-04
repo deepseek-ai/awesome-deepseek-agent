@@ -31,6 +31,7 @@
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
+| **AlayaCore** | 快速、精简的终端 AI Agent（约 8MB 静态二进制，零运行时依赖），支持交互式 TUI 和纯文本模式。 | [指南](./docs/alayacore.zh-CN.md) |
 
 ## 相关资源
 
