@@ -4,24 +4,23 @@
 
 [CCX](https://github.com/BenedictKing/ccx) is a high-performance AI API proxy and protocol translation gateway. It unlocks DeepSeek models for multiple tools through a unified local endpoint:
 
-| Endpoint            | Protocol                                     | Target Tool          |
-| ------------------- | -------------------------------------------- | -------------------- |
-| `/v1/messages`      | Claude Messages API passthrough              | **Claude Code CLI**  |
-| `/v1/responses`     | Responses → Chat Completions translation     | **Codex CLI / App**  |
-| `/v1/chat/completions` | OpenAI Chat Completions passthrough       | Any OpenAI-compatible tool |
+| Endpoint               | Protocol                                 | Target Tool                |
+| ---------------------- | ---------------------------------------- | -------------------------- |
+| `/v1/messages`         | Claude Messages API routing              | **Claude Code CLI**        |
+| `/v1/responses`        | Responses → Chat Completions translation | **Codex CLI / App**        |
+| `/v1/chat/completions` | OpenAI Chat Completions passthrough      | Any OpenAI-compatible tool |
 
-One CCX instance serves all three paths simultaneously — add a DeepSeek channel and every tool that speaks one of these protocols can use it.
+One CCX instance serves all three paths simultaneously — configure the DeepSeek-backed channels for the protocols you need, and every compatible tool can use the same local gateway.
 
 ## How It Works
 
 ```text
-Claude Code CLI ──→  /v1/messages ──→  CCX (:3000)  ──→  DeepSeek API
-Codex CLI/App  ──→  /v1/responses ──→  CCX (:3000)  ──→  DeepSeek API
-                                            │
-                          /v1/chat/completions (passthrough)
+Claude Code CLI       ──→  /v1/messages          ──→  CCX (:3000)  ──→  DeepSeek Anthropic endpoint
+Codex CLI/App         ──→  /v1/responses         ──→  CCX (:3000)  ──→  DeepSeek Chat endpoint
+OpenAI-compatible app ──→  /v1/chat/completions  ──→  CCX (:3000)  ──→  DeepSeek Chat endpoint
 ```
 
-CCX handles the protocol differences internally: Claude Messages requests are translated to Chat Completions for the upstream DeepSeek channel, and Responses requests are likewise mapped to Chat Completions. The tool sees a native endpoint; DeepSeek receives standard Chat Completions calls.
+CCX handles the protocol differences internally: Claude Messages requests can route to DeepSeek's Anthropic-compatible endpoint, while Responses requests are mapped to Chat Completions. The tool sees a native endpoint; the upstream DeepSeek channel receives the protocol it expects.
 
 #### 1. Set Up CCX
 
@@ -47,65 +46,89 @@ docker run -d --name ccx \
   benedictking/ccx:latest
 ```
 
-#### 2. Configure a DeepSeek Channel
+#### 2. Configure DeepSeek Channels
 
-Open the CCX admin console at `http://localhost:3000`, navigate to **Channels**, and add a new channel:
+##### 2.1 Codex CLI/App: Responses Channel
 
-| Field              | Value                                          |
-| ------------------ | ---------------------------------------------- |
-| **Type**           | OpenAI Chat                                    |
-| **Name**           | DeepSeek                                       |
-| **Base URL**       | `https://api.deepseek.com/v1/chat/completions` |
-| **API Key**        | `<your DeepSeek API Key>`                      |
-| **Models**         | `deepseek-v4-pro`, `deepseek-v4-flash`         |
+For Codex CLI/App, open the Responses channel page, for example `http://localhost:3000/channels/responses` (replace `3000` with your CCX port), and add a Chat service type. This Base URL is the upstream DeepSeek URL stored in CCX, not the local URL used by Codex:
+
+| Field                 | Value                                      |
+| --------------------- | ------------------------------------------ |
+| **Service type**      | Chat                                       |
+| **Name**              | DeepSeek Chat                              |
+| **Base URL (OpenAI)** | `https://api.deepseek.com/`                |
+| **API Key**           | `<your DeepSeek API Key>`                  |
+| **Models**            | `deepseek-v4-pro`, `deepseek-v4-flash`     |
+
+Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model redirection:
+
+| Requested Model  | Redirect To           |
+| ---------------- | --------------------- |
+| `gpt-5`          | `deepseek-v4-pro`     |
+| `mini`           | `deepseek-v4-flash`   |
+
+Configure Model Mapping for the Responses Chat service:
+
+![Responses Chat service model redirection](../assets/ccx/codex-responses-redirect.png)
 
 Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
-Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model redirection. Claude Code CLI uses `opus` / `sonnet` / `haiku` — redirection is recommended but optional (you can also pass `--model deepseek-v4-pro` directly). Configure **model redirection** in the channel:
+##### 2.2 Claude Code CLI: Messages Channel
 
-| Requested Model  | Redirect To           | Used By            |
-| ---------------- | --------------------- | ------------------ |
-| `gpt-5`          | `deepseek-v4-pro`     | Codex CLI/App      |
-| `mini`           | `deepseek-v4-flash`   | Codex CLI/App      |
-| `opus`           | `deepseek-v4-pro`     | Claude Code CLI (推荐) |
-| `sonnet`         | `deepseek-v4-pro`     | Claude Code CLI (推荐) |
-| `haiku`          | `deepseek-v4-pro`     | Claude Code CLI (推荐) |
+For Claude Code CLI, open the Messages channel page, for example `http://localhost:3000/channels/messages` (replace `3000` with your CCX port), and add a Claude service type backed by DeepSeek's Anthropic-compatible endpoint:
 
-Fill in the Model Mapping section in the CCX channel settings to set up the redirection.
+| Field                    | Value                                      |
+| ------------------------ | ------------------------------------------ |
+| **Service type**         | Claude                                     |
+| **Name**                 | DeepSeek Claude                            |
+| **Base URL (Anthropic)** | `https://api.deepseek.com/anthropic`       |
+| **API Key**              | `<your DeepSeek API Key>`                  |
+| **Models**               | `deepseek-v4-pro`, `deepseek-v4-flash`     |
 
-Model redirection examples in the channel editor:
+Claude Code CLI uses its default Opus 4.7 model, with `opus` / `sonnet` / `haiku` aliases available for redirection:
 
-![DeepSeek channel model redirection](../assets/ccx/redirect-editing-chat.png)
-![Claude Code channel model redirection](../assets/ccx/messages-channel-config.png)
+| Requested Model  | Redirect To           |
+| ---------------- | --------------------- |
+| `opus`           | `deepseek-v4-pro`     |
+| `sonnet`         | `deepseek-v4-pro`     |
+| `haiku`          | `deepseek-v4-flash`   |
+
+Configure Model Mapping for the Messages Claude service:
+
+![Claude Code channel model redirection](../assets/ccx/channel-test-success-alt.png)
 
 #### 3. Scenario A: Claude Code CLI
 
-Claude Code CLI speaks the Messages API. Configure a channel of type **Claude Code** with your DeepSeek Base URL, Key, and model remapping rules:
+Claude Code CLI speaks the Messages API. Use the Claude channel configured above with the Anthropic-compatible DeepSeek Base URL, Key, and model remapping rules.
 
-Point Claude Code CLI at CCX's `/v1/messages` endpoint:
+Point Claude Code CLI at the local CCX gateway root:
 
 ```bash
 export ANTHROPIC_API_KEY="your-strong-proxy-key"
-export ANTHROPIC_BASE_URL="http://localhost:3000/v1/messages"
+export ANTHROPIC_BASE_URL="http://localhost:3000"
 ```
 
 Verify:
 
 ```bash
-claude --model deepseek-v4-pro "hello"
+claude "hello"
 ```
 
-Claude Code CLI sends `/v1/messages` requests; CCX translates them and routes to the DeepSeek channel.
+Claude Code CLI sends `/v1/messages` requests with its default Opus 4.7 model; CCX applies the model redirection rules, translates the request, and routes it to the DeepSeek channel.
+
+The Claude Code channel dashboard shows Messages traffic and token metrics:
+
+![Claude Code channel usage stats](../assets/ccx/redirect-editing-chat.png)
+
+Messages request logs show protocol, model redirection, and latency:
+
+![Messages request logs](../assets/ccx/messages-channel-config.png)
 
 #### 4. Scenario B: Codex CLI
 
-Codex CLI speaks the OpenAI Responses API. Configure a channel of type **DeepSeek** (OpenAI Chat) with your DeepSeek Base URL, Key, and model remapping rules. The channel management interface shows request count, average latency, and success rate:
+Codex CLI speaks the OpenAI Responses API. Use the Chat service type configured in the Responses channel page with the OpenAI-compatible DeepSeek Base URL, Key, and model remapping rules.
 
-![DeepSeek Chat channel usage stats](../assets/ccx/chat-channel-config.png)
-
-![Responses → Chat protocol translation model redirect](../assets/ccx/codex-responses-redirect.png)
-
-Point Codex CLI at CCX's `/v1` base:
+Point Codex CLI at the local CCX `/v1` base:
 
 ```bash
 export OPENAI_API_KEY="your-strong-proxy-key"
@@ -120,6 +143,14 @@ codex "hello"
 
 Codex CLI defaults to `gpt-5` as the model name; CCX remaps it to `deepseek-v4-pro` via the channel's model redirection rules. You can also specify the model explicitly: `codex --model deepseek-v4-pro "hello"`.
 
+The Responses channel dashboard shows traffic and token metrics:
+
+![DeepSeek Chat channel usage stats](../assets/ccx/chat-channel-config.png)
+
+Responses request logs show protocol, model redirection, and latency:
+
+![Responses request logs](../assets/ccx/channel-test-success.png)
+
 #### 5. Scenario C: Codex App (VS Code / JetBrains)
 
 In the Codex extension settings, set:
@@ -132,14 +163,7 @@ In the Codex extension settings, set:
 
 After saving, Codex App sends Responses API requests with `gpt-5` as the default model; CCX remaps it to `deepseek-v4-pro` via the channel redirection rules and translates the call to Chat Completions for DeepSeek.
 
-#### 6. Optional: View Request Logs
-
-Channel real-time usage stats showing test request latency and throughput:
-
-![Channel real-time stats](../assets/ccx/channel-test-success.png)
-![Channel real-time stats](../assets/ccx/channel-test-success-alt.png)
-
-#### 7. Optional: Verify Model List
+#### 6. Optional: Verify Model List
 
 ```bash
 curl http://localhost:3000/v1/models \
@@ -154,4 +178,4 @@ If you see `deepseek-v4-pro` and `deepseek-v4-flash` in the list, the channel is
 - `Model not found`: Verify the model names in the CCX channel match exactly `deepseek-v4-pro` or `deepseek-v4-flash`.
 - `Connection refused`: Ensure CCX is running on port 3000 and the base URL points to the correct address.
 - Channel shows unhealthy: Verify your DeepSeek API Key in the CCX admin console and check network connectivity to `api.deepseek.com`.
-- Claude Code reports an unexpected response format: Make sure `ANTHROPIC_BASE_URL` ends with `/v1/messages` (not just `/v1`).
+- Claude Code reports an unexpected response format: Make sure `ANTHROPIC_BASE_URL` points to the CCX gateway root (not `/v1` or `/v1/messages`).
