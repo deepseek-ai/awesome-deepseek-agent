@@ -6,7 +6,7 @@ Morph is an open-source agent runtime and console for building personal or team 
 
 - **GitHub:** <https://github.com/quailyquaily/mistermorph>
 
-#### 1. Install Morph
+## 1. Install Morph
 
 For the simplest setup, download the desktop app from [GitHub Releases](https://github.com/quailyquaily/mistermorph/releases). The desktop app starts the local backend and provides the Console UI.
 
@@ -23,7 +23,7 @@ After installation, verify that the CLI is available:
 mistermorph --help
 ```
 
-#### 2. Configure DeepSeek
+## 2. Configure DeepSeek
 
 The recommended path is to use the Console UI.
 
@@ -40,8 +40,6 @@ Open the local URL printed by the command, then use Setup or Settings -> LLM. Co
 - Provider: `deepseek`
 - Model: `deepseek-v4-pro`
 - API Key: your DeepSeek API key
-
-Use `--allow-empty-password` only in a trusted local environment. If the Console is exposed on a network, configure a password instead.
 
 You can get an API key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
@@ -79,7 +77,7 @@ llm:
   api_key: ${DEEPSEEK_API_KEY}
 ```
 
-#### 3. Run Morph
+## 3. Run Morph
 
 Run a task from the command line:
 
@@ -93,7 +91,7 @@ Or open the local console server:
 mistermorph console serve
 ```
 
-#### 4. Optional: use a dedicated LLM profile
+## 4. Optional: use a dedicated LLM profile
 
 Morph also supports named LLM profiles. This is useful when you want to route different tasks to different DeepSeek models:
 
