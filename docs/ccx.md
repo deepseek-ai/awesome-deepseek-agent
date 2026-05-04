@@ -73,17 +73,17 @@ Codex CLI/App defaults to `gpt-5` / `mini` as model names and requires model red
 
 Fill in the Model Mapping section in the CCX channel settings to set up the redirection.
 
-Channel configuration and model remapping example:
-
-![Channel configuration and model redirection](../assets/ccx/channel-test-request.png)
-
 After enabling the channel, verify connectivity via "Test Channel":
 
 ![Test successful](../assets/ccx/channel-test-success.png)
 
 #### 3. Scenario A: Claude Code CLI
 
-Claude Code CLI speaks the Messages API. Point it at CCX's `/v1/messages` endpoint:
+Claude Code CLI speaks the Messages API. Configure a channel of type **Claude Code** with your DeepSeek Base URL, Key, and model remapping rules:
+
+![Claude Messages channel configuration](../assets/ccx/messages-channel-config.png)
+
+Point Claude Code CLI at CCX's `/v1/messages` endpoint:
 
 ```bash
 export ANTHROPIC_API_KEY="your-strong-proxy-key"
@@ -100,7 +100,11 @@ Claude Code CLI sends `/v1/messages` requests; CCX translates them and routes to
 
 #### 4. Scenario B: Codex CLI
 
-Codex CLI speaks the OpenAI Responses API. Point it at CCX's `/v1` base:
+Codex CLI speaks the OpenAI Responses API. Configure a channel of type **DeepSeek** (OpenAI Chat) with your DeepSeek Base URL, Key, and model remapping rules:
+
+![DeepSeek Chat channel configuration](../assets/ccx/chat-channel-config.png)
+
+Point Codex CLI at CCX's `/v1` base:
 
 ```bash
 export OPENAI_API_KEY="your-strong-proxy-key"
