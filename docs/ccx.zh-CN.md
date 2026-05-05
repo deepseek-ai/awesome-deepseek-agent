@@ -64,12 +64,14 @@ docker run -d --name ccx \
 
 ![启用规范化非常见 Chat role](assets/ccx/codex-edit-channel-switch.png)
 
-接着在同一个编辑弹窗中配置 Model Mapping。Codex CLI/App 的常见请求模型包含 `gpt-5` / `mini`，可以通过映射把不同等级的 Codex 模型重定向到对应的 DeepSeek 模型：
+接着在同一个编辑弹窗中配置 Model Mapping。Codex CLI/App 的常见请求模型可通过 `gpt` / `mini` 这类短匹配键分层重定向到对应的 DeepSeek 模型：
 
 | 请求模型 | 重定向到              |
 | -------- | --------------------- |
-| `gpt-5`  | `deepseek-v4-pro`     |
+| `gpt`    | `deepseek-v4-pro`     |
 | `mini`   | `deepseek-v4-flash`   |
+
+`gpt` 应用于常规 Codex 模型（例如 `gpt-5`），`mini` 应用于轻量模型（例如 `gpt-5-mini`）。CCX 会优先使用更长的匹配键；因此不要把 pro 路由键写成 `gpt-5`，否则 `gpt-5-mini` 会先命中 `gpt-5`，无法优先通过 `mini` 转发到 `deepseek-v4-flash`。
 
 在 Responses Chat service 的 Model Mapping 区域添加上述映射：
 
@@ -145,7 +147,7 @@ export OPENAI_BASE_URL="http://localhost:3000/v1"
 codex "你好"
 ```
 
-当 Codex CLI 请求模型名为 `gpt-5` 时，CCX 会根据渠道的模型重定向规则将其映射为 `deepseek-v4-pro` 发往 DeepSeek。也可显式指定模型：`codex --model deepseek-v4-pro "你好"`。
+当 Codex CLI 请求模型名为 `gpt-5` 时，CCX 会根据 `gpt` 映射将其重定向为 `deepseek-v4-pro` 发往 DeepSeek；当请求模型名为 `gpt-5-mini` 时，会根据更长的 `mini` 映射优先重定向为 `deepseek-v4-flash`。也可显式指定模型：`codex --model deepseek-v4-pro "你好"`。
 
 Responses 渠道面板会显示请求流量和 token 指标：
 
@@ -163,9 +165,9 @@ Responses 请求日志可查看协议类型、模型重定向和响应耗时：
 | ------------ | --------------------------------------------------- |
 | **API Key**  | `your-strong-proxy-key`                             |
 | **Base URL** | `http://localhost:3000/v1`                          |
-| **Model**    | `gpt-5`（示例：CCX 自动重定向到 `deepseek-v4-pro`） |
+| **Model**    | `gpt-5`（示例：CCX 通过 `gpt` 映射自动重定向到 `deepseek-v4-pro`） |
 
-保存后，如果 Codex App 发送的 Responses API 请求模型为 `gpt-5`，CCX 会根据渠道重定向规则自动映射为 `deepseek-v4-pro`，并翻译为 Chat Completions 调用发往 DeepSeek。
+保存后，如果 Codex App 发送的 Responses API 请求模型为 `gpt-5`，CCX 会根据 `gpt` 映射自动重定向为 `deepseek-v4-pro`；如果请求模型为 `gpt-5-mini`，会根据 `mini` 映射优先重定向为 `deepseek-v4-flash`。随后 CCX 会翻译为 Chat Completions 调用发往 DeepSeek。
 
 #### 6. 可选：验证模型列表
 

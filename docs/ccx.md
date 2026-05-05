@@ -64,12 +64,14 @@ After saving, **edit** the **DeepSeek Chat** channel you just created and turn o
 
 ![Enable Normalize non-standard Chat roles](assets/ccx/codex-edit-channel-switch.png)
 
-Then configure Model Mapping in the same edit dialog. Common Codex CLI/App requested models include `gpt-5` / `mini`, so you can map different Codex model tiers to the corresponding DeepSeek models:
+Then configure Model Mapping in the same edit dialog. Codex CLI/App requested models can be tiered with short match keys such as `gpt` / `mini`, so you can redirect different Codex model tiers to the corresponding DeepSeek models:
 
 | Requested Model  | Redirect To           |
 | ---------------- | --------------------- |
-| `gpt-5`          | `deepseek-v4-pro`     |
+| `gpt`            | `deepseek-v4-pro`     |
 | `mini`           | `deepseek-v4-flash`   |
+
+`gpt` covers regular Codex models such as `gpt-5`, while `mini` covers lightweight models such as `gpt-5-mini`. CCX prefers the longest matching key, so do not use `gpt-5` as the pro redirect key; otherwise `gpt-5-mini` matches `gpt-5` before `mini` and cannot be routed to `deepseek-v4-flash` via the `mini` rule.
 
 Add the mappings above in the Responses Chat service Model Mapping section:
 
@@ -145,7 +147,7 @@ Verify:
 codex "hello"
 ```
 
-When Codex CLI requests `gpt-5`, CCX remaps it to `deepseek-v4-pro` via the channel's model redirection rules. You can also specify the model explicitly: `codex --model deepseek-v4-pro "hello"`.
+When Codex CLI requests `gpt-5`, CCX remaps it to `deepseek-v4-pro` via the `gpt` rule. When it requests `gpt-5-mini`, the longer `mini` rule takes precedence and remaps it to `deepseek-v4-flash`. You can also specify the model explicitly: `codex --model deepseek-v4-pro "hello"`.
 
 The Responses channel dashboard shows traffic and token metrics:
 
@@ -163,9 +165,9 @@ In the Codex extension settings, set:
 | ------------------- | ---------------------------- |
 | **API Key**         | `your-strong-proxy-key`      |
 | **Base URL**        | `http://localhost:3000/v1`   |
-| **Model**           | `gpt-5` (CCX auto-redirects to `deepseek-v4-pro`) |
+| **Model**           | `gpt-5` (CCX auto-redirects to `deepseek-v4-pro` via the `gpt` rule) |
 
-After saving, if Codex App sends Responses API requests with `gpt-5`, CCX remaps it to `deepseek-v4-pro` via the channel redirection rules and translates the call to Chat Completions for DeepSeek.
+After saving, if Codex App sends Responses API requests with `gpt-5`, CCX remaps it to `deepseek-v4-pro` via the `gpt` rule. If it sends `gpt-5-mini`, the `mini` rule takes precedence and remaps it to `deepseek-v4-flash`. CCX then translates the call to Chat Completions for DeepSeek.
 
 #### 6. Optional: Verify Model List
 
