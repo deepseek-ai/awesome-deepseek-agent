@@ -22,6 +22,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
 | **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
+| **Ontheia** | Open-source self-hosted AI agent platform with multi-provider support, MCP, chain workflows, and long-term memory. | [Guide](./docs/ontheia.md) |
 | **OpenClaw**    | Open-source personal AI assistant that plugs into chat tools (Feishu, WeChat) and is extensible via Skills. | [Guide](./docs/openclaw.md)    |
 | **AstrBot**     | Open-source agent assistant for Feishu, Telegram and more, extensible with skills, plugins, and MCPs.       | [Guide](./docs/astrbot.md)     |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
