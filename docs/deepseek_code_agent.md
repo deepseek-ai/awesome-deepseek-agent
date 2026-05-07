@@ -3,7 +3,7 @@
 # Integrate with DeepSeek Code Agent
 
 > 🌐 **The only Web UI + System Tray AI desktop agent** in this list — not just a terminal CLI.  
-> Built for DeepSeek-V4 with 20+ tools, RAG knowledge base, ACL file protection, conversation encryption, and multi-tab session management.
+> Built for DeepSeek-V4 with 20+ tools, Knowledge Base, ACL file protection, conversation encryption, and multi-tab session management.
 
 DeepSeek Code Agent is an open-source AI desktop assistant that runs as a **Web service + System Tray** application. It uses DeepSeek-V4 as its core model and comes with **20+ built-in tools** for file operations, code diagnostics, Git queries, regex search, web fetching, and more — all controllable through natural language conversation.
 
@@ -18,7 +18,7 @@ Unlike CLI-only AI coding assistants, it provides a **rich graphical interface**
 | Feature | DeepSeek Code Agent | CLI-only tools (Claude Code, Kilo Code, etc.) |
 |---------|-------------------|----------------------------------------------|
 | **Interface** | 🌐 Web UI + System Tray 🖥️ | ⌨️ Terminal only |
-| **RAG Knowledge Base** | ✅ Built-in with GUI file picker | ❌ |
+| **Knowledge Base** | ✅ Built-in with GUI file picker | ❌ |
 | **Multi-tab Sessions** | ✅ Manage multiple conversations | ❌ Single session |
 | **File Browser** | ✅ GUI file picker (@引用) | ❌ Manual path typing |
 | **ACL Anti-tampering** | ✅ Auto-locks project files | ❌ |
@@ -114,11 +114,11 @@ Type natural language commands and the agent will call tools to complete tasks:
 | **Context Management** | Auto-summarizes after 800 messages to stay within context limits, preserving key information |
 | **Model Selection** | Per-conversation model override via `CHAT_API_MODELS` |
 
-#### 6. Knowledge Base (RAG)
+#### 6. Knowledge Base
 
 <div align="center">
   <img src="./assets/deepseek_code_agent_kb.png" width="800" alt="Knowledge Base Panel" border="1" />
-  <p><em>Knowledge Base panel — select local files to inject into conversation context as RAG references</em></p>
+  <p><em>Knowledge Base panel — select local files to inject into conversation context as context references</em></p>
 </div>
 
 Toggle the 📚 **Knowledge Base** panel on the right side of the interface, check the files you want the AI to reference, and the agent automatically injects their content into the conversation for context-aware responses.
