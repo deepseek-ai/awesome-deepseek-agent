@@ -32,7 +32,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
-| **DeepSeek Code Agent** | Open-source Web UI + System Tray AI desktop agent with 20+ built-in tools, Knowledge Base, and ACL security. | [Guide](./docs/deepseek_code_agent.md) |
+| **DeepSeek Code Agent** | Open-source Web UI AI desktop agent with 20+ built-in tools, Knowledge Base, and ACL security. | [Guide](./docs/deepseek_code_agent.md) |
 
 ## Resources
 
