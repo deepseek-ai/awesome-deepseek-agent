@@ -16,6 +16,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | Tool            | Description                                                                                                 | Guide                          |
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
+| **DeepSeek Code Agent** | Web UI + System Tray AI desktop agent with 20+ built-in tools, RAG knowledge base, and ACL security. | [Guide](./docs/deepseek_code_agent.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
 | **Kilo Code** | AI coding assistant available as a CLI and editor extension. | [Guide](./docs/kilo_code.md) |
