@@ -2,12 +2,12 @@
 
 # 接入 DeepSeek Code Agent
 
-> 🌐 **本列表中唯一的 Web UI AI 桌面助手**。  
-> 基于 DeepSeek-V4，内置丰富工具、知识库、ACL 文件保护、对话加密和多标签会话管理。
+> 🌐 **开源 Web UI 代码开发助手** —— 轻客户端架构，一键切换 Pro/Flash 模型，任务决策全程透明。  
+> 快速上手、日常开发、Agent 进阶，一个工具全搞定。
 
-DeepSeek Code Agent 是一款开源的 AI 桌面助手，以 **Web 服务**形式运行。它以 DeepSeek-V4 为核心模型，内置**丰富工具**，支持文件操作、代码诊断、Git 查询、正则搜索、Web 抓取等功能，全部通过自然语言对话即可操控。
+DeepSeek Code Agent 是一款基于 **Web UI 的轻客户端**代码开发助手。无需安装重型 IDE，打开浏览器即可使用，对话中随时在 **DeepSeek-V4-Pro** 与 **DeepSeek-V4-Flash** 之间切换，每一步工具调用都在侧栏清晰展示，**任务决策透明化**。
 
-它提供了**丰富的图形界面**，任何浏览器均可访问，让 DeepSeek-V4 的 Agent 能力惠及开发者与**非技术用户**。
+无论是**入门学习 AI Agent**，还是作为**日常代码开发助手**，它都能提供简洁直观的体验，随你一起成长。
 
 - **GitHub：** <https://github.com/Fan/DeepSeekCodeAgent>
 

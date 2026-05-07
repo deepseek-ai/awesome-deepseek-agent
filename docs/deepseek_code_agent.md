@@ -2,12 +2,12 @@
 
 # Integrate with DeepSeek Code Agent
 
-> 🌐 **The only Web UI AI desktop agent** in this list.  
-> Built for DeepSeek-V4 with rich tools, Knowledge Base, ACL file protection, conversation encryption, and multi-tab session management.
+> 🌐 **Open-source Web UI coding assistant** — lightweight client architecture, one-click Pro/Flash model switching, transparent task decision-making.  
+> Perfect for quick start, daily development, and advancing your Agent skills.
 
-DeepSeek Code Agent is an open-source AI desktop assistant that runs as a **Web-based** application. It uses DeepSeek-V4 as its core model and comes with **rich built-in tools** for file operations, code diagnostics, Git queries, regex search, web fetching, and more — all controllable through natural language conversation.
+DeepSeek Code Agent is an open-source Web UI coding assistant built for **rapid development** with DeepSeek-V4. Its lightweight client architecture runs in the browser — no heavy IDE, no terminal needed. Switch between **DeepSeek-V4-Pro** and **DeepSeek-V4-Flash** anytime during a conversation, and watch every tool-call decision unfold transparently in the side panel.
 
-It provides a **rich graphical interface** accessible from any browser, making DeepSeek-V4's agent capabilities available to both developers and **non-technical users alike**.
+Whether you're **getting started with AI agents** or looking for a **daily coding companion**, DeepSeek Code Agent offers a clean, intuitive interface that grows with you.
 
 - **GitHub:** <https://github.com/Fan/DeepSeekCodeAgent>
 
