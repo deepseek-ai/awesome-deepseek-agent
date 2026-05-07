@@ -20,7 +20,7 @@ It provides a **rich graphical interface** accessible from any browser, making D
 | 🌐 **Web UI** | Graphical interface accessible from any browser |
 | 📚 **Knowledge Base** | Built-in file picker for context injection |
 | 📑 **Multi-tab Sessions** | Manage multiple conversations simultaneously |
-| 📁 **File Browser** | GUI-based file picker for easy @-referencing |
+| 📁 **File Browser** | GUI-based file picker with @-syntax for quick file referencing |
 | 🔒 **ACL Anti-tampering** | Auto-locks project files for security |
 | 🔐 **Conversation Encryption** | Windows DPAPI encrypted storage |
 
