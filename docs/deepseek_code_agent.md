@@ -15,7 +15,7 @@ Unlike CLI-only AI coding assistants, it provides a **rich graphical interface**
 
 ### Why DeepSeek Code Agent?
 
-| Feature | DeepSeek Code Agent | CLI-only tools (Claude Code, Kilo Code, etc.) |
+| Feature | DeepSeek Code Agent | Terminal-only CLI tools |
 |---------|-------------------|----------------------------------------------|
 | **Interface** | 🌐 Web UI + System Tray 🖥️ | ⌨️ Terminal only |
 | **Knowledge Base** | ✅ Built-in with GUI file picker | ❌ |
