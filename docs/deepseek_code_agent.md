@@ -72,7 +72,7 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 | `AGENT_MODEL_API_KEY` | Your DeepSeek API key |
 | `AGENT_SERVER_PORT` | Web UI port (default: 8802) |
 | `AGENT_WORKSPACE_DIR` | Default workspace directory |
-| `AGENT_KNOWLEDGE_BASE_DIR` | Knowledge base directory for RAG |
+| `AGENT_KNOWLEDGE_BASE_DIR` | Knowledge base directory |
 | `CHAT_API_MODELS` | Allowed models, defaults to `deepseek-v4-pro,deepseek-v4-flash` |
 
 #### 3. Launch DeepSeek Code Agent
@@ -131,7 +131,7 @@ Toggle the 📚 **Knowledge Base** panel on the right side of the interface, che
 | `/execute` | Switch to Execute mode (strictly follow Todo-List) |
 | `@/path/to/file` | Reference a local file in your message |
 | 📁 button | Open the file browser to pick files |
-| 📚 panel | Toggle knowledge base files for RAG context |
+| 📚 panel | Toggle knowledge base files as context reference |
 
 #### Built-in Tools (20+)
 

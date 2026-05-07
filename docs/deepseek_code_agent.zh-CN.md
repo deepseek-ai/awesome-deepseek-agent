@@ -72,7 +72,7 @@ pip install -r requirements.txt
 | `AGENT_MODEL_API_KEY` | DeepSeek API 密钥 |
 | `AGENT_SERVER_PORT` | Web 界面端口（默认 8802） |
 | `AGENT_WORKSPACE_DIR` | 默认工作目录 |
-| `AGENT_KNOWLEDGE_BASE_DIR` | 知识库目录（RAG） |
+| `AGENT_KNOWLEDGE_BASE_DIR` | 知识库目录 |
 | `CHAT_API_MODELS` | 允许使用的模型列表，默认 `deepseek-v4-pro,deepseek-v4-flash` |
 
 #### 3. 启动 DeepSeek Code Agent
@@ -131,7 +131,7 @@ python main_tray.py
 | 输入 `/execute` | 切换到 Execute 模式（严格按照执行清单执行） |
 | 输入 `@文件路径` | 在消息中引用本地文件 |
 | 点击 📁 按钮 | 打开文件浏览器选择文件 |
-| 📚 知识库面板 | 勾选知识库文件注入对话上下文（RAG） |
+| 📚 知识库面板 | 勾选知识库文件注入对话上下文 |
 
 #### 内置工具（20+）
 
