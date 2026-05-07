@@ -2,28 +2,27 @@
 
 # Integrate with DeepSeek Code Agent
 
-> 🌐 **The only Web UI AI desktop agent** in this list — not just a terminal CLI.  
+> 🌐 **The only Web UI AI desktop agent** in this list.  
 > Built for DeepSeek-V4 with 20+ tools, Knowledge Base, ACL file protection, conversation encryption, and multi-tab session management.
 
 DeepSeek Code Agent is an open-source AI desktop assistant that runs as a **Web-based** application. It uses DeepSeek-V4 as its core model and comes with **20+ built-in tools** for file operations, code diagnostics, Git queries, regex search, web fetching, and more — all controllable through natural language conversation.
 
-Unlike CLI-only AI coding assistants, it provides a **rich graphical interface** accessible from any browser, making DeepSeek-V4's agent capabilities available to both developers and **non-technical users alike**.
+It provides a **rich graphical interface** accessible from any browser, making DeepSeek-V4's agent capabilities available to both developers and **non-technical users alike**.
 
 - **GitHub:** <https://github.com/Fan/DeepSeekCodeAgent>
 
 ---
 
-### Why DeepSeek Code Agent?
+### Key Features
 
-| Feature | DeepSeek Code Agent | Terminal-only CLI tools |
-|---------|-------------------|----------------------------------------------|
-| **Interface** | 🌐 Web UI 🖥️ | ⌨️ Terminal only |
-| **Knowledge Base** | ✅ Built-in with GUI file picker | ❌ |
-| **Multi-tab Sessions** | ✅ Manage multiple conversations | ❌ Single session |
-| **File Browser** | ✅ GUI file picker (@引用) | ❌ Manual path typing |
-| **ACL Anti-tampering** | ✅ Auto-locks project files | ❌ |
-| **Conversation Encryption** | ✅ Windows DPAPI encrypted | ❌ |
-| **Target Users** | 👥 Developers + non-technical | 👨‍💻 Developers only |
+| Feature | Description |
+|---------|-------------|
+| 🌐 **Web UI** | Graphical interface accessible from any browser |
+| 📚 **Knowledge Base** | Built-in file picker for context injection |
+| 📑 **Multi-tab Sessions** | Manage multiple conversations simultaneously |
+| 📁 **File Browser** | GUI-based file picker for easy @-referencing |
+| 🔒 **ACL Anti-tampering** | Auto-locks project files for security |
+| 🔐 **Conversation Encryption** | Windows DPAPI encrypted storage |
 
 ---
 
