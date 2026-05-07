@@ -29,6 +29,8 @@ After the initial installation, you will automatically enter the setup phase. Us
 - When prompted: `Default model` Navigate to **Enter model** and enter the model name (`deepseek-v4-pro` or `deepseek-v4-flash`).
 - For the remaining configuration (message channels, Skills, etc.), configure as needed. Beginners can select **Skip for now**.
 
+To avoid compatibility issues, it is strongly recommended to upgrade OpenClaw to the latest version, ensuring the version number is >= [v2026.4.24](https://github.com/openclaw/openclaw/releases/tag/v2026.4.24), which adds proper support for DeepSeek V4 thinking mode. If you encounter a 400 error about `reasoning_content`, updating to the latest version should resolve it.
+
 #### 3. Get Started
 
 Open the Web UI and interact on the Chat page:

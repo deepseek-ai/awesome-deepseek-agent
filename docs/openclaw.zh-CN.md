@@ -29,6 +29,8 @@ iwr -useb https://openclaw.ai/install.ps1 | iex
 - 遇到提示：`Default model` 请将光标指向 **Enter model**，填写模型名称（`deepseek-v4-pro` 或 `deepseek-v4-flash`）。
 - 后续的其余配置（消息频道、Skill 等）请根据需求配置，新手可以先选择 **Skip for now**。
 
+为避免兼容性问题，强烈建议将 OpenClaw 升级到最新版本，确保版本号 >= [v2026.4.24](https://github.com/openclaw/openclaw/releases/tag/v2026.4.24)，该版本新增了对 DeepSeek V4 Thinking Mode 的正确支持。如果遇到关于 `reasoning_content` 的 400 报错，更新到最新版本即可解决。
+
 #### 3. 开始使用
 
 打开 Web UI，在 Chat 页面进行交互：
