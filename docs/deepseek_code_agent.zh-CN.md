@@ -3,9 +3,9 @@
 # 接入 DeepSeek Code Agent
 
 > 🌐 **本列表中唯一的 Web UI AI 桌面助手**。  
-> 基于 DeepSeek-V4，内置 20+ 工具、知识库、ACL 文件保护、对话加密和多标签会话管理。
+> 基于 DeepSeek-V4，内置丰富工具、知识库、ACL 文件保护、对话加密和多标签会话管理。
 
-DeepSeek Code Agent 是一款开源的 AI 桌面助手，以 **Web 服务**形式运行。它以 DeepSeek-V4 为核心模型，内置 **20+ 工具**，支持文件操作、代码诊断、Git 查询、正则搜索、Web 抓取等功能，全部通过自然语言对话即可操控。
+DeepSeek Code Agent 是一款开源的 AI 桌面助手，以 **Web 服务**形式运行。它以 DeepSeek-V4 为核心模型，内置**丰富工具**，支持文件操作、代码诊断、Git 查询、正则搜索、Web 抓取等功能，全部通过自然语言对话即可操控。
 
 它提供了**丰富的图形界面**，任何浏览器均可访问，让 DeepSeek-V4 的 Agent 能力惠及开发者与**非技术用户**。
 
@@ -107,7 +107,7 @@ python main_tray.py
 
 | 特性 | 说明 |
 |------|------|
-| **Function Calling** | DeepSeek-V4 驱动全部 20+ 内置工具调用 |
+| **Function Calling** | DeepSeek-V4 驱动全部内置工具调用 |
 | **KV 缓存优化** | 流式响应携带 `cache_hit_tokens`，计费区分缓存命中/未命中 |
 | **流式响应** | 基于 SSE 的流式输出，支持 `reasoning_content` 推理过程显示 |
 | **上下文管理** | 超过 800 条消息自动摘要压缩，保留关键信息 |
@@ -132,6 +132,6 @@ python main_tray.py
 | 点击 📁 按钮 | 打开文件浏览器选择文件 |
 | 📚 知识库面板 | 勾选知识库文件注入对话上下文 |
 
-#### 内置工具（20+）
+#### 内置工具
 
 `cli_structured_edit` · `cli_python_inline` · `cli_directory_list` · `cli_web_fetch` · `cli_git_workspace` · `cli_regex_locate` · `cli_find_replace` · `cli_file_ops` · `cli_ip_geolocate` · `cli_open_meteo_weather` · `cli_unified_diagnose` · `cli_test_report` · `cli_text_diff` · `cli_patch_apply` · `cli_user_confirm` · `cli_orch_dispatch` · 等。

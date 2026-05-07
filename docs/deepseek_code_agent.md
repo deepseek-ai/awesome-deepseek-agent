@@ -3,9 +3,9 @@
 # Integrate with DeepSeek Code Agent
 
 > 🌐 **The only Web UI AI desktop agent** in this list.  
-> Built for DeepSeek-V4 with 20+ tools, Knowledge Base, ACL file protection, conversation encryption, and multi-tab session management.
+> Built for DeepSeek-V4 with rich tools, Knowledge Base, ACL file protection, conversation encryption, and multi-tab session management.
 
-DeepSeek Code Agent is an open-source AI desktop assistant that runs as a **Web-based** application. It uses DeepSeek-V4 as its core model and comes with **20+ built-in tools** for file operations, code diagnostics, Git queries, regex search, web fetching, and more — all controllable through natural language conversation.
+DeepSeek Code Agent is an open-source AI desktop assistant that runs as a **Web-based** application. It uses DeepSeek-V4 as its core model and comes with **rich built-in tools** for file operations, code diagnostics, Git queries, regex search, web fetching, and more — all controllable through natural language conversation.
 
 It provides a **rich graphical interface** accessible from any browser, making DeepSeek-V4's agent capabilities available to both developers and **non-technical users alike**.
 
@@ -107,7 +107,7 @@ Type natural language commands and the agent will call tools to complete tasks:
 
 | Feature | Description |
 |---------|-------------|
-| **Function Calling** | DeepSeek-V4's tool-use capabilities drive all 20+ built-in tools |
+| **Function Calling** | DeepSeek-V4's tool-use capabilities drive all built-in tools |
 | **KV Cache Optimization** | Streams `usage` info including `cache_hit_tokens`; pricing distinguishes cache hit/miss for cost savings |
 | **Streaming Responses** | SSE-based streaming with reasoning content support (`reasoning_content`) |
 | **Context Management** | Auto-summarizes after 800 messages to stay within context limits, preserving key information |
@@ -132,6 +132,6 @@ Toggle the 📚 **Knowledge Base** panel on the right side of the interface, che
 | 📁 button | Open the file browser to pick files |
 | 📚 panel | Toggle knowledge base files as context reference |
 
-#### Built-in Tools (20+)
+#### Built-in Tools
 
 `cli_structured_edit` · `cli_python_inline` · `cli_directory_list` · `cli_web_fetch` · `cli_git_workspace` · `cli_regex_locate` · `cli_find_replace` · `cli_file_ops` · `cli_ip_geolocate` · `cli_open_meteo_weather` · `cli_unified_diagnose` · `cli_test_report` · `cli_text_diff` · `cli_patch_apply` · `cli_user_confirm` · `cli_orch_dispatch` · and more.
