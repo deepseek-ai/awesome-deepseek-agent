@@ -15,6 +15,7 @@
 
 | 工具            | 简介                                                                  | 指南                                |
 | --------------- | --------------------------------------------------------------------- | ----------------------------------- |
+| **Bash Agent** | 极简 AI 编程 Agent 运行时 —— 纯 Bash + AWK，零依赖，Cache-First 架构，缓存命中率 99%。 | [指南](./docs/bash_agent.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
