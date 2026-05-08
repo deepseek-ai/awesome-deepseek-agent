@@ -28,7 +28,7 @@ Roo Code 是一个支持多提供商插件的 IDE / CLI 编程助手。本文介
 
 **注意**
 
-- deepseek-chat 与 deepseek-reasoner 两个模型名将于 2026/07/24 弃用。出于兼容考虑，二者分别对应 deepseek-v4-flash 的非思考与思考模式。
+- `deepseek-chat` 与 `deepseek-reasoner` 两个模型名将于 *2026/07/24* 弃用。出于兼容考虑，二者分别对应 deepseek-v4-flash 的非思考与思考模式。
 - Roo Code 默认只有 `deepseek-chat` 和 `deepseek-reasoner` 这两个模型可选 , 因此我们需要手动指定我们需要的模型 , 例如 `deepseek-v4-pro`
 
 ### 验证 API（可选）

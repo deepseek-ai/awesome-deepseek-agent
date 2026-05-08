@@ -26,19 +26,9 @@ Roo Code is an IDE and CLI-focused coding assistant that supports multiple provi
 3. Paste your DeepSeek API key into the `DeepSeek API Key` field.
 4. Choose a model: `deepseek-v4-pro` (recommended) or `deepseek-v4-flash` (lower cost).
 
-Notes:
+**Notes**:
 
-- DeepSeek V4 models support up to **1,000,000 tokens** context. If Roo Code exposes a "context window" option, set it to `1000000`.
-- If the provider UI exposes advanced options (base URL / thinking / reasoning fields), configure them as appropriate:
-  - OpenAI-compatible base URL: `https://api.deepseek.com`
-  - Anthropic-compatible base URL: `https://api.deepseek.com/anthropic`
-  - Enable thinking: `thinking: { "type": "enabled" }`
-  - Recommended reasoning effort: `reasoning_effort: "max"`
-- For Anthropic/Claude-compatible clients, append `[1m]` to model names where required (e.g. `deepseek-v4-pro[1m]`).
-
-**Important note about deprecated model names and Roo Code defaults**:
-
-- The model names `deepseek-chat` and `deepseek-reasoner` are deprecated and will be removed on 2026/07/24. For compatibility they map to `deepseek-v4-flash`'s non-thinking and thinking modes respectively.
+- The model names `deepseek-chat` and `deepseek-reasoner` are deprecated and will be removed on *2026/07/24*. For compatibility they map to `deepseek-v4-flash`'s non-thinking and thinking modes respectively.
 - Roo Code's provider UI may by default only list `deepseek-chat` and `deepseek-reasoner` in the model selector. In that case, manually enter the desired model name (for example, `deepseek-v4-pro`) into the model field to use the current V4 model names.
 
 ### Verify the API (optional)
