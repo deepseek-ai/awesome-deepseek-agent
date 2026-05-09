@@ -9,7 +9,7 @@ DeepSeek Code Agent is an open-source Web UI coding assistant built for **rapid 
 
 Whether you're **getting started with AI agents** or looking for a **daily coding companion**, DeepSeek Code Agent offers a clean, intuitive interface that grows with you.
 
-- **GitHub:** <https://github.com/Fan/deepseek-code-agent>
+- **GitHub:** <https://github.com/diky87688973/deepseek-code-agent>
 
 ---
 
@@ -39,7 +39,7 @@ Whether you're **getting started with AI agents** or looking for a **daily codin
 - Clone the repository:
 
 ```bash
-git clone https://github.com/Fan/deepseek-code-agent.git
+git clone https://github.com/diky87688973/deepseek-code-agent.git
 cd deepseek-code-agent
 ```
 

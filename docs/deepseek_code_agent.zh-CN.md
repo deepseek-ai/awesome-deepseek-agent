@@ -9,7 +9,7 @@ DeepSeek Code Agent 是一款基于 **Web UI 的轻客户端**代码开发助手
 
 无论是**入门学习 AI Agent**，还是作为**日常代码开发助手**，它都能提供简洁直观的体验，随你一起成长。
 
-- **GitHub：** <https://github.com/Fan/deepseek-code-agent>
+- **GitHub：** <https://github.com/diky87688973/deepseek-code-agent>
 
 ---
 
@@ -39,7 +39,7 @@ DeepSeek Code Agent 是一款基于 **Web UI 的轻客户端**代码开发助手
 - 克隆仓库：
 
 ```bash
-git clone https://github.com/Fan/deepseek-code-agent.git
+git clone https://github.com/diky87688973/deepseek-code-agent.git
 cd deepseek-code-agent
 ```
 
