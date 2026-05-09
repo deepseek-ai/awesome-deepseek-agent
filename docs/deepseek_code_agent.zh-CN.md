@@ -57,7 +57,7 @@ pip install -r requirements.txt
 {
     "AGENT_MODEL_API_BASE_URL": "https://api.deepseek.com",
     "AGENT_MODEL_API_KEY": "sk-...",
-    "AGENT_SERVER_PORT": 8802
+    "AGENT_SERVER_PORT": 8801
 }
 ```
 
@@ -135,6 +135,5 @@ python main_tray.py
 | 点击 📁 按钮 | 打开文件浏览器选择文件 |
 | 📚 知识库面板 | 勾选知识库文件注入对话上下文 |
 
-#### 内置工具
 
 `read_file` · `write_file` · `replace_in_file` · `apply_patch` · `grep_files` · `glob_files` · `file_ops` · `archive` · `data_table` · `run_command` · `python_inline` · `git_workspace` · `web_fetch` · `unified_diagnose` · `text_diff` · `env_probe` · `ip_geolocate` · `open_meteo_weather` · `image_ocr` · `user_confirm` · `todo_list` · `run_type` · 等。
