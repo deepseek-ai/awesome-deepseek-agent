@@ -9,7 +9,7 @@ DeepSeek Code Agent 是一款基于 **Web UI 的轻客户端**代码开发助手
 
 无论是**入门学习 AI Agent**，还是作为**日常代码开发助手**，它都能提供简洁直观的体验，随你一起成长。
 
-- **GitHub：** <https://github.com/Fan/DeepSeekCodeAgent>
+- **GitHub：** <https://github.com/Fan/deepseek-code-agent>
 
 ---
 
@@ -39,7 +39,7 @@ DeepSeek Code Agent 是一款基于 **Web UI 的轻客户端**代码开发助手
 - 克隆仓库：
 
 ```bash
-git clone https://github.com/Fan/DeepSeekCodeAgent.git
+git clone https://github.com/Fan/deepseek-code-agent.git
 cd deepseek-code-agent
 ```
 
@@ -69,9 +69,12 @@ pip install -r requirements.txt
 |--------|------|
 | `AGENT_MODEL_API_BASE_URL` | API 地址，默认 `https://api.deepseek.com` |
 | `AGENT_MODEL_API_KEY` | DeepSeek API 密钥 |
-| `AGENT_SERVER_PORT` | Web 界面端口（默认 8802） |
+| `AGENT_SERVER_PORT` | Web 界面端口（默认 8801） |
 | `AGENT_WORKSPACE_DIR` | 默认工作目录 |
 | `AGENT_KNOWLEDGE_BASE_DIR` | 知识库目录 |
+| `AGENT_DATA_ROOT_DIR` | 数据存储目录（会话、加密密钥、用量日志） |
+| `AGENT_SESSION_ENCRYPTION` | 会话加密模式（`auto`、`on`、`off`；默认 `auto`） |
+| `AGENT_REASONING_EFFORT` | 推理强度（`max`、`high`、`medium`；默认 `max`） |
 | `CHAT_API_MODELS` | 允许使用的模型列表，默认 `deepseek-v4-pro,deepseek-v4-flash` |
 
 #### 3. 启动 DeepSeek Code Agent
@@ -92,7 +95,7 @@ chmod +x start.sh && ./start.sh
 python main_tray.py
 ```
 
-打开浏览器访问 `http://127.0.0.1:8802`。
+打开浏览器访问 `http://127.0.0.1:8801`。
 
 #### 4. 开始对话
 
@@ -134,4 +137,4 @@ python main_tray.py
 
 #### 内置工具
 
-`cli_structured_edit` · `cli_python_inline` · `cli_directory_list` · `cli_web_fetch` · `cli_git_workspace` · `cli_regex_locate` · `cli_find_replace` · `cli_file_ops` · `cli_ip_geolocate` · `cli_open_meteo_weather` · `cli_unified_diagnose` · `cli_test_report` · `cli_text_diff` · `cli_patch_apply` · `cli_user_confirm` · `cli_orch_dispatch` · 等。
+`read_file` · `write_file` · `replace_in_file` · `apply_patch` · `grep_files` · `glob_files` · `file_ops` · `archive` · `data_table` · `run_command` · `python_inline` · `git_workspace` · `web_fetch` · `unified_diagnose` · `text_diff` · `env_probe` · `ip_geolocate` · `open_meteo_weather` · `image_ocr` · `user_confirm` · `todo_list` · `run_type` · 等。

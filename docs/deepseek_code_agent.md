@@ -9,7 +9,7 @@ DeepSeek Code Agent is an open-source Web UI coding assistant built for **rapid 
 
 Whether you're **getting started with AI agents** or looking for a **daily coding companion**, DeepSeek Code Agent offers a clean, intuitive interface that grows with you.
 
-- **GitHub:** <https://github.com/Fan/DeepSeekCodeAgent>
+- **GitHub:** <https://github.com/Fan/deepseek-code-agent>
 
 ---
 
@@ -39,7 +39,7 @@ Whether you're **getting started with AI agents** or looking for a **daily codin
 - Clone the repository:
 
 ```bash
-git clone https://github.com/Fan/DeepSeekCodeAgent.git
+git clone https://github.com/Fan/deepseek-code-agent.git
 cd deepseek-code-agent
 ```
 
@@ -69,9 +69,12 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 |--------|-------------|
 | `AGENT_MODEL_API_BASE_URL` | API base URL, defaults to `https://api.deepseek.com` |
 | `AGENT_MODEL_API_KEY` | Your DeepSeek API key |
-| `AGENT_SERVER_PORT` | Web UI port (default: 8802) |
+| `AGENT_SERVER_PORT` | Web UI port (default: 8801) |
 | `AGENT_WORKSPACE_DIR` | Default workspace directory |
 | `AGENT_KNOWLEDGE_BASE_DIR` | Knowledge base directory |
+| `AGENT_DATA_ROOT_DIR` | Data storage root (sessions, encryption keys, usage logs) |
+| `AGENT_SESSION_ENCRYPTION` | Session encryption mode (`auto`, `on`, `off`; default: `auto`) |
+| `AGENT_REASONING_EFFORT` | Reasoning effort level (`max`, `high`, `medium`; default: `max`) |
 | `CHAT_API_MODELS` | Allowed models, defaults to `deepseek-v4-pro,deepseek-v4-flash` |
 
 #### 3. Launch DeepSeek Code Agent
@@ -92,7 +95,7 @@ chmod +x start.sh && ./start.sh
 python main_tray.py
 ```
 
-Open your browser and visit `http://127.0.0.1:8802`.
+Open your browser and visit `http://127.0.0.1:8801`.
 
 #### 4. Start a Conversation
 
@@ -134,4 +137,4 @@ Toggle the 📚 **Knowledge Base** panel on the right side of the interface, che
 
 #### Built-in Tools
 
-`cli_structured_edit` · `cli_python_inline` · `cli_directory_list` · `cli_web_fetch` · `cli_git_workspace` · `cli_regex_locate` · `cli_find_replace` · `cli_file_ops` · `cli_ip_geolocate` · `cli_open_meteo_weather` · `cli_unified_diagnose` · `cli_test_report` · `cli_text_diff` · `cli_patch_apply` · `cli_user_confirm` · `cli_orch_dispatch` · and more.
+`read_file` · `write_file` · `replace_in_file` · `apply_patch` · `grep_files` · `glob_files` · `file_ops` · `archive` · `data_table` · `run_command` · `python_inline` · `git_workspace` · `web_fetch` · `unified_diagnose` · `text_diff` · `env_probe` · `ip_geolocate` · `open_meteo_weather` · `image_ocr` · `user_confirm` · `todo_list` · `run_type` · and more.
