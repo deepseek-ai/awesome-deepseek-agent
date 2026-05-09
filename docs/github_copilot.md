@@ -2,13 +2,13 @@
 
 # Integrate with GitHub Copilot
 
-**DeepSeek V4 for Copilot Chat** is a VS Code extension that adds DeepSeek V4 Pro & Flash directly into the GitHub Copilot Chat model picker. You keep Copilot's agent mode, tool calling, skills, and MCP — all powered by DeepSeek.
+**OAI Compatible Copilot** is a VS Code extension that lets you bring any OpenAI-compatible model into GitHub Copilot Chat. With it, you can use DeepSeek directly in Copilot Chat without waiting for official integration.
 
 #### 1. Install the Extension
 
 - Install [VS Code](https://code.visualstudio.com/) 1.116 or later.
-- Make sure you have a GitHub Copilot subscription (Free / Pro / Enterprise — the free tier works).
-- Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Vizards.deepseek-v4-for-copilot).
+- Make sure you have a GitHub Copilot subscription (Free / Pro / Enterprise; the free tier works).
+- Install OAI Compatible Copilot from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=johnny-zhao.oai-compatible-copilot).
 
 #### 2. Get a DeepSeek API Key
 
@@ -18,27 +18,22 @@
 #### 3. Configure the API Key in VS Code
 
 - Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`).
-- Run **DeepSeek: Set API Key** and paste your key.
-- The key is stored securely in the OS keychain, never on disk.
+- Run **OAICopilot: Open Configuration UI**.
+- In the settings UI, find the **Provider Management** section and click **Add Provider**.
+- In the expanded input form, enter a Provider Name such as "DeepSeek", paste the Base URL (default: `https://api.deepseek.com`) and API Key, then click `save`.
+- The key is stored securely in the OS keychain and is never written to disk.
 
-#### 4. Select the Model and Start Chatting
+#### 4. Register Models
+
+- In the same settings UI, find the **Model Management** section and click **Add Model**.
+- Select the Provider ID you just created. Open Model ID and the available model list will appear below. Choose **DeepSeek V4 Pro** and **DeepSeek V4 Flash**. If they do not appear, check that the configuration above is correct. 
+- Set `Context Length` to `1000000` and `Max Tokens` to `384000` to enable 1M context support.
+- To configure Thinking Mode, go to Advanced Settings, set `Enable Thinking` to `True`, and set `Reasoning Effort` to `max` (supported values: `high`, `max`).
+- Configure any other parameters as needed, then click `save`.
+
+#### 5. Select the Model and Start Chatting
 
 - Open Copilot Chat (`Cmd+Shift+I` / `Ctrl+Shift+I`).
-- Click the model picker at the top-right of the chat panel.
-- Choose **DeepSeek V4 Pro** or **DeepSeek V4 Flash**.
-- Start chatting — agent mode, tool calling, and all Copilot features work out of the box.
-
-#### Optional: Configure Thinking Effort
-
-In the model picker, click the gear icon next to a DeepSeek model to choose the thinking effort level:
-- **None** — fastest, no reasoning.
-- **High** — balanced (default).
-- **Max** — deep reasoning for complex tasks.
-
-#### Optional: Vision Support
-
-DeepSeek V4 is text-only, but the extension handles images automatically. Drop a screenshot into chat and it proxies through another installed Copilot model (Claude, GPT-4o) to describe the image before sending to DeepSeek. Run **DeepSeek: Set Vision Proxy Model** to pick which model handles image descriptions.
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/Vizards/deepseek-v4-for-copilot/main/resources/screenshots/01-picker.png" width='1024' border='1'  />
-</div>
+- Click the model picker below the chat area, then click the gear settings icon.
+- Choose **DeepSeek V4 Pro** or **DeepSeek V4 Flash**, and turn on the eye icon.
+- Start chatting — agent mode, tool calling, and all Copilot features are available right away.
