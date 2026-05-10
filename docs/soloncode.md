@@ -42,6 +42,7 @@ soloncode:
       apiKey: "<your DeepSeek API Key>"
       model: "deepseek-v4-flash"
       timeout: "180s"
+      contextLength: 1_000_000
 ```
 
 > **Note:**
@@ -70,6 +71,7 @@ soloncode:
       apiKey: "<your DeepSeek API Key>"
       model: "deepseek-v4-flash"
       timeout: "180s"
+      contextLength: 1_000_000
 ```
 
 Restart SolonCode for the changes to take effect.
@@ -85,8 +87,10 @@ soloncode:
       apiKey: "<your DeepSeek API Key>"
       model: "deepseek-v4-flash"
       timeout: "180s"
+      contextLength: 1_000_000
     - apiUrl: "https://api.deepseek.com"
       apiKey: "<your DeepSeek API Key>"
       model: "deepseek-v4-pro"
       timeout: "180s"
+      contextLength: 1_000_000
 ```

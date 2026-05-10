@@ -42,6 +42,7 @@ soloncode:
       apiKey: "<你的 DeepSeek API Key>"
       model: "deepseek-v4-flash"
       timeout: "180s"
+      contextLength: 1_000_000
 ```
 
 > **说明：**
@@ -70,6 +71,7 @@ soloncode:
       apiKey: "<你的 DeepSeek API Key>"
       model: "deepseek-v4-flash"
       timeout: "180s"
+      contextLength: 1_000_000
 ```
 
 修改后重新启动 SolonCode 即可生效。
@@ -85,9 +87,11 @@ soloncode:
       apiKey: "<你的 DeepSeek API Key>"
       model: "deepseek-v4-flash"
       timeout: "180s"
+      contextLength: 1_000_000
     - apiUrl: "https://api.deepseek.com"
       apiKey: "<你的 DeepSeek API Key>"
       model: "deepseek-v4-pro"
       timeout: "180s"
+      contextLength: 1_000_000
 ```
 
