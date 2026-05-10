@@ -1,12 +1,12 @@
 [English](./dscode.md) | [简体中文](./dscode.zh-CN.md) · [← Back](../README.md)
 
-# Integrate with DSCode
+# Integrate with dscode
 
-DSCode is an open-source terminal AI coding agent built specifically as a DeepSeek harness — analogous to how Claude Code is the harness for Claude models. It provides file operations, shell execution, code search, permission control, session persistence, context management, memory system, Skills system, and MCP protocol support.
+Unlike general-purpose coding agents built for developers, dscode is an open-source terminal AI agent positioned to connect creative MCP tools — serving creators, writers, and content makers. Built as a DeepSeek-native harness, it provides file operations, shell execution, code search, permission control, session persistence, context management, memory system, Skills system, and MCP protocol support.
 
 - **GitHub:** <https://github.com/wangcan26/dscode>
 
-#### 1. Install DSCode
+#### 1. Install dscode
 
 - Install [Node.js](https://nodejs.org/en/download/) 20.6+.
 - Clone the repository and install dependencies:
@@ -30,7 +30,7 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 
 #### 3. Configure Model and Thinking Mode
 
-DSCode supports two-level configuration (user-level and project-level):
+dscode supports two-level configuration (user-level and project-level):
 
 - **User-level:** `~/.dscode/config.json`
 - **Project-level:** `<project>/.dscode/config.json`
@@ -55,7 +55,7 @@ Priority: **environment variables > project-level config > user-level config > d
 
 > **Thinking mode:** Set `thinkingLevel` to `xhigh` or `AGENT_THINKING_LEVEL=xhigh` to enable max reasoning effort (`reasoning_effort: "max"`). The underlying pi-ai framework automatically configures 1M context window (`contextWindow: 1000000`) and DeepSeek-specific thinking format.
 
-#### 4. Run DSCode
+#### 4. Run dscode
 
 ```bash
 npm start
@@ -70,7 +70,7 @@ DSCODE_PROJECT_PATH=/path/to/my-project npm start
 Once started, you will see the `you ›` prompt:
 
 ```
-DSCode  (deepseek-v4-pro)
+dscode  (deepseek-v4-pro)
 Type a message. /help for commands. exit to quit.
 
 you ›

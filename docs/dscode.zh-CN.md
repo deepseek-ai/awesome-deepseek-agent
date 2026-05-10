@@ -1,12 +1,12 @@
 [English](./dscode.md) | [简体中文](./dscode.zh-CN.md) · [← Back](../README.zh-CN.md)
 
-# 集成 DSCode
+# 集成 dscode
 
-DSCode 是一款专为 DeepSeek 模型打造的开源终端 AI 编程 Agent —— 类似于 Claude Code 是 Claude 模型的专属 Harness。提供文件操作、Shell 执行、代码搜索、权限控制、会话持久化、上下文管理、记忆系统、Skills 系统和 MCP 协议支持。
+不同于面向开发者的通用编程 Agent，dscode 是一款开源终端 AI Agent，产品定位是链接创作类 MCP 工具，服务创作者而非开发者。作为 DeepSeek 原生 Harness，提供文件操作、Shell 执行、代码搜索、权限控制、会话持久化、上下文管理、记忆系统、Skills 系统以及 MCP 协议支持。
 
 - **GitHub：** <https://github.com/wangcan26/dscode>
 
-#### 1. 安装 DSCode
+#### 1. 安装 dscode
 
 - 安装 [Node.js](https://nodejs.org/en/download/) 20.6+ 版本。
 - 克隆仓库并安装依赖：
@@ -30,7 +30,7 @@ DEEPSEEK_API_KEY=sk-...
 
 #### 3. 配置模型与思考模式
 
-DSCode 支持两级配置（用户级和项目级）：
+dscode 支持两级配置（用户级和项目级）：
 
 - **用户级：** `~/.dscode/config.json`
 - **项目级：** `<project>/.dscode/config.json`
@@ -55,7 +55,7 @@ DSCode 支持两级配置（用户级和项目级）：
 
 > **思考模式：** 设置 `thinkingLevel` 为 `xhigh` 或 `AGENT_THINKING_LEVEL=xhigh` 即可启用最大推理强度（`reasoning_effort: "max"`）。底层 pi-ai 框架自动配置 100 万 token 上下文窗口（`contextWindow: 1000000`）和 DeepSeek 专有的 thinking 格式。
 
-#### 4. 运行 DSCode
+#### 4. 运行 dscode
 
 ```bash
 npm start
@@ -70,7 +70,7 @@ DSCODE_PROJECT_PATH=/path/to/my-project npm start
 启动后将看到 `you ›` 提示符：
 
 ```
-DSCode  (deepseek-v4-pro)
+dscode  (deepseek-v4-pro)
 Type a message. /help for commands. exit to quit.
 
 you ›
