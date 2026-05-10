@@ -2,7 +2,104 @@
 
 # 接入 Codex
 
-Codex 是 OpenAI 的编程 Agent，支持 CLI 和 App 使用。Codex 使用 OpenAI Responses API 与模型通信，因此需要一个转发层处理请求，这里使用 [Moon Bridge](https://github.com/ZhiYi-R/moon-bridge) 作为转发层。
+Codex 是 OpenAI 的编程 Agent，支持 CLI 和 App 使用。Codex 使用 OpenAI Responses API 与模型通信，因此需要一个转发层处理请求。
+
+这里提供两种方案，任选其一：
+
+- **[@codeproxy/cli](https://github.com/codeproxy-ai/cli)** — 轻量级，基于 npm，零配置（推荐）
+- [Moon Bridge](https://github.com/ZhiYi-R/moon-bridge) — 基于 Go，支持高级路由
+
+---
+
+## 方案一：@codeproxy/cli（推荐）
+
+> **`@codeproxy/cli`** 是一个零依赖、开源（MIT）的本地代理，将 OpenAI Responses API 实时转换为 Chat Completions 或 Anthropic Messages。无需 Go，无需生成配置，只需 npm。
+
+#### 1. 安装 Codex CLI
+
+```shell
+npm install -g @openai/codex
+```
+
+验证安装：
+
+```shell
+codex --version
+```
+
+#### 2. 获取 DeepSeek API Key
+
+前往 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 创建并复制 API Key。
+
+#### 3. 启动代理
+
+一行命令启动 `@codeproxy/cli`，无需克隆项目，无需配置文件：
+
+```shell
+npx @codeproxy/cli --upstream-format openai-chat \
+  --base-url https://api.deepseek.com/v1 \
+  --apikey sk-your-deepseek-api-key \
+  --port 8787
+```
+
+保持此终端运行。代理现在监听 `http://127.0.0.1:8787/v1/responses`，将每个请求转换为 DeepSeek 的 Chat Completions API。
+
+#### 4. 配置 Codex
+
+创建或编辑 `~/.codex/config.toml`：
+
+```toml
+[model_providers.deepseek]
+name = "DeepSeek"
+base_url = "http://127.0.0.1:8787/v1"
+wire_api = "responses"
+
+[profiles.deepseek-pro]
+model = "deepseek-v4-pro"
+model_provider = "deepseek"
+model_context_window = 1000000
+```
+
+如需推理力度支持：
+
+```toml
+[profiles.deepseek-pro]
+model = "deepseek-v4-pro"
+model_provider = "deepseek"
+model_context_window = 1000000
+model_reasoning_effort = "high"
+```
+
+#### 5. 启动 Codex
+
+```shell
+cd /path/to/my-project
+codex
+```
+
+#### 6. 验证
+
+```shell
+curl http://127.0.0.1:8787/v1/responses \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-v4-pro",
+    "input": "请用一句话打个招呼。",
+    "max_output_tokens": 100
+  }'
+```
+
+#### 小贴士
+
+- **多上游切换**：使用配置文件在 DeepSeek、Kimi、Claude 等之间切换 — 见 [config.example.json](https://github.com/codeproxy-ai/cli/blob/main/config.example.json)。
+- **视觉自动回退**：设置 `dropImages: true` 和 `fallback` 上游，图片请求自动路由到 Kimi K2.6 等视觉模型。
+- **推理力度**：`@codeproxy/cli` 自动将 `reasoning.effort` 映射为上游原生的推理参数。
+
+---
+
+## 方案二：Moon Bridge
+
+[查看原文](#)（向下滚动）
 
 #### 1. 安装依赖
 

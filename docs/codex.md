@@ -2,7 +2,104 @@
 
 # Integrate with Codex
 
-Codex is OpenAI's coding agent, available as a CLI and app. Codex communicates with models through the OpenAI Responses API, so it needs a forwarding layer to handle requests. This guide uses [Moon Bridge](https://github.com/ZhiYi-R/moon-bridge) as that forwarding layer.
+Codex is OpenAI's coding agent, available as a CLI and app. Codex communicates with models through the OpenAI Responses API, so it needs a forwarding layer to handle requests.
+
+There are two approaches — choose the one that fits your setup:
+
+- **[@codeproxy/cli](https://github.com/codeproxy-ai/cli)** — lightweight, npm-based, zero-config (recommended)
+- [Moon Bridge](https://github.com/ZhiYi-R/moon-bridge) — Go-based, supports advanced routing
+
+---
+
+## Option 1: @codeproxy/cli (Recommended)
+
+> **`@codeproxy/cli`** is a zero-dependency, open-source (MIT) proxy that translates OpenAI Responses API requests into Chat Completions or Anthropic Messages on the fly. No Go, no config generation — just npm.
+
+#### 1. Install Codex CLI
+
+```shell
+npm install -g @openai/codex
+```
+
+Verify the installation:
+
+```shell
+codex --version
+```
+
+#### 2. Get a DeepSeek API Key
+
+Go to the [DeepSeek Platform](https://platform.deepseek.com/api_keys), create an API key, and copy it.
+
+#### 3. Start the Proxy
+
+Run `@codeproxy/cli` with a single command — no clone, no config file needed:
+
+```shell
+npx @codeproxy/cli --upstream-format openai-chat \
+  --base-url https://api.deepseek.com/v1 \
+  --apikey sk-your-deepseek-api-key \
+  --port 8787
+```
+
+Keep this terminal open. The proxy now listens on `http://127.0.0.1:8787/v1/responses` and translates every request to DeepSeek's Chat Completions API.
+
+#### 4. Configure Codex
+
+Create or edit `~/.codex/config.toml`:
+
+```toml
+[model_providers.deepseek]
+name = "DeepSeek"
+base_url = "http://127.0.0.1:8787/v1"
+wire_api = "responses"
+
+[profiles.deepseek-pro]
+model = "deepseek-v4-pro"
+model_provider = "deepseek"
+model_context_window = 1000000
+```
+
+For reasoning support:
+
+```toml
+[profiles.deepseek-pro]
+model = "deepseek-v4-pro"
+model_provider = "deepseek"
+model_context_window = 1000000
+model_reasoning_effort = "high"
+```
+
+#### 5. Start Codex
+
+```shell
+cd /path/to/my-project
+codex
+```
+
+#### 6. Verify
+
+```shell
+curl http://127.0.0.1:8787/v1/responses \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-v4-pro",
+    "input": "Say hello in one short sentence.",
+    "max_output_tokens": 100
+  }'
+```
+
+#### Tips
+
+- **Multiple upstreams**: Use a config file to switch between DeepSeek, Kimi, Claude, and more — see [config.example.json](https://github.com/codeproxy-ai/cli/blob/main/config.example.json).
+- **Vision auto-fallback**: Set `dropImages: true` and a `fallback` upstream to route image requests to a vision-capable model like Kimi K2.6.
+- **Reasoning effort**: `@codeproxy/cli` automatically maps `reasoning.effort` to the upstream's native format.
+
+---
+
+## Option 2: Moon Bridge
+
+[View Original Guide](#) (scroll down)
 
 #### 1. Install Requirements
 
