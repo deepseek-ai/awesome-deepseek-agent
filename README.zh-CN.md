@@ -19,6 +19,7 @@
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
 | **Cursor** | 带聊天与 Agent 工作流的 AI 代码编辑器，可通过兼容代理接入 DeepSeek。 | [指南](./docs/cursor.zh-CN.md) |
+| **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
@@ -41,4 +42,4 @@
 
 ## 参与贡献
 
-想看到更多工具的接入指南？欢迎提 Issue 或 Pull Request，按现有指南的结构添加新的接入文档即可。
+想看到更多工具的接入指南？请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解 Issue 和 Pull Request 的提交规范。
