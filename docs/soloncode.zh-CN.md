@@ -93,5 +93,9 @@ soloncode:
       model: "deepseek-v4-pro"
       timeout: "180s"
       contextLength: 1_000_000
+      defaultOptions:
+        thinking: 
+          type: "enabled"
+        reasoning_effort: "high"
 ```
 
