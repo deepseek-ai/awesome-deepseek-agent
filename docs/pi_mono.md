@@ -46,6 +46,7 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": "high", "low": "high", "medium": "high", "high": "high", "xhigh": "max" },
           "cost": {
             "input": 1.74,
             "output": 3.48,
@@ -71,6 +72,7 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": "high", "low": "high", "medium": "high", "high": "high", "xhigh": "max" },
           "cost": {
             "input": 0.14,
             "output": 0.28,
