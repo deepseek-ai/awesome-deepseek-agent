@@ -15,6 +15,7 @@ Each guide walks through installation, configuration, and first run — so you c
 
 | Tool            | Description                                                                                                 | Guide                          |
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| **Bash Agent** | Minimal AI coding agent runtime — pure Bash + AWK, zero dependencies, cache-first architecture with 99% cache hit rate. | [Guide](./docs/bash_agent.md) |
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
