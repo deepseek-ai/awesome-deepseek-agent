@@ -2,13 +2,13 @@
 
 # Integrate with GitHub Copilot
 
-**DeepSeek V4 for Copilot Chat** is a VS Code extension that adds DeepSeek V4 Pro & Flash directly into the GitHub Copilot Chat model picker. You keep Copilot's agent mode, tool calling, skills, and MCP — all powered by DeepSeek.
+**DeepSeek V4 Native Provider for Copilot Chat** is a VS Code extension that adds DeepSeek V4 Pro & Flash directly into the GitHub Copilot Chat model picker. You keep Copilot's agent mode, tool calling, skills, and MCP — all powered by DeepSeek.
 
 #### 1. Install the Extension
 
 - Install [VS Code](https://code.visualstudio.com/) 1.116 or later.
 - Make sure you have a GitHub Copilot subscription (Free / Pro / Enterprise — the free tier works).
-- Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Vizards.deepseek-v4-for-copilot).
+- Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Laurent00TT.deepseek-v4-vscode-chat).
 
 #### 2. Get a DeepSeek API Key
 

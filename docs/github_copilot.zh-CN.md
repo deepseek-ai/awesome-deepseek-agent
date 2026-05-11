@@ -2,13 +2,13 @@
 
 # 接入 GitHub Copilot
 
-**DeepSeek V4 for Copilot Chat** 是一个 VS Code 插件，将 DeepSeek V4 Pro 和 Flash 直接添加到 GitHub Copilot 的模型选择器中。你仍可使用 Copilot 的 Agent 模式、工具调用、Skills 和 MCP — 全部由 DeepSeek 驱动。
+**DeepSeek V4 Native Provider for Copilot Chat** 是一个 VS Code 插件，将 DeepSeek V4 Pro 和 Flash 直接添加到 GitHub Copilot 的模型选择器中。你仍可使用 Copilot 的 Agent 模式、工具调用、Skills 和 MCP — 全部由 DeepSeek 驱动。
 
 #### 1. 安装插件
 
 - 安装 [VS Code](https://code.visualstudio.com/) 1.116 或更高版本。
 - 确保已有 GitHub Copilot 订阅（Free / Pro / Enterprise 均可，免费版即可使用）。
-- 从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Vizards.deepseek-v4-for-copilot) 安装插件。
+- 从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Laurent00TT.deepseek-v4-vscode-chat) 安装插件。
 
 #### 2. 获取 DeepSeek API Key
 
