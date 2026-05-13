@@ -49,7 +49,8 @@ You can [use OAI Compatible Copilot](#integrate-with-copilot-in-an-openai-compat
 #### 1. Install the Extension
 - Install [VS Code](https://code.visualstudio.com/) 1.116 or later.
 - Make sure you have a GitHub Copilot subscription (Free / Pro / Enterprise; the free tier works).
-- Download the latest Deepseek For Copilot extension (`.vsix` file) from the [GitHub Release](https://github.com/Vizards/deepseek-v4-for-copilot/releases) page.
+- Download and install the latest Deepseek For Copilot extension (`.vsix` file) from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vizards.deepseek-v4-for-copilot) 
+- Or, if thats unavailable, from the [GitHub Release](https://github.com/Vizards/deepseek-v4-for-copilot/releases) page.
 - In VS Code, open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`), type `vsix`, choose `Extensions: Install from VSIX...`, and select the downloaded `deepseek-v4-for-copilot-x.y.z.vsix` file to install it.
 
 #### 2. Get a DeepSeek API Key

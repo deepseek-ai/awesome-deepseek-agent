@@ -49,7 +49,8 @@
 #### 1. 安装插件
 - 安装 [VS Code](https://code.visualstudio.com/) 1.116 或更高版本。
 - 确保已有 GitHub Copilot 订阅（Free / Pro / Enterprise 均可，免费版即可使用）。
-- 从 [Github Release](https://github.com/Vizards/deepseek-v4-for-copilot/releases) 页面下载最新版本的 Deepseek For Copilot 插件（`.vsix` 文件）。
+- 从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vizards.deepseek-v4-for-copilot) 下载安装最新版本的 Deepseek For Copilot 
+- 或者，如果 Marketplace 上不可用，也可以从 [Github Release](https://github.com/Vizards/deepseek-v4-for-copilot/releases) 页面下载最新版本的 Deepseek For Copilot 插件（`.vsix` 文件）。
 - 在 VS Code 中安装插件：打开命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`），输入`vsix`，选取 `Extensions: Install from VSIX...`，选择下载的 `deepseek-v4-for-copilot-x.y.z.vsix` 文件进行安装。
 
 #### 2. 获取 DeepSeek API Key
