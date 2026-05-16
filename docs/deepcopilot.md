@@ -34,6 +34,7 @@ code --install-extension deep-copilot-<version>.vsix
 2. Click the **🔑** button at the bottom-right.
 3. Paste your [DeepSeek API Key](https://platform.deepseek.com/api_keys) and save.
 
+
 ---
 
 ## 3. Select a DeepSeek Model
