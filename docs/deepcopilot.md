@@ -71,7 +71,7 @@ Find all usages of the deprecated `getUser()` function and migrate them to `fetc
 Fix the three failing tests in tests/api.test.ts
 ```
 
-> Every file write and shell command requires your approval by default. Adjust this in [§ Approval Modes](#approval-modes).
+> Every file write and shell command requires your approval by default. Adjust this in [§ Approval Modes](#7-approval-modes).
 
 ---
 
@@ -173,7 +173,7 @@ All settings live under `deepseekAgent.*`:
   "deepseekAgent.maxIterations":       15,
   "deepseekAgent.compactBudgetTokens": 600000,
   "deepseekAgent.postEditDiagnostics": true,        // append LSP errors after each edit
-  "deepseekAgent.enableDebugLog":      true,        // write logs to .deep-copilot/logs/
+  "deepseekAgent.enableDebugLog":      true,        // write logs to .deepcopilot/logs/
   "deepseekAgent.mcp.servers":         []
 }
 ```

@@ -71,7 +71,7 @@ Deep Copilot 默认使用 `deepseek-v4-pro`。在 **VS Code 设置**（`Ctrl/Cmd
 修复 tests/api.test.ts 中三个失败的测试
 ```
 
-> 默认情况下，每次写文件或执行 Shell 命令都会弹窗确认。可通过 [§ 审批模式](#审批模式) 调整。
+> 默认情况下，每次写文件或执行 Shell 命令都会弹窗确认。可通过 [§ 审批模式](#7-审批模式) 调整。
 
 ---
 
@@ -173,7 +173,7 @@ Deep Copilot 支持最高 **100 万 token** 上下文（DeepSeek V4 完整窗口
   "deepseekAgent.maxIterations":       15,
   "deepseekAgent.compactBudgetTokens": 600000,
   "deepseekAgent.postEditDiagnostics": true,        // 每次编辑后追加 LSP 诊断
-  "deepseekAgent.enableDebugLog":      true,        // 写日志到 .deep-copilot/logs/
+  "deepseekAgent.enableDebugLog":      true,        // 写日志到 .deepcopilot/logs/
   "deepseekAgent.mcp.servers":         []
 }
 ```
