@@ -4,15 +4,21 @@
 
 Whale is a DeepSeek-native coding agent that runs in the terminal. It is designed around DeepSeek's API directly — prefix-cache-friendly sessions, thinking controls, tool-call repair, MCP, and Agent Skills.
 
-- **GitHub:** <https://github.com/usewhale/whale>
-- **Platform support:** Whale currently supports macOS and Linux. Windows support is in progress.
+- **GitHub:** <https://github.com/usewhale/DeepSeek-Code-Whale>
+- **Platform support:** Whale currently supports macOS, Linux, and Windows.
 
 #### 1. Install Whale
 
-Install with the script:
+Install on macOS or Linux with the script:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/usewhale/whale/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/usewhale/DeepSeek-Code-Whale/main/scripts/install.sh | sh
+```
+
+Install on Windows with PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/usewhale/DeepSeek-Code-Whale/main/scripts/install.ps1 | iex
 ```
 
 Or install with Homebrew:

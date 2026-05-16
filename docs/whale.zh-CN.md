@@ -4,15 +4,21 @@
 
 Whale 是一款以 DeepSeek 为原生后端的终端编程 Agent。设计围绕 DeepSeek API 展开 —— prefix-cache 友好的会话、thinking 控制、工具调用修复、MCP 与 Agent Skills。
 
-- **GitHub：** <https://github.com/usewhale/whale>
-- **平台支持：** Whale 当前支持 macOS 和 Linux，Windows 支持仍在开发中。
+- **GitHub：** <https://github.com/usewhale/DeepSeek-Code-Whale>
+- **平台支持：** Whale 当前支持 macOS、Linux 和 Windows。
 
 #### 1. 安装 Whale
 
-使用脚本安装：
+在 macOS 或 Linux 上使用脚本安装：
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/usewhale/whale/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/usewhale/DeepSeek-Code-Whale/main/scripts/install.sh | sh
+```
+
+在 Windows 上使用 PowerShell 安装：
+
+```powershell
+irm https://raw.githubusercontent.com/usewhale/DeepSeek-Code-Whale/main/scripts/install.ps1 | iex
 ```
 
 也可以使用 Homebrew 安装：
