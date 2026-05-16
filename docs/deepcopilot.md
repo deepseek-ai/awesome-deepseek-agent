@@ -34,8 +34,6 @@ code --install-extension deep-copilot-<version>.vsix
 2. Click the **🔑** button at the bottom-right.
 3. Paste your [DeepSeek API Key](https://platform.deepseek.com/api_keys) and save.
 
-> **China users**: if `api.deepseek.com` is unreliable, set the **Base URL** field to `https://api.deepseeki.com`.
-
 ---
 
 ## 3. Select a DeepSeek Model
