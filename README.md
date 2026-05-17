@@ -20,6 +20,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Kilo Code** | AI coding assistant available as a CLI and editor extension. | [Guide](./docs/kilo_code.md) |
+| **KimiX** | Terminal AI coding agent optimized for DeepSeek models, featuring a scriptable workflow system, memory system, and extensible Agent Skills. | [Guide](./docs/kimix.md) |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
 | **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
@@ -33,7 +34,6 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
-| **KimiX** | Terminal AI coding agent optimized for DeepSeek models, featuring a scriptable workflow system, memory system, and extensible Agent Skills. | [Guide](./docs/kimix.md) |
 
 ## Resources
 
