@@ -89,7 +89,7 @@ The interactive wizard will guide you through:
 5. **Context size** — Choose `128k`, `200k`, `256k`, `512k`, `1M`, or enter a custom number.
 6. **Max tokens** — Maximum tokens per request (must be less than context size minus reserved space).
 7. **Thinking effort** — `off`, `low`, `medium`, `high`, `xhigh`, or `max`.
-8. **Capabilities** — Comma-separated list: `thinking`, `always_thinking`, `image_in`, `video_in`; or `none` for empty. e.g. `thinking`
+8. **Capabilities** — Comma-separated list: `thinking`, `always_thinking`, `image_in`, `video_in`; or `none` for empty.
 9. **API URL** — The base endpoint URL for your provider.
 10. **Sub-provider (optional)** — Configure a secondary model for sub-agent tasks, including its own model, type, URL, API key, context size, thinking effort, capabilities, and max tokens. You may configure `deepseek-v4-flash` for this.
 
