@@ -43,3 +43,20 @@ Each guide walks through installation, configuration, and first run — so you c
 ## Contributing
 
 Have another tool you'd like to see here? See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on opening an issue or a pull request with a new guide.
+
+
+## OpenClaw Monitor
+
+⭐ **Real-time AI Agent Monitoring Dashboard for OpenClaw**
+
+![Dashboard](https://raw.githubusercontent.com/flik2002/openclaw-monitor/main/Openclaw%20Monitor.jpg)
+
+### Features
+- **Real-time Monitoring**: WebSocket connection, live Gateway and session status
+- **Token Statistics**: Track prompt/completion tokens with visual charts
+- **Multi-Agent Support**: Monitor multiple OpenClaw agents simultaneously
+- **7-Day Trends**: Message volume and token usage history
+- **Open Source**: Vue 3 + ECharts, no registration required
+
+### Links
+- GitHub: https://github.com/flik2002/openclaw-monitor
