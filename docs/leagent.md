@@ -39,7 +39,9 @@ curl -fsSL https://vixues.com.cn/install.sh | bash
 3. Select **DeepSeek** from the provider list.
 4. Enter your [DeepSeek API Key](https://platform.deepseek.com/api_keys).
 5. Choose a model — `deepseek-v4-pro` for best quality or `deepseek-v4-flash` for faster responses.
-6. Save the configuration.
+6. Set **context window** to `1000000` (DeepSeek V4 supports up to 1M tokens).
+7. Enable **Thinking Mode** and set reasoning effort to `max` for best results with `deepseek-v4-pro`.
+8. Save the configuration.
 
 #### 3. Get Started
 

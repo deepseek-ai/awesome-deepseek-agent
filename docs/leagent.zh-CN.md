@@ -39,7 +39,9 @@ curl -fsSL https://vixues.com.cn/install.sh | bash
 3. 在供应商列表中选择 **DeepSeek**。
 4. 输入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
 5. 选择模型 —— `deepseek-v4-pro` 质量最佳，`deepseek-v4-flash` 响应更快。
-6. 保存配置。
+6. 将**上下文窗口**设置为 `1000000`（DeepSeek V4 支持最高 100 万 token 上下文）。
+7. 开启**思考模式**，并将推理强度设为 `max` 以获得 `deepseek-v4-pro` 的最佳效果。
+8. 保存配置。
 
 #### 3. 开始使用
 
