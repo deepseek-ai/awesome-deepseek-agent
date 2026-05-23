@@ -17,6 +17,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | **Cherry Studio** | Open-source cross-platform desktop AI client with 300+ assistants, MCP support, knowledge bases, and multi-model chat. | [Guide](./docs/cherry_studio.md) |
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
+| **Cline CLI** | Command-line AI coding assistant powered by Cline. | [Guide](./docs/cline_cli.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
