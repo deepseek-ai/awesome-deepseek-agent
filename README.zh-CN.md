@@ -21,6 +21,7 @@
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
+| **VT Code** | 基于 Rust 的终端编程 Agent，原生支持 DeepSeek V4 和 100 万上下文。 | [指南](./docs/vtcode.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
 | **Oh My Pi** | 基于 Pi 分支扩展的终端 AI 编程 Agent，提供 OMP 专用工具、模型角色、MCP、插件与 Agent 工作流。 | [指南](./docs/oh-my-pi.zh-CN.md) |
