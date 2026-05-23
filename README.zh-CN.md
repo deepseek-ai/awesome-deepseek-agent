@@ -19,6 +19,7 @@
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
+| **Cursor** | 带聊天与 Agent 工作流的 AI 代码编辑器，可通过兼容代理接入 DeepSeek。 | [指南](./docs/cursor.zh-CN.md) |
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |

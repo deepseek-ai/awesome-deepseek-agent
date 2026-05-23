@@ -19,6 +19,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
+| **Cursor** | AI code editor with chat and agent workflows, connected to DeepSeek through a compatibility proxy. | [Guide](./docs/cursor.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Kilo Code** | AI coding assistant available as a CLI and editor extension. | [Guide](./docs/kilo_code.md) |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
