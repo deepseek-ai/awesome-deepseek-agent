@@ -30,11 +30,12 @@ http://127.0.0.1:55667
 
 在 Web UI 中：
 
-1. 打开 **Providers**。
-2. 选择 **DeepSeek**。
-3. 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
-4. API Base 默认保持为 `https://api.deepseek.com`，除非你使用兼容代理。
-5. 保存 Provider 配置。
+1. 打开 **Settings**。
+2. 打开 **Providers**。
+3. 选择 **DeepSeek**。
+4. 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
+5. API Base 默认保持为 `https://api.deepseek.com`，除非你使用兼容代理。
+6. 保存 Provider 配置。
 
 然后打开模型或默认 Agent 设置，选择当前 DeepSeek V4 模型：
 

@@ -30,11 +30,12 @@ http://127.0.0.1:55667
 
 In the Web UI:
 
-1. Open **Providers**.
-2. Select **DeepSeek**.
-3. Paste your [DeepSeek API key](https://platform.deepseek.com/api_keys).
-4. Keep the API base as `https://api.deepseek.com` unless you use a compatible proxy.
-5. Save the provider configuration.
+1. Open **Settings**.
+2. Open **Providers**.
+3. Select **DeepSeek**.
+4. Paste your [DeepSeek API key](https://platform.deepseek.com/api_keys).
+5. Keep the API base as `https://api.deepseek.com` unless you use a compatible proxy.
+6. Save the provider configuration.
 
 Then open the model or default agent settings and choose one of the current DeepSeek V4 models:
 
