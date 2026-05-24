@@ -37,16 +37,14 @@ In the Web UI:
 5. Keep the API base as `https://api.deepseek.com` unless you use a compatible proxy.
 6. Save the provider configuration.
 
-Then open the model or default agent settings and choose one of the current DeepSeek V4 models:
+#### 3. First Run
+
+Open **Chat** in the Web UI, choose a DeepSeek V4 model from the model selector, and send a short test prompt:
 
 ```text
 deepseek/deepseek-v4-pro
 deepseek/deepseek-v4-flash
 ```
-
-#### 3. First Run
-
-Open **Chat** in the Web UI and send a short test prompt:
 
 ```text
 Explain how NextClaw can use DeepSeek together with tools and automations.
@@ -57,5 +55,5 @@ After the first reply works, you can connect more NextClaw capabilities, such as
 #### Troubleshooting
 
 - **401 / invalid API key**: Check the DeepSeek API key in the provider settings.
-- **Unknown model**: Make sure the model is `deepseek/deepseek-v4-pro` or `deepseek/deepseek-v4-flash`.
+- **DeepSeek V4 models do not appear**: Save the DeepSeek provider settings first, then reopen **Chat** and check the model selector.
 - **Cannot open the UI**: Confirm `nextclaw start` is still running and open `http://127.0.0.1:55667`.

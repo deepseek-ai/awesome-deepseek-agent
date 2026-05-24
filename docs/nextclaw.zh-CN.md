@@ -37,16 +37,14 @@ http://127.0.0.1:55667
 5. API Base 默认保持为 `https://api.deepseek.com`，除非你使用兼容代理。
 6. 保存 Provider 配置。
 
-然后打开模型或默认 Agent 设置，选择当前 DeepSeek V4 模型：
+#### 3. 第一次运行
+
+打开 Web UI 中的 **Chat**，在消息框的模型选择器中选择一个 DeepSeek V4 模型，然后发送一条测试消息：
 
 ```text
 deepseek/deepseek-v4-pro
 deepseek/deepseek-v4-flash
 ```
-
-#### 3. 第一次运行
-
-打开 Web UI 中的 **Chat**，发送一条测试消息：
 
 ```text
 解释一下 NextClaw 如何把 DeepSeek 和工具、自动化一起使用。
@@ -57,5 +55,5 @@ deepseek/deepseek-v4-flash
 #### 常见问题
 
 - **401 / API Key 无效**：检查 Provider 设置里的 DeepSeek API Key。
-- **Unknown model**：确认模型名是 `deepseek/deepseek-v4-pro` 或 `deepseek/deepseek-v4-flash`。
+- **看不到 DeepSeek V4 模型**：先保存 DeepSeek Provider 设置，然后重新打开 **Chat** 并检查模型选择器。
 - **打不开 UI**：确认 `nextclaw start` 仍在运行，并打开 `http://127.0.0.1:55667`。
