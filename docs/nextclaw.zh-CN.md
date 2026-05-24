@@ -2,7 +2,7 @@
 
 # 在 NextClaw 中接入 DeepSeek
 
-NextClaw 是一个开源 AI 助手，可以把你的电脑变成一个强大的工作台，用来协调 Agent、技能、CLI 工具、自动化和消息应用。
+NextClaw 把你的电脑变成一个强大的 AI 助手，协调 Agent、技能、CLI 工具、自动化和消息应用。
 
 这份指南会带你在 NextClaw 中配置 DeepSeek V4，并完成第一次对话。
 

@@ -2,7 +2,7 @@
 
 # Integrate DeepSeek with NextClaw
 
-NextClaw is an open-source AI assistant that turns your computer into a powerful workspace for coordinating agents, skills, CLI tools, automations, and messaging apps.
+NextClaw turns your computer into a powerful AI assistant that coordinates agents, skills, CLI tools, automations, and messaging apps.
 
 This guide shows how to configure DeepSeek V4 in NextClaw and send your first message.
 
