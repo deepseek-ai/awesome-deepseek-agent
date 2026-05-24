@@ -57,12 +57,6 @@ Open **Chat** in the Web UI and send a short test prompt:
 Explain how NextClaw can use DeepSeek together with tools and automations.
 ```
 
-You can also use NextClaw from the terminal:
-
-```bash
-nextclaw agent "Say hello from DeepSeek V4."
-```
-
 After the first reply works, you can connect more NextClaw capabilities, such as skills, CLI tools, scheduled automations, and messaging apps.
 
 #### Troubleshooting
