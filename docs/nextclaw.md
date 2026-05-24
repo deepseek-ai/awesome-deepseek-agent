@@ -44,12 +44,6 @@ deepseek/deepseek-v4-pro
 deepseek/deepseek-v4-flash
 ```
 
-Use `deepseek-v4-pro` for the strongest coding and reasoning experience. Use `deepseek-v4-flash` when you want faster, lower-cost responses.
-
-DeepSeek V4 supports up to 1 million tokens of context. NextClaw does not require a separate context-window field for the basic setup; use the V4 model names above and keep your installed NextClaw version current.
-
-For DeepSeek V4 Pro thinking mode, use the highest available thinking level exposed by your NextClaw build after verifying it against the current NextClaw release. Do not switch back to deprecated V3 model names as a workaround for reasoning errors.
-
 #### 3. First Run
 
 Open **Chat** in the Web UI and send a short test prompt:
@@ -65,4 +59,3 @@ After the first reply works, you can connect more NextClaw capabilities, such as
 - **401 / invalid API key**: Check the DeepSeek API key in the provider settings.
 - **Unknown model**: Make sure the model is `deepseek/deepseek-v4-pro` or `deepseek/deepseek-v4-flash`.
 - **Cannot open the UI**: Confirm `nextclaw start` is still running and open `http://127.0.0.1:55667`.
-- **Thinking / reasoning errors**: Upgrade NextClaw first. Do not switch to old V3 model names as a workaround.
