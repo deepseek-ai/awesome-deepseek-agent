@@ -16,6 +16,7 @@
 | 工具            | 简介                                                                  | 指南                                |
 | --------------- | --------------------------------------------------------------------- | ----------------------------------- |
 | **Cherry Studio** | 开源跨平台桌面 AI 客户端，内置 300+ 助手、MCP、知识库与多模型对话。 | [指南](./docs/cherry_studio.zh-CN.md) |
+| **GenericAgent** | 极简自进化自主 Agent 框架 —— ~3K行核心代码、9个原子工具、多级记忆系统（L0-L4），任务自动结晶为可复用技能。已适配 DeepSeek V4。 | [指南](./docs/genericagent.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
@@ -34,7 +35,6 @@
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
-| **GenericAgent** | 极简自进化自主 Agent 框架 —— ~3K行核心代码、9个原子工具、多级记忆系统（L0-L4），任务自动结晶为可复用技能。已适配 DeepSeek V4。 | [指南](./docs/genericagent.zh-CN.md) |
 
 ## 相关资源
 

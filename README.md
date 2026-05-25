@@ -16,6 +16,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | Tool            | Description                                                                                                 | Guide                          |
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | **Cherry Studio** | Open-source cross-platform desktop AI client with 300+ assistants, MCP support, knowledge bases, and multi-model chat. | [Guide](./docs/cherry_studio.md) |
+| **GenericAgent** | Minimal self-evolving autonomous agent framework — ~3K lines core, 9 atomic tools, multi-level memory (L0–L4), auto-crystallizes tasks into reusable Skills. DeepSeek V4 ready. | [Guide](./docs/genericagent.md) |
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
@@ -34,7 +35,6 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
-| **GenericAgent** | Minimal self-evolving autonomous agent framework — ~3K lines core, 9 atomic tools, multi-level memory (L0–L4), auto-crystallizes tasks into reusable Skills. DeepSeek V4 ready. | [Guide](./docs/genericagent.md) |
 
 ## Resources
 
