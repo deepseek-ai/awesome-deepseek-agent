@@ -34,6 +34,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
+| **VibeCoding** | Ultra cost-effective terminal AI coding assistant with excellent token cache hit rate. Built in ~10K lines of Go, it uses DeepSeek by default with multiple modes and sandbox. | [Guide](./docs/vibecoding.md) |
 
 ## Resources
 
