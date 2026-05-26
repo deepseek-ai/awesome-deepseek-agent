@@ -1,5 +1,7 @@
 # DeepLossless — DeepSeek 推理感知执行运行时
 
+![DeepLossless header](./assets/deeplossless_header.png)
+
 DeepLossless 是一个**推理感知的编码运行时**，用于减少 AI 长时间编码会话中的重复工作。它作为 HTTPS 代理位于你的编码 Agent 和 DeepSeek API 之间，提供：
 
 - **工具缓存拦截** — 重复的 grep/搜索调用直接返回缓存结果，无需 API 往返

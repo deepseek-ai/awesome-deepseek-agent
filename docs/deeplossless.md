@@ -1,5 +1,7 @@
 # DeepLossless — Inference-aware Execution Runtime for DeepSeek
 
+![DeepLossless header](./assets/deeplossless_header.png)
+
 DeepLossless is an **inference-aware coding runtime** that reduces repeated
 work in long AI coding sessions. It sits as an HTTPS proxy between
 your coding agent and the DeepSeek API, adding:
