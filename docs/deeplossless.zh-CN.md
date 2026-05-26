@@ -99,7 +99,7 @@ DeepLossless 使用 DeepSeek 当前模型：
 | `deepseek-v4-pro` | `deepseek-v4-pro`（1M 上下文） |
 | `deepseek-v4-flash` | `deepseek-v4-flash`（1M 上下文） |
 
-均支持 1M token 上下文窗口。DAG 组装和自动压缩确保关键上下文在原始对话历史超出上下文窗口时仍然保留。
+均支持 1M token 上下文窗口和 `reasoning_effort` 控制（DeepSeek 思考模式）。DAG 组装和自动压缩确保关键上下文在原始对话历史超出上下文窗口时仍然保留。
 
 ## LCM 端点（无损上下文管理）
 

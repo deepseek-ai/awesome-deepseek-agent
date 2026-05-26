@@ -108,7 +108,8 @@ DeepLossless uses DeepSeek's current models:
 | `deepseek-v4-pro` | `deepseek-v4-pro` (1M context) |
 | `deepseek-v4-flash` | `deepseek-v4-flash` (1M context) |
 
-Both support 1M token context windows. The runtime's DAG assembly and
+Both support 1M token context windows and `reasoning_effort` control
+(DeepSeek's thinking mode). The runtime's DAG assembly and
 auto-compaction ensure important context survives even when the raw
 conversation history exceeds the context window.
 
