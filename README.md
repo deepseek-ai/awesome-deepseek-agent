@@ -21,6 +21,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Kilo Code** | AI coding assistant available as a CLI and editor extension. | [Guide](./docs/kilo_code.md) |
+| **KiraAI** | Open-source modular AI digital life platform with dedicated DeepSeek integration, thinking mode, reasoning effort control, and multi-platform chat support (QQ, Telegram, WeChat, Discord). | [Guide](./docs/kira-ai.md) |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
 | **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
