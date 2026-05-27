@@ -22,6 +22,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Kilo Code** | AI coding assistant available as a CLI and editor extension. | [Guide](./docs/kilo_code.md) |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
+| **OpenAgentd** | Open-source desktop cockpit for local AI agent teams with a built-in DeepSeek provider. | [Guide](./docs/openagentd.md) |
 | **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
 | **OpenClaw**    | Open-source personal AI assistant that plugs into chat tools (Feishu, WeChat) and is extensible via Skills. | [Guide](./docs/openclaw.md)    |
