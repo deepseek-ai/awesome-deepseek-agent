@@ -66,6 +66,8 @@ Run `/connect` in the interactive UI, then:
 
 You can get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
+> **Note:** DeepSeek V4 models support up to **1 million tokens** of context. You can also enable thinking mode for enhanced reasoning capabilities.
+
 ### Using Kimi Code CLI
 
 Open a project directory and start the interactive UI:
