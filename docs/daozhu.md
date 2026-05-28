@@ -53,6 +53,10 @@ In the chat panel, type something like:
 
 DeepSeek will write a multi-scene script with stage directions, then the built-in theater renders CSS-animated stick figures performing the story — no video tools required.
 
+![Stick-Figure Theater](./assets/daozhu-theater.png)
+
+![DaoZhu Main Interface](./assets/daozhu-main.png)
+
 ## 4. Get Started
 
 Once configured, you can chat with the AI assistant to:

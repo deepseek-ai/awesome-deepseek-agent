@@ -53,6 +53,10 @@ python daozhu_main.py
 
 DeepSeek 会写出多幕剧本（含舞台指令），内置剧场引擎用 CSS 动画渲染火柴人自动演出——不需要任何视频工具。
 
+![火柴人剧场](./assets/daozhu-theater.png)
+
+![岛主主界面](./assets/daozhu-main.png)
+
 ## 4. 开始使用
 
 配置完成后，你可以用自然语言和 AI 管理员对话：
