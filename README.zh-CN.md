@@ -30,6 +30,7 @@
 | **LobeHub** | LobeHub 是你的 Chief Agent Operator，通过招聘、排班并报告整个 AI 团队，将你的 Agent 组织成 7×24 小时运作。 | [指南](./docs/lobehub.zh-CN.md) |
 | **nanobot** | 开源轻量级 AI 智能体，支持接入聊天工具、记忆、MCP 等。 | [指南](./docs/nanobot.zh-CN.md) |
 | **Oh My Pi** | 基于 Pi 分支扩展的终端 AI 编程 Agent，提供 OMP 专用工具、模型角色、MCP、插件与 Agent 工作流。 | [指南](./docs/oh-my-pi.zh-CN.md) |
+| **Open Multi-Agent** | 原生 TypeScript 多智能体编排框架，自动把目标拆解为并行任务 DAG。 | [指南](./docs/open_multi_agent.zh-CN.md) |
 | **OpenClaw**    | 开源个人 AI 助手，可接入飞书、微信等聊天工具，并通过 Skill 扩展能力。 | [指南](./docs/openclaw.zh-CN.md)    |
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
