@@ -10,7 +10,20 @@ IllusionCode is an open-source terminal AI coding assistant that inherits Claude
 
 - Install [Python](https://www.python.org/downloads/) 3.10+.
 - Install [Node.js](https://nodejs.org/en/download/) 18+ (for the TUI frontend).
-- Clone and set up the project:
+
+**Option A: Install from PyPI (recommended)**
+
+```sh
+pip install illusion-code
+```
+
+Verify the installation:
+
+```sh
+illusion --version
+```
+
+**Option B: Install from source**
 
 ```sh
 git clone https://github.com/YunTaiHua/illusion-code.git
@@ -18,22 +31,14 @@ cd illusion-code
 uv sync
 ```
 
-- Verify the installation:
-
-```sh
-uv run illusion --version
-```
-
-> **Tip:** You can also install globally with `pip install -e .` and then run `illusion` directly.
+> **Tip:** You can also install from source with `pip install .` (auto-builds frontends) or `pip install -e .` for editable mode.
 
 #### 2. Configure IllusionCode
 
 **Option A: Interactive login (recommended)**
 
-Use `uv run` for first-time login; afterward, you can run `illusion` directly.
-
 ```sh
-uv run illusion auth login
+illusion auth login
 ```
 
 Select **Custom provider** → set `api_format: openai` → set `base_url: https://api.deepseek.com/v1` → enter your API Key.
@@ -71,7 +76,7 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 
 ```sh
 cd /path/to/my-project
-uv run illusion
+illusion
 ```
 
 **CLI options:**
@@ -81,7 +86,11 @@ uv run illusion
 | `-m env_1.model_2` | Switch model at launch |
 | `-p "prompt"` | Non-interactive mode — run a single prompt |
 | `--continue` | Resume the last conversation |
+| `--resume <session-id>` | Restore a specific session |
+| `--permission-mode` | Set permission mode (`default` / `plan` / `full_auto`) |
 | `--api-format openai` | Override API format |
+| `illusion web` | Launch the Web UI (default port 3000) |
+| `illusion web --port 8080` | Launch Web UI on a custom port |
 
 #### Reasoning Effort
 
@@ -106,14 +115,30 @@ Available levels: `low`, `medium`, `high`, `xhigh`, `max`. Use `max` for the bes
 | `/new` | Start a fresh conversation |
 | `/resume` | Choose a previous conversation to continue |
 | `/model` | Switch model interactively |
+| `/memory` | View and manage persistent memory |
+| `/config` | View and edit settings |
+| `/skills` | List and manage skills |
+| `/hooks` | Manage hook configurations |
+| `/mcp` | Manage MCP server connections |
 | `/exit` | Quit IllusionCode |
 
 #### Features
 
-- **36 built-in tools** + MCP dynamic tool extension
-- **52 slash commands** and **7 built-in agents**
-- **Permission modes:** `default` / `plan` / `full_auto`
+- **34+ built-in tools** — file operations, shell execution, search, task management, agent collaboration, and more
+- **47 slash commands** and **7 built-in agents** (general-purpose, Explore, Plan, verification, worker, statusline-setup, illusion-guide)
+- **Dual UI:** Terminal TUI (React + Ink) and Web UI (React + Vite + Tailwind)
+- **Permission modes:** `default` / `plan` / `full_auto`, with fine-grained per-tool and per-path rules
+- **Multi-provider support:** Anthropic Claude, OpenAI-compatible endpoints, GitHub Copilot OAuth, OpenAI Codex, and 20+ auto-detected providers (OpenRouter, DashScope, Groq, Ollama, vLLM, etc.)
+- **Multi-environment config:** Switch between providers via `env_N` groups without reconfiguration
+- **MCP extension:** Dynamic tool registration from MCP servers, with project-level and global configs
+- **Plugin & Skill systems:** Installable plugins and loadable skills for extending functionality
+- **Hook system:** Event-driven hooks (PRE/POST tool use, user prompt submit) supporting command, prompt, HTTP, and agent hook types
+- **Memory system:** Persistent project knowledge across sessions
+- **Cron scheduler:** Scheduled tasks with job management, execution history, and daemon mode
+- **LSP integration:** Language Server Protocol support for code intelligence
+- **Sandbox support:** Configurable network and filesystem restrictions
 - **Bilingual UI:** Chinese and English, controlled by `ui_language` in `~/.illusion/settings.json`
 - **1M context window:** DeepSeek V4 models support up to 1 million tokens
+- **Self-update:** `illusion update` checks PyPI for newer versions
 
 For more configuration options, see the [IllusionCode documentation](https://github.com/YunTaiHua/illusion-code/blob/main/README.md).

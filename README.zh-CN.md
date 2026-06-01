@@ -28,7 +28,7 @@
 | **AstrBot** | 开源的 Agent 助手，支持接入 QQ、微信、飞书等消息平台，并可通过 Skill、插件和 MCP 扩展能力。 | [指南](./docs/astrbot.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
 | **Hermes**      | 开源自我进化 AI 助手。                                                | [指南](./docs/hermes.zh-CN.md)      |
-| **IllusionCode** | 开源终端 AI 编程助手，继承 Claude Code 提示词体系，支持多提供商接入、MCP 扩展、中英双语界面与 markdown 优化渲染。 | [指南](./docs/illusion_code.zh-CN.md) |
+| **IllusionCode** | 开源终端 AI 编程助手，继承 Claude Code 提示词体系，支持终端 + Web 双 UI、多提供商接入、MCP 扩展、插件/技能系统与中英双语界面。 | [指南](./docs/illusion_code.zh-CN.md) |
 | **nanobot** | 开源轻量级 AI 智能体，支持接入聊天工具，记忆，MCP等。 | [指南](./docs/nanobot.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
