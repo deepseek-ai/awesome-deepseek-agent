@@ -44,3 +44,5 @@ Each guide walks through installation, configuration, and first run — so you c
 ## Contributing
 
 Have another tool you'd like to see here? See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on opening an issue or a pull request with a new guide.
+
+- [AI Tools Hub](https://cloud1-d4g787x2022795b0b-1435432994.tcloudbaseapp.com/hub.html) - 21 free AI tools powered by DeepSeek, one-time crypto payment, no subscriptions.
