@@ -259,12 +259,5 @@ Reply topic:   $a2a/v1/reply/{org_id}/{unit_id}/{caller_agent_id}/{reply_suffix}
 
 #### 资源
 
-- [Device Agent](https://github.com/emqx/device-agent)
-- [Device Agent 文档](https://device-agent-web.vercel.app/docs)
-- [Device Agent MQTT Broker](https://device-agent-web.vercel.app/docs/mqtt-broker)
-- [Use a Device Agent](https://device-agent-web.vercel.app/docs/usage/use-device-agent)
-- [Device Agent A2A Collaboration](https://device-agent-web.vercel.app/docs/usage/a2a)
-- [EMQX](https://www.emqx.com/en/products/emqx)
-- [EMQX Cloud](https://www.emqx.com/en/cloud)
-- [DeepSeek 开放平台](https://platform.deepseek.com/)
-- [DeepSeek API 文档](https://api-docs.deepseek.com/zh-cn/)
+- [Device Agent 官网](https://www.emqx.com/zh/device-agent)
+- [Device Agent 文档](https://docs.emqx.com/zh/device-agent/latest/)

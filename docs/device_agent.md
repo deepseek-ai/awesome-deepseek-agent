@@ -259,12 +259,5 @@ Use this checklist:
 
 #### Resources
 
-- [Device Agent](https://github.com/emqx/device-agent)
-- [Device Agent Docs](https://device-agent-web.vercel.app/docs)
-- [Device Agent MQTT Broker](https://device-agent-web.vercel.app/docs/mqtt-broker)
-- [Use a Device Agent](https://device-agent-web.vercel.app/docs/usage/use-device-agent)
-- [Device Agent A2A Collaboration](https://device-agent-web.vercel.app/docs/usage/a2a)
-- [EMQX](https://www.emqx.com/en/products/emqx)
-- [EMQX Cloud](https://www.emqx.com/en/cloud)
-- [DeepSeek Platform](https://platform.deepseek.com/)
-- [DeepSeek API Docs](https://api-docs.deepseek.com/)
+- [Device Agent Website](https://www.emqx.com/en/device-agent)
+- [Device Agent Docs](https://docs.emqx.com/en/device-agent/latest/)
