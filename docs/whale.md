@@ -2,7 +2,7 @@
 
 # Integrate with Whale
 
-Whale is a DeepSeek-native coding agent that runs in the terminal. It is designed around DeepSeek's API directly — prefix-cache-friendly sessions, thinking controls, tool-call repair, MCP, and Agent Skills.
+Whale is a DeepSeek-native AI coding agent that runs in the terminal. It is designed around DeepSeek's API directly — prefix-cache-friendly sessions, thinking controls, tool-call repair, MCP, Agent Skills, and dynamic workflows.
 
 - **GitHub:** <https://github.com/usewhale/DeepSeek-Code-Whale>
 - **Platform support:** Whale currently supports macOS, Linux, and Windows.
@@ -99,3 +99,18 @@ printf 'Summarize the current directory\n' | whale exec
 Whale reads MCP server configuration from `~/.whale/mcp.json` by default. It supports stdio MCP servers and Streamable HTTP MCP servers, and registers MCP tools with the same approval flow as built-in tools.
 
 Whale discovers Agent Skills from `.whale/skills`, `.agents/skills`, `~/.whale/skills`, and `~/.agents/skills`. Type `$` in the TUI to search and insert a skill, or run `/skills` to manage them.
+
+#### Dynamic Workflows
+
+Whale supports **dynamic workflows**: JavaScript scripts that orchestrate multiple sub-agents deterministically — fan-out research, multi-perspective review, pipeline processing, and more. Workflow scripts are [Claude Code compatible](https://docs.whale-ai.com/workflows) and can be copied between the two tools as-is.
+
+To enable workflows, run `/config` in the TUI and toggle `Dynamic workflows` on, or add to `~/.whale/config.toml`:
+
+```toml
+[workflows]
+enabled = true
+```
+
+Workflow scripts live in `.whale/workflows/<name>.js` (project-level) or `~/.whale/workflows/<name>.js` (user-global). Use `/workflows` to open the workflow panel for managing runs.
+
+Learn more: [Workflow Guide](https://docs.whale-ai.com/workflows)

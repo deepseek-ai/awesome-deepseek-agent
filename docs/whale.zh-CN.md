@@ -2,7 +2,7 @@
 
 # 接入 Whale
 
-Whale 是一款以 DeepSeek 为原生后端的终端编程 Agent。设计围绕 DeepSeek API 展开 —— prefix-cache 友好的会话、thinking 控制、工具调用修复、MCP 与 Agent Skills。
+Whale 是一款以 DeepSeek 为原生后端的 AI 编程 Agent，运行在终端中。设计围绕 DeepSeek API 展开 —— prefix-cache 友好的会话、thinking 控制、工具调用修复、MCP、Agent Skills 与动态工作流。
 
 - **GitHub：** <https://github.com/usewhale/DeepSeek-Code-Whale>
 - **平台支持：** Whale 当前支持 macOS、Linux 和 Windows。
@@ -99,3 +99,18 @@ printf '总结当前目录\n' | whale exec
 Whale 默认从 `~/.whale/mcp.json` 读取 MCP server 配置。它支持 stdio MCP server 和 Streamable HTTP MCP server，并将 MCP 工具接入与内置工具相同的审批流程。
 
 Whale 会从 `.whale/skills`、`.agents/skills`、`~/.whale/skills` 和 `~/.agents/skills` 发现 Agent Skills。在 TUI 中输入 `$` 可以搜索并插入 skill，也可以运行 `/skills` 进行管理。
+
+#### 动态工作流（Dynamic Workflows）
+
+Whale 支持**动态工作流**：用 JavaScript 脚本编排多个子 Agent 确定性执行 —— 适用于扇出式研究、多角度审查、流水线处理等场景。工作流脚本与 [Claude Code 兼容](https://docs.whale-ai.com/workflows)，可直接在两个工具之间复用。
+
+启用工作流：在 TUI 中运行 `/config` 并开启 `Dynamic workflows`，或在 `~/.whale/config.toml` 中添加：
+
+```toml
+[workflows]
+enabled = true
+```
+
+工作流脚本存放在 `.whale/workflows/<名称>.js`（项目级）或 `~/.whale/workflows/<名称>.js`（用户全局）。使用 `/workflows` 打开工作流面板来管理运行。
+
+了解更多：[工作流指南](https://docs.whale-ai.com/workflows)
