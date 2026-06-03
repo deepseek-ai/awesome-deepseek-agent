@@ -36,6 +36,7 @@
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
+| **ZenMind** | 开源的智能体终端与 AGWUI 交互协议，支持 DeepSeek V4 等多款国产模型。 | [指南](./docs/zenmind.zh-CN.md) |
 
 ## 相关资源
 
