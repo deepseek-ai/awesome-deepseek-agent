@@ -3,16 +3,61 @@
 # Access desca
 
 <div align="center">
-<img src="https://github.com/ChangedenCZD/desca/raw/refs/heads/develop/assets/logo.svg" width='640' />
+<img src="https://raw.atomgit.com/changeden/desca/files/main/assets/logo.svg" width='640' />
 </div>
 
-**desca** (**De**ep**s**eek **C**oding **A**gent) is a **terminal AI coding assistant** for the DeepSeek model ecosystem, built with **Go 1.25 + Charmbracelet TUI**. Its core architecture is a **single-agent main loop + tool-driven** approach, delegating independent tasks to sub-agents via the `task` tool.
+**desca** (short for **De**ep**s**eek **C**oding **A**gent) is a **terminal-based AI coding assistant** built for the DeepSeek model ecosystem. Its core architecture is a **single Agent main loop + tool-driven**, delegating independent tasks to sub-agents via the `task` tool.
 
 ## Obtaining an API Key
 
 ### 1. Get a DeepSeek API Key
 
-Obtain an `Api-Key` from the [DeepSeek Open Platform](https://platform.deepseek.com/api_keys). When desca is launched for the first time, a pop-up window will prompt you to enter the `Api-Key`, which will then be persisted in `~/.desca/settings.toml`. Users can also switch the `Api-Key` using the `/connect` command.
+Obtain an `Api-Key` from the [DeepSeek Open Platform](https://platform.deepseek.com/api_keys). Edit `~/.desca/settings.json`, modify the value of `models.deepseek.apiKey`, save the file, and restart `desca`.
+
+### settings.json
+
+```json
+{
+  "models": {
+    "default": "deepseek/deepseek-v4-flash",
+    "deepseek": {
+      "name": "deepseek",
+      "baseUrl": "https://api.deepseek.com",
+      "protocol": "openai",
+      "apiKey": "sk-xxx",
+      "defaultModel": "deepseek-v4-flash",
+      "models": [
+        {
+          "id": "deepseek-v4-flash",
+          "contextLimit": 1000000,
+          "outputLimit": 384000
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "contextLimit": 1000000,
+          "outputLimit": 384000
+        }
+      ]
+    },
+    "opencode": {
+      "name": "opencode",
+      "baseUrl": "https://opencode.ai/zen/v1",
+      "protocol": "openai",
+      "apiKey": "",
+      "defaultModel": "deepseek-v4-flash-free",
+      "models": [
+        {
+          "id": "deepseek-v4-flash-free",
+          "alias": "deepseek-v4-flash (free)",
+          "contextLimit": 200000,
+          "outputLimit": 32768,
+          "ignoreAuthorization": true
+        }
+      ]
+    }
+  }
+}
+```
 
 ## Installation and Usage
 
