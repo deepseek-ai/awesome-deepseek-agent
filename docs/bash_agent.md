@@ -11,7 +11,10 @@
 No Node.js, Python, or other runtime required. Download the latest release from [GitHub Releases](https://github.com/lloydzhou/bash-agent/releases):
 
 ```bash
-# Bash + AWK version (zero dependencies, recommended)
+# macOS — Homebrew (includes all 4 versions: bash/go/rust/c)
+brew install lloydzhou/tap/bash-agent
+
+# Or manually install Bash version (zero dependencies, single file)
 curl -fsSL https://github.com/lloydzhou/bash-agent/releases/latest/download/agent.sh \
   -o ~/.local/bin/bash-agent && chmod +x ~/.local/bin/bash-agent
 
@@ -22,15 +25,19 @@ OS=$(uname -s | tr '[:upper:]' '[:lower:]'); ARCH=$(uname -m); \
   curl -fsSL "https://github.com/lloydzhou/bash-agent/releases/latest/download/goagent-${OS}-${ARCH}" \
   -o ~/.local/bin/goagent && chmod +x ~/.local/bin/goagent
 
-# Rust compiled version (Linux / macOS only)
+# Rust compiled version
 OS=$(uname -s | tr '[:upper:]' '[:lower:]'); ARCH=$(uname -m); \
   [ "$ARCH" = "x86_64" ] && ARCH=amd64; \
   [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ] && ARCH=arm64; \
-  case "$OS" in linux|darwin) SUFFIX="${OS}-${ARCH}" ;; \
-    *) echo "No prebuilt rustagent for $OS/$ARCH, build locally with: cd rust && cargo build --release"; exit 1 ;; \
-  esac; \
-  curl -fsSL "https://github.com/lloydzhou/bash-agent/releases/latest/download/rustagent-${SUFFIX}" \
+  curl -fsSL "https://github.com/lloydzhou/bash-agent/releases/latest/download/rustagent-${OS}-${ARCH}" \
   -o ~/.local/bin/rustagent && chmod +x ~/.local/bin/rustagent
+
+# C compiled version
+OS=$(uname -s | tr '[:upper:]' '[:lower:]'); ARCH=$(uname -m); \
+  [ "$ARCH" = "x86_64" ] && ARCH=amd64; \
+  [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ] && ARCH=arm64; \
+  curl -fsSL "https://github.com/lloydzhou/bash-agent/releases/latest/download/cagent-${OS}-${ARCH}" \
+  -o ~/.local/bin/cagent && chmod +x ~/.local/bin/cagent
 ```
 
 Ensure `~/.local/bin` is in your `PATH`.
@@ -41,8 +48,17 @@ Bash Agent uses the Anthropic-compatible API format. Set the environment variabl
 
 ```bash
 # Example: add to ~/.zshrc
+
+# Option 1: Use DEEPSEEK_API_KEY (auto-detected, simplest)
+export DEEPSEEK_API_KEY="sk-xxxx"
 deepseek() {
-  DP_P_INNPUT=1 DP_P_OUT=3 DP_P_CACHE=0.02 \
+  DP_P_IN=1 DP_P_OUT=3 DP_P_CACHE=0.02 \
+  bash-agent -m deepseek-v4-flash --max-turns 100 --max-context 1m --max-tokens 81920 --continue $@
+}
+
+# Option 2: Use ANTHROPIC_BASE_URL explicitly
+deepseek() {
+  DP_P_IN=1 DP_P_OUT=3 DP_P_CACHE=0.02 \
   ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic \
   ANTHROPIC_API_KEY=sk-xxxx \
   bash-agent -m deepseek-v4-flash --max-turns 100 --max-context 1m --max-tokens 81920 --continue $@
@@ -72,5 +88,5 @@ Bash Agent will read your project files, send them to DeepSeek with full context
 - **Cache-first architecture** — designed to maximize DeepSeek's context cache, achieving 99% cache hit rate, significantly reducing costs.
 - **1M context** — fully leverages DeepSeek V4's 1 million token context window for large codebases.
 - **Max thinking effort** — supports DeepSeek V4 Pro's `max` reasoning level out of the box.
-- **Lightweight & hackable** — `src/agent.sh` (~1,500 lines) + 1,600 lines of AWK modules, compiled into a single `dist/agent.sh` (under 3,000 lines). Read, modify, and extend in minutes.
+- **Lightweight & hackable** — `src/agent.sh` (~1,600 lines) + 1,600 lines of AWK modules, compiled into a single `dist/agent.sh`. Also available in Go, Rust, and C for compiled performance. Read, modify, and extend in minutes.
 - **Skill extensions** — supports custom skill loading from `.claude/skills/`, `./skills/`, and `~/.claude/skills/`, with a three-layer mechanism: skill-index (summary) → selected-skills (full load via `--skill`) → Skill tool (on-demand read).
