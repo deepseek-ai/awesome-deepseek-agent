@@ -4,7 +4,7 @@
 
 **Bash Agent** 是一个极简的 AI 编程 Agent 运行时，纯 Bash + AWK 实现，零运行时依赖。它在任何 POSIX Shell 中运行，直接对接 DeepSeek API，利用 Cache-First 循环大幅降低每次调用成本。
 
-> **生产数据（2026-05-07）：** 输入 73.7M tokens，缓存命中率 99%，输出 215K tokens。（[DeepSeek分享对话](https://chat.deepseek.com/share/28068py62e711nhg57)）
+> **生产数据（2026 年 5 月，11 天）：** 输入 723.9M tokens，平均缓存命中率 99.15%，输出 2.5M tokens。（[数据看板](https://lloydzhou.github.io/bash-agent/)）
 
 #### 1. 安装
 

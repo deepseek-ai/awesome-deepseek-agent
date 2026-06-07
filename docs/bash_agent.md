@@ -4,7 +4,7 @@
 
 **Bash Agent** is a minimal AI coding agent runtime built with pure Bash + AWK — zero runtime dependencies. It runs in any POSIX shell, talks directly to the DeepSeek API, and leverages a cache-first loop to dramatically reduce cost per token.
 
-> **Production Stats (2026-05-07):** 73.7M input tokens, cache hit rate 99%, 215K output tokens. ([DeepSeek分享对话](https://chat.deepseek.com/share/28068py62e711nhg57))
+> **Production Stats (2026-05, 11 days):** 723.9M input tokens, avg cache hit rate 99.15%, 2.5M output tokens. ([Dashboard](https://lloydzhou.github.io/bash-agent/))
 
 #### 1. Install
 
