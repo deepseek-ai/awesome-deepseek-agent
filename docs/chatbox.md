@@ -24,24 +24,14 @@ Open Chatbox, then open **Settings → Model Provider → DeepSeek**.
 
 1. Paste your [DeepSeek API Key](https://platform.deepseek.com/api_keys) into **API Key**.
 2. Keep the default DeepSeek API endpoint.
-3. Click **Fetch** in the **Model** section and add **`deepseek-v4-pro`** and **`deepseek-v4-flash`**.
-4. If the models are not shown in the fetched list yet, click **New** and add them manually.
+3. Click **Fetch** in the **Model** section if you want to refresh the provider model list.
+4. Confirm that **DeepSeek V4 Pro** and **DeepSeek V4 Flash** are available in the model list.
 
 <div align="center">
 <img src="./assets/chatbox_deepseek_provider.zh-CN.png" width="720" border="1" />
 </div>
 
-For each manually added model:
-
-| Field | `deepseek-v4-pro` | `deepseek-v4-flash` |
-| ----- | ----------------- | ------------------- |
-| Model ID | `deepseek-v4-pro` | `deepseek-v4-flash` |
-| Model Type | `Chat` | `Chat` |
-| Capabilities | `Reasoning`, `Tool use` | `Reasoning`, `Tool use` |
-| Context Window | `1000000` | `1000000` |
-| Max Output Tokens | `384000` | `384000` |
-
-DeepSeek V4 supports a **1 million token** context window. Setting the context window in Chatbox lets the token counter, automatic compaction, file context, and long-session warnings use the correct limit.
+Chatbox's default DeepSeek model list already includes the current V4 models with the right capabilities and limits, including the **1 million token** context window and 384K max output. No manual model-parameter configuration is required.
 
 #### 3. Start Chatting
 
