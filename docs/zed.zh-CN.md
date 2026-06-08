@@ -15,10 +15,6 @@ Zed 是一款用 Rust 构建的高性能协作代码编辑器。其内置的 AI 
 - 将 DeepSeek 供应商配置（见下方 JSON 代码段）粘贴到设置编辑器中。
 - 按 `Cmd+S` 保存。
 
-<div align="center">
-<img src="./assets/zed_step_settings.png" width="500" border="1" />
-</div>
-
 #### 方法二：直接编辑 JSON 配置
 
 - 打开命令面板（macOS：`Cmd+Shift+P`，Linux/Windows：`Ctrl+Shift+P`）。

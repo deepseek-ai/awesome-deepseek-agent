@@ -15,10 +15,6 @@ Choose one of the two methods below to configure DeepSeek in Zed.
 - Add the DeepSeek provider configuration (see the JSON snippet below) into the settings editor.
 - Press `Cmd+S` to save.
 
-<div align="center">
-<img src="./assets/zed_step_settings.png" width="500" border="1" />
-</div>
-
 #### Method 2: Direct JSON Configuration
 
 - Open the command palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Linux/Windows).
