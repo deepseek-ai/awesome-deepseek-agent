@@ -4,17 +4,30 @@
 
 Zed is a high-performance, collaborative code editor built in Rust. It has a built-in AI assistant that supports OpenAI-compatible API providers, including DeepSeek.
 
-#### 1. Open Settings
+Choose one of the two methods below to configure DeepSeek in Zed.
+
+#### Method 1: Settings UI (Recommended)
 
 - Open Zed.
+- Open Settings with `Cmd+,` (macOS) or `Ctrl+,` (Linux/Windows).
+- In the search bar at the top, type `assistant`.
+- The settings editor will scroll to the `assistant` section.
+- Add the DeepSeek provider configuration (see the JSON snippet below) into the settings editor.
+- Press `Cmd+S` to save.
+
+<div align="center">
+<img src="./assets/zed_step_settings.png" width="500" border="1" />
+</div>
+
+#### Method 2: Direct JSON Configuration
+
 - Open the command palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Linux/Windows).
 - Type `zed: open settings` and select it.
+- Alternatively, open `~/.config/zed/settings.json` directly.
 
-Alternatively, open `~/.config/zed/settings.json` directly.
+#### Assistant Configuration
 
-#### 2. Configure the Assistant
-
-Add a `deepseek` provider under the `assistant` section in your `settings.json`. Use the `openai_compatible` provider type pointing to the DeepSeek API:
+Regardless of which method you chose, add a `deepseek` provider under the `assistant` section using the `openai_compatible` provider type pointing to the DeepSeek API:
 
 ```json
 {
@@ -49,7 +62,7 @@ Add a `deepseek` provider under the `assistant` section in your `settings.json`.
 
 > **Note:** DeepSeek V4 models support up to **1 million tokens** of context. The `max_tokens` and `max_completion_tokens` are set to 384,000 to reflect the maximum output tokens. Zed will manage the full context window automatically.
 
-#### 3. Add Your API Key
+#### Add Your API Key
 
 Open the command palette (`Cmd+Shift+P` / `Ctrl+Shift+P`), type `assistant: open configuration` and select it. Add your DeepSeek API key:
 
@@ -65,7 +78,7 @@ Open the command palette (`Cmd+Shift+P` / `Ctrl+Shift+P`), type `assistant: open
 
 Alternatively, set the `DEEPSEEK_API_KEY` environment variable and omit `api_key` from the configuration.
 
-#### 4. Enable Max Thinking (Recommended)
+#### Enable Max Thinking (Recommended)
 
 DeepSeek V4 Pro supports reasoning effort levels for better code generation. Add the `reasoning_effort` parameter to the model configuration to enable `max` thinking:
 
@@ -80,7 +93,7 @@ DeepSeek V4 Pro supports reasoning effort levels for better code generation. Add
 }
 ```
 
-#### 5. Start Using Zed with DeepSeek
+#### Start Using Zed with DeepSeek
 
 - Open the assistant panel with `Ctrl+Enter` (or click the AI icon in the status bar).
 - Type your prompt and press `Enter` to send.
