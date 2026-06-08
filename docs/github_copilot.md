@@ -8,7 +8,7 @@
 
 - Install [VS Code](https://code.visualstudio.com/) 1.116 or later.
 - Make sure you have a GitHub Copilot subscription (Free / Pro / Enterprise — the free tier works).
-- Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Vizards.deepseek-v4-for-copilot).
+- Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Vizards.deepseek-v4-for-copilot) or its [GitHub repo](https://github.com/Vizards/deepseek-v4-for-copilot).
 
 #### 2. Get a DeepSeek API Key
 
