@@ -27,6 +27,10 @@ Open Chatbox, then open **Settings → Model Provider → DeepSeek**.
 3. Click **Fetch** in the **Model** section and add **`deepseek-v4-pro`** and **`deepseek-v4-flash`**.
 4. If the models are not shown in the fetched list yet, click **New** and add them manually.
 
+<div align="center">
+<img src="./assets/chatbox_deepseek_provider.zh-CN.png" width="720" border="1" />
+</div>
+
 For each manually added model:
 
 | Field | `deepseek-v4-pro` | `deepseek-v4-flash` |
