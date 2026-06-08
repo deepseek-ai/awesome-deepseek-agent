@@ -28,7 +28,7 @@ Open Chatbox, then open **Settings → Model Provider → DeepSeek**.
 4. Confirm that **DeepSeek V4 Pro** and **DeepSeek V4 Flash** are available in the model list.
 
 <div align="center">
-<img src="./assets/chatbox_deepseek_provider.zh-CN.png" width="720" border="1" />
+<img src="./assets/chatbox_deepseek_provider.en-US.png" width="720" border="1" />
 </div>
 
 Chatbox's default DeepSeek model list already includes the current V4 models with the right capabilities and limits, including the **1 million token** context window and 384K max output. No manual model-parameter configuration is required.
