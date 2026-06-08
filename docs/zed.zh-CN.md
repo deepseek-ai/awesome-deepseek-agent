@@ -2,97 +2,68 @@
 
 # 接入 Zed
 
-Zed 是一款用 Rust 构建的高性能协作代码编辑器。其内置的 AI 助手支持 OpenAI 兼容的 API 供应商，包括 DeepSeek。
+> **要求：** Zed v0.160 或更高版本。
 
-选择以下两种方法之一在 Zed 中配置 DeepSeek。
+Zed 是一款内置 AI Agent 的高性能协作代码编辑器。DeepSeek 作为一级 API 供应商直接支持，无需通过 OpenAI 兼容方式绕行。API Key 保存在系统钥匙串中，而非 `settings.json`。
 
-#### 方法一：设置界面（推荐）
+参考：[Zed 文档 — 使用 API 访问](https://zed.dev/docs/ai/use-api-access)
+
+#### 1. 获取 DeepSeek API Key
+
+- 访问 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 创建 API Key。
+- 确保账户已充值或有可用的 API 额度。
+
+#### 2. 打开 Agent 设置界面
 
 - 打开 Zed。
-- 按 `Cmd+,`（macOS）或 `Ctrl+,`（Linux/Windows）打开设置。
-- 在顶部的搜索栏中输入 `assistant`。
-- 设置编辑器将滚动到 `assistant` 部分。
-- 将 DeepSeek 供应商配置（见下方 JSON 代码段）粘贴到设置编辑器中。
-- 按 `Cmd+S` 保存。
-
-#### 方法二：直接编辑 JSON 配置
-
 - 打开命令面板（macOS：`Cmd+Shift+P`，Linux/Windows：`Ctrl+Shift+P`）。
-- 输入 `zed: open settings` 并选择。
-- 也可以直接打开 `~/.config/zed/settings.json` 文件。
+- 输入 `agent: open settings` 并选择。这将打开 Agent 设置面板。
 
-#### 助手配置
+在 Agent 设置面板中你会看到各个 LLM 供应商的配置区域。滚动到 **DeepSeek** 部分。
 
-无论选择哪种方法，在 `assistant` 部分添加 `deepseek` 供应商，使用 `openai_compatible` 供应商类型指向 DeepSeek API：
+#### 3. 输入 API Key
 
-```json
-{
-  "assistant": {
-    "default_model": {
-      "provider": "deepseek",
-      "model": "deepseek-v4-pro"
-    },
-    "version": "2",
-    "provider": {
-      "deepseek": {
-        "name": "deepseek",
-        "type": "openai_compatible",
-        "api_url": "https://api.deepseek.com",
-        "available_models": [
-          {
-            "name": "deepseek-v4-pro",
-            "max_tokens": 384000,
-            "max_completion_tokens": 384000
-          },
-          {
-            "name": "deepseek-v4-flash",
-            "max_tokens": 384000,
-            "max_completion_tokens": 384000
-          }
-        ]
-      }
-    }
-  }
-}
-```
+- 在 Agent 设置面板中，找到 **DeepSeek** 部分。
+- 输入你的 DeepSeek API Key。Zed 会将其保存到系统钥匙串中，绝不会写入 `settings.json`。
 
-> **注意：** DeepSeek V4 模型支持最高 **100 万 token** 的上下文窗口。`max_tokens` 和 `max_completion_tokens` 设置为 384,000 以匹配最大输出 token 数。Zed 会自动管理完整的上下文窗口。
+你也可以设置 `DEEPSEEK_API_KEY` 环境变量。非空环境变量的优先级高于钥匙串中的值。
 
-#### 添加 API Key
+#### 4. （可选）添加自定义模型
 
-打开命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`），输入 `assistant: open configuration` 并选择。添加你的 DeepSeek API Key：
+Zed 内置了默认的 DeepSeek 模型。为确保使用最新的 `deepseek-v4-pro` 和 `deepseek-v4-flash`（含 100 万 token 上下文），可在设置文件中添加自定义模型：
+
+通过 `zed: open settings file` 打开设置文件，添加：
 
 ```json
 {
-  "provider": {
+  "language_models": {
     "deepseek": {
-      "api_key": "sk-your-deepseek-api-key"
+      "api_url": "https://api.deepseek.com",
+      "available_models": [
+        {
+          "name": "deepseek-v4-flash",
+          "display_name": "DeepSeek V4 Flash",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000
+        },
+        {
+          "name": "deepseek-v4-pro",
+          "display_name": "DeepSeek V4 Pro",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000
+        }
+      ]
     }
   }
 }
 ```
 
-或者设置 `DEEPSEEK_API_KEY` 环境变量，即可在配置中省略 `api_key`。
+> **注意：** DeepSeek V4 模型支持最高 **100 万 token** 的上下文窗口。`max_tokens` 设置上下文窗口大小（1,000,000），`max_output_tokens` 限制响应长度（384,000）。
 
-#### 启用 Max Thinking（推荐）
+#### 5. 选择模型并开始使用
 
-DeepSeek V4 Pro 支持推理强度级别，可获得更好的代码生成效果。在模型配置中添加 `reasoning_effort` 参数以启用 `max` 级别思考：
+- 按 `Ctrl+Enter` 打开 Agent 面板（或点击状态栏中的 AI 图标）。
+- 从模型下拉菜单中选择 **DeepSeek V4 Pro** 或 **DeepSeek V4 Flash**。
+- 输入提示词并按 `Enter` 发送。Zed Agent 可以在项目中读取、编辑、搜索和运行代码。
 
-```json
-{
-  "name": "deepseek-v4-pro",
-  "max_tokens": 384000,
-  "max_completion_tokens": 384000,
-  "extra_params": {
-    "reasoning_effort": "max"
-  }
-}
-```
-
-#### 开始在 Zed 中使用 DeepSeek
-
-- 按 `Ctrl+Enter` 打开助手面板（或点击状态栏中的 AI 图标）。
-- 输入提示词并按 `Enter` 发送。
-- 你也可以使用内联转换：选中代码，按 `Ctrl+Enter`，然后描述你想要的更改。
-
-你的 Zed 编辑器现已由 DeepSeek 驱动！
+你也可以使用内联助手：选中代码，按 `Ctrl+Enter`，然后描述你想要的更改。

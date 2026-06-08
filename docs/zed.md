@@ -2,97 +2,68 @@
 
 # Integrate with Zed
 
-Zed is a high-performance, collaborative code editor built in Rust. It has a built-in AI assistant that supports OpenAI-compatible API providers, including DeepSeek.
+> **Requires:** Zed v0.160 or later.
 
-Choose one of the two methods below to configure DeepSeek in Zed.
+Zed is a high-performance, collaborative code editor with a built-in AI agent. DeepSeek is supported as a first-class API provider — no OpenAI-compatible workaround needed. API keys are stored in your system keychain, not in `settings.json`.
 
-#### Method 1: Settings UI (Recommended)
+Reference: [Zed Docs — Use API Access](https://zed.dev/docs/ai/use-api-access)
+
+#### 1. Get a DeepSeek API Key
+
+- Visit the [DeepSeek platform](https://platform.deepseek.com/api_keys) and create an API key.
+- Make sure your account has credits or paid API usage enabled.
+
+#### 2. Open Agent Settings (UI)
 
 - Open Zed.
-- Open Settings with `Cmd+,` (macOS) or `Ctrl+,` (Linux/Windows).
-- In the search bar at the top, type `assistant`.
-- The settings editor will scroll to the `assistant` section.
-- Add the DeepSeek provider configuration (see the JSON snippet below) into the settings editor.
-- Press `Cmd+S` to save.
-
-#### Method 2: Direct JSON Configuration
-
 - Open the command palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Linux/Windows).
-- Type `zed: open settings` and select it.
-- Alternatively, open `~/.config/zed/settings.json` directly.
+- Type `agent: open settings` and select it. This opens the Agent Settings panel.
 
-#### Assistant Configuration
+In the Agent Settings panel you'll see sections for each LLM provider. Scroll to the **DeepSeek** section.
 
-Regardless of which method you chose, add a `deepseek` provider under the `assistant` section using the `openai_compatible` provider type pointing to the DeepSeek API:
+#### 3. Enter Your API Key
 
-```json
-{
-  "assistant": {
-    "default_model": {
-      "provider": "deepseek",
-      "model": "deepseek-v4-pro"
-    },
-    "version": "2",
-    "provider": {
-      "deepseek": {
-        "name": "deepseek",
-        "type": "openai_compatible",
-        "api_url": "https://api.deepseek.com",
-        "available_models": [
-          {
-            "name": "deepseek-v4-pro",
-            "max_tokens": 384000,
-            "max_completion_tokens": 384000
-          },
-          {
-            "name": "deepseek-v4-flash",
-            "max_tokens": 384000,
-            "max_completion_tokens": 384000
-          }
-        ]
-      }
-    }
-  }
-}
-```
+- In the Agent Settings panel, go to the **DeepSeek** section.
+- Enter your DeepSeek API key. Zed saves it to your system keychain — never in `settings.json`.
 
-> **Note:** DeepSeek V4 models support up to **1 million tokens** of context. The `max_tokens` and `max_completion_tokens` are set to 384,000 to reflect the maximum output tokens. Zed will manage the full context window automatically.
+Alternatively, set the `DEEPSEEK_API_KEY` environment variable. Non-empty environment variables take precedence over the keychain value.
 
-#### Add Your API Key
+#### 4. (Optional) Add Custom Models
 
-Open the command palette (`Cmd+Shift+P` / `Ctrl+Shift+P`), type `assistant: open configuration` and select it. Add your DeepSeek API key:
+Zed ships with default DeepSeek models. To ensure you have the latest `deepseek-v4-pro` and `deepseek-v4-flash` with 1M context, add custom models in your settings file:
+
+Open with `zed: open settings file` and add:
 
 ```json
 {
-  "provider": {
+  "language_models": {
     "deepseek": {
-      "api_key": "sk-your-deepseek-api-key"
+      "api_url": "https://api.deepseek.com",
+      "available_models": [
+        {
+          "name": "deepseek-v4-flash",
+          "display_name": "DeepSeek V4 Flash",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000
+        },
+        {
+          "name": "deepseek-v4-pro",
+          "display_name": "DeepSeek V4 Pro",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000
+        }
+      ]
     }
   }
 }
 ```
 
-Alternatively, set the `DEEPSEEK_API_KEY` environment variable and omit `api_key` from the configuration.
+> **Note:** DeepSeek V4 models support up to **1 million tokens** of context. `max_tokens` sets the context window (1,000,000) and `max_output_tokens` caps the response length (384,000).
 
-#### Enable Max Thinking (Recommended)
+#### 5. Select the Model and Start Using Zed
 
-DeepSeek V4 Pro supports reasoning effort levels for better code generation. Add the `reasoning_effort` parameter to the model configuration to enable `max` thinking:
+- Open the Agent Panel with `Ctrl+Enter` (or click the AI icon in the status bar).
+- Choose **DeepSeek V4 Pro** or **DeepSeek V4 Flash** from the model dropdown.
+- Type your prompt and press `Enter`. The Zed Agent can read, edit, search, and run code in your project.
 
-```json
-{
-  "name": "deepseek-v4-pro",
-  "max_tokens": 384000,
-  "max_completion_tokens": 384000,
-  "extra_params": {
-    "reasoning_effort": "max"
-  }
-}
-```
-
-#### Start Using Zed with DeepSeek
-
-- Open the assistant panel with `Ctrl+Enter` (or click the AI icon in the status bar).
-- Type your prompt and press `Enter` to send.
-- You can also use inline transformations: select code, press `Ctrl+Enter`, and describe the change you want.
-
-Your Zed editor is now powered by DeepSeek!
+You can also use the Inline Assistant: select code, press `Ctrl+Enter`, and describe the change.
