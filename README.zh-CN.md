@@ -35,6 +35,7 @@
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
+| **Taco AI** | 开源桌面 AI 助手，内置终端、代码编辑器、浏览器自动化与项目记忆——为 DeepSeek 提供完整的桌面端运行环境。 | [指南](./docs/taco.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
 
 ## 相关资源
