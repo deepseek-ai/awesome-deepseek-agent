@@ -36,6 +36,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
+| **Zagens** | Desktop DeepSeek V4 harness — hallucination guard, completion gates, session replay, Code+Office runtime, `zagens` CLI. | [Guide](./docs/zagens.md) |
 
 ## Resources
 
