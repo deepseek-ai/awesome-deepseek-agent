@@ -37,6 +37,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Qwen Code** | Coding agent CLI by the Alibaba Qwen team — now with built-in DeepSeek provider support. | [Guide](./docs/qwen_code.md) |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
+| **Zagens** | Desktop DeepSeek V4 harness — hallucination guard, completion gates, session replay, Code+Office runtime, `zagens` CLI. | [Guide](./docs/zagens.md) |
 
 ## Resources
 
