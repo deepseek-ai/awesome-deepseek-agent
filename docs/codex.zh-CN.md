@@ -81,9 +81,16 @@ providers:
       - model: deepseek-v4-flash
 
 routes:
+  # 在此添加更多 Codex 可识别的模型 ID 路由别名（例如 gpt-5.5、gpt-5.2）
   moonbridge:
     model: deepseek-v4-pro
     provider: deepseek
+  # gpt-5.5:
+  #   model: deepseek-v4-pro
+  #   provider: deepseek
+  # gpt-5.2:
+  #   model: deepseek-v4-flash
+  #   provider: deepseek
 
 defaults:
   model: moonbridge
@@ -227,7 +234,16 @@ curl http://127.0.0.1:38440/v1/responses \
 #### 常见问题
 
 - `connection refused`：Moon Bridge 未启动，或 `config.yml` 中的 `server.addr` 使用了其他端口。
-- Codex 看不到模型：重新执行第 5 步；Codex 需要 `CODEX_HOME` 目录下的 `models_catalog.json`。
+- Codex 看不到模型：重新执行第 5 步；Codex 需要 `CODEX_HOME` 目录下的 `models_catalog.json`。如果仍然看不到，在 `config.yml` 的 `routes` 字段中添加 Codex 能识别的模型 ID 作为别名（如 `gpt-5.5`、`gpt-5.2`），例如：
+  ```yaml
+  routes:
+    gpt-5.4:
+      model: deepseek-v4-pro
+      provider: deepseek
+    gpt-5.2:
+      model: deepseek-v4-flash
+      provider: deepseek
+  ```
 - 配置加载失败且提示 `field provider not found`：你使用的是旧版 `provider.providers` 配置；当前格式是顶层 `providers`、`models`、`routes`、`defaults`。
 - `401` 或认证失败：检查 `config.yml` 中的 DeepSeek API Key 是否正确。
 - `402` 或余额错误：检查 DeepSeek 开放平台账户余额。
