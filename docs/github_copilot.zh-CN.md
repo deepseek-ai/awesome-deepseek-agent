@@ -2,6 +2,63 @@
 
 # 接入 GitHub Copilot
 
+## 通过官方 BYOK 接入
+BYOK 指 *bring your own language model API key*，该功能可使我们在不登录或登录 GitHub 的情况下使用未内置的模型。VS Code 从 1.122 版本开始支持在不登录 GitHub 的情况下使用 BYOK。
+
+#### 1. 获取 DeepSeek API Key
+
+- 前往 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 创建 API Key。
+- 复制 Key（以 `sk-` 开头）。
+
+#### 2. 在 VS Code 中配置 API Key
+
+- 打开命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`）。
+- 执行 **Chat: Manage Language Models**。
+- 在新弹出的窗口中点击 **Add Models**，选择 **Custom Endpoint**，然后在 Group Name 输入框填入「DeepSeek」，在 API Key 输入框填入 DeepSeek API Key，在 API Type 选择框选中「Chat Completions」。
+- 完成上一步后，会弹出 chatLanguageModels.json 编辑框，将该 JSON 的 **models** 字段更改为以下内容：
+
+```json
+[
+	{
+		"id": "deepseek-v4-flash",
+		"name": "DeepSeek V4 Flash",
+		"url": "https://api.deepseek.com",
+		"toolCalling": true,
+		"vision": true,
+		"thinking": true,
+		"maxInputTokens": 1000000,
+		"maxOutputTokens": 384000,
+		"supportsReasoningEffort": [
+			"high",
+			"max"
+		]
+	},
+	{
+		"id": "deepseek-v4-pro",
+		"name": "DeepSeek V4 Pro",
+		"url": "https://api.deepseek.com",
+		"toolCalling": true,
+		"vision": true,
+		"thinking": true,
+		"maxInputTokens": 1000000,
+		"maxOutputTokens": 384000,
+		"supportsReasoningEffort": [
+			"high",
+			"max"
+		]
+	}
+]
+```
+
+#### 3. 选择模型并开始对话
+
+- 打开 Copilot Chat（`Cmd+Shift+I` / `Ctrl+Shift+I`）。
+- 点击聊天面板下方的模型选择器。
+- 选择 **DeepSeek V4 Pro** 或 **DeepSeek V4 Flash**。
+- 即可开始对话 — Agent 模式、工具调用及所有 Copilot 功能均可直接使用。
+
+## 通过社区插件接入
+
 **DeepSeek V4 for Copilot Chat** 是一个 VS Code 插件，将 DeepSeek V4 Pro 和 Flash 直接添加到 GitHub Copilot 的模型选择器中。你仍可使用 Copilot 的 Agent 模式、工具调用、Skills 和 MCP — 全部由 DeepSeek 驱动。
 
 #### 1. 安装插件
