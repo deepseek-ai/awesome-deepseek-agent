@@ -52,16 +52,17 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
             "cacheRead": 0.145,
             "cacheWrite": 0
           },
+          "thinkingLevelMap": {
+            "off": "off",
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "high": "high",
+            "xhigh": "max"
+          },
           "compat": {
             "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
+            "thinkingFormat": "deepseek"
           }
         },
         {
@@ -77,16 +78,17 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
             "cacheRead": 0.028,
             "cacheWrite": 0
           },
+          "thinkingLevelMap": {
+            "off": "off",
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "high": "high",
+            "xhigh": "max"
+          },
           "compat": {
             "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
+            "thinkingFormat": "deepseek"
           }
         }
       ]
