@@ -46,6 +46,7 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
             "input": 1.74,
             "output": 3.48,
@@ -71,6 +72,7 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
             "input": 0.14,
             "output": 0.28,
