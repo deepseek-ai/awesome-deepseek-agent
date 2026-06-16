@@ -23,6 +23,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Crush**       | Glamorous open-source AI coding agent for the terminal with multi-model support and LSP integration.        | [Guide](./docs/crush.md)       |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
+| **EasyGS** | Helps bioinformatics researchers without a computer science background experience agentic AI: a crop genomic selection AI Agent with DeepSeek support for completing GS bioinformatics analyses through natural language. | [Guide](./docs/easygs.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
 | **Hermes**      | Open-source self-improving AI agent built by Nous Research.                                                 | [Guide](./docs/hermes.md)      |
