@@ -30,9 +30,13 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
 | **LobeHub** | LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team. | [Guide](./docs/lobehub.md) |
 | **nanobot** | Open-source lightweight AI agent with chat platform integration, memory, MCP, and more. | [Guide](./docs/nanobot.md) |
+| **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
+| **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
+| **OpenZeroCode** | Local-first terminal AI coding agent inspired by OpenCode, with built-in tools, provider switching, and workspace memory. | [Guide](./docs/openzerocode.md) |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
 | **OpenClaw**    | Open-source personal AI assistant that plugs into chat tools (Feishu, WeChat) and is extensible via Skills. | [Guide](./docs/openclaw.md)    |
 | **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
+| **OpenZeroCode** | Local-first terminal AI coding agent inspired by OpenCode, with built-in tools, provider switching, and workspace memory. | [Guide](./docs/openzerocode.md) |
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
 | **Qwen Code** | Coding agent CLI by the Alibaba Qwen team — now with built-in DeepSeek provider support. | [Guide](./docs/qwen_code.md) |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
