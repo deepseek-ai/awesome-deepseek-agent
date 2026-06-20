@@ -33,7 +33,7 @@ In the AFK browser UI:
 5. Save the connection
 6. Optionally click **Test** to verify the connection
 
-AFK uses DeepSeek through an OpenAI-compatible API path.
+AFK's DeepSeek connection uses the default DeepSeek API endpoint automatically. Only set a Base URL if you use a custom proxy or gateway.
 
 #### 5. Start a Coding Session
 
