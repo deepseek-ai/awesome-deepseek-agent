@@ -6,7 +6,7 @@
 
 A curated list of guides for integrating **DeepSeek** models into popular AI agent and coding-assistant tools.
 
-Each guide walks through installation, configuration, and first run â€” so you can start using DeepSeek-V4-Pro or DeepSeek-V4-Flash inside your favorite tool in a few minutes.
+Each guide walks through installation, configuration, and first run â€?so you can start using DeepSeek-V4-Pro or DeepSeek-V4-Flash inside your favorite tool in a few minutes.
 
 </div>
 
@@ -22,7 +22,7 @@ Each guide walks through installation, configuration, and first run â€” so you c
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Crush**       | Glamorous open-source AI coding agent for the terminal with multi-model support and LSP integration.        | [Guide](./docs/crush.md)       |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
-| **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 â€” Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
+| **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 â€?Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
 | **Hermes**      | Open-source self-improving AI agent built by Nous Research.                                                 | [Guide](./docs/hermes.md)      |
@@ -31,17 +31,18 @@ Each guide walks through installation, configuration, and first run â€” so you c
 | **LobeHub** | LobeHub is your Chief Agent Operator, organizing your agents into 7Ã—24 operations by hiring, scheduling, and reporting on your entire AI team. | [Guide](./docs/lobehub.md) |
 | **nanobot** | Open-source lightweight AI agent with chat platform integration, memory, MCP, and more. | [Guide](./docs/nanobot.md) |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
+| **OK** | Open-source AI agent infrastructure - self-evolving skills, multi-agent DAG orchestration, OS-level sandbox, MCP-native. Single 15 MB binary with TUI, desktop, VS Code, and chat-platform frontends. | [Guide](./docs/ok.md) |
 | **OpenClaw**    | Open-source personal AI assistant that plugs into chat tools (Feishu, WeChat) and is extensible via Skills. | [Guide](./docs/openclaw.md)    |
 | **OpenCode**    | Open-source AI coding assistant available in terminal, web, and other forms.                                | [Guide](./docs/opencode.md)    |
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
-| **Qwen Code** | Coding agent CLI by the Alibaba Qwen team â€” now with built-in DeepSeek provider support. | [Guide](./docs/qwen_code.md) |
-| **Reasonix**    | DeepSeek-native coding agent that runs in the terminal â€” cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
+| **Qwen Code** | Coding agent CLI by the Alibaba Qwen team â€?now with built-in DeepSeek provider support. | [Guide](./docs/qwen_code.md) |
+| **Reasonix**    | DeepSeek-native coding agent that runs in the terminal â€?cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
 
 ## Resources
 
-- [DeepSeek Platform](https://platform.deepseek.com/) â€” get an API key.
-- [DeepSeek API Docs](https://api-docs.deepseek.com/) â€” API reference and guides.
+- [DeepSeek Platform](https://platform.deepseek.com/) â€?get an API key.
+- [DeepSeek API Docs](https://api-docs.deepseek.com/) â€?API reference and guides.
 
 ## Contributing
 
