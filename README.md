@@ -36,6 +36,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Pi**          | Minimal, extensible terminal coding harness with tree-structured sessions and custom providers.               | [Guide](./docs/pi_mono.md)     |
 | **Qwen Code** | Coding agent CLI by the Alibaba Qwen team — now with built-in DeepSeek provider support. | [Guide](./docs/qwen_code.md) |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
+| **VS Code Copilot** | Use DeepSeek V4 natively in Copilot Chat via `chatLanguageModels.json` — no extension needed. | [Guide](./docs/vscode_copilot.md) |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
 
 ## Resources
