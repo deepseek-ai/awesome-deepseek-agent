@@ -34,6 +34,7 @@
 | **OpenClaw**    | 开源个人 AI 助手，可接入飞书、微信等聊天工具，并通过 Skill 扩展能力。 | [指南](./docs/openclaw.zh-CN.md)    |
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
+| **Qoder** | Qoder 团队推出的 AI 编程 Agent 系列 —— CLI 面向命令行开发者，Qoder Desktop 面向自主软件开发，QoderWork（CN）作为桌面级 Agentic 助手。DeepSeek 为内置一方模型，支持自带 Key 接入与 100 万 token 上下文。 | [指南](./docs/qoder.zh-CN.md) |
 | **Qwen Code** | 阿里巴巴通义千问团队推出的 Coding Agent CLI，现已全面支持 DeepSeek 提供商。 | [指南](./docs/qwen_code.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
