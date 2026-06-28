@@ -19,6 +19,7 @@
 | **Cherry Studio** | 开源跨平台桌面 AI 客户端，内置 300+ 助手、MCP、知识库与多模型对话。 | [指南](./docs/cherry_studio.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
 | **Cline** | 运行在 VS Code 中的 AI 编程助手扩展，支持多种 API 供应商。 | [指南](./docs/cline.zh-CN.md) |
+| **Codelf** | 内置自主式 AI Agent 的轻量级桌面 IDE，原生支持 DeepSeek，具备多 Agent 群聊协作、浏览器/桌面自动化、本地 RAG、定时任务与微信集成等能力。 | [指南](./docs/codelf.zh-CN.md) |
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
