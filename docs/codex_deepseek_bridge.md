@@ -1,23 +1,20 @@
 [English](./codex_deepseek_bridge.md) | [简体中文](./codex_deepseek_bridge.zh-CN.md) · [← Back](../README.md)
 
-# Integrate with Codex DeepSeek Bridge
+# Run Codex App on DeepSeek
 
-[Codex DeepSeek Bridge](https://github.com/JetXu-LLM/codex-deepseek-bridge) is a small local bridge for running the OpenAI Codex app or CLI with DeepSeek. Codex keeps using its native Responses API workflow, while the bridge translates model calls to DeepSeek's Chat Completions API.
+[Codex DeepSeek Bridge](https://github.com/JetXu-LLM/codex-deepseek-bridge) lets the official OpenAI Codex app use DeepSeek with one local setup command. You keep Codex Desktop, approvals, plugins, MCP servers, and tool workflows; the bridge sends model calls to DeepSeek.
 
-- **GitHub:** <https://github.com/JetXu-LLM/codex-deepseek-bridge>
+- **One command sets it up** after download. No build step, and no Node.js runtime for the bridge binary.
+- **No ChatGPT subscription needed.** Use your own DeepSeek API key.
+- **Your key stays local.** It is never passed as a command-line argument, printed, or logged.
+- **Your Codex stays your Codex.** Plugins and tools remain in Codex while DeepSeek handles the model call.
+- **One command restores everything.** `restore` removes the managed Codex config block.
 
-The bridge uses stable Codex-facing model names (`deepseek-pro` and `deepseek-flash`), maps them to the current DeepSeek models (`deepseek-v4-pro` and `deepseek-v4-flash`), and keeps the DeepSeek API key on your machine.
+![Codex composer running deepseek-pro](./assets/codex_deepseek_bridge_composer.png)
 
-#### 1. Install Codex and the bridge
+#### 1. Quick Start
 
-Install the [Codex app](https://developers.openai.com/codex/) or Codex CLI first. For CLI usage:
-
-```sh
-npm install -g @openai/codex
-codex --version
-```
-
-Then download a bridge binary. Node.js is not required for the bridge binary.
+You need a DeepSeek API key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys) and the Codex app on macOS or Windows. Copy the command for your platform, run it, paste your DeepSeek API key when asked, then restart Codex.
 
 macOS Apple Silicon:
 
@@ -25,7 +22,7 @@ macOS Apple Silicon:
 curl -L -o codex-deepseek-bridge-macos https://github.com/JetXu-LLM/codex-deepseek-bridge/releases/latest/download/codex-deepseek-bridge-macos
 xattr -d com.apple.quarantine ./codex-deepseek-bridge-macos 2>/dev/null || true
 chmod +x ./codex-deepseek-bridge-macos
-./codex-deepseek-bridge-macos --version
+./codex-deepseek-bridge-macos setup
 ```
 
 macOS Intel:
@@ -34,7 +31,7 @@ macOS Intel:
 curl -L -o codex-deepseek-bridge-macos-x64 https://github.com/JetXu-LLM/codex-deepseek-bridge/releases/latest/download/codex-deepseek-bridge-macos-x64
 xattr -d com.apple.quarantine ./codex-deepseek-bridge-macos-x64 2>/dev/null || true
 chmod +x ./codex-deepseek-bridge-macos-x64
-./codex-deepseek-bridge-macos-x64 --version
+./codex-deepseek-bridge-macos-x64 setup
 ```
 
 Windows PowerShell:
@@ -47,62 +44,27 @@ Remove-Item $out -ErrorAction SilentlyContinue
 curl.exe -L --fail --progress-bar -o $out $url
 if ($LASTEXITCODE -ne 0) { throw "Download failed." }
 if ((Get-Item $out).Length -lt 10MB) { throw "Download looks incomplete. Run the commands again." }
-& $out --version
+& $out setup
 ```
 
-#### 2. Get a DeepSeek API Key
+When setup finishes, restart Codex. The app will use `deepseek-pro` by default.
 
-Get your API key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
+#### 2. What setup does
 
-Do not pass the key as a command-line argument. The bridge reads it from an interactive prompt, `--from-stdin`, or `DEEPSEEK_API_KEY`, and stores it locally with owner-only file permissions.
+`setup` writes one reversible block into Codex's `config.toml`, points Codex at a local bridge on `127.0.0.1`, starts the bridge, and maps Codex's default `deepseek-pro` model to `deepseek-v4-pro`.
 
-#### 3. Run setup
+It also backs up your existing Codex config. The DeepSeek key is read from the terminal prompt, `--from-stdin`, or `DEEPSEEK_API_KEY`; it is stored locally with owner-only permissions.
 
-Run `setup` with the binary you downloaded:
+#### 3. Models and reasoning
 
-macOS:
+The bridge uses stable Codex-facing model names and maps them to the current DeepSeek V4 models:
 
-```sh
-./codex-deepseek-bridge-macos setup
-```
-
-Windows PowerShell:
-
-```powershell
-.\codex-deepseek-bridge-win-x64.exe setup
-```
-
-Setup does the following:
-
-- backs up the existing Codex `config.toml`;
-- writes one managed Codex provider block pointing to `127.0.0.1`;
-- starts the local bridge;
-- publishes `deepseek-pro` for Codex by default;
-- maps `deepseek-pro` to `deepseek-v4-pro`.
-
-Restart Codex after setup completes.
-
-#### 4. Use Codex with DeepSeek
-
-Open the Codex app, or start Codex CLI inside a project:
-
-```sh
-cd /path/to/my-project
-codex
-```
-
-Codex now sends Responses API requests to the local bridge, and the bridge sends DeepSeek-compatible requests to `deepseek-v4-pro`.
-
-![Codex composer running deepseek-pro](./assets/codex_deepseek_bridge_composer.png)
-
-DeepSeek V4 metadata is written into Codex's local model catalog:
-
-| Codex model | Upstream DeepSeek model | Notes |
+| Codex model | DeepSeek model | Notes |
 |---|---|---|
 | `deepseek-pro` | `deepseek-v4-pro` | Default coding model |
-| `deepseek-flash` | `deepseek-v4-flash` | Fast model, mapped by the bridge |
+| `deepseek-flash` | `deepseek-v4-flash` | Fast model mapped by the bridge |
 
-The model catalog declares a 1M-token context window and `384000` max output tokens. Reasoning effort maps through to DeepSeek thinking:
+The local model metadata declares a 1M-token context window and `384000` max output tokens. Codex reasoning efforts map to DeepSeek thinking:
 
 | Codex reasoning | DeepSeek behavior |
 |---|---|
@@ -110,56 +72,42 @@ The model catalog declares a 1M-token context window and `384000` max output tok
 | `high` | high thinking |
 | `none` | thinking off |
 
-#### 5. Keep Codex tools and plugins
+#### 4. Keep Codex tools and plugins
 
 Codex still owns the app, approvals, workspace access, plugins, MCP servers, and tool execution. The bridge only translates the model protocol.
 
-It handles Codex Responses tool calls, including function tools, namespace tools, and custom/freeform tools such as `apply_patch`, then returns DeepSeek tool calls back in the shape Codex expects. This lets Codex-side tools such as Browser, Chrome, Computer Use, MCP, document workflows, and plugin-provided search tools stay in the normal Codex workflow while DeepSeek handles the model call.
+It handles Codex Responses tool calls, including function tools, namespace tools, and custom/freeform tools such as `apply_patch`, then returns DeepSeek tool calls in the shape Codex expects. Browser, Chrome, Computer Use, MCP, document workflows, and plugin-provided search tools can stay in the normal Codex workflow when they are available in your Codex environment.
 
-Image input is off by default because DeepSeek's public API does not yet expose compatible multimodal input. The bridge already has a vision path, so when DeepSeek supports image input, image-dependent plugin flows can be enabled without changing the Codex-side workflow.
+Image input is off by default because DeepSeek's public API does not yet expose compatible multimodal input. The bridge already has a vision path, so future image-input support can use the same Codex-side workflow.
 
-#### 6. Verify and view the local report
+#### 5. See every call
 
-Check the bridge health:
-
-```sh
-./codex-deepseek-bridge-macos doctor
-```
-
-If the bridge binary is on your `PATH`, you can use:
-
-```sh
-codex-deepseek-bridge doctor
-```
-
-Open the local report:
+Every request passes through the bridge. Open the local report to see latency, token usage, DeepSeek cache hits, and recent calls:
 
 ```sh
 codex-deepseek-bridge report
 ```
 
-The report is served from `127.0.0.1`, is read-only, and shows requests, latency, token usage, DeepSeek cache hits, and recent calls.
+If you used a downloaded binary that is not on your `PATH`, call it the same way you ran setup, for example `./codex-deepseek-bridge-macos report`.
 
 ![Codex DeepSeek Bridge report](./assets/codex_deepseek_bridge_report.png)
 
-#### Optional: show both model labels in Codex Desktop
+#### 6. Restore
 
-Current Codex Desktop builds may show `Custom` for local custom models even when the bridge is working. The default setup does not need to modify Codex Desktop.
-
-If you specifically want both `deepseek-pro` and `deepseek-flash` to appear with their labels in the Desktop model picker, read the bridge README and use the optional Desktop compatibility mode only if you accept the local app-bundle change.
-
-![Codex Desktop picker with DeepSeek models](./assets/codex_deepseek_bridge_picker.jpg)
-
-#### Restore
-
-To undo the setup:
+To remove the managed Codex config block and stop the bridge:
 
 ```sh
 codex-deepseek-bridge restore
 ```
 
-`restore` removes the managed Codex config block and stops the bridge. To remove the stored key, logs, and local state as well:
+To remove the stored key, logs, and local state as well:
 
 ```sh
 codex-deepseek-bridge restore --purge
 ```
+
+#### Optional: model labels in Codex Desktop
+
+Current Codex Desktop builds may show `Custom` for local custom models even when the bridge is working. The default setup does not need to modify Codex Desktop; the bridge README describes an optional Desktop compatibility mode for users who specifically want both model labels in the picker.
+
+![Codex Desktop picker with DeepSeek models](./assets/codex_deepseek_bridge_picker.jpg)
