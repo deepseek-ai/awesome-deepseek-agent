@@ -15,6 +15,7 @@
 
 | 工具            | 简介                                                                  | 指南                                |
 | --------------- | --------------------------------------------------------------------- | ----------------------------------- |
+| **AionUi** | 免费开源的多 AI Agent Cowork 应用，多个 agent 可读写文件、编写代码、浏览网页、生成 Office 文档，支持任意 API Key。 | [指南](./docs/aionui.zh-CN.md) |
 | **AstrBot** | 开源的 Agent 助手，支持接入 QQ、微信、飞书等消息平台，并可通过 Skill、插件和 MCP 扩展能力。 | [指南](./docs/astrbot.zh-CN.md) |
 | **Cherry Studio** | 开源跨平台桌面 AI 客户端，内置 300+ 助手、MCP、知识库与多模型对话。 | [指南](./docs/cherry_studio.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
