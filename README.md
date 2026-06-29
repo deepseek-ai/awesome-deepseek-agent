@@ -21,6 +21,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Cline** | AI coding assistant extension for VS Code supporting multiple API providers. | [Guide](./docs/cline.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Crush**       | Glamorous open-source AI coding agent for the terminal with multi-model support and LSP integration.        | [Guide](./docs/crush.md)       |
+| **Dao Code** | Open-source TypeScript terminal coding agent for DeepSeek-V4 — builds on DeepSeek's strong price-performance and ultra-cheap cache pricing, engineering byte-stable prefixes and cache-reusing forks so cross-session memory and a continuous self-correction layer add almost no token cost; 1M context, layered-permission sandbox, Skills/MCP/Hooks, Claude Code config compatible. | [Guide](./docs/dao_code.md) |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
