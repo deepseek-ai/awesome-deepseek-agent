@@ -87,6 +87,17 @@ $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 $env:CLAUDE_CODE_EFFORT_LEVEL="max"
 ```
 
+#### 方法三:使用 CC Switch
+
+前往[CC Switch](https://github.com/farion1231/cc-switch/releases)官方github仓库下载系统对应的版本
+
+安装完成后添加deepseek供应商
+![供应商页](./assets/cc_switch_step_1.png)
+
+编辑配置,填入 API KEY ,在[DeepSeek Platfrom](https://platform.deepseek.com/api_keys)获取 API KEY
+
+配置完成后即可正常使用
+
 ### 使用 Claude Code
 
 #### 使用 Claude Code CLI
