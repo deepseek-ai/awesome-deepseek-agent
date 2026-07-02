@@ -33,6 +33,7 @@
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **Langcli** | 100%兼容Claude code、支持Deepseek v4等主流LLM模型的开源AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
+| **知令** | 智能体桌面软件，图形界面操作，深度适配国产模型。支持 DOCX/XLSX 文档编辑、浏览器自动操作、应用自动操作等能力，面向科研与工程场景。 | [指南](./docs/zhiling.zh-CN.md) |
 
 ## 相关资源
 
