@@ -27,6 +27,9 @@
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
 | **Hermes**      | 开源自我进化 AI 助手。                                                | [指南](./docs/hermes.zh-CN.md)      |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
+| **KiraAI** | 开源模块化 AI 数字生命平台，内置 DeepSeek 专用集成，支持思维模式、推理强度控制及多平台聊天接入（QQ、Telegram、微信、Discord）。 | [指南](./docs/kira-ai.zh-CN.md) |
+| **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
+| **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
 | **Langcli** | 100% 兼容 Claude Code、支持 DeepSeek V4 等主流 LLM 模型的开源 AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 | **LobeHub** | LobeHub 是你的 Chief Agent Operator，通过招聘、排班并报告整个 AI 团队，将你的 Agent 组织成 7×24 小时运作。 | [指南](./docs/lobehub.zh-CN.md) |
 | **nanobot** | 开源轻量级 AI 智能体，支持接入聊天工具、记忆、MCP 等。 | [指南](./docs/nanobot.zh-CN.md) |
