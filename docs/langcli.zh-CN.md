@@ -30,8 +30,27 @@ npm i -g langcli-com
 
 #### 2. 快速开始
 
-##### API Key 准备
- 打开[LangRouter官网](https://langrouter.ai/)，注册一个账号，保存api-key。备注：可免费体验的。
+##### API Key 与提供商（建议使用 DeepSeek 官方）
+
+方案 A — DeepSeek 官方（推荐）
+
+1. 获取 DeepSeek API Key：访问 [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys)，创建或复制你的 API Key。
+2. 将 Langcli 配置为使用 DeepSeek 的 Anthropic 兼容端点。设置以下环境变量：
+
+```bash
+export ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
+export ANTHROPIC_AUTH_TOKEN="<你的 DeepSeek API Key>"
+export ANTHROPIC_MODEL="deepseek-v4-pro[1m]"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-v4-pro[1m]"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-v4-pro[1m]"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash[1m]"
+```
+
+将模型设置为 `deepseek-v4-pro[1m]` 或 `deepseek-v4-flash[1m]`。`[1m]` 后缀用于启用 100 万 token 的完整上下文窗口。更多配置选项请参阅 [Langcli 文档](https://langcli.com/docs)。
+
+方案 B — 第三方路由器（可选）
+
+部分用户也会通过第三方服务（例如 LangRouter）中转 API 请求。这些为第三方服务，**不由 DeepSeek 维护或背书**。如选择使用，请向该服务提供商获取凭证并按说明操作。使用第三方路由器需自行评估风险——官方端点兼容性与安全性最佳，建议优先使用。
 
 ##### 运行
 ```bash
