@@ -1,4 +1,4 @@
-[English](./waveloom.md) | [简体中文](./waveloom.zh-CN.md) · [← Back](../README.md)
+[English](./waveloom.md) | [简体中文](./waveloom.zh-CN.md) · [← Back](../README.zh-CN.md)
 
 # 集成 Waveloom
 
