@@ -20,6 +20,7 @@
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
 | **Cline** | 运行在 VS Code 中的 AI 编程助手扩展，支持多种 API 供应商。 | [指南](./docs/cline.zh-CN.md) |
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
+| **Continue** | 开源 AI 编程助手，支持 VS Code 和 JetBrains，提供可自定义的模型供应商与 Agent 工作流。 | [指南](./docs/continue.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
