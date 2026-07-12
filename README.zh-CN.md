@@ -25,7 +25,7 @@
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
-| **Hermes**      | 开源自我进化 AI 助手。                                                | [指南](./docs/hermes.zh-CN.md)      |
+| **Hermes**      | 支持 DeepSeek V4 的自我进化 AI 智能体，具备模型路由、多配置管理、100 万上下文及 200+ 内置技能。 | [指南](./docs/hermes.zh-CN.md)      |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **Langcli** | 100% 兼容 Claude Code、支持 DeepSeek V4 等主流 LLM 模型的开源 AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 | **LobeHub** | LobeHub 是你的 Chief Agent Operator，通过招聘、排班并报告整个 AI 团队，将你的 Agent 组织成 7×24 小时运作。 | [指南](./docs/lobehub.zh-CN.md) |
