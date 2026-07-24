@@ -2,128 +2,58 @@
 
 # Integrate with Pi
 
-Pi (pi-mono) is a minimal, aggressively extensible terminal coding harness. It adapts to your workflows through TypeScript extensions, skills, prompt templates, and themes — with tree-structured sessions and 15+ built-in providers.
+Pi (pi-mono) is a minimal, extensible terminal coding harness with built-in provider and model catalogs. Visit the official website at [pi.dev](https://pi.dev/).
 
 #### 1. Install Pi
 
-- Install [Node.js](https://nodejs.org/en/download/).
-- Run the following command in your terminal to install Pi:
+Use Pi's official installer:
 
-```bash
-npm install -g @earendil-works/pi-coding-agent
-```
+- **Linux / macOS**
 
-- After installation, run the following command. If the version number is displayed, the installation is successful:
+  ```bash
+  curl -fsSL https://pi.dev/install.sh | sh
+  ```
+
+- **Windows (PowerShell)**
+
+  ```powershell
+  irm https://pi.dev/install.ps1 | iex
+  ```
+
+> **Windows note:** Pi uses a Bash shell for its shell tool. Install [Git for Windows](https://git-scm.com/download/win) or provide another Bash executable.
+
+Verify the installation:
 
 ```bash
 pi --version
 ```
 
-> **Note:** Linux / macOS users can also install via the official script:
-> ```bash
-> curl -fsSL https://pi.dev/install.sh | sh
-> ```
+#### 2. Configure the DeepSeek Provider
 
-#### 2. Configure DeepSeek Provider
+DeepSeek is a built-in API-key provider in Pi. You do not need to create or edit `models.json`.
 
-Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compatible provider:
-
-- **Linux / macOS**: `~/.pi/agent/models.json`
-- **Windows**: `%USERPROFILE%\.pi\agent\models.json`
-
-```json
-{
-  "providers": {
-    "deepseek": {
-      "baseUrl": "https://api.deepseek.com",
-      "api": "openai-completions",
-      "apiKey": "$DEEPSEEK_API_KEY",
-      "models": [
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
-          "cost": {
-            "input": 1.74,
-            "output": 3.48,
-            "cacheRead": 0.145,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
-          "cost": {
-            "input": 0.14,
-            "output": 0.28,
-            "cacheRead": 0.028,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
-        }
-      ]
-    }
-  }
-}
-```
-
-Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
-
-Set the environment variable:
-
-Linux / Mac users:
-
-```bash
-export DEEPSEEK_API_KEY="<your DeepSeek API Key>"
-```
-
-Windows users:
-
-```powershell
-$env:DEEPSEEK_API_KEY="<your DeepSeek API Key>"
-```
-
-#### 3. Run and Select Model
-
-- Enter the project directory and execute the `pi` command:
+Get an API key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys), then start Pi in your project directory:
 
 ```bash
 cd /path/to/my-project
 pi
 ```
 
-- Type `/model` to open the model switcher.
-- Select **deepseek** and choose `DeepSeek-V4-Pro` or `DeepSeek-V4-Flash`.
-- Start coding with your minimal terminal harness.
+In Pi:
 
-For more configuration options, see the [Pi models documentation](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent/docs/models.md).
+1. Run `/login`.
+2. Select **Sign in with an API key**.
+3. Search for and select **DeepSeek**.
+4. Paste your DeepSeek API key and press Enter to save it.
+
+Pi stores the credential locally and makes the DeepSeek models available automatically.
+
+#### 3. Select a Model and Start Coding
+
+Run `/model` (or press Ctrl+L), search for `deepseek`, and select a model.
+
+Pi's built-in catalog currently includes `deepseek-v4-pro` and `deepseek-v4-flash`. Both support up to 1M tokens of context and 384K output tokens. For maximum reasoning on coding tasks, select `deepseek-v4-pro` and press Shift+Tab until the thinking level is `max`.
+
+You are ready to start coding.
+
+For further usage and configuration details, see the [Pi documentation](https://github.com/earendil-works/pi-mono/tree/main/packages/coding-agent/docs).
