@@ -15,6 +15,7 @@ Each guide walks through installation, configuration, and first run — so you c
 
 | Tool            | Description                                                                                                 | Guide                          |
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| **Jig** | Python multi-agent orchestration framework with 12 preset roles, 4-layer memory, and hard-constraint Harness layer — optimized for DeepSeek V4 with cache-first prefix hashing and flash-first cost routing. | [Guide](./docs/jig.md) |
 | **AstrBot** | Open-source agent assistant for Feishu, Telegram and more, extensible with skills, plugins, and MCPs. | [Guide](./docs/astrbot.md) |
 | **AgentHarness** | Self-built multi-agent orchestration framework with hard-constraint Harness layer, 12 preset roles, and DeepSeek-native cache optimization. | [Guide](./docs/agent-harness.md) |
 | **Cherry Studio** | Open-source cross-platform desktop AI client with 300+ assistants, MCP support, knowledge bases, and multi-model chat. | [Guide](./docs/cherry_studio.md) |
