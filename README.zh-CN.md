@@ -33,6 +33,7 @@
 | **Oh My Pi** | 基于 Pi 分支扩展的终端 AI 编程 Agent，提供 OMP 专用工具、模型角色、MCP、插件与 Agent 工作流。 | [指南](./docs/oh-my-pi.zh-CN.md) |
 | **OpenClaw**    | 开源个人 AI 助手，可接入飞书、微信等聊天工具，并通过 Skill 扩展能力。 | [指南](./docs/openclaw.zh-CN.md)    |
 | **OpenCode**    | 开源 AI 编程助手，提供终端、网页等多种运行形式。                      | [指南](./docs/opencode.zh-CN.md)    |
+| **Open Science** | 面向科学研究的开源桌面 AI 工作台，提供沙箱化 Agent Runtime、Notebook、Skills、Connectors 与内置 DeepSeek V4 支持。 | [指南](./docs/openscience.zh-CN.md) |
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Qwen Code** | 阿里巴巴通义千问团队推出的 Coding Agent CLI，现已全面支持 DeepSeek 提供商。 | [指南](./docs/qwen_code.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
