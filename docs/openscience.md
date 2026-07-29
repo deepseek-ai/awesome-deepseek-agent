@@ -17,21 +17,15 @@ Download the appropriate package from the latest GitHub Release:
 - Intel macOS: `open-science-0.7.3-mac-x64.dmg`
 - Windows 10/11 x64: `open-science-0.7.3-win-x64-setup.exe`
 
-<div align="center">
-<img src="./assets/aipoch_open_science_release.png" width="720" border="1" />
-</div>
+<img width="1009" height="709" alt="aipoch_open_science_release" src="https://github.com/user-attachments/assets/e576b247-72dc-4972-bb3a-1aabdcb0059e" />
 
 On first launch, Open Science checks system compatibility, application storage permission, secure credential storage, and installation-network access. Resolve any item that is not marked **Ready**, then click **Continue**.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_environment.png" width="720" border="1" />
-</div>
+<img width="1266" height="953" alt="aipoch_open_science_environment" src="https://github.com/user-attachments/assets/6932fe0c-3617-4c39-b581-bc8b2773698d" />
 
 Next, select one Agent Runtime. Only the runtime you want to use must be installed. Click **Install**, wait for detection to finish, and continue when the selected runtime is marked **Active**.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_agent_runtime.png" width="720" border="1" />
-</div>
+<img width="1266" height="953" alt="aipoch_open_science_agent_runtime" src="https://github.com/user-attachments/assets/c359f435-1031-4950-8796-6273578b1651" />
 
 #### 2. Configure the Built-in DeepSeek Provider
 
@@ -41,27 +35,19 @@ During first launch, the same configuration is available in the **Model provider
 
 From the project home page, click the gear icon in the upper-right corner.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_settings.jpg" width="720" border="1" />
-</div>
+<img width="1280" height="848" alt="aipoch_open_science_settings" src="https://github.com/user-attachments/assets/4a573525-4498-49c7-9fb1-1d081fea2a1d" />
 
 Open **Model**, scroll to the bottom of the provider list, and click **Add provider**.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_add_provider.jpg" width="720" border="1" />
-</div>
+<img width="1280" height="848" alt="aipoch_open_science_add_provider" src="https://github.com/user-attachments/assets/10f340c0-d65d-426a-bbec-5debadac154f" />
 
 Set **Provider type** to **DeepSeek**. Use the built-in provider rather than **Custom Gateway** for the standard DeepSeek API.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_select_deepseek.jpg" width="720" border="1" />
-</div>
+<img width="1690" height="1139" alt="aipoch_open_science_select_deepseek" src="https://github.com/user-attachments/assets/ae7ce7bf-1cbe-4830-9907-91ead98b96ff" />
 
 Paste the API key into **API Key** and click **Save**. Do not put the endpoint URL in the API Key field. The DeepSeek form exposes the three supported V4 model IDs:
 
-<div align="center">
-<img src="./assets/aipoch_open_science_supported_models.jpg" width="720" border="1" />
-</div>
+<img width="1690" height="1139" alt="aipoch_open_science_supported_models" src="https://github.com/user-attachments/assets/a2f2e2bc-fb51-4280-8b9b-aed0fe69f5e3" />
 
 | Model | Recommended use | Context window |
 | --- | --- | --- |
@@ -73,15 +59,12 @@ Use the current V4 model IDs exactly as shown above; do not substitute legacy De
 
 After saving, Open Science tests the provider. A green status icon on the DeepSeek provider card indicates that the connection check passed. Set the active model to the required DeepSeek model; the example below uses `deepseek-v4-pro[1m]`.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_active_deepseek.jpg" width="720" border="1" />
-</div>
+<img width="1280" height="848" alt="aipoch_open_science_active_deepseek" src="https://github.com/user-attachments/assets/a21c6e5b-7e9a-4102-8508-34fb18d00bb2" />
 
 For `deepseek-v4-pro`, set **Reasoning effort** to **Max** for the strongest reasoning mode. You can set the default on the Model settings page or override it for the current chat from the message toolbar.
 
-<div align="center">
-<img src="./assets/aipoch_open_science_reasoning_effort.png" width="720" border="1" />
-</div>
+<img width="583" height="207" alt="aipoch_open_science_reasoning_effort" src="https://github.com/user-attachments/assets/54ccfe35-23c3-44a3-9635-826d466c6695" />
+
 
 The built-in provider supplies the endpoint automatically. Open Science v0.7.3 defines:
 
@@ -94,9 +77,7 @@ You normally should not edit either address manually.
 
 The chat context indicator reports usage against the full model window. For example, `71k / 1M tokens (7%)` confirms a 1-million-token ceiling:
 
-<div align="center">
-<img src="./assets/aipoch_open_science_context_1m.png" width="520" border="1" />
-</div>
+<img width="355" height="136" alt="aipoch_open_science_context_1m" src="https://github.com/user-attachments/assets/bbfbe662-f164-4d48-b5f9-5f05a30c3660" />
 
 #### 3. Finish the First-launch Setup
 
@@ -113,10 +94,8 @@ Choose a **Data location** for projects, artifacts, notebooks, and runtime files
 3. Click **Create project**.
 4. In the model selector above the message box, confirm that `deepseek-v4-pro`, `deepseek-v4-pro[1m]`, or `deepseek-v4-flash` is active.
 5. Enter a prompt and send it.
-
-<div align="center">
-<img src="./assets/aipoch_open_science_deepseek_project.jpg" width="720" border="1" />
-</div>
+   
+<img width="1084" height="681" alt="aipoch_open_science_deepseek_project" src="https://github.com/user-attachments/assets/4083c3bb-0b2b-480b-a104-9a78e0bfa9a3" />
 
 For the first check, use a small prompt that is easy to verify:
 
