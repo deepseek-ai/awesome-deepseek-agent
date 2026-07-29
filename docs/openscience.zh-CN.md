@@ -17,21 +17,15 @@ AIPOCH Open Science 是一款面向科学研究的开源桌面 AI 工作台，�
 - Intel macOS：`open-science-0.7.3-mac-x64.dmg`
 - Windows 10/11 x64：`open-science-0.7.3-win-x64-setup.exe`
 
-<div align="center">
-<img src="./assets/aipoch_open_science_release.png" width="720" border="1" />
-</div>
+<img width="1009" height="709" alt="aipoch_open_science_release" src="https://github.com/user-attachments/assets/dc6a8f53-fd9e-4a6e-8a8c-5348e7f9167e" />
 
 首次启动时，Open Science 会检查系统兼容性、应用存储权限、安全凭据存储和安装网络。处理所有未显示为 **Ready** 的项目，然后点击 **Continue**。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_environment.png" width="720" border="1" />
-</div>
+<img width="1266" height="953" alt="aipoch_open_science_environment" src="https://github.com/user-attachments/assets/e91c18d7-d297-4ba2-941d-009956951ecf" />
 
 下一步选择一个 Agent Runtime。只需要安装实际准备使用的 Runtime。点击 **Install**，等待自动检测完成；目标 Runtime 显示为 **Active** 后继续。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_agent_runtime.png" width="720" border="1" />
-</div>
+<img width="1266" height="953" alt="aipoch_open_science_agent_runtime" src="https://github.com/user-attachments/assets/b1c6a5ea-8936-4974-8625-746bb2527147" />
 
 #### 2. 配置内置 DeepSeek 服务
 
@@ -41,27 +35,19 @@ AIPOCH Open Science 是一款面向科学研究的开源桌面 AI 工作台，�
 
 在项目主页点击右上角的齿轮图标。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_settings.jpg" width="720" border="1" />
-</div>
+<img width="1280" height="848" alt="aipoch_open_science_settings" src="https://github.com/user-attachments/assets/ed3fd6f3-c64c-48aa-afde-db9c0e2cf959" />
 
 打开 **Model**，滚动到 Provider 列表底部，点击 **Add provider**。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_add_provider.jpg" width="720" border="1" />
-</div>
+<img width="1280" height="848" alt="aipoch_open_science_add_provider" src="https://github.com/user-attachments/assets/f1f6bf2f-2390-4ee7-931c-2bcadbcdc1b5" />
 
 将 **Provider type** 设为 **DeepSeek**。连接 DeepSeek 官方 API 时使用内置服务，不要选择 **Custom Gateway**。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_select_deepseek.jpg" width="720" border="1" />
-</div>
+<img width="1690" height="1139" alt="aipoch_open_science_select_deepseek" src="https://github.com/user-attachments/assets/d77b2dbb-b3cc-4c91-ab55-a94ce11600bb" />
 
 将 API Key 粘贴到 **API Key**，然后点击 **Save**。不要把接口地址填入 API Key 字段。DeepSeek 配置页会显示三个受支持的 V4 模型 ID：
 
-<div align="center">
-<img src="./assets/aipoch_open_science_supported_models.jpg" width="720" border="1" />
-</div>
+<img width="1690" height="1139" alt="aipoch_open_science_supported_models" src="https://github.com/user-attachments/assets/772d649b-0c14-4589-bd8b-c7cf4df19b43" />
 
 | 模型 | 推荐用途 | 上下文窗口 |
 | --- | --- | --- |
@@ -73,15 +59,11 @@ AIPOCH Open Science 是一款面向科学研究的开源桌面 AI 工作台，�
 
 保存后，Open Science 会测试该 Provider。DeepSeek Provider 卡片显示绿色状态图标，表示连接检查已通过。随后选择需要的 DeepSeek 模型作为 Active model；下图使用 `deepseek-v4-pro[1m]`。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_active_deepseek.jpg" width="720" border="1" />
-</div>
+<img width="1280" height="848" alt="aipoch_open_science_active_deepseek" src="https://github.com/user-attachments/assets/29481b57-1e42-4ca9-af61-af4fe998539c" />
 
 使用 `deepseek-v4-pro` 时，将 **Reasoning effort** 设为 **Max**，以获得最高推理强度。既可以在 Model 设置页配置默认值，也可以从消息输入区为当前会话单独切换。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_reasoning_effort.png" width="720" border="1" />
-</div>
+<img width="583" height="207" alt="aipoch_open_science_reasoning_effort" src="https://github.com/user-attachments/assets/11d3232e-c518-4b2b-b45d-91f7a7d2c368" />
 
 使用内置服务时，Open Science 会自动提供接口地址。v0.7.3 定义的地址为：
 
@@ -94,9 +76,7 @@ AIPOCH Open Science 是一款面向科学研究的开源桌面 AI 工作台，�
 
 聊天界面的上下文指示器会按完整模型窗口显示用量。例如 `71k / 1M tokens (7%)` 可以直接确认当前上限为 100 万 token：
 
-<div align="center">
-<img src="./assets/aipoch_open_science_context_1m.png" width="520" border="1" />
-</div>
+<img width="355" height="136" alt="aipoch_open_science_context_1m" src="https://github.com/user-attachments/assets/b81dea52-ea8b-430e-b5b8-5675ac86cd67" />
 
 #### 3. 完成首次启动配置
 
@@ -114,9 +94,7 @@ AIPOCH Open Science 是一款面向科学研究的开源桌面 AI 工作台，�
 4. 在输入框上方的模型选择器中，确认当前模型是 `deepseek-v4-pro`、`deepseek-v4-pro[1m]` 或 `deepseek-v4-flash`。
 5. 输入提示词并发送。
 
-<div align="center">
-<img src="./assets/aipoch_open_science_deepseek_project.jpg" width="720" border="1" />
-</div>
+<img width="1084" height="681" alt="aipoch_open_science_deepseek_project" src="https://github.com/user-attachments/assets/dcd9c394-9b8c-49df-a725-237bcd6e4f91" />
 
 首次验证建议使用一个容易检查的小任务：
 
