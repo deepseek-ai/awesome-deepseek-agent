@@ -34,9 +34,10 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 
 - 选择 **API Provider** 为 **DeepSeek**。
 - 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
-- 选择要使用的模型。
+- 如需最强的编程能力，请选择 `deepseek-v4-pro`；如需更快的响应，请选择 `deepseek-v4-flash`。
+- 将 **Reasoning Effort** 设置为 **High**。这是 Cline 和 DeepSeek V4 当前共同支持的最高推理强度。
 
-> **注意：** `deepseek-reasoner` 和 `deepseek-chat` 模型即将废弃，请等待 Cline 官方添加 `deepseek-v4-pro` 和 `deepseek-v4-flash` 模型。
+> **注意：** Cline 内置的 DeepSeek 供应商当前默认使用 `deepseek-v4-flash`，并支持两个 V4 模型。
 
 <div align="center">
 <img src="./assets/cline_step_4_a.png" width="250" border="1" />
@@ -53,8 +54,9 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 - 选择 **API Provider** 为 **OpenAI Compatible**。
 - **Base URL** 填入 `https://api.deepseek.com`。
 - 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
-- 填入 **Model ID**，如 `deepseek-v4-pro`。
-- （选做）点击 **Model Configuration**，调整窗口大小、温度、价格和限量等参数。
+- 将 **Model ID** 填为 `deepseek-v4-pro` 或 `deepseek-v4-flash`。
+- 展开 **Model Configuration**，不要勾选 **Supports Images**，将 **Context Window Size** 设置为 `1000000`，并将 **Max Output Tokens** 设置为 `384000`。
+- 将 **Reasoning Effort** 设置为 **High**。
 
 <div align="center">
 <img src="./assets/cline_step_4_b.png" width="250" border="1" />
