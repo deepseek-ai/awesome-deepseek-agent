@@ -40,16 +40,22 @@ Crush 支持通过 OpenAI 兼容 API 添加自定义供应商。在配置文件�
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek-V4-Pro",
-          "context_window": 1048576,
-          "default_max_tokens": 32768,
-          "can_reason": true
+          "context_window": 1000000,
+          "default_max_tokens": 384000,
+          "can_reason": true,
+          "reasoning_levels": ["max", "high"],
+          "default_reasoning_effort": "max",
+          "supports_attachments": false
         },
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek-V4-Flash",
-          "context_window": 1048576,
-          "default_max_tokens": 32768,
-          "can_reason": true
+          "context_window": 1000000,
+          "default_max_tokens": 384000,
+          "can_reason": true,
+          "reasoning_levels": ["max", "high"],
+          "default_reasoning_effort": "max",
+          "supports_attachments": false
         }
       ]
     }
@@ -58,6 +64,8 @@ Crush 支持通过 OpenAI 兼容 API 添加自定义供应商。在配置文件�
 ```
 
 其中 API Key 在 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 获取。
+
+此配置为两个 V4 模型启用完整的 100 万 token 上下文和 38.4 万 token 输出上限，开启 Crush 的推理强度选择器，并默认使用最高推理强度。
 
 设置环境变量：
 

@@ -40,16 +40,22 @@ Crush supports custom providers via OpenAI-compatible APIs. Add DeepSeek to your
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek-V4-Pro",
-          "context_window": 1048576,
-          "default_max_tokens": 32768,
-          "can_reason": true
+          "context_window": 1000000,
+          "default_max_tokens": 384000,
+          "can_reason": true,
+          "reasoning_levels": ["max", "high"],
+          "default_reasoning_effort": "max",
+          "supports_attachments": false
         },
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek-V4-Flash",
-          "context_window": 1048576,
-          "default_max_tokens": 32768,
-          "can_reason": true
+          "context_window": 1000000,
+          "default_max_tokens": 384000,
+          "can_reason": true,
+          "reasoning_levels": ["max", "high"],
+          "default_reasoning_effort": "max",
+          "supports_attachments": false
         }
       ]
     }
@@ -58,6 +64,8 @@ Crush supports custom providers via OpenAI-compatible APIs. Add DeepSeek to your
 ```
 
 Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
+
+This config gives both V4 models their full 1M-token context and 384K-token output limit, enables Crush's reasoning selector, and uses maximum reasoning by default.
 
 Set the environment variable:
 
