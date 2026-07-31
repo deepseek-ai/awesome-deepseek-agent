@@ -28,7 +28,7 @@ Add these entries to the `customModels` array in `~/.factory/settings.json`:
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Pro",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "anthropic"
 },
 {
@@ -39,7 +39,7 @@ Add these entries to the `customModels` array in `~/.factory/settings.json`:
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Flash",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "anthropic"
 }
 ```
@@ -55,7 +55,7 @@ Add these entries to the `customModels` array in `~/.factory/settings.json`:
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Pro (OpenAI)",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "openai"
 },
 {
@@ -66,7 +66,7 @@ Add these entries to the `customModels` array in `~/.factory/settings.json`:
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Flash (OpenAI)",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "openai"
 }
 ```
@@ -78,11 +78,11 @@ To use DeepSeek as the default worker/validation model, update `missionModelSett
 ```json
 "missionModelSettings": {
   "workerModel": "custom:deepseek-v4-pro---Anthropic",
-  "workerReasoningEffort": "none",
+  "workerReasoningEffort": "high",
   "validationWorkerModel": "custom:deepseek-v4-flash---Anthropic",
-  "validationWorkerReasoningEffort": "none",
-  "skipUserTesting": true,
-  "skipScrutiny": true
+  "validationWorkerReasoningEffort": "high",
+  "skipUserTesting": false,
+  "skipScrutiny": false
 }
 ```
 
@@ -94,7 +94,7 @@ Factory supports three provider types that determine API compatibility:
 | Provider                      | API Format                           | Use For                                                                                                               | Documentation                                                                      |
 | ----------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `anthropic`                   | Anthropic Messages API (v1/messages) | Anthropic models on their official API or compatible proxies                                                          | [Anthropic Messages API](https://docs.anthropic.com/en/api/messages)               |
-| `openai`                      | OpenAI Responses API                 | OpenAI models on their official API or compatible proxies. Required for the newest models like GPT-5 and GPT-5-Codex. | [OpenAI Responses API](https://platform.openai.com/docs/api/responses)             |
+| `openai`                      | OpenAI Responses API                 | OpenAI models on their official API or compatible proxies. Required for the newest models like GPT-5 and GPT-5-Codex. | [OpenAI Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create) |
 | `generic-chat-completion-api` | OpenAI Chat Completions API          | OpenRouter, Fireworks, Together AI, Ollama, vLLM, and most open-source providers                                      | [OpenAI Chat Completions API](https://platform.openai.com/docs/api-reference/chat) |
 
 
@@ -104,6 +104,8 @@ DeepSeek V4 Pro and V4 Flash support both `anthropic` and `openai` provider type
 
 - Replace `<your DeepSeek API Key>` with your actual DeepSeek API key, or use environment variable syntax: `"apiKey": "${DEEPSEEK_API_KEY}"`
 - Max output tokens: 384,000
+- DeepSeek V4 has a 1M-token context window and accepts text input only, so
+  `noImageSupport` must be `true`
 - Model indices must be unique across all custom models
 - Set the environment variable before starting Droid: `export DEEPSEEK_API_KEY=your_key_here`
 
@@ -130,4 +132,3 @@ DeepSeek V4 Pro and V4 Flash support both `anthropic` and `openai` provider type
 
 - Check your provider's rate limits and usage quotas
 - Monitor your usage through your provider's dashboard
-
