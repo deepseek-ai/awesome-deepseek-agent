@@ -6,16 +6,22 @@ AdaL 是一款开源的 AI 编程 Agent 命令行工具，面向终端软件工�
 
 #### 1. 安装 AdaL
 
-通过安装脚本安装：
+**macOS、Linux、WSL：**
 
 ```
 curl -fsSL https://adal.sylph.ai/install.sh | bash
 ```
 
-或通过 npm 安装：
+**Windows PowerShell：**
 
 ```
-npm install -g @sylphai/adal-cli
+irm https://adal.sylph.ai/install/windows | iex
+```
+
+**Windows CMD：**
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://adal.sylph.ai/install/windows | iex"
 ```
 
 验证安装：
@@ -33,12 +39,6 @@ cd /path/to/my-project
 adal
 ```
 
-- 添加你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)，作为自带密钥（BYOAK），计费将直接通过 DeepSeek 而非 AdaL 的代理：
-
-```
-/byoak add deepseek
-```
-
 - 将当前模型切换为 DeepSeek-V4-Pro：
 
 ```
@@ -46,6 +46,8 @@ adal
 ```
 
 更快、更低成本的 DeepSeek-V4-Flash 也可通过 `deepseek-deepseek-v4-flash` 使用。
+
+AdaL 通过其自有的托管代理路由 DeepSeek 请求，费用从 AdaL 的额度/订阅中扣除——目前尚不支持针对 DeepSeek 的自带密钥（BYOAK）方式（AdaL 的 BYOAK 目前仅支持 Anthropic、OpenAI 和 Google）。
 
 AdaL 的模型注册表已自动为两款模型设置了接近 100 万 token 上限的输入上下文窗口（V4-Pro 为 936K，V4-Flash 为 984K），无需手动配置。由于 DeepSeek-V4 在 AdaL 的 Provider 抽象层中未声明单次请求的推理强度（reasoning effort）参数，AdaL 目前未针对 DeepSeek 暴露独立的推理强度开关。
 

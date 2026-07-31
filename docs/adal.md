@@ -6,16 +6,22 @@ AdaL is an open-source AI coding agent CLI for terminal-based software engineeri
 
 #### 1. Install AdaL
 
-Install the CLI via the install script:
+**macOS, Linux, WSL:**
 
 ```
 curl -fsSL https://adal.sylph.ai/install.sh | bash
 ```
 
-Or via npm:
+**Windows PowerShell:**
 
 ```
-npm install -g @sylphai/adal-cli
+irm https://adal.sylph.ai/install/windows | iex
+```
+
+**Windows CMD:**
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://adal.sylph.ai/install/windows | iex"
 ```
 
 Verify the installation:
@@ -33,12 +39,6 @@ cd /path/to/my-project
 adal
 ```
 
-- Add your [DeepSeek API Key](https://platform.deepseek.com/api_keys) as a Bring-Your-Own-API-Key (BYOAK), which routes billing directly through DeepSeek instead of AdaL's proxy:
-
-```
-/byoak add deepseek
-```
-
 - Switch the active model to DeepSeek-V4-Pro:
 
 ```
@@ -46,6 +46,8 @@ adal
 ```
 
 DeepSeek-V4-Flash is also available as `deepseek-deepseek-v4-flash` for faster, lower-cost runs.
+
+AdaL routes DeepSeek usage through its own hosted proxy, billed via AdaL credits/subscription — there is currently no bring-your-own-API-key (BYOAK) option for DeepSeek specifically (BYOAK in AdaL is limited to Anthropic, OpenAI, and Google).
 
 AdaL's model registry sets the input context window for both models close to the 1M-token limit (936K for V4-Pro, 984K for V4-Flash) automatically — no manual config needed. AdaL does not expose a separate reasoning-effort flag for DeepSeek, since DeepSeek-V4 does not take a per-request effort parameter through AdaL's provider abstraction.
 
