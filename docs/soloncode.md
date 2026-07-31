@@ -1,17 +1,19 @@
-# Integrating with SolonCode
+[English](./soloncode.md) | [简体中文](./soloncode.zh-CN.md) · [← Back](../README.md)
 
-SolonCode is an open-source coding agent built on Java that runs as a terminal CLI, helping developers accomplish a wide range of software engineering tasks — including code writing, project analysis, refactoring suggestions, test generation, and documentation authoring.
+# Getting Started with SolonCode
 
-## Installing SolonCode from Scratch
+SolonCode is an open-source coding agent built in Java, running as a terminal CLI tool. It helps developers with code writing, project analysis, refactoring, test generation, documentation, and other development tasks.
 
-### 1. System Requirements
+## Install SolonCode from Scratch
 
-- **Java 8+** (supports Java 8 through Java 26; must be pre-installed)
-- macOS, Linux, or Windows
+### 1. Requirements
 
-### 2. Install SolonCode
+- **Java 8+** (must be installed in advance; supports Java 8 ~ 26)
+- Supports macOS, Linux, Windows, Harmony PC
 
-**Mac / Linux:**
+### 2. Installation
+
+**Mac / Linux / Harmony PC:**
 
 ```bash
 curl -fsSL https://solon.noear.org/soloncode/setup.sh | bash
@@ -23,78 +25,33 @@ curl -fsSL https://solon.noear.org/soloncode/setup.sh | bash
 irm https://solon.noear.org/soloncode/setup.ps1 | iex
 ```
 
-After installation, run the following command to verify. If a version number is displayed, the installation was successful:
+Verify the installation:
 
 ```bash
 soloncode --version
 ```
 
-### 3. Configure the DeepSeek Model
+### 3. Configure a Model
 
-Once installed, you need to edit the configuration file `~/.soloncode/config.yml`. You can obtain your API Key from the [DeepSeek Open Platform](https://platform.deepseek.com/api_keys).
-
-Open `~/.soloncode/config.yml`, locate the `models` section, and fill in the DeepSeek API details:
-
-```yaml
-soloncode:
-  models:
-    - apiUrl: "https://api.deepseek.com"
-      apiKey: "<your DeepSeek API Key>"
-      model: "deepseek-v4-flash"
-      timeout: "180s"
-      contextLength: 1_000_000
-```
-
-> **Note:**
-> - `apiUrl` can be a full endpoint URL (or an OpenAI-compatible baseUrl).
-
-### 4. Start Using
-
-Once configured, navigate to your project directory and run the `soloncode` command to get started:
+Launch the web settings page:
 
 ```bash
-cd /path/to/my-project
-soloncode
-
-# Or launch with the web-based interactive UI
 soloncode web 0
 ```
 
-## Switching to DeepSeek from an Existing Installation
+Go to **Settings → Models → Add Model** and fill in the model details:
 
-If you already have SolonCode installed and are using another model provider (e.g., OpenAI, Qwen), simply update the `models` section in `~/.soloncode/config.yml` to switch to DeepSeek:
+<img src="assets/solon_code_llm.png" width='512' border='1'  />
 
-```yaml
-soloncode:
-  models:
-    - apiUrl: "https://api.deepseek.com"
-      apiKey: "<your DeepSeek API Key>"
-      model: "deepseek-v4-flash"
-      timeout: "180s"
-      contextLength: 1_000_000
+Get your API Key from the [DeepSeek Open Platform](https://platform.deepseek.com/api_keys).
+
+### 4. Start Using
+
+Navigate to your project directory and launch SolonCode Web:
+
+```bash
+cd your-project
+soloncode web 0
 ```
 
-Restart SolonCode for the changes to take effect.
-
-## Multi-Model Configuration
-
-SolonCode supports configuring multiple models simultaneously. The first entry is used as the default model, and you can freely switch between models at runtime:
-
-```yaml
-soloncode:
-  models:
-    - apiUrl: "https://api.deepseek.com"
-      apiKey: "<your DeepSeek API Key>"
-      model: "deepseek-v4-flash"
-      timeout: "180s"
-      contextLength: 1_000_000
-    - apiUrl: "https://api.deepseek.com"
-      apiKey: "<your DeepSeek API Key>"
-      model: "deepseek-v4-pro"
-      timeout: "180s"
-      contextLength: 1_000_000
-      defaultOptions:
-        thinking: 
-          type: "enabled"
-        reasoning_effort: "high"
-```
+<img src="assets/solon_code_hello.png" width='512' border='1'  />
