@@ -51,12 +51,14 @@ base_url = "https://api.deepseek.com/v1"
 api_key = "sk-<你的DeepSeek API Key>"     # 在 https://platform.deepseek.com/api_keys 获取
 ```
 
-> **提示：** 为避免把 API Key 以明文形式写进配置文件，可以把它放进提供商的 `env` 子表中。该子表仅从配置文件读取，不会泄露到你的 shell 环境变量中：
+> **提示：** 如果希望凭据使用提供商惯例的字段名而非 `api_key` 字段，可以把它放进提供商的 `env` 子表中——它仅在 `api_key` 为空时被采用，并且只从配置文件读取（绝不读取你的 shell 环境变量）：
 >
 > ```toml
 > [providers.deepseek.env]
 > DEEPSEEK_API_KEY = "sk-<你的DeepSeek API Key>"
 > ```
+>
+> 注意：无论哪种方式，密钥都以明文存储在 `config.toml` 中——Kimi Code 只从配置文件读取提供商凭据，不会回退到 shell 环境变量。若与他人共用机器，请收紧文件权限（`chmod 600`）。
 
 #### 第二步：声明 DeepSeek V4 模型
 
@@ -92,7 +94,7 @@ enabled = true
 effort = "max"
 ```
 
-> 如果上游 API 拒绝了配置的强度值，请改用该模型实际支持的级别（DeepSeek V4 Pro 支持 `low` / `high` / `max`）。
+> 如果上游 API 拒绝了配置的强度值，请改用该模型实际支持的级别（DeepSeek V4 Pro 支持 `high` / `max`）。
 
 ### 使用 Kimi Code + DeepSeek
 

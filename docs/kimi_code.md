@@ -51,12 +51,14 @@ base_url = "https://api.deepseek.com/v1"
 api_key = "sk-<your-deepseek-api-key>"   # Get from https://platform.deepseek.com/api_keys
 ```
 
-> **Tip:** To avoid writing the API key in plain text in the config file, put it in the provider's `env` sub-table instead. It is read only from the config file, so the key never leaks into your shell environment:
+> **Tip:** To keep the credential under a provider-conventional key name instead of the `api_key` field, put it in the provider's `env` sub-table — it is consulted only when `api_key` is empty, and is read from the config file only (never from your shell environment):
 >
 > ```toml
 > [providers.deepseek.env]
 > DEEPSEEK_API_KEY = "sk-<your-deepseek-api-key>"
 > ```
+>
+> Note that either way the key is stored in `config.toml` in plain text — Kimi Code reads provider credentials only from the config file and does not fall back to shell environment variables. Keep the file permissions tight (`chmod 600`) if you share the machine.
 
 #### Step 2: Declare the DeepSeek V4 models
 
@@ -92,7 +94,7 @@ enabled = true
 effort = "max"
 ```
 
-> If the upstream API rejects a configured effort value, pick a level the model actually supports (for DeepSeek V4 Pro: `low` / `high` / `max`).
+> If the upstream API rejects a configured effort value, pick a level the model actually supports (for DeepSeek V4 Pro: `high` or `max`).
 
 ### Using Kimi Code with DeepSeek
 
