@@ -2,7 +2,7 @@
 
 # Integrate with DeepDepCat
 
-DeepDepCat is an open-source desktop AI workbench (Tauri + React + Rust) with two workspaces: **Code** — a Claude Code-style coding agent with permission modes, subagent orchestration, and multi-session parallel conversations; and **Depwork** — a Codex-style task agent for documents and office automation (Word/PPT/Excel, OCR, media). Both run on DeepSeek V4 with 1M context and configurable reasoning effort.
+DeepDepCat is an all-in-one AI desktop workbench (native Tauri + React + Rust app) with two integrated workspaces: a **coding workspace** with permission modes, subagent orchestration, and multi-session parallel conversations; and a **document/office-automation workspace** — Word/PPT/Excel generation, OCR, table processing, media conversion, web fetching — with a live task panel. Both run on DeepSeek V4 with 1M context and configurable reasoning effort.
 
 - **GitHub:** <https://github.com/hanmirage/deepdepcat>
 - **Platforms:** Windows / macOS / Linux
@@ -49,10 +49,10 @@ DeepSeek V4 Pro supports multiple reasoning effort levels. In DeepDepCat:
 
 | Feature | Description |
 |---------|-------------|
-| Dual workspaces | Code (coding agent) + Depwork (document/office automation), each with its own tool set and system prompt |
+| Dual workspaces | Coding + document/office automation in ONE app, each with its own tool set and system prompt |
 | Multi-session parallelism | Sessions run concurrently without blocking each other; per-session live indicators and stop buttons in the sidebar |
 | Subagent orchestration | Decompose complex tasks into parallel subagents with live activity tracking |
-| Ecosystem skills | Reuse existing Claude/Cursor skills and plugin layouts (`~/.claude/skills`, `~/.cursor/skills`, plugins) |
+| Ecosystem skill reuse | Reuse existing agent skill ecosystems (Claude/Cursor skills and plugin layouts, e.g. `~/.claude/skills`, `~/.cursor/skills`) |
 | 1M context | DeepSeek V4's full context window, with a live context usage ring in the input bar |
 | Silent updates | Small releases auto-download and install on app exit — zero interruption |
 | Sandbox & permissions | File edits require approval per interaction mode; configurable sandbox profiles |

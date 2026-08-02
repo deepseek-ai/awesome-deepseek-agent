@@ -2,7 +2,7 @@
 
 # 集成 DeepDepCat
 
-DeepDepCat 是一款开源的桌面 AI 工作台（Tauri + React + Rust），内置两个工作台：**Code**——类 Claude Code 的编码智能体，支持权限模式、子代理编排与多会话并行；**Depwork**——类 Codex 的任务型智能体，专注文档与办公自动化（Word/PPT/Excel、OCR、媒体处理）。两者均基于 DeepSeek V4，支持 1M 上下文与可调推理强度。
+DeepDepCat 是一款一体化的 AI 桌面工作台（Tauri + React + Rust 原生应用），内置两个工作空间：**编码工作空间**——权限模式、子代理编排、多会话并行；**文档/办公自动化工作空间**——Word/PPT/Excel 生成、OCR、表格处理、媒体转换、网页抓取，附实时任务面板。两者均基于 DeepSeek V4，支持 1M 上下文与可调推理强度。
 
 - **GitHub:** <https://github.com/hanmirage/deepdepcat>
 - **平台:** Windows / macOS / Linux
@@ -49,10 +49,10 @@ DeepSeek V4 Pro 支持多档推理强度。在 DeepDepCat 中：
 
 | 特性 | 说明 |
 |---------|-------------|
-| 双工作台 | Code（编码智能体）+ Depwork（文档/办公自动化），各自独立工具集与系统提示词 |
+| 双工作台 | 编码 + 文档/办公自动化一体化，各自独立工具集与系统提示词 |
 | 多会话并行 | 会话间互不阻塞并发运行；侧边栏显示每个会话的实时运行状态与停止按钮 |
 | 子代理编排 | 将复杂任务拆解为并行子代理，实时追踪活动状态 |
-| 生态技能兼容 | 直接复用 Claude/Cursor 技能与插件布局（`~/.claude/skills`、`~/.cursor/skills` 及插件目录） |
+| 生态技能复用 | 直接复用现有 Agent 技能生态（Claude/Cursor 技能与插件布局，如 `~/.claude/skills`、`~/.cursor/skills`） |
 | 1M 上下文 | 完整支持 DeepSeek V4 上下文窗口，输入栏实时显示上下文用量环 |
 | 静默更新 | 小版本在后台自动下载、退出应用时自动安装，零打扰 |
 | 沙箱与权限 | 按交互模式审批文件修改；可配置沙箱档案 |
