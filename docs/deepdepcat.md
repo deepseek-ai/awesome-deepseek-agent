@@ -25,7 +25,7 @@ Open **Settings → Model Providers**, select the built-in **DeepSeek** provider
 | Field | Value |
 |-------|-------|
 | API Key | `sk-...` from the [DeepSeek Platform](https://platform.deepseek.com/api_keys) |
-| Base URL | `https://api.deepseek.com/v1` (default) |
+| Base URL | `https://api.deepseek.com` (default) |
 | API Format | `OpenAI-compatible` (default) |
 | Models | Add `deepseek-v4-pro` and/or `deepseek-v4-flash` — the model picker reads this list directly |
 
@@ -61,7 +61,7 @@ DeepSeek V4 Pro supports multiple reasoning effort levels. In DeepDepCat:
 
 | Option | Description |
 |--------|-------------|
-| `baseUrl` | API base URL, defaults to `https://api.deepseek.com/v1` |
+| `baseUrl` | API base URL, defaults to `https://api.deepseek.com` |
 | `apiFormat` | `openai` (OpenAI-compatible) or `anthropic` |
 | `context_window` | Per-model context window in tokens — set `1000000` for DeepSeek V4 |
 | `reasoning_effort` | `auto` / `high` / `max` — controls how much the model thinks before answering |

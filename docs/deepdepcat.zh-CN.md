@@ -25,7 +25,7 @@ npm run tauri dev
 | 字段 | 值 |
 |-------|-------|
 | API Key | 在 [DeepSeek 开放平台](https://platform.deepseek.com/api_keys) 获取 `sk-...` |
-| Base URL | `https://api.deepseek.com/v1`（默认） |
+| Base URL | `https://api.deepseek.com`（默认） |
 | API 格式 | `OpenAI 兼容`（默认） |
 | 模型 | 添加 `deepseek-v4-pro` 和/或 `deepseek-v4-flash`——模型选择器直接读取此列表 |
 
@@ -61,7 +61,7 @@ DeepSeek V4 Pro 支持多档推理强度。在 DeepDepCat 中：
 
 | 选项 | 说明 |
 |--------|-------------|
-| `baseUrl` | API 基础地址，默认 `https://api.deepseek.com/v1` |
+| `baseUrl` | API 基础地址，默认 `https://api.deepseek.com` |
 | `apiFormat` | `openai`（OpenAI 兼容）或 `anthropic` |
 | `context_window` | 按模型设置的上下文窗口（token），DeepSeek V4 填 `1000000` |
 | `reasoning_effort` | `auto` / `high` / `max`——控制模型回答前的思考深度 |
