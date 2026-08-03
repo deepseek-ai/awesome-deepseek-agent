@@ -49,7 +49,7 @@ DeepSeek-V4-Flash is also available as `deepseek-deepseek-v4-flash` for faster, 
 
 AdaL routes DeepSeek usage through its own hosted proxy, billed via AdaL credits/subscription — there is currently no bring-your-own-API-key (BYOAK) option for DeepSeek specifically (BYOAK in AdaL is limited to Anthropic, OpenAI, and Google).
 
-DeepSeek-V4 supports up to 1M tokens of context. AdaL applies this automatically — its model registry sets the input context window to 936K for V4-Pro and 984K for V4-Flash, so no manual configuration is needed.
+Both models run with a 1M-token context window in AdaL — no manual configuration is needed.
 
 AdaL does not currently expose a reasoning-effort setting for DeepSeek. Its per-request effort control is wired per provider, and DeepSeek is not among the providers with an effort path today, so V4-Pro runs at the API default rather than a caller-selected level such as `max`.
 

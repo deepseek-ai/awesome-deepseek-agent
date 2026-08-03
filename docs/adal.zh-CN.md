@@ -49,7 +49,7 @@ adal
 
 AdaL 通过其自有的托管代理路由 DeepSeek 请求，费用从 AdaL 的额度/订阅中扣除——目前尚不支持针对 DeepSeek 的自带密钥（BYOAK）方式（AdaL 的 BYOAK 目前仅支持 Anthropic、OpenAI 和 Google）。
 
-DeepSeek-V4 支持最高 100 万 token 的上下文。AdaL 会自动应用该能力——其模型注册表已将输入上下文窗口设置为 V4-Pro 936K、V4-Flash 984K，无需手动配置。
+两款模型在 AdaL 中均以 100 万 token 的上下文窗口运行，无需手动配置。
 
 AdaL 目前尚未针对 DeepSeek 暴露推理强度（reasoning effort）设置。AdaL 的单次请求推理强度控制是按 Provider 分别接入的，而 DeepSeek 目前不在已接入的 Provider 之列，因此 V4-Pro 会使用 API 默认强度，而非由调用方指定的 `max` 等级别。
 
