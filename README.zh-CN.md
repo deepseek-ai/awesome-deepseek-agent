@@ -36,6 +36,7 @@
 | **Pi** | 极简且高度可扩展的终端编码框架，支持树状会话和自定义供应商。 | [指南](./docs/pi_mono.zh-CN.md) |
 | **Qwen Code** | 阿里巴巴通义千问团队推出的 Coding Agent CLI，现已全面支持 DeepSeek 提供商。 | [指南](./docs/qwen_code.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
+| **Skales** | 面向非开发者的本地优先桌面 AI 智能体 —— 像普通应用一样安装，197 个内置工具，媒体工作室，移动端配套应用。 | [指南](./docs/skales.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
 
 ## 相关资源
