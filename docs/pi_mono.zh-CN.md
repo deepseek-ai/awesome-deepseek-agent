@@ -10,7 +10,7 @@ Pi（pi-mono）是一个极简且高度可扩展的终端编码框架。它通�
 - 在命令行界面，执行以下命令安装 Pi：
 
 ```bash
-npm install -g @mariozechner/pi-coding-agent
+npm install -g @earendil-works/pi-coding-agent
 ```
 
 - 安装结束后，执行以下命令，若显示版本号则安装成功：
@@ -46,6 +46,7 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
             "input": 1.74,
             "output": 3.48,
@@ -71,6 +72,7 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
             "input": 0.14,
             "output": 0.28,

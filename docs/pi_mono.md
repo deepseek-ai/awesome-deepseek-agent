@@ -10,7 +10,7 @@ Pi (pi-mono) is a minimal, aggressively extensible terminal coding harness. It a
 - Run the following command in your terminal to install Pi:
 
 ```bash
-npm install -g @mariozechner/pi-coding-agent
+npm install -g @earendil-works/pi-coding-agent
 ```
 
 - After installation, run the following command. If the version number is displayed, the installation is successful:
@@ -46,6 +46,7 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
             "input": 1.74,
             "output": 3.48,
@@ -71,6 +72,7 @@ Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compat
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
+          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
             "input": 0.14,
             "output": 0.28,
