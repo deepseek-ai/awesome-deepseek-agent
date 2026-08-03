@@ -2,24 +2,27 @@
 
 # Integrate with Crush
 
-Crush is a glamorous open-source AI coding agent that runs in your terminal, built by Charm. It supports multi-model switching, LSP integration, MCP servers, and agentic coding workflows.
+Crush is a glamorous open-source AI coding agent written in Go by Charm that
+runs in your terminal. It supports multi-model switching, LSP integration, MCP
+servers, and agentic coding workflows.
 
 #### 1. Install Crush
 
-- Install [Node.js](https://nodejs.org/en/download/).
-- Run the following command in your terminal to install Crush:
+- Crush is distributed as a standalone binary, so Node.js is not required. On
+  macOS or Linux, install it with Homebrew:
 
 ```bash
-npm install -g @charmland/crush
+brew install charmbracelet/tap/crush
 ```
+
+- For other platforms and package managers, see the
+  [official installation instructions](https://github.com/charmbracelet/crush#installation).
 
 - After installation, run the following command. If the version number is displayed, the installation is successful:
 
 ```bash
 crush --version
 ```
-
-> **Note:** macOS users can also install via Homebrew: `brew install charmbracelet/tap/crush`.
 
 #### 2. Configure DeepSeek Provider
 
