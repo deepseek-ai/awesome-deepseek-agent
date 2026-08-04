@@ -51,7 +51,7 @@ API 地址默认使用 `https://api.deepseek.com`（可通过 `DEEPSEEK_API_URL`
 ./glidingcode --model deepseek-v4-pro "为待办事项应用设计一个 REST API"
 ```
 
-DeepSeek-V4 系列模型支持 **100 万 token 上下文**；Gliding Code 对 `deepseek-v4*` 模型启用完整的 100 万上下文（`1_048_576`），并将原生推理模型的推理内容以思考步骤的形式呈现。
+DeepSeek-V4 系列模型支持 **100 万 token 上下文**；Gliding Code 对 `deepseek-v4*` 模型启用完整的 100 万上下文（`1_048_576`）。思考模式默认开启（DeepSeek V4 默认 effort 为 `high`，支持 `reasoning_effort: low|high|max`），原生推理模型的推理内容会以思考步骤的形式呈现在 TUI 中。
 
 #### 4. 配置项
 
@@ -62,7 +62,16 @@ DeepSeek-V4 系列模型支持 **100 万 token 上下文**；Gliding Code 对 `d
 | `USE_RESPONSES_API` | `1`/`true` 强制使用 Responses API（`/v1/responses`），`0` 强制使用 Chat Completions。默认对 DeepSeek-V4-Flash 启用。 |
 | `GLIDING_HORSE_DATA` | 记忆/知识图谱存储目录（默认 `~/.gliding_horse/data`） |
 
-#### 5. 核心特性
+#### 5. 定价
+
+按每 100 万 token 计价，已于 [DeepSeek API 定价页](https://api-docs.deepseek.com/quick_start/pricing) 核对（2026-08-04）：
+
+| 模型 | 输入（缓存未命中） | 输入（缓存命中） | 输出 |
+|---|---|---|---|
+| `deepseek-v4-flash` | $0.14 | $0.0028 | $0.28 |
+| `deepseek-v4-pro` | $0.435 | $0.003625 | $0.87 |
+
+#### 6. 核心特性
 
 - **PDCA 编排** —— 多 Agent 的 Plan/Do/Check/Act 循环，配合 7 级自适应执行（L0 即时 → L6 紧急），模型会规划、执行、验证并改进，直到任务完成。
 - **MCP 支持** —— 通过 `--mcp-server name=url`（HTTP SSE）或 `--mcp-server-stdio name='{"command":"npx","args":[...]}'`（stdio）接入任意 MCP 服务器。

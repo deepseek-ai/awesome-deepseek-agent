@@ -51,7 +51,7 @@ By default Gliding Code uses **DeepSeek-V4-Flash**, which is routed through the 
 ./glidingcode --model deepseek-v4-pro "Design a REST API for a todo app"
 ```
 
-DeepSeek-V4 models support a **1M-token context window**; Gliding Code applies the full 1M context (`1_048_576`) for `deepseek-v4*` models, and reasoning content from native reasoning models is surfaced as thinking steps.
+DeepSeek-V4 models support a **1M-token context window**; Gliding Code applies the full 1M context (`1_048_576`) for `deepseek-v4*` models. Thinking mode is enabled by default (DeepSeek V4's default effort is `high`; `reasoning_effort: low|high|max` is supported), and reasoning content from native reasoning models is surfaced as thinking steps in the TUI.
 
 #### 4. Configuration
 
@@ -62,7 +62,16 @@ DeepSeek-V4 models support a **1M-token context window**; Gliding Code applies t
 | `USE_RESPONSES_API` | `1`/`true` to force the Responses API (`/v1/responses`), `0` to force chat completions. Defaults to `true` for DeepSeek-V4-Flash. |
 | `GLIDING_HORSE_DATA` | Data directory for memory/knowledge-graph stores (defaults to `~/.gliding_horse/data`) |
 
-#### 5. Key features
+#### 5. Pricing
+
+Per 1M tokens, verified against the [DeepSeek API pricing page](https://api-docs.deepseek.com/quick_start/pricing) (2026-08-04):
+
+| Model | Input (cache miss) | Input (cache hit) | Output |
+|---|---|---|---|
+| `deepseek-v4-flash` | $0.14 | $0.0028 | $0.28 |
+| `deepseek-v4-pro` | $0.435 | $0.003625 | $0.87 |
+
+#### 6. Key features
 
 - **PDCA orchestration** — multi-agent Plan/Do/Check/Act cycles with 7-level adaptive execution (L0 instant → L6 emergency), so the model plans, executes, verifies, and refines until the task is done.
 - **MCP support** — attach any MCP server with `--mcp-server name=url` (HTTP SSE) or `--mcp-server-stdio name='{"command":"npx","args":[...]}'` (stdio).
