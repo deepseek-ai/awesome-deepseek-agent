@@ -47,7 +47,15 @@ adal
 
 更快、更低成本的 DeepSeek-V4-Flash 也可通过 `deepseek-deepseek-v4-flash` 使用。
 
-AdaL 通过其自有的托管代理路由 DeepSeek 请求，费用从 AdaL 的额度/订阅中扣除——目前尚不支持针对 DeepSeek 的自带密钥（BYOAK）方式（AdaL 的 BYOAK 目前仅支持 Anthropic、OpenAI 和 Google）。
+默认情况下，AdaL 通过其自有的托管代理路由 DeepSeek 请求，费用从 AdaL 的额度/订阅中扣除。
+
+如果希望将 DeepSeek 的用量直接计入你自己的 DeepSeek 账户，可以通过 BYOAK（自带密钥）添加 API Key：
+
+```
+/byoak add deepseek
+```
+
+不带密钥执行该命令会显示配置说明，也可以直接内联传入：`/byoak add deepseek <api-key>`。前往 [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) 创建密钥。密钥启用后，DeepSeek 请求将直连 DeepSeek API，由 DeepSeek 计费，不再扣除 AdaL 额度。随时可通过 `/byoak` 管理或移除密钥。
 
 两款模型在 AdaL 中均以 100 万 token 的上下文窗口运行，无需手动配置。
 

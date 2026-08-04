@@ -47,7 +47,15 @@ adal
 
 DeepSeek-V4-Flash is also available as `deepseek-deepseek-v4-flash` for faster, lower-cost runs.
 
-AdaL routes DeepSeek usage through its own hosted proxy, billed via AdaL credits/subscription — there is currently no bring-your-own-API-key (BYOAK) option for DeepSeek specifically (BYOAK in AdaL is limited to Anthropic, OpenAI, and Google).
+By default AdaL routes DeepSeek through its own hosted proxy, billed via AdaL credits/subscription.
+
+To bill DeepSeek usage directly to your own DeepSeek account instead, add your API key with BYOAK (bring your own API key):
+
+```
+/byoak add deepseek
+```
+
+Run it without a key to get setup instructions, or pass the key inline as `/byoak add deepseek <api-key>`. Create a key at [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys). Once the key is enabled, DeepSeek requests go straight to the DeepSeek API and are billed by DeepSeek rather than deducted from AdaL credits. Manage or remove keys any time with `/byoak`.
 
 Both models run with a 1M-token context window in AdaL — no manual configuration is needed.
 
