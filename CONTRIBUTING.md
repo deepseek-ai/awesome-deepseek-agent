@@ -37,7 +37,7 @@ DeepSeek renamed its models in April 2026. All code examples, config snippets, a
 
 DeepSeek V4 models support up to **1 million tokens** of context. Make sure your configuration reflects this:
 
-- **Claude Code / Anthropic-compatible**: append `[1m]` to model names, e.g. `deepseek-v4-pro[1m]`
+- **Claude Code / Anthropic-compatible**: use `deepseek-v4-pro[1m]` for Pro and `deepseek-v4-flash` for Flash
 - **OpenAI-compatible configs**: set `context_window: 1000000` / `max_tokens: 384000` where the tool supports it
 - **Other tools**: at minimum, note in prose that DeepSeek V4 supports 1M context
 
