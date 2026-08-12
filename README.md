@@ -10,6 +10,15 @@ Each guide walks through installation, configuration, and first run — so you c
 
 </div>
 
+## Current Models
+
+Use the API model IDs in configuration. The corresponding release versions are listed here for identifying the deployed model:
+
+| API model ID | Release version |
+| ------------ | --------------- |
+| `deepseek-v4-flash` | `DeepSeek-V4-Flash-0731` |
+| `deepseek-v4-pro` | `DeepSeek-V4-Pro-0813` |
+
 
 ## Contents
 

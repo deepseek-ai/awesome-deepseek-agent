@@ -10,6 +10,15 @@
 
 </div>
 
+## 当前模型
+
+配置时请使用 API 模型 ID。下表列出对应的发布版本，便于确认当前使用的模型：
+
+| API 模型 ID | 发布版本 |
+| ----------- | -------- |
+| `deepseek-v4-flash` | `DeepSeek-V4-Flash-0731` |
+| `deepseek-v4-pro` | `DeepSeek-V4-Pro-0813` |
+
 
 ## 目录
 
