@@ -20,6 +20,16 @@ The only prerequisite is Git. The installer automatically handles everything els
 
 For more installation instructions, please refer to the [Hermes installation page](https://hermes-agent.nousresearch.com/docs/getting-started/installation).
 
+###### Windows (native)
+
+Hermes also ships a native Windows desktop app and a PowerShell install path:
+
+```powershell
+irm https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.ps1 | iex
+```
+
+The desktop app provides a chat surface, terminal/preview panes, voice support (STT/TTS), and background task scheduling (cron jobs) on top of the same agent core.
+
 #### 2. Run and Configure
 
 Reload your shell and start Hermes configuration:
@@ -31,3 +41,27 @@ Reload your shell and start Hermes configuration:
 - Enter the Base URL as `https://api.deepseek.com`
 - Select the `deepseek-v4-pro` model
 - Continue with the remaining options
+
+#### 3. Choose a Model
+
+| Model | Strengths | Use when |
+| ----- | --------- | -------- |
+| `deepseek-v4-pro` | Deepest reasoning, best agentic planning | Default; complex multi-step tasks, long-horizon autonomy |
+| `deepseek-v4-flash` | High throughput, low cost | Bulk/batch jobs, cron automation, high-frequency tool calling |
+
+Model choice is configurable per session via `hermes config`, so it is easy to switch without re-running setup.
+
+#### 4. Real-World Usage Example
+
+Beyond interactive chat, Hermes shines as a background agent. A practical pattern is a fully automated pipeline driven by scheduled jobs:
+
+1. **Skills** — capture a working procedure once (e.g. "produce a short video: script → TTS → assets → ffmpeg → publish"); the agent reuses it on every later run.
+2. **Cron jobs** — schedule the workflow with `hermes cron` (e.g. daily content production at a fixed time).
+3. **Human-in-the-loop** — gate irreversible actions (publishing) behind an approval step; the agent verifies its own output before delivering.
+
+An example open-source pipeline built on this pattern with DeepSeek as the planning brain: [douyin-agent-pipeline](https://github.com/xiaozhang-iu/douyin-agent-pipeline) (TTS → asset retrieval → music research → ffmpeg compose → CDP publish, fully automated with a review gate).
+
+#### 5. Multilingual & Voice
+
+Hermes supports Chinese (and other languages) end-to-end: Chinese STT for voice input, Chinese TTS for spoken replies, and Chinese prompt conventions — useful when driving the agent hands-free.
+
