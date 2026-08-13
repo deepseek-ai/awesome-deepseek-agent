@@ -25,7 +25,7 @@ For more installation instructions, please refer to the [Hermes installation pag
 Hermes also ships a native Windows desktop app and a PowerShell install path:
 
 ```powershell
-irm https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.ps1 | iex
+iex (irm https://hermes-agent.nousresearch.com/install.ps1)
 ```
 
 The desktop app provides a chat surface, terminal/preview panes, voice support (STT/TTS), and background task scheduling (cron jobs) on top of the same agent core.
