@@ -37,7 +37,7 @@
 | **Qwen Code** | 阿里巴巴通义千问团队推出的 Coding Agent CLI，现已全面支持 DeepSeek 提供商。 | [指南](./docs/qwen_code.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
-| **Xenon** | 面向 DeepSeek V4 的终端编程 Agent，支持原生工具调用、缓存费用观测、权限控制、MCP 与透明的用户治理记忆。 | [指南](./docs/xenon.zh-CN.md) |
+| **Xenon** | 面向 DeepSeek V4 的终端编程 Agent，支持原生工具调用、缓存费用观测、权限控制、MCP 与透明的用户治理记忆。SWE-bench_Lite 官方评测：40.0% 实例级（可复现）。 | [指南](./docs/xenon.zh-CN.md) |
 
 ## 相关资源
 

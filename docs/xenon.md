@@ -4,12 +4,16 @@
 
 [Xenon](https://github.com/xianyu-sheng/Xenon) is an open-source terminal AI coding agent. It supports DeepSeek V4 model discovery, configurable reasoning effort, native tool calling, cache and cost observability, permission-gated coding tools, MCP servers, eight execution engines, and transparent user-governed memory.
 
+## SWE-bench official evaluation
+
+On the **SWE-bench_Lite official harness** (30 instances × 5 engines, single attempt, cheapest model tier), Xenon reaches **40.0% instance-level / 45.8% cell-level**, with a fully reproducible report (sampling seed, grading method, cost accounting, no-patch attribution) committed to the repo. A same-model A/B (v0.8.0 → v0.8.2, DeepSeek V4 Flash) isolates the framework gain at **+6.7pp instance / +11.0pp cell**.
+
 ## 1. Install
 
-Install Python 3.10 or newer, then install the verified v0.7.3 release:
+Install Python 3.10 or newer, then install the verified v0.8.2 release:
 
 ```bash
-pip install -U "git+https://github.com/xianyu-sheng/Xenon.git@v0.7.3"
+pip install -U "git+https://github.com/xianyu-sheng/Xenon.git@v0.8.2"
 xenon --version
 ```
 
@@ -64,15 +68,15 @@ Shift+Tab      cycle execution modes
 Ctrl+O         expand or collapse execution details
 ```
 
-Xenon preserves DeepSeek's native `reasoning_content`, `tool_calls`, and `tool_call_id` messages across tool rounds. File and command tools pass through its permission policy before execution. v0.7.3 also persists bounded, privacy-safe tool checkpoints, including concurrent Plan-Execute steps, so an interrupted session can recover without replaying state-changing work.
+Xenon preserves DeepSeek's native `reasoning_content`, `tool_calls`, and `tool_call_id` messages across tool rounds. File and command tools pass through its permission policy before execution. v0.8.2 also persists bounded, privacy-safe tool checkpoints, including concurrent Plan-Execute steps, so an interrupted session can recover without replaying state-changing work.
 
 ## Cache and cost observability
 
-The status bar, `/cost` view, and exit summary derive cache hit rate and estimated cost locally from API `usage` fields. v0.7.3 adds Cache Rails: each model keeps an independent append-only prompt lane, so switching models and later returning does not rebuild that model's stable prefix. `/cache lanes` reports content-free lane diagnostics; provider `usage` remains the source of truth for actual hit rates. This reporting and routing affinity make no additional model request. See the [DeepSeek cache guide](https://github.com/xianyu-sheng/Xenon/blob/v0.7.3/docs/deepseek-guide.md) for details and real-provider validation.
+The status bar, `/cost` view, and exit summary derive cache hit rate and estimated cost locally from API `usage` fields. v0.8.2 adds Cache Rails: each model keeps an independent append-only prompt lane, so switching models and later returning does not rebuild that model's stable prefix. `/cache lanes` reports content-free lane diagnostics; provider `usage` remains the source of truth for actual hit rates. This reporting and routing affinity make no additional model request. See the [DeepSeek cache guide](https://github.com/xianyu-sheng/Xenon/blob/v0.8.2/docs/deepseek-guide.md) for details and real-provider validation.
 
 ## User-governed memory
 
-Xenon v0.7.3 provides four isolated memory scopes: session, project-local,
+Xenon v0.8.2 provides four isolated memory scopes: session, project-local,
 project-shared, and user. An explicit request such as `Remember that this project
 uses Python 3.12` is saved immediately with a receipt containing its ID, scope,
 and exact local path. When Xenon itself detects reusable information, it only
@@ -82,7 +86,7 @@ the user's confirmation.
 Memory is bounded by token budgets, can be inspected with `/memory inspect`, and
 checked with `/memory doctor`. Potential conflicts are reported without silent
 overwrite; `/memory replace` and `/memory rollback` keep the change reversible.
-See the [memory system specification](https://github.com/xianyu-sheng/Xenon/blob/v0.7.3/docs/MEMORY_SYSTEM_SPEC.md) for the storage and consent model.
+See the [memory system specification](https://github.com/xianyu-sheng/Xenon/blob/v0.8.2/docs/MEMORY_SYSTEM_SPEC.md) for the storage and consent model.
 
 ## Vision Bridge (optional)
 
