@@ -40,6 +40,8 @@ Each guide walks through installation, configuration, and first run — so you c
 
 ## Resources
 
+- [Clickyy](https://github.com/jayamitkatariya/clickyyy) - Shake your cursor to summon an AI agent that sees your screen and clicks, types, drags, and acts for you on macOS. Open-source, MIT.
+
 - [DeepSeek Platform](https://platform.deepseek.com/) — get an API key.
 - [DeepSeek API Docs](https://api-docs.deepseek.com/) — API reference and guides.
 
