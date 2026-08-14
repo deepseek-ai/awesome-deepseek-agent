@@ -2,7 +2,9 @@
 
 # 接入 San
 
-San 是开源的终端 Agent 运行时 —— 单个 Go 原生二进制，不依赖 Node.js 或 Python。DeepSeek 是**内置供应商**：V4 模型 ID、100 万 token 上下文、推理强度与每轮费用都已经接好，你只需要准备一个 API Key。
+San 是开源的终端 Agent 运行时：单个 12 MB Go 二进制，~0.01s 冷启动，零运行时依赖 —— 不需要 Node.js，也不需要 Python。你的第一句话之前，框架只占约 2.3k token，DeepSeek 的 100 万上下文窗口留给你的正事。
+
+DeepSeek 是**内置供应商**：V4 模型 ID、100 万 / 384K 的上下文与输出上限、推理强度与每轮费用都已经接好，你只需要准备一个 API Key。
 
 - **GitHub：** <https://github.com/genai-io/san>
 - **文档：** <https://genai-io.github.io/san/>

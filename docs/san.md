@@ -2,7 +2,9 @@
 
 # Integrate with San
 
-San is an open-source terminal agent runtime — a single native Go binary, no Node.js or Python. DeepSeek is a **built-in provider**: the V4 model IDs, the 1M context window, reasoning effort and per-turn cost are already wired in, so all you bring is an API key.
+San is an open-source terminal agent runtime: one 12 MB Go binary, ~0.01s cold start, zero runtime deps — no Node.js, no Python. Its harness spends ~2.3k tokens before your first message, so DeepSeek's 1M window stays yours.
+
+DeepSeek is a **built-in provider**: the V4 model IDs, the 1M/384K limits, reasoning effort and per-turn cost are already wired in, so all you bring is an API key.
 
 - **GitHub:** <https://github.com/genai-io/san>
 - **Docs:** <https://genai-io.github.io/san/>
