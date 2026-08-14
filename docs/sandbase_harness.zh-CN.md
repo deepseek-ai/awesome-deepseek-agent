@@ -71,3 +71,7 @@ tools:
 
 - 请把 `DEEPSEEK_API_KEY` 保存在运行时环境变量中，不要提交到仓库。
 - 默认本地沙箱会以当前操作系统用户身份执行命令，适合可信开发环境；如需更强的隔离边界，请使用 Docker 或 Kubernetes 沙箱提供方。
+
+## DeepSeek Harness 相关资源
+
+SandBase Harness 还提供了连接 DeepSeek 官方 Harness 运行时的桥接能力。如需了解上游运行时心智模型、Web 与 Headless 快速入门、工具策略管线、MCP、Python SDK、Windows 边界和排障方法，请参阅基于官方来源编写的 [DeepSeek Harness Handbook](https://github.com/sandbaseai/deepseek-harness-handbook)。其最新 Release 还附带一份可下载的 10 页英文速查指南。

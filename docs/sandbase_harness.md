@@ -71,3 +71,7 @@ Use `deepseek-v4-flash` instead when lower latency is more important than maximu
 
 - Keep `DEEPSEEK_API_KEY` in the runtime environment; do not commit it.
 - The default local sandbox executes commands as your operating-system user and is intended for trusted development. Use the Docker or Kubernetes sandbox provider when you need a stronger isolation boundary.
+
+## Related DeepSeek Harness Resources
+
+SandBase Harness also provides a bridge for the official DeepSeek Harness runtime. For the upstream runtime mental model, Web and headless quickstarts, tool-policy pipeline, MCP, Python SDK, Windows boundaries, and troubleshooting, see the source-backed [DeepSeek Harness Handbook](https://github.com/sandbaseai/deepseek-harness-handbook). A downloadable 10-page field guide is attached to its latest release.
