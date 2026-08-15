@@ -124,6 +124,21 @@ pi
 
 - Type `/model` to open the model switcher.
 - Select **deepseek** and choose `DeepSeek-V4-Pro` or `DeepSeek-V4-Flash`.
+- For V4 Pro coding work, set thinking / reasoning effort to **xhigh** (mapped to `max` in the `thinkingLevelMap` / `reasoningEffortMap` above). V4 models support a 1M context window; the snippet already sets `contextWindow: 1000000`.
 - Start coding with your minimal terminal harness.
+
+#### 4. Optional: official Harness minimal surface (V4 Pro)
+
+The DeepSeek V4 Pro model card evaluates code-agent tasks with DeepSeek Harness **minimal** mode: the complete system prompt is `You are a helpful software engineer assistant.`, and the tool catalog is persistent `bash` + `str_replace_editor`. Pi's default catalog is richer, which can change V4 Pro's first-request trajectory.
+
+To use that official surface inside Pi:
+
+```bash
+pi install npm:pi-dsh-minimal
+```
+
+Then `/reload` or restart Pi, start a **new** session, and select DeepSeek V4 Pro. The extension is on by default but only activates when the model matches V4 Pro (`deepseek-v4-flash` does not match). Open `/dsh` to change the trigger.
+
+This is a [community extension](https://github.com/Averyyy/pi-dsh-minimal), not an official DeepSeek or Pi preset.
 
 For more configuration options, see the [Pi models documentation](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent/docs/models.md).
