@@ -6,10 +6,10 @@
 
 ## 安装 SandBase Harness
 
-安装 Node.js 22 或更高版本，然后从 v0.3.0 标签构建源码并创建工作区：
+安装 Node.js 22 或更高版本，然后从 v0.3.1 标签构建源码并创建工作区：
 
 ```bash
-git clone --branch v0.3.0 --depth 1 https://github.com/sandbaseai/sandbase-harness.git
+git clone --branch v0.3.1 --depth 1 https://github.com/sandbaseai/sandbase-harness.git
 cd sandbase-harness
 npm ci
 npm run build
