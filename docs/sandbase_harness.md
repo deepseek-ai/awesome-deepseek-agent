@@ -6,11 +6,11 @@
 
 ## Install SandBase Harness
 
-Install Node.js 22 or later, then build the tagged v0.3.1 source and create a
+Install Node.js 22 or later, then build the tagged v0.3.2 source and create a
 workspace:
 
 ```bash
-git clone --branch v0.3.1 --depth 1 https://github.com/sandbaseai/sandbase-harness.git
+git clone --branch v0.3.2 --depth 1 https://github.com/sandbaseai/sandbase-harness.git
 cd sandbase-harness
 npm ci
 npm run build
