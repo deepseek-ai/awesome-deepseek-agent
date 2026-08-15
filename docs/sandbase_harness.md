@@ -6,13 +6,21 @@
 
 ## Install SandBase Harness
 
-Install Node.js 22 or later, then create a workspace:
+Install Node.js 22 or later, then build the tagged v0.3.0 source and create a
+workspace:
 
 ```bash
-mkdir my-sandbase-agents
-cd my-sandbase-agents
-npx managed-agents init
+git clone --branch v0.3.0 --depth 1 https://github.com/sandbaseai/sandbase-harness.git
+cd sandbase-harness
+npm ci
+npm run build
+mkdir ../my-sandbase-agents && cd ../my-sandbase-agents
+node ../sandbase-harness/dist/index.js init
 ```
+
+> The unscoped `managed-agents` package on npm is not SandBase Harness. Until
+> this repository announces an official scoped package, install from the tagged
+> source above.
 
 Set a DeepSeek API key without writing it into the workspace:
 
@@ -23,7 +31,7 @@ export DEEPSEEK_API_KEY="<your DeepSeek API key>"
 Start the runtime:
 
 ```bash
-npx managed-agents start
+node ../sandbase-harness/dist/index.js start
 ```
 
 Open `http://127.0.0.1:3000/dashboard`.
@@ -59,7 +67,7 @@ tools:
   - type: agent_toolset_20260401
 ```
 
-Restart the runtime or run `npx managed-agents reload`, open the agent in the dashboard, create a session, and send a task such as:
+Restart the runtime or run `node ../sandbase-harness/dist/index.js reload`, open the agent in the dashboard, create a session, and send a task such as:
 
 ```text
 Inspect this repository, explain its architecture, and identify one small improvement with tests.

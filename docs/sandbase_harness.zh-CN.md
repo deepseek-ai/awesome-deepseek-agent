@@ -6,13 +6,19 @@
 
 ## 安装 SandBase Harness
 
-安装 Node.js 22 或更高版本，然后创建工作区：
+安装 Node.js 22 或更高版本，然后从 v0.3.0 标签构建源码并创建工作区：
 
 ```bash
-mkdir my-sandbase-agents
-cd my-sandbase-agents
-npx managed-agents init
+git clone --branch v0.3.0 --depth 1 https://github.com/sandbaseai/sandbase-harness.git
+cd sandbase-harness
+npm ci
+npm run build
+mkdir ../my-sandbase-agents && cd ../my-sandbase-agents
+node ../sandbase-harness/dist/index.js init
 ```
+
+> npm 上未加 scope 的 `managed-agents` 包并非 SandBase Harness。在本仓库宣布
+> 官方 scoped 包之前，请仅从上述带标签的源码安装。
 
 设置 DeepSeek API Key，避免将密钥写入工作区：
 
@@ -23,7 +29,7 @@ export DEEPSEEK_API_KEY="<你的 DeepSeek API Key>"
 启动运行时：
 
 ```bash
-npx managed-agents start
+node ../sandbase-harness/dist/index.js start
 ```
 
 打开 `http://127.0.0.1:3000/dashboard`。
@@ -59,7 +65,7 @@ tools:
   - type: agent_toolset_20260401
 ```
 
-重启运行时或执行 `npx managed-agents reload`，在控制台中打开该 Agent、创建会话，然后发送一个任务，例如：
+重启运行时或执行 `node ../sandbase-harness/dist/index.js reload`，在控制台中打开该 Agent、创建会话，然后发送一个任务，例如：
 
 ```text
 检查这个仓库，解释其架构，并找出一项可以通过测试验证的小型改进。
