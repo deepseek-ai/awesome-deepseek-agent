@@ -98,3 +98,5 @@ API Key 获取地址：[DeepSeek 开放平台](https://platform.deepseek.com/api
 - 示例中使用的是当前公开模型：`deepseek-v4-pro`、`deepseek-v4-flash`。
 - 本 Action 的输入里没有 `model` 字段。
 - 本项目为社区维护且非官方产品（非 DeepSeek 官方/GitHub 官方）。
+- DeepSeek V4 公开模型支持高达 **1M tokens** 的上下文（在相关配置支持的场景）。
+- 最大思考/推理强度由上游 DeepSeek 运行时决定，本 Action 的 `action.yml` 未对该类能力提供输入参数。

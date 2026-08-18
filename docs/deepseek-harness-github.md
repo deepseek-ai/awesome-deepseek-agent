@@ -97,3 +97,5 @@ and set `allow-write: "true"` in a trusted-write workflow (with `run-tests` and 
 - This project uses current DeepSeek model names (`deepseek-v4-pro`, `deepseek-v4-flash`) in the examples.
 - There is no `model` input in the action interface; model selection is handled in the action runtime configuration paths.
 - This repository and action are community-maintained, not an official DeepSeek or GitHub product.
+- DeepSeek V4 supports up to **1M tokens** of context (where applicable).
+- Max thinking / reasoning effort controls are handled by the upstream DeepSeek runtime and are **not exposed** in this action input schema (the interface only exposes fields in `action.yml`).
