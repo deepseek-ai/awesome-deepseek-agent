@@ -40,7 +40,7 @@ jobs:
           ref: ${{ github.event.pull_request.base.sha }}
           persist-credentials: false
           fetch-depth: 1
-      - uses: Lixiaoyiao/deepseek-harness-action@v0.2.0
+      - uses: Lixiaoyiao/deepseek-harness-action@243926cbd3d013f07b364e188ff84826bfa6f678
         with:
           deepseek-api-key: ${{ secrets.DEEPSEEK_API_KEY }}
 ```
@@ -99,3 +99,4 @@ and set `allow-write: "true"` in a trusted-write workflow (with `run-tests` and 
 - This repository and action are community-maintained, not an official DeepSeek or GitHub product.
 - DeepSeek V4 supports up to **1M tokens** of context (where applicable).
 - Max thinking / reasoning effort controls are handled by the upstream DeepSeek runtime and are **not exposed** in this action input schema (the interface only exposes fields in `action.yml`).
+
