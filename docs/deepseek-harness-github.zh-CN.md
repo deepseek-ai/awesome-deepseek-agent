@@ -40,7 +40,7 @@ jobs:
           ref: ${{ github.event.pull_request.base.sha }}
           persist-credentials: false
           fetch-depth: 1
-      - uses: Lixiaoyiao/deepseek-harness-action@v0.2.0
+      - uses: Lixiaoyiao/deepseek-harness-action@243926cbd3d013f07b364e188ff84826bfa6f678
         with:
           deepseek-api-key: ${{ secrets.DEEPSEEK_API_KEY }}
 ```
@@ -100,3 +100,4 @@ API Key 获取地址：[DeepSeek 开放平台](https://platform.deepseek.com/api
 - 本项目为社区维护且非官方产品（非 DeepSeek 官方/GitHub 官方）。
 - DeepSeek V4 公开模型支持高达 **1M tokens** 的上下文（在相关配置支持的场景）。
 - 最大思考/推理强度由上游 DeepSeek 运行时决定，本 Action 的 `action.yml` 未对该类能力提供输入参数。
+
