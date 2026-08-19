@@ -47,3 +47,4 @@ Each guide walks through installation, configuration, and first run — so you c
 ## Contributing
 
 Have another tool you'd like to see here? See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on opening an issue or a pull request with a new guide.
+
