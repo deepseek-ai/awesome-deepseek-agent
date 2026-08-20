@@ -1,14 +1,14 @@
-[English](./dph_fleet.md) | [简体中文](./dph_fleet.zh-CN.md) · [← Back](../README.zh-CN.md)
+[English](./dsh_devices.md) | [简体中文](./dsh_devices.zh-CN.md) · [← Back](../README.zh-CN.md)
 
-# dph-fleet 接入 DeepSeek
+# dsh-devices 接入 DeepSeek
 
-[dph-fleet](https://github.com/polaris-smart/dph-fleet) 是 DeepSeek Harness（dsh）的开源插件，把你的多台设备变成一个舰队：任何跑在 dsh 会话里的智能体都能直接使用它注册的工具——同网设备发现（mDNS）、密钥配对（WiFi 式输入一个 key）、SSH 跨网直连执行命令、文件传输。纯插件挂载，零核心改动、运行时零 npm 依赖，卸载不留痕迹。
+[dsh-devices](https://github.com/polaris-smart/dsh-devices) 是 DeepSeek Harness（dsh）的开源插件，把你的多台设备变成一个舰队：任何跑在 dsh 会话里的智能体都能直接使用它注册的工具——同网设备发现（mDNS）、密钥配对（WiFi 式输入一个 key）、SSH 跨网直连执行命令、文件传输。纯插件挂载，零核心改动、运行时零 npm 依赖，卸载不留痕迹。
 
-- **GitHub:** <https://github.com/polaris-smart/dph-fleet>
+- **GitHub:** <https://github.com/polaris-smart/dsh-devices>
 
 #### 1. 安装 dsh（DeepSeek Harness）
 
-dph-fleet 运行在 dsh 内，舰队里的每台设备都要装 dsh（Node 22+）：
+dsh-devices 运行在 dsh 内，舰队里的每台设备都要装 dsh（Node 22+）：
 
 ```sh
 npx @deepseek-ai/dsh web
@@ -22,19 +22,19 @@ npx @deepseek-ai/dsh web
 export DEEPSEEK_API_KEY=sk-...
 ```
 
-#### 3. 安装 dph-fleet 插件
+#### 3. 安装 dsh-devices 插件
 
 在**每台**设备上，把插件装进你使用的 profile（默认 `web`）：
 
 ```sh
-npx @deepseek-ai/dsh plugin --profile web add dph-fleet
+npx @deepseek-ai/dsh plugin --profile web add dsh-devices
 ```
 
 然后重启 dsh。插件会自动注册六个智能体工具（`fleet_discover`、`fleet_pair`、`fleet_ssh_exec`、`fleet_workspace`、`fleet_upload`、`fleet_download`）。
 
 #### 4. 首次运行——配对两台设备，然后一句话指挥
 
-至少需要 2 台装了 dph-fleet 的设备，连接方式二选一：同一局域网（mDNS），或公网可达的 SSH 端点。
+至少需要 2 台装了 dsh-devices 的设备，连接方式二选一：同一局域网（mDNS），或公网可达的 SSH 端点。
 
 在被控设备 B 上查看设备密钥并保持监听。在主控设备 A 上，直接对 dsh 智能体说话：
 
@@ -50,6 +50,6 @@ npx @deepseek-ai/dsh plugin --profile web add dph-fleet
 
 #### 说明
 
-- 模型配置（DeepSeek-V4 系列、上下文窗口、推理力度）由 dsh 本身负责，参见 dsh 文档。dph-fleet 只提供设备互连工具，不介入模型路由。
+- 模型配置（DeepSeek-V4 系列、上下文窗口、推理力度）由 dsh 本身负责，参见 dsh 文档。dsh-devices 只提供设备互连工具，不介入模型路由。
 - NAT 内网设备（都在家庭/办公路由器后面）当前版本无法直连，P2P 路线已在规划中。
-- 适用前提与完整流程见 [dph-fleet README](https://github.com/polaris-smart/dph-fleet)。
+- 适用前提与完整流程见 [dsh-devices README](https://github.com/polaris-smart/dsh-devices)。
