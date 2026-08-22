@@ -42,6 +42,7 @@ Each guide walks through installation, configuration, and first run — so you c
 
 - [DeepSeek Platform](https://platform.deepseek.com/) — get an API key.
 - [DeepSeek API Docs](https://api-docs.deepseek.com/) — API reference and guides.
+- [DeepSeek Harness Handbook](https://github.com/sandbaseai/deepseek-harness-handbook) — community-maintained handbook with 115+ guides for the DeepSeek Harness agent runtime, covering agents, plugins, security, troubleshooting, and runbooks.
 
 ## Contributing
 
