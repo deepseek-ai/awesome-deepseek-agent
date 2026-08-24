@@ -29,6 +29,7 @@
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **Langcli** | 100% 兼容 Claude Code、支持 DeepSeek V4 等主流 LLM 模型的开源 AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 | **LobeHub** | LobeHub 是你的 Chief Agent Operator，通过招聘、排班并报告整个 AI 团队，将你的 Agent 组织成 7×24 小时运作。 | [指南](./docs/lobehub.zh-CN.md) |
+| **MamboChat** | 开源的 Web Harness 平台，支持多服务商 API 接入、Mambo Agent、RAG 知识库与 MCP，电脑与手机网页端同步访问。 | [指南](./docs/mambochat.zh-CN.md) |
 | **nanobot** | 开源轻量级 AI 智能体，支持接入聊天工具、记忆、MCP 等。 | [指南](./docs/nanobot.zh-CN.md) |
 | **Oh My Pi** | 基于 Pi 分支扩展的终端 AI 编程 Agent，提供 OMP 专用工具、模型角色、MCP、插件与 Agent 工作流。 | [指南](./docs/oh-my-pi.zh-CN.md) |
 | **OpenClaw**    | 开源个人 AI 助手，可接入飞书、微信等聊天工具，并通过 Skill 扩展能力。 | [指南](./docs/openclaw.zh-CN.md)    |
