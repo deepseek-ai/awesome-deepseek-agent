@@ -119,6 +119,47 @@ VS Code 原生支持通过 `chatLanguageModels.json` 配置自定义 OpenAI 兼�
 
 配置完成！Agent 模式、工具调用、MCP 服务器、Skills、自定义指令——Copilot 的全部功能现在都由 DeepSeek V4 驱动。
 
+#### 可选：使用 Responses API
+
+上面的配置使用的是 Chat Completions API（`"apiType": "chat-completions"`）。DeepSeek 同样支持 OpenAI **Responses API** 格式（见[使用 Responses API](https://api-docs.deepseek.com/guides/responses_api)），VS Code 的 Custom Endpoint 供应商也原生支持。
+
+切换时只需将 `"apiType"` 改为 `"responses"`，并把模型的 `url` 指向 `https://api.deepseek.com/v1/responses`，其余配置保持不变（此处仅展示一个模型；`deepseek-v4-pro` 按上方同样方式添加即可）：
+
+```json
+{
+    "name": "DeepSeek",
+    "vendor": "customendpoint",
+    "apiKey": "${input:chat.lm.secret.deepseek}",
+    "apiType": "responses",
+    "models": [
+        {
+            "id": "deepseek-v4-flash",
+            "name": "DeepSeek V4 Flash",
+            "url": "https://api.deepseek.com/v1/responses",
+            "toolCalling": true,
+            "vision": false,
+            "thinking": true,
+            "maxInputTokens": 1000000,
+            "maxOutputTokens": 64000,
+            "supportsReasoningEffort": [
+                "low",
+                "max",
+                "xhigh"
+            ]
+        }
+    ],
+    "settings": {
+        "deepseek-v4-flash": {
+            "reasoningEffort": "xhigh"
+        }
+    }
+}
+```
+
+> **注意：** 如果模型的 `url` 不含明确的 API 路径，VS Code 会自动追加 `/v1/responses`（例如 `https://api.deepseek.com` 会解析为 `https://api.deepseek.com/v1/responses`）。建议写全路径以避免歧义。
+
+> 两种 API 类型均支持流式输出、工具调用和思考，因此都可以配合 Copilot Agent 模式使用。Chat Completions 是稳妥的默认选择；如果你更喜欢 Responses 格式或网关仅暴露该端点，可选用 `responses`。
+
 #### 可选：配置思考深度
 
 VS Code 原生的模型选择器支持按模型独立配置。在模型选择器中，点击 DeepSeek 模型旁的齿轮图标即可调整思考深度：

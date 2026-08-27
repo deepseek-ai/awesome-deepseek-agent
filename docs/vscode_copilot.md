@@ -119,6 +119,47 @@ Here is the step-by-step configuration in VS Code:
 
 That's it! Agent mode, tool calling, MCP servers, skills, custom instructions — all of Copilot's features now run on DeepSeek V4.
 
+#### Optional: Use the Responses API
+
+The configuration above uses the Chat Completions API (`"apiType": "chat-completions"`). DeepSeek also supports the OpenAI **Responses API** format (see [Using the Responses API](https://api-docs.deepseek.com/guides/responses_api)), and VS Code's Custom Endpoint provider supports it natively.
+
+To switch, set `"apiType": "responses"` and point each model's `url` to `https://api.deepseek.com/v1/responses`. Everything else stays the same (shown with one model; add `deepseek-v4-pro` the same way as above):
+
+```json
+{
+    "name": "DeepSeek",
+    "vendor": "customendpoint",
+    "apiKey": "${input:chat.lm.secret.deepseek}",
+    "apiType": "responses",
+    "models": [
+        {
+            "id": "deepseek-v4-flash",
+            "name": "DeepSeek V4 Flash",
+            "url": "https://api.deepseek.com/v1/responses",
+            "toolCalling": true,
+            "vision": false,
+            "thinking": true,
+            "maxInputTokens": 1000000,
+            "maxOutputTokens": 64000,
+            "supportsReasoningEffort": [
+                "low",
+                "max",
+                "xhigh"
+            ]
+        }
+    ],
+    "settings": {
+        "deepseek-v4-flash": {
+            "reasoningEffort": "xhigh"
+        }
+    }
+}
+```
+
+> **Note:** If the model `url` doesn't contain an explicit API path, VS Code automatically appends `/v1/responses` (e.g. `https://api.deepseek.com` resolves to `https://api.deepseek.com/v1/responses`). Writing the full URL avoids ambiguity.
+
+> Both API types support streaming, tool calling, and thinking, so either works with Copilot Agent mode. Chat Completions is the safe default — pick `responses` if you prefer that format or your gateway only exposes it.
+
 #### Optional: Configure Thinking Effort
 
 VS Code's native model picker supports per-model options. In the model picker, click the gear icon next to a DeepSeek model to adjust the thinking effort:
