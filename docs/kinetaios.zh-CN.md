@@ -53,9 +53,19 @@ npm start
 
 > KinetAios 通过 Electron `safeStorage`(macOS Keychain / Windows DPAPI)在本地加密存储 Key。不经过任何中转服务器 —— Key 不会离开你的机器。
 
-> **100 万上下文**:DeepSeek V4 支持最高 1,000,000 token 上下文。在 KinetAios 中,可在上下文检查器(⚙ → Behavior,或会话级模型下拉)中设置每会话上下文预算以利用完整窗口。若保持默认,自动压缩循环仍会通过摘要早期对话来保持历史在预算之内。
+> **100 万上下文窗口** —— DeepSeek V4 支持最高 **1,000,000 token** 上下文。KinetAios 允许你使用完整窗口:
+>
+> - **OpenAI 兼容(DeepSeek 预设)**:在会话级模型下拉中,将上下文预算设为 `1000000`。token/char 比例按协议分别追踪,并发会话下的估算仍保持准确。
+> - **Anthropic 兼容**:使用模型 id `deepseek-v4-pro[1m]`(`[1m]` 后缀启用 100 万上下文档位)。
+> - 若保持默认,**自动压缩**循环仍会通过摘要早期对话来保持历史在预算之内(压缩事件会在 UI 中显示前后 token 数)。
+> - 也可通过**上下文检查器**(Chat 标签页 → 上下文检查器)查看/编辑原始历史,核验实时 token 用量。
 
-> **最大思考强度**:DeepSeek V4 Pro 支持 `max` 推理强度。在 Direct 引擎中使用 OpenAI 兼容端点时,KinetAios 会在请求体中发送 `reasoning_effort`;在会话级模型设置中选择 `max` 级别以获得最佳编程体验。详见[思考模式文档](https://api-docs.deepseek.com/zh-cn/guides/thinking_mode)。
+> **最大思考强度 / 推理强度** —— DeepSeek V4 Pro 支持多档推理强度(`max`、`high`)。为获得最佳编程体验:
+>
+> - **Direct 引擎 + OpenAI 兼容端点**:KinetAios 会在请求体中发送 `reasoning_effort`。在会话级模型下拉中将其设为 `max`(Direct 引擎支持按协议的 token 校准,推理预算与输出预算分开追踪)。
+> - **DeepSeek Harness 引擎**:推理强度会转发给 `dsh` CLI;在会话级模型设置中选择 `max` 级别,让 harness 以完整推理运行。
+>
+> 不要将关闭思考模式作为 API 报错的 workaround —— 若遇到 reasoning-content 回传问题,应引导用户寻求上游修复。详见[思考模式文档](https://api-docs.deepseek.com/zh-cn/guides/thinking_mode)。
 
 ---
 

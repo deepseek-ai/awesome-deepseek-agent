@@ -53,9 +53,19 @@ npm start
 
 > KinetAios encrypts the key locally via Electron `safeStorage` (macOS Keychain / Windows DPAPI). No relay server is involved — your key never leaves your machine.
 
-> **1M context**: DeepSeek V4 supports up to 1,000,000 tokens of context. In KinetAios, set the per-session context budget in the context inspector (⚙ → Behavior, or the per-session model dropdown) to take advantage of the full window. If you leave the default, the auto-compaction loop still keeps history within budget by summarizing early turns.
+> **1M context window** — DeepSeek V4 supports up to **1,000,000 tokens** of context. KinetAios lets you use the full window:
+>
+> - **OpenAI-compatible (DeepSeek preset)**: in the per-session model dropdown, set the context budget to `1000000`. The token/char ratio is tracked per protocol so the estimate stays accurate across concurrent sessions.
+> - **Anthropic-compatible**: use the model id `deepseek-v4-pro[1m]` (the `[1m]` suffix enables the 1M context tier).
+> - If you leave the default, the **auto-compaction** loop still keeps history within budget by summarizing early turns (compaction events are visualized in the UI with before/after token counts).
+> - You can also inspect/edit the raw history via the **Context inspector** (Chat tab → context inspector) to verify the live token usage.
 
-> **Max thinking effort**: DeepSeek V4 Pro supports `max` reasoning effort. When using the Direct engine with the OpenAI-compatible endpoint, KinetAios sends `reasoning_effort` in the request body; pick the `max` level in the per-session model settings for the best coding experience. See the [Thinking Mode docs](https://api-docs.deepseek.com/guides/thinking_mode) for details.
+> **Max thinking / reasoning effort** — DeepSeek V4 Pro supports multiple reasoning effort levels (`max`, `high`). To get the best coding experience:
+>
+> - **Direct engine + OpenAI-compatible endpoint**: KinetAios sends `reasoning_effort` in the request body. Set it to `max` in the per-session model dropdown (the Direct engine supports per-protocol token calibration, so reasoning budget is tracked separately from the output budget).
+> - **DeepSeek Harness engine**: reasoning effort is forwarded to the `dsh` CLI; pick the `max` level in the per-session model settings so the harness runs with full reasoning.
+>
+> Don't disable thinking mode as a workaround for API errors — if you hit a reasoning-content passback issue, point users to the upstream fix instead. See the [Thinking Mode docs](https://api-docs.deepseek.com/guides/thinking_mode) for details.
 
 ---
 
