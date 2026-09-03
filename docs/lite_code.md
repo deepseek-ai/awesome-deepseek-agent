@@ -45,4 +45,6 @@ In **Settings**, pick your model:
 
 Both models run with the full **1 million token** context window, resolved automatically (with a built-in metadata table as offline fallback) — no manual configuration required.
 
+DeepSeek V4 also supports **reasoning effort** control. Click the reasoning-strength button next to the model selector (in **Settings**, or next to the model dropdown in the composer input for a single-turn override) and pick one of **Off / Low / Medium / High / Max**. Choose **Max** for the strongest thinking on complex coding tasks. When reasoning effort is enabled, lite-code sends the `reasoning_effort` parameter to the API.
+
 Open a project folder, and start chatting. Tool calls show up as approval cards — MEDIUM/HIGH-risk operations need your confirmation before running. lite-code tracks prompt-cache hit rate and context usage in the right panel, and compresses context automatically when it grows too large.
