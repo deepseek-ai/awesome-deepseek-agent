@@ -107,3 +107,15 @@ claude
 Open your project directory in VSCode, click the Claude Code icon in the sidebar, and click `New session` to get started.
 
 ![Using Claude Code in VSCode Extension](./assets/claude_code_vsc_ext.png "Using Claude Code in VSCode Extension")
+## Troubleshooting DeepSeek + Claude Code
+
+### HTTP 400 errors
+
+If Claude Code returns an HTTP 400 error while using the DeepSeek Anthropic-compatible endpoint, do not immediately assume that the API key or network is invalid. First verify the endpoint independently with a minimal API request, then inspect the Claude Code debug output for the exact model name and error text.
+
+Useful checks:
+
+```powershell
+claude --version
+$env:ANTHROPIC_BASE_URL
+$env:ANTHROPIC_MODEL
