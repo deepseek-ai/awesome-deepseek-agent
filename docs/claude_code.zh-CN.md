@@ -107,3 +107,72 @@ claude
 用 VSCode 打开项目目录，点击左侧边栏的 Claude Code 图标，并点击 `New session` 即可开始使用。
 
 ![在 VSCode Extension 中使用 Claude Code](./assets/claude_code_vsc_ext.png "在 VSCode Extension 中使用 Claude Code")
+## DeepSeek + Claude Code 故障排查
+
+### HTTP 400 错误
+
+使用 DeepSeek Anthropic 兼容接口时，如果 Claude Code 返回 HTTP 400，不要第一时间判断为 API Key 或网络错误。先独立验证 DeepSeek 接口是否可用，再检查 Claude Code 调试输出中的实际模型名称和具体错误文本。
+
+建议先检查：
+
+```powershell
+claude --version
+$env:ANTHROPIC_BASE_URL
+$env:ANTHROPIC_MODEL
+```
+
+不要在日志或 Issue 中打印真实的 `ANTHROPIC_AUTH_TOKEN`。
+
+### `unrecognized_model` 或模型相关的 400
+
+模型相关的 400 可能来自 Claude Code 版本与 DeepSeek Anthropic 兼容接口之间的兼容性差异。
+
+本仓库已有一个可复现的版本相关案例：Claude Code v2.1.154 在同一配置下发送了 DeepSeek 不接受的 `system` role，而 v2.1.153 正常工作，详见 [Issue #167](https://github.com/deepseek-ai/awesome-deepseek-agent/issues/167)。
+
+另一个独立测试环境中，Claude Code v2.1.266 使用 DeepSeek V4 Pro/Flash 时出现带有 `unrecognized_model` 的 400；在相同 DeepSeek 接口和凭据下，v2.1.153 后续验证正常，且 Pro/Flash 的工具调用也能工作。
+
+由于兼容性可能与版本有关，建议按以下最小隔离流程排查：
+
+1. 先在 Claude Code 之外验证 DeepSeek Anthropic 接口。
+2. 用 `claude --version` 记录准确的 Claude Code 版本。
+3. 使用 `--print` 或最短单句 Prompt 做最小请求。
+4. 问题仍不明确时开启 `--debug`。
+5. 检查实际模型名称和错误正文。
+6. 在不删除当前版本的情况下，单独测试另一个 Claude Code 版本。
+7. 至少分别验证普通 Prompt 和工具调用，再继续修改其他配置。
+
+不要把某一个版本组合直接写成对所有用户都有效的通用修复。报告问题时，应提供准确的 Claude Code 版本、DeepSeek 模型、接口地址和错误文本，以便复现。
+
+### Windows PowerShell：`.ps1` 执行策略错误
+
+如果 PowerShell 阻止执行 `npm.ps1` 或 `claude.ps1`，优先使用 Windows 的 `.cmd` 包装器：
+
+```powershell
+npm.cmd -v
+claude.cmd --version
+```
+
+这样通常无需为了运行工具而修改系统 ExecutionPolicy。
+
+### Windows 原生 `claude.exe` 被替换问题
+
+如果 Windows 安装后只剩下类似 `claude.exe.old.<timestamp>`，却没有新的 `claude.exe`，先检查安装状态，不要反复执行安装/升级命令。
+
+在一次已验证的 v2.1.153 恢复案例中，原先已经验证过的 `.old` 二进制被恢复为 `claude.exe` 后，程序即可正常启动。
+
+只有在确认 `.old` 文件就是当前安装中、此前已验证成功的同版本二进制后，才建议恢复名称；不要从无关安装目录复制二进制文件。
+
+### 如何提交可复现的问题
+
+提交 Issue 时建议包含：
+
+- 操作系统
+- Claude Code 版本
+- DeepSeek 模型
+- `ANTHROPIC_BASE_URL`
+- 独立 API 最小请求是否成功
+- HTTP 状态码和完整错误文本
+- 普通 Prompt、工具调用是否受影响
+- 脱敏后的关键 debug 日志
+
+绝不要提交 API Key、Cookie、账号密码或其他秘密信息。
