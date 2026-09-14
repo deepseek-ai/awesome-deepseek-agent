@@ -28,6 +28,10 @@ sudo apt install ./gritcode-*-Linux.deb
 2. 将 **Reasoning effort**（推理强度）设为 **Max**，以获得最强的编程推理能力。（**High** 是 DeepSeek 的默认值，速度更快。）
 3. 点击 **OK**。
 
+<div align="center">
+<img src="./assets/gritcode_settings.png" width="560" border="1" />
+</div>
+
 Gritcode 直接调用 DeepSeek 的 OpenAI 兼容接口（`https://api.deepseek.com`），无需代理或配置文件。设置密钥后，它会通过 `/models` 接口实时加载可用模型，因此 DeepSeek 推出新模型时无需更新应用即可使用。
 
 #### 3. 开始编程
@@ -35,6 +39,10 @@ Gritcode 直接调用 DeepSeek 的 OpenAI 兼容接口（`https://api.deepseek.c
 1. 打开工具栏中的会话下拉菜单，选择 **New Session…**，然后选择你的项目文件夹。
 2. 在旁边的模型下拉菜单中，选择 **DeepSeek V4 Pro**（`deepseek-v4-pro`）或 **DeepSeek Flash**（`deepseek-flash`，即 DeepSeek V4.1 Flash）。
 3. 输入任务并点击 **Send**。
+
+<div align="center">
+<img src="./assets/gritcode_session.png" width="720" border="1" />
+</div>
 
 DeepSeek V4 默认开启思考模式，Gritcode 围绕这一点做了适配：
 

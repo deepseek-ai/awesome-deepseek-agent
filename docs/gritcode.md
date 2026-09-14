@@ -28,6 +28,10 @@ Click the gear button in the toolbar to open **Settings**.
 2. Set **Reasoning effort** to **Max** for the strongest reasoning on coding tasks. (**High** is DeepSeek's default and is faster.)
 3. Click **OK**.
 
+<div align="center">
+<img src="./assets/gritcode_settings.png" width="560" border="1" />
+</div>
+
 Gritcode talks to DeepSeek's OpenAI-compatible endpoint (`https://api.deepseek.com`) directly — no proxy or config file needed. Once a key is set, it loads the available models live from the `/models` endpoint, so new DeepSeek models show up without an app update.
 
 #### 3. Start Coding
@@ -35,6 +39,10 @@ Gritcode talks to DeepSeek's OpenAI-compatible endpoint (`https://api.deepseek.c
 1. Open the session dropdown in the toolbar, choose **New Session…**, and pick your project folder.
 2. In the model dropdown next to it, choose **DeepSeek V4 Pro** (`deepseek-v4-pro`) or **DeepSeek Flash** (`deepseek-flash`, i.e. DeepSeek V4.1 Flash).
 3. Type a task and click **Send**.
+
+<div align="center">
+<img src="./assets/gritcode_session.png" width="720" border="1" />
+</div>
 
 DeepSeek V4 runs with thinking mode enabled, and Gritcode is built around it:
 
