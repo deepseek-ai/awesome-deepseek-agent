@@ -41,7 +41,7 @@ Gritcode talks to DeepSeek's OpenAI-compatible endpoint (`https://api.deepseek.c
 3. Type a task and click **Send**.
 
 <div align="center">
-<img src="./assets/gritcode_session.png" width="720" border="1" />
+<img src="./assets/gritcode_session.png" width="480" border="1" />
 </div>
 
 DeepSeek V4 runs with thinking mode enabled, and Gritcode is built around it:

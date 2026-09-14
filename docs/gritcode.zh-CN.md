@@ -41,7 +41,7 @@ Gritcode 直接调用 DeepSeek 的 OpenAI 兼容接口（`https://api.deepseek.c
 3. 输入任务并点击 **Send**。
 
 <div align="center">
-<img src="./assets/gritcode_session.png" width="720" border="1" />
+<img src="./assets/gritcode_session.png" width="480" border="1" />
 </div>
 
 DeepSeek V4 默认开启思考模式，Gritcode 围绕这一点做了适配：
