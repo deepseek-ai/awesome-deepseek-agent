@@ -107,3 +107,68 @@ claude
 Open your project directory in VSCode, click the Claude Code icon in the sidebar, and click `New session` to get started.
 
 ![Using Claude Code in VSCode Extension](./assets/claude_code_vsc_ext.png "Using Claude Code in VSCode Extension")
+## Troubleshooting DeepSeek + Claude Code
+
+### HTTP 400 errors
+
+If Claude Code returns an HTTP 400 error while using the DeepSeek Anthropic-compatible endpoint, do not immediately assume that the API key or network is invalid. First verify the endpoint independently with a minimal API request, then inspect the Claude Code debug output for the exact model name and error text.
+
+Useful checks:
+
+```powershell
+claude --version
+$env:ANTHROPIC_BASE_URL
+$env:ANTHROPIC_MODEL
+```
+
+Do not print the real value of `ANTHROPIC_AUTH_TOKEN` in logs or issue reports.
+
+### `unrecognized_model` or model-related 400 responses
+
+A model-related 400 may indicate an incompatibility between the Claude Code version and the DeepSeek Anthropic-compatible endpoint.
+
+One reproducible community report in this repository documents a different version-specific 400: Claude Code v2.1.154 sent a `system` role that the endpoint rejected, while v2.1.153 worked with the same configuration. See [Issue #167](https://github.com/deepseek-ai/awesome-deepseek-agent/issues/167).
+
+In another independent test environment, Claude Code v2.1.266 returned 400 responses containing `unrecognized_model` for DeepSeek V4 Pro/Flash. With the same DeepSeek endpoint and credentials, Claude Code v2.1.153 was then verified to work for both model types, including tool calls.
+
+Because compatibility can be version-specific, use this minimal isolation procedure:
+
+1. Confirm the DeepSeek Anthropic endpoint works outside Claude Code.
+2. Record the exact Claude Code version with `claude --version`.
+3. Run a minimal request with `--print` or a one-line prompt.
+4. Enable `--debug` if the error is still unclear.
+5. Check the reported model name and error body.
+6. Test a second Claude Code version without deleting the first installation.
+7. Re-test both a simple prompt and a tool call before changing the rest of the configuration.
+
+Do not treat a single version pairing as a universal fix. Report the exact Claude Code version, DeepSeek model, endpoint, and error text so others can reproduce the case.
+
+### Windows PowerShell: `.ps1` execution-policy errors
+
+If PowerShell blocks `npm.ps1` or `claude.ps1`, try the Windows command wrappers first:
+
+```powershell
+npm.cmd -v
+claude.cmd --version
+```
+
+This avoids changing the system execution policy just to launch the tools.
+
+### Claude Code native binary replacement problem
+
+If a Windows installation leaves a file such as `claude.exe.old.<timestamp>` but no `claude.exe`, first inspect the installation state and avoid repeatedly running install/upgrade commands while troubleshooting. In a verified v2.1.153 recovery case, the existing `.old` binary was restored to `claude.exe` and the executable then started successfully.
+
+Only restore a renamed binary after confirming that it is the expected version and was previously verified in the same installation. Do not copy binaries from unrelated installations.
+
+### Reporting a reproducible issue
+
+When opening an issue, include:
+
+- Operating system
+- Claude Code version
+- DeepSeek model
+- `ANTHROPIC_BASE_URL`
+- Whether the minimal API request succeeds
+- Exact HTTP status and error text
+- Whether the failure affects normal prompts, tool calls, or both
+- Relevant debug-log lines with all API keys and secrets removed
