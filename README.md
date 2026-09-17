@@ -15,6 +15,7 @@ Each guide walks through installation, configuration, and first run — so you c
 
 | Tool            | Description                                                                                                 | Guide                          |
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| **Ante** | Local-first Rust terminal agent — a ~15 MB, dependency-free binary that lifts DeepSeek-V4 from 50.19% to 64% on Terminal-Bench 2.1. Built-in DeepSeek provider. | [Guide](./docs/ante.md) |
 | **AstrBot** | Open-source agent assistant for Feishu, Telegram and more, extensible with skills, plugins, and MCPs. | [Guide](./docs/astrbot.md) |
 | **Cherry Studio** | Open-source cross-platform desktop AI client with 300+ assistants, MCP support, knowledge bases, and multi-model chat. | [Guide](./docs/cherry_studio.md) |
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |

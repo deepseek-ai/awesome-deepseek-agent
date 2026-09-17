@@ -15,6 +15,7 @@
 
 | 工具            | 简介                                                                  | 指南                                |
 | --------------- | --------------------------------------------------------------------- | ----------------------------------- |
+| **Ante** | 本地优先的 Rust 终端 Agent —— 约 15 MB、零依赖的二进制，在 Terminal-Bench 2.1 上将 DeepSeek-V4 从 50.19% 提升到 64%。内置 DeepSeek 提供商。 | [指南](./docs/ante.zh-CN.md) |
 | **AstrBot** | 开源的 Agent 助手，支持接入 QQ、微信、飞书等消息平台，并可通过 Skill、插件和 MCP 扩展能力。 | [指南](./docs/astrbot.zh-CN.md) |
 | **Cherry Studio** | 开源跨平台桌面 AI 客户端，内置 300+ 助手、MCP、知识库与多模型对话。 | [指南](./docs/cherry_studio.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
