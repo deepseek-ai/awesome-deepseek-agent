@@ -68,7 +68,7 @@ DeepSeek-TUI 默认使用 **DeepSeek-V4-Pro**。按 `Shift+Tab` 切换推理强�
 | 变量 | 说明 |
 |---|---|
 | `DEEPSEEK_API_KEY` | API Key（覆盖配置文件中的值） |
-| `DEEPSEEK_BASE_URL` | API 基址，默认 `https://api.deepseek.com`；中国区使用 `https://api.deepseeki.com` |
+| `DEEPSEEK_BASE_URL` | API 基址，默认 `https://api.deepseek.com`，该主机同时为中国区官方端点（DeepSeek-TUI 的 `deepseek-cn` 仅为同一主机的旧别名） |
 | `DEEPSEEK_MODEL` | 覆盖默认模型 |
 | `DEEPSEEK_PROVIDER` | 切换提供商，例如 `nvidia-nim`（使用 `NVIDIA_API_KEY`） |
 | `RUST_LOG` | 日志级别，例如 `RUST_LOG=debug` |

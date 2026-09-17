@@ -68,7 +68,7 @@ By default DeepSeek-TUI uses **DeepSeek-V4-Pro**. Press `Shift+Tab` to cycle rea
 | Variable | Description |
 |---|---|
 | `DEEPSEEK_API_KEY` | API key (overrides config) |
-| `DEEPSEEK_BASE_URL` | API base URL — defaults to `https://api.deepseek.com`; use `https://api.deepseeki.com` for the China endpoint |
+| `DEEPSEEK_BASE_URL` | API base URL — defaults to `https://api.deepseek.com`, which is also the official host for the China endpoint (DeepSeek-TUI exposes `deepseek-cn` as a legacy alias for the same host) |
 | `DEEPSEEK_MODEL` | Override default model |
 | `DEEPSEEK_PROVIDER` | Switch provider — e.g. `nvidia-nim` (uses `NVIDIA_API_KEY`) |
 | `RUST_LOG` | Logging verbosity (e.g. `RUST_LOG=debug`) |
