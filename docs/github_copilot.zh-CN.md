@@ -2,7 +2,7 @@
 
 # 接入 GitHub Copilot
 
-**DeepSeek V4 for Copilot Chat** 是一个 VS Code 插件，将 DeepSeek V4 Pro 和 Flash 直接添加到 GitHub Copilot 的模型选择器中。你仍可使用 Copilot 的 Agent 模式、工具调用、Skills 和 MCP — 全部由 DeepSeek 驱动。
+**DeepSeek V4 for Copilot Chat** 是一个 VS Code 插件，可将 DeepSeek V4.1 Flash 直接添加到 GitHub Copilot 的模型选择器中。你仍可使用 Copilot 的 Agent 模式、工具调用、Skills 和 MCP — 全部由 DeepSeek 驱动。
 
 #### 1. 安装插件
 
@@ -25,7 +25,7 @@
 
 - 打开 Copilot Chat（`Cmd+Shift+I` / `Ctrl+Shift+I`）。
 - 点击聊天面板右上角的模型选择器。
-- 选择 **DeepSeek V4 Pro** 或 **DeepSeek V4 Flash**。
+- 选择 **DeepSeek V4.1 Flash**。
 - 即可开始对话 — Agent 模式、工具调用及所有 Copilot 功能均可直接使用。
 
 #### 可选：配置思考深度
@@ -37,7 +37,7 @@
 
 #### 可选：视觉支持
 
-DeepSeek V4 为纯文本模型，但插件会自动处理图片。将截图拖入对话后，插件会通过其他已安装的 Copilot 模型（如 Claude、GPT-4o）描述图片内容，再发送给 DeepSeek。执行 **DeepSeek: Set Vision Proxy Model** 可选择用于图片描述的模型。
+DeepSeek V4.1 Flash 原生支持视觉理解；插件的新版本支持该能力时可直接传入截图。将截图拖入对话后，插件会通过其他已安装的 Copilot 模型（如 Claude、GPT-4o）描述图片内容，再发送给 DeepSeek。执行 **DeepSeek: Set Vision Proxy Model** 可选择用于图片描述的模型。
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/Vizards/deepseek-v4-for-copilot/main/resources/screenshots/01-picker.png" width='1024' border='1'  />

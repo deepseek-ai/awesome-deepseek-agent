@@ -50,7 +50,7 @@ nanobot onboard
 {
     "agents": {
         "defaults": {
-            "model": "deepseek-v4-pro",
+            "model": "deepseek-flash",
             "provider": "deepseek",
         }
     },

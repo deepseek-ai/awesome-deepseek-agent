@@ -57,13 +57,13 @@ The `/auth` menu will appear. Follow these steps:
 1. Select **Third-party Providers**
 2. Select **DeepSeek API Key**
 3. **Step 1/2** — paste your DeepSeek API key and press Enter
-4. **Step 2/2** — confirm the model IDs: `deepseek-v4-pro, deepseek-v4-flash` (or edit if needed), press Enter
+4. **Step 2/2** — confirm the model IDs: `deepseek-flash` (or edit if needed), press Enter
 
 After confirmation, you'll see: `Successfully configured DeepSeek API Key`.
 
 #### 4. Switch to a DeepSeek Model
 
-Run the `/model` command and select `deepseek-v4-pro` or `deepseek-v4-flash`:
+Run the `/model` command and select `deepseek-flash`:
 
 ```
 /model

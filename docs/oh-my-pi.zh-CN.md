@@ -26,37 +26,14 @@ providers:
     apiKey: DEEPSEEK_API_KEY
     authHeader: true
     models:
-      - id: deepseek-v4-pro
-        name: DeepSeek V4 Pro
+      - id: deepseek-flash
+        name: DeepSeek V4.1 Flash
         reasoning: true
         thinking:
           minLevel: high
           maxLevel: xhigh
           mode: effort
-        input: [text]
-        contextWindow: 1000000
-        maxTokens: 384000
-        compat:
-          supportsDeveloperRole: false
-          supportsReasoningEffort: true
-          maxTokensField: max_tokens
-          reasoningEffortMap:
-            high: high
-            xhigh: max
-          supportsToolChoice: false
-          requiresReasoningContentForToolCalls: true
-          requiresAssistantContentForToolCalls: true
-          extraBody:
-            thinking:
-              type: enabled
-      - id: deepseek-v4-flash
-        name: DeepSeek V4 Flash
-        reasoning: true
-        thinking:
-          minLevel: high
-          maxLevel: xhigh
-          mode: effort
-        input: [text]
+        input: [text, image]
         contextWindow: 1000000
         maxTokens: 384000
         compat:
@@ -109,20 +86,14 @@ providers:
 
 ```sh
 cd /path/to/your-project
-omp --model deepseek/deepseek-v4-pro
-```
-
-需要更快响应时：
-
-```sh
-omp --model deepseek/deepseek-v4-flash
+omp --model deepseek/deepseek-flash
 ```
 
 在 Oh My Pi 内输入 `/model` 或按 `Ctrl+L` 切换模型。
 
 ## 已知问题
 
-**不推荐依赖内置模型条目。** 较新版本 `omp --list-models deepseek` 能列出 `deepseek-v4-pro` 和 `deepseek-v4-flash`，但内置条目缺少上述三项关键 compat。直接用内置条目在 thinking mode 下带 tool call 的长对话大概率 400。始终使用上方的 `models.yml` 配置。
+**不推荐依赖内置模型条目。** 较新版本 `omp --list-models deepseek` 能列出 `deepseek-flash`，但内置条目缺少上述三项关键 compat。直接用内置条目在 thinking mode 下带 tool call 的长对话大概率 400。始终使用上方的 `models.yml` 配置。
 
 Oh My Pi 目前没有 DeepSeek 的 OAuth `/login` 入口。只能通过 `DEEPSEEK_API_KEY` 环境变量或 `models.yml` 中的 `apiKey` 字段配置 API Key。
 

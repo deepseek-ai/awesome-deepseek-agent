@@ -23,7 +23,7 @@ Open Cherry Studio and click the gear icon in the lower-left corner to open **Se
 
 1. Open **Model Provider** in the left navigation and select **DeepSeek** from the built-in providers list.
 2. Paste your [DeepSeek API Key](https://platform.deepseek.com/api_keys) into the **API Key** field. Leave **API Host** as the default `https://api.deepseek.com`.
-3. Click **Fetch model list** to load the available DeepSeek models, then add **`deepseek-v4-pro`** and **`deepseek-v4-flash`** to the model list.
+3. Click **Fetch model list** to load the available DeepSeek models, then add **`deepseek-flash`** to the model list.
 4. Toggle the switch in the top-right of the DeepSeek provider page to enable it.
 
 <div align="center">
@@ -32,7 +32,7 @@ Open Cherry Studio and click the gear icon in the lower-left corner to open **Se
 
 #### 3. Start Chatting
 
-Open the **Agents** tab from the top navigation, click **+ Agents**, give your agent a name, set **Model** to **`deepseek-v4-pro`** (or **`deepseek-v4-flash`**), pick a permission mode, and click **Add**.
+Open the **Agents** tab from the top navigation, click **+ Agents**, give your agent a name, set **Model** to **`deepseek-flash`**, pick a permission mode, and click **Add**.
 
 <div align="center">
 <img src="./assets/cherry_studio_add_agent.png" width="720" border="1" />

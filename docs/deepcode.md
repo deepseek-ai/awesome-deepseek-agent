@@ -28,7 +28,7 @@ Create `~/.deepcode/settings.json` with your DeepSeek API key and model settings
 ```json
 {
   "env": {
-    "MODEL": "deepseek-v4-pro",
+    "MODEL": "deepseek-flash",
     "BASE_URL": "https://api.deepseek.com",
     "API_KEY": "sk-..."
   },
@@ -45,7 +45,7 @@ Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_
 
 | Option | Description |
 |--------|-------------|
-| `MODEL` | Model name, e.g. `deepseek-v4-pro` or `deepseek-v4-flash` |
+| `MODEL` | Model name, e.g. `deepseek-flash` |
 | `BASE_URL` | API base URL, defaults to `https://api.deepseek.com` |
 | `thinkingEnabled` | Enable deep thinking mode (defaults to `true` for deepseek-v4 models) |
 | `reasoningEffort` | `"max"` or `"high"` — controls how much reasoning the model performs |

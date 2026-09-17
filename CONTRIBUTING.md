@@ -27,25 +27,26 @@ Before submitting, verify these items. PRs missing any of them will be flagged d
 ### 1. Model Naming
 
 ```
-❌ deepseek-chat / deepseek-reasoner / deepseek-coder   (V3, deprecated)
-✅ deepseek-v4-pro / deepseek-v4-flash                   (current)
+❌ deepseek-chat / deepseek-reasoner / deepseek-coder   (V3, retired)
+❌ deepseek-v4-flash / deepseek-v4-flash-vision-exp     (compatibility aliases)
+✅ deepseek-flash                                       (current)
 ```
 
-DeepSeek renamed its models in April 2026. All code examples, config snippets, and prose must use the current names. Search your diff for `deepseek-chat` — if you find it, fix it.
+DeepSeek introduced the canonical `deepseek-flash` model ID in September 2026. All code examples, config snippets, and prose must use the current name. The retired Flash IDs remain temporary compatibility aliases, while `deepseek-v4-pro` routes to V4.1 Flash beginning September 14, 2026.
 
 ### 2. 1M Context Window
 
-DeepSeek V4 models support up to **1 million tokens** of context. Make sure your configuration reflects this:
+DeepSeek V4.1 Flash supports up to **1 million tokens** of context. Make sure your configuration reflects this:
 
-- **Claude Code / Anthropic-compatible**: append `[1m]` to model names, e.g. `deepseek-v4-pro[1m]`
+- **Claude Code / Anthropic-compatible**: append `[1m]` to model names, e.g. `deepseek-flash[1m]`
 - **OpenAI-compatible configs**: set `context_window: 1000000` / `max_tokens: 384000` where the tool supports it
-- **Other tools**: at minimum, note in prose that DeepSeek V4 supports 1M context
+- **Other tools**: at minimum, note in prose that DeepSeek V4.1 Flash supports 1M context
 
 If the tool doesn't expose a context window config, mention it in the description so users are aware.
 
 ### 3. Max Thinking / Reasoning Effort
 
-DeepSeek V4 Pro supports multiple reasoning effort levels (`max` and `high`). Your guide should be compatible with the `max` level so users get the best coding experience. See [Thinking Mode docs](https://api-docs.deepseek.com/guides/thinking_mode) for details.
+DeepSeek V4.1 Flash supports multiple reasoning effort levels (`max` and `high`). Your guide should be compatible with the `max` level so users get the best coding experience. See [Thinking Mode docs](https://api-docs.deepseek.com/guides/thinking_mode) for details.
 
 - **Claude Code**: `CLAUDE_CODE_EFFORT_LEVEL=max` (or equivalent `settings.json` config)
 - **Anthropic-compatible endpoint**: set `thinking: { type: "enabled" }` with max budget
@@ -59,8 +60,8 @@ If your guide includes pricing tables, always verify the numbers against the off
 
 | Model | Input / M tokens | Output / M tokens | Cache Hit / M tokens |
 |-------|-----------------|-------------------|----------------------|
-| deepseek-v4-pro | $0.435 | $0.87 | $0.003625 |
-| deepseek-v4-flash | $0.14 | $0.28 | $0.0028 |
+| deepseek-flash (off-peak) | $0.15 | $0.60 | $0.003 |
+| deepseek-flash (peak) | $0.30 | $1.20 | $0.006 |
 
 ## Common Pitfalls
 

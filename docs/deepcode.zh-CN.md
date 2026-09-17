@@ -28,7 +28,7 @@ deepcode --version
 ```json
 {
   "env": {
-    "MODEL": "deepseek-v4-pro",
+    "MODEL": "deepseek-flash",
     "BASE_URL": "https://api.deepseek.com",
     "API_KEY": "sk-..."
   },
@@ -45,7 +45,7 @@ deepcode --version
 
 | 选项 | 说明 |
 |------|------|
-| `MODEL` | 模型名称，例如 `deepseek-v4-pro` 或 `deepseek-v4-flash` |
+| `MODEL` | 模型名称，例如 `deepseek-flash` |
 | `BASE_URL` | API 地址，默认为 `https://api.deepseek.com` |
 | `thinkingEnabled` | 启用深度思考模式（deepseek-v4 模型默认开启） |
 | `reasoningEffort` | `"max"` 或 `"high"` — 控制模型的推理强度 |

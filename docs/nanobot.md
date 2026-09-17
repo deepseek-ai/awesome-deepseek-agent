@@ -50,7 +50,7 @@ Edit the `config.json` file and modify the following configuration items:
 {
     "agents": {
         "defaults": {
-            "model": "deepseek-v4-pro",
+            "model": "deepseek-flash",
             "provider": "deepseek",
         }
     },

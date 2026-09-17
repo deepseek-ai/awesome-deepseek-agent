@@ -21,7 +21,7 @@ Cherry Studio 是一款面向 Windows / macOS / Linux 的开源桌面 AI 客户�
 
 1. 在左侧导航中打开 **模型服务**，在内置 Provider 列表里找到 **深度求索（DeepSeek）**。
 2. 将 [DeepSeek API Key](https://platform.deepseek.com/api_keys) 粘贴到 **API 密钥** 字段，**API 地址** 保持默认值 `https://api.deepseek.com`。
-3. 点击 **获取模型列表** 拉取可用模型，将 **`deepseek-v4-pro`** 与 **`deepseek-v4-flash`** 添加到模型列表。
+3. 点击 **获取模型列表** 拉取可用模型，将 **`deepseek-flash`** 添加到模型列表。
 4. 打开 DeepSeek 服务页面右上角的开关，启用该 Provider。
 
 <div align="center">
@@ -30,7 +30,7 @@ Cherry Studio 是一款面向 Windows / macOS / Linux 的开源桌面 AI 客户�
 
 #### 3. 开始对话
 
-进入顶部 **智能体** 页面，点击 **+ 智能体**，填写名称，**模型** 选择 **`deepseek-v4-pro`**（或 **`deepseek-v4-flash`**），按需选择权限模式，点击 **添加**。
+进入顶部 **智能体** 页面，点击 **+ 智能体**，填写名称，**模型** 选择 **`deepseek-flash`**，按需选择权限模式，点击 **添加**。
 
 <div align="center">
 <img src="./assets/cherry_studio_add_agent.zh-CN.png" width="720" border="1" />

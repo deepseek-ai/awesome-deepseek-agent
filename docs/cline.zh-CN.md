@@ -36,7 +36,7 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 - 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
 - 选择要使用的模型。
 
-> **注意：** `deepseek-reasoner` 和 `deepseek-chat` 模型即将废弃，请等待 Cline 官方添加 `deepseek-v4-pro` 和 `deepseek-v4-flash` 模型。
+> **注意：** `deepseek-reasoner` 和 `deepseek-chat` 已退役。如果 Cline 内置的 DeepSeek Provider 尚未列出 `deepseek-flash`，请使用下方的 OpenAI Compatible 配置。
 
 <div align="center">
 <img src="./assets/cline_step_4_a.png" width="250" border="1" />
@@ -53,7 +53,7 @@ Cline 是一款运行在 VS Code 中的 AI 编程助手扩展，支持多种 API
 - 选择 **API Provider** 为 **OpenAI Compatible**。
 - **Base URL** 填入 `https://api.deepseek.com`。
 - 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)。
-- 填入 **Model ID**，如 `deepseek-v4-pro`。
+- 填入 **Model ID**，如 `deepseek-flash`。
 - （选做）点击 **Model Configuration**，调整窗口大小、温度、价格和限量等参数。
 
 <div align="center">

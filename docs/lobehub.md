@@ -31,8 +31,8 @@ https://app.lobehub.com/settings/provider/deepseek
 2. Make sure the provider switch in the upper-right corner is enabled.
 3. Paste your DeepSeek API Key into **API Key**.
 4. Leave **API Proxy URL** empty unless you use a custom proxy. The default endpoint is `https://api.deepseek.com`.
-5. Optional: click **Check** under **Connectivity Check**. LobeHub uses `deepseek-v4-flash` as the default check model.
-6. In **Model List**, confirm that **DeepSeek V4 Pro** and **DeepSeek V4 Flash** are enabled. If needed, click **Fetch models** to refresh the provider model list.
+5. Optional: click **Check** under **Connectivity Check**. LobeHub uses `deepseek-flash` as the default check model.
+6. In **Model List**, confirm that **DeepSeek V4.1 Flash** are enabled. If needed, click **Fetch models** to refresh the provider model list.
 
 <div align="center">
 <img src="./assets/lobehub_chrome_provider_settings.en-US.jpg" width="1024" border="1" />
@@ -46,7 +46,7 @@ Return to **Home** or open any agent chat.
 
 1. Click the current model chip in the chat input toolbar.
 2. Search for `DeepSeek V4`.
-3. Choose **DeepSeek V4 Pro** for coding, long-horizon planning, and agent workflows, or **DeepSeek V4 Flash** for lower-latency everyday chat.
+3. Choose **DeepSeek V4.1 Flash** for coding, planning, agent workflows, and everyday chat.
 4. Send a message to start the conversation.
 
 <div align="center">
@@ -79,7 +79,7 @@ DEEPSEEK_PROXY_URL=https://api.deepseek.com
 To restrict the visible DeepSeek model list to V4 models only, add:
 
 ```bash
-DEEPSEEK_MODEL_LIST=-all,+deepseek-v4-pro,+deepseek-v4-flash
+DEEPSEEK_MODEL_LIST=-all,+deepseek-flash
 ```
 
 For most hosted web and desktop users, the UI configuration in **Settings → Service Model → DeepSeek** is enough.
@@ -87,6 +87,6 @@ For most hosted web and desktop users, the UI configuration in **Settings → Se
 #### Troubleshooting
 
 - `401` or authentication errors: recheck the API Key and make sure it is pasted into **API Key**, not **API Proxy URL**.
-- Model not found: refresh the model list and confirm that the enabled model ids are `deepseek-v4-pro` and `deepseek-v4-flash`.
+- Model not found: refresh the model list and confirm that the enabled model ids are `deepseek-flash`.
 - Connection check fails with a proxy: the proxy URL must include `http://` or `https://` and should route to the DeepSeek-compatible API endpoint.
-- Reasoning controls are missing: make sure you selected **DeepSeek V4 Pro** or **DeepSeek V4 Flash**, not another provider's routed model.
+- Reasoning controls are missing: make sure you selected **DeepSeek V4.1 Flash**, not another provider's routed model.

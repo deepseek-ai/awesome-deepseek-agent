@@ -20,7 +20,7 @@ cd /path/to/my-project
 npx reasonix code
 ```
 
-No global install required. By default Reasonix uses **DeepSeek-V4-Flash** for cost-efficient iteration. Type `/pro` inside the TUI to arm **DeepSeek-V4-Pro** for the next turn, or `/preset max` to use Pro for the whole session. Run `/help` for the full slash-command reference.
+No global install required. Reasonix uses **DeepSeek-V4.1-Flash** by default. Legacy Pro selections will route to V4.1 Flash after September 14, 2026. Run `/help` for the full slash-command reference.
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/esengine/reasonix/main/docs/logo.svg" width='640' />

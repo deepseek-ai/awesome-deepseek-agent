@@ -52,8 +52,8 @@ kilo
 - 选择一个可用的 DeepSeek 模型：
   - DeepSeek Chat
   - DeepSeek Reasoner
-  - DeepSeek V4 Flash
-  - DeepSeek V4 Pro
+  - DeepSeek V4.1 Flash
+  - DeepSeek V4.1 Flash
 
 <div align="center">
 <img src="./assets/kilo_code_step_4.png" width="1024" border="1" />

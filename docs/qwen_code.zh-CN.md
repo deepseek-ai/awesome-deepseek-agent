@@ -57,13 +57,13 @@ qwen
 1. 选择 **Third-party Providers**
 2. 选择 **DeepSeek API Key**
 3. **步骤 1/2** — 粘贴你的 DeepSeek API Key，回车
-4. **步骤 2/2** — 确认模型 ID：`deepseek-v4-pro, deepseek-v4-flash`（可自行修改），回车
+4. **步骤 2/2** — 确认模型 ID：`deepseek-flash`（可自行修改），回车
 
 确认后将显示：`Successfully configured DeepSeek API Key`。
 
 #### 4. 切换到 DeepSeek 模型
 
-运行 `/model` 命令，选择 `deepseek-v4-pro` 或 `deepseek-v4-flash`：
+运行 `/model` 命令，选择 `deepseek-flash`：
 
 ```
 /model

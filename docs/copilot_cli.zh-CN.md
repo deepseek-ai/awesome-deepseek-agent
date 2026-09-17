@@ -27,7 +27,7 @@ Linux / Mac：
 export COPILOT_PROVIDER_TYPE=anthropic
 export COPILOT_PROVIDER_BASE_URL=https://api.deepseek.com/anthropic
 export COPILOT_PROVIDER_API_KEY=sk-your-deepseek-api-key
-export COPILOT_MODEL=deepseek-v4-pro
+export COPILOT_MODEL=deepseek-flash
 ```
 
 Windows（PowerShell）：
@@ -36,10 +36,10 @@ Windows（PowerShell）：
 $env:COPILOT_PROVIDER_TYPE="anthropic"
 $env:COPILOT_PROVIDER_BASE_URL="https://api.deepseek.com/anthropic"
 $env:COPILOT_PROVIDER_API_KEY="sk-your-deepseek-api-key"
-$env:COPILOT_MODEL="deepseek-v4-pro"
+$env:COPILOT_MODEL="deepseek-flash"
 ```
 
-可选模型：`deepseek-v4-pro`、`deepseek-v4-flash`，修改 `COPILOT_MODEL` 即可切换。
+可选模型：`deepseek-flash`，修改 `COPILOT_MODEL` 即可切换。
 
 #### 4. 启动 Copilot CLI
 
@@ -51,7 +51,7 @@ copilot
 
 #### 可选：配置 Token 限制
 
-由于 `deepseek-v4-pro` 不在 Copilot CLI 的内置模型目录中，建议显式配置 token 限制：
+由于 `deepseek-flash` 不在 Copilot CLI 的内置模型目录中，建议显式配置 token 限制：
 
 Linux / Mac：
 

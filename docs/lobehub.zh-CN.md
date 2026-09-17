@@ -31,8 +31,8 @@ https://app.lobehub.com/settings/provider/deepseek
 2. 确认右上角的 Provider 开关已开启。
 3. 将 DeepSeek API Key 粘贴到 **API Key**。
 4. 除非你使用自定义代理，**API 代理地址** 可以保持为空；默认端点是 `https://api.deepseek.com`。
-5. 可选：点击 **连通性检查** 中的 **检查**。LobeHub 默认使用 `deepseek-v4-flash` 作为检查模型。
-6. 在 **模型列表** 中确认 **DeepSeek V4 Pro** 与 **DeepSeek V4 Flash** 已启用。如需刷新模型列表，点击 **获取模型列表**。
+5. 可选：点击 **连通性检查** 中的 **检查**。LobeHub 默认使用 `deepseek-flash` 作为检查模型。
+6. 在 **模型列表** 中确认 **DeepSeek V4.1 Flash** 已启用。如需刷新模型列表，点击 **获取模型列表**。
 
 <div align="center">
 <img src="./assets/lobehub_chrome_provider_settings.zh-CN.jpg" width="1024" border="1" />
@@ -46,7 +46,7 @@ https://app.lobehub.com/settings/provider/deepseek
 
 1. 点击输入框工具栏中的当前模型标签。
 2. 搜索 `DeepSeek V4`。
-3. 编码、长程规划和 Agent 工作流建议选择 **DeepSeek V4 Pro**；日常对话和低延迟场景可以选择 **DeepSeek V4 Flash**。
+3. 编码、长程规划、Agent 工作流和日常对话均选择 **DeepSeek V4.1 Flash**。
 4. 发送消息即可开始对话。
 
 <div align="center">
@@ -79,7 +79,7 @@ DEEPSEEK_PROXY_URL=https://api.deepseek.com
 如果只想显示 DeepSeek V4 模型，可以继续添加：
 
 ```bash
-DEEPSEEK_MODEL_LIST=-all,+deepseek-v4-pro,+deepseek-v4-flash
+DEEPSEEK_MODEL_LIST=-all,+deepseek-flash
 ```
 
 对于大多数网页端和桌面端用户，在 **设置 → 服务模型 → DeepSeek** 中完成 UI 配置即可。
@@ -87,6 +87,6 @@ DEEPSEEK_MODEL_LIST=-all,+deepseek-v4-pro,+deepseek-v4-flash
 #### 常见问题
 
 - `401` 或鉴权失败：检查 API Key 是否正确，并确认它填在 **API Key**，不是 **API 代理地址**。
-- 找不到模型：刷新模型列表，并确认已启用的模型 id 是 `deepseek-v4-pro` 和 `deepseek-v4-flash`。
+- 找不到模型：刷新模型列表，并确认已启用的模型 id 是 `deepseek-flash`。
 - 使用代理时连通性检查失败：代理地址必须包含 `http://` 或 `https://`，并且应转发到 DeepSeek 兼容 API 端点。
-- 看不到推理强度控制：确认当前选择的是 **DeepSeek V4 Pro** 或 **DeepSeek V4 Flash**，而不是其他服务商的转发模型。
+- 看不到推理强度控制：确认当前选择的是 **DeepSeek V4.1 Flash**，而不是其他服务商的转发模型。

@@ -40,43 +40,17 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
       "apiKey": "$DEEPSEEK_API_KEY",
       "models": [
         {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
+          "id": "deepseek-flash",
+          "name": "DeepSeek V4.1 Flash",
           "contextWindow": 1000000,
           "maxTokens": 384000,
-          "input": ["text"],
+          "input": ["text", "image"],
           "reasoning": true,
           "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
           "cost": {
-            "input": 1.74,
-            "output": 3.48,
-            "cacheRead": 0.145,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
-          "cost": {
-            "input": 0.14,
-            "output": 0.28,
-            "cacheRead": 0.028,
+            "input": 0.30,
+            "output": 1.20,
+            "cacheRead": 0.006,
             "cacheWrite": 0
           },
           "compat": {
@@ -123,7 +97,7 @@ pi
 ```
 
 - 输入 `/model` 打开模型切换器。
-- 选择 **deepseek**，然后选择 `DeepSeek-V4-Pro` 或 `DeepSeek-V4-Flash`。
+- 选择 **deepseek**，然后选择 `DeepSeek-V4.1-Flash`。
 - 开始使用你的极简终端编码框架。
 
 更多配置选项请参阅 [Pi 模型文档](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent/docs/models.md)。

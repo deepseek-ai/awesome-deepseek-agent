@@ -2,7 +2,7 @@
 
 # Integrate with DeepSeek-TUI
 
-DeepSeek-TUI is an open-source terminal AI coding assistant built in Rust as a Codex-style 13-crate workspace. It talks to `api.deepseek.com` directly, supports DeepSeek-V4-Pro and DeepSeek-V4-Flash with the full 1M-token context window, and ships sandboxed tool execution on macOS (Seatbelt), Linux (Landlock), and Windows.
+DeepSeek-TUI is an open-source terminal AI coding assistant built in Rust as a Codex-style 13-crate workspace. It talks to `api.deepseek.com` directly, supports DeepSeek-V4.1-Flash with the full 1M-token context window, and ships sandboxed tool execution on macOS (Seatbelt), Linux (Landlock), and Windows.
 
 - **GitHub:** <https://github.com/Hmbown/DeepSeek-TUI>
 
@@ -40,7 +40,7 @@ deepseek
 
 `deepseek` is the canonical entry point. It dispatches to the interactive TUI by default, or to subcommands like `deepseek doctor`, `deepseek mcp list`, `deepseek serve --http`, `deepseek -p "one-shot prompt"`, and `deepseek --yolo`.
 
-By default DeepSeek-TUI uses **DeepSeek-V4-Pro**. Press `Shift+Tab` to cycle reasoning effort (`off → high → max`). Press `Tab` to cycle modes:
+By default DeepSeek-TUI uses **DeepSeek-V4.1-Flash**. Press `Shift+Tab` to cycle reasoning effort (`off → high → max`). Press `Tab` to cycle modes:
 
 | Mode | What it does |
 |---|---|

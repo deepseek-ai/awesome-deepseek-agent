@@ -43,7 +43,7 @@ server:
   addr: "127.0.0.1:38440"
 
 models:
-  deepseek-v4-pro:
+  deepseek-flash:
     context_window: 1000000
     max_output_tokens: 384000
     default_reasoning_level: "high"
@@ -57,32 +57,16 @@ models:
     extensions:
       deepseek_v4:
         enabled: true
-  deepseek-v4-flash:
-    context_window: 1000000
-    max_output_tokens: 384000
-    default_reasoning_level: "high"
-    supported_reasoning_levels:
-      - effort: "high"
-        description: "High reasoning effort"
-      - effort: "xhigh"
-        description: "Extra high reasoning effort"
-    supports_reasoning_summaries: true
-    default_reasoning_summary: "auto"
-    extensions:
-      deepseek_v4:
-        enabled: true
-
 providers:
   deepseek:
     base_url: "https://api.deepseek.com/anthropic"
     api_key: "sk-your-deepseek-api-key"
     offers:
-      - model: deepseek-v4-pro
-      - model: deepseek-v4-flash
+      - model: deepseek-flash
 
 routes:
   moonbridge:
-    model: deepseek-v4-pro
+    model: deepseek-flash
     provider: deepseek
 
 defaults:
@@ -90,7 +74,7 @@ defaults:
   max_tokens: 65536
 ```
 
-这个最小配置使用当前 Moon Bridge 配置结构，启用 DeepSeek V4 Pro / Flash、Codex 模型元数据和 DeepSeek V4 兼容扩展。**如果需要图片输入、Web Search 或多 Provider 路由**，可以再参考 Moon Bridge 的 `config.example.yml` 扩展配置。
+这个最小配置使用当前 Moon Bridge 配置结构，启用 DeepSeek V4.1 Flash、Codex 模型元数据和 DeepSeek V4 兼容扩展。**如果需要图片输入、Web Search 或多 Provider 路由**，可以再参考 Moon Bridge 的 `config.example.yml` 扩展配置。
 
 #### 4. 启动 Moon Bridge
 

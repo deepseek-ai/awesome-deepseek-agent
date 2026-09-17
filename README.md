@@ -6,7 +6,9 @@
 
 A curated list of guides for integrating **DeepSeek** models into popular AI agent and coding-assistant tools.
 
-Each guide walks through installation, configuration, and first run — so you can start using DeepSeek-V4-Pro or DeepSeek-V4-Flash inside your favorite tool in a few minutes.
+Each guide walks through installation, configuration, and first run — so you can start using DeepSeek-V4.1-Flash inside your favorite tool in a few minutes.
+
+> **September 2026 update:** Use `deepseek-flash` for the latest V4.1 Flash model. It includes native visual understanding. The retired `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` IDs temporarily route to V4.1 Flash; `deepseek-v4-pro` will do the same starting September 14, 2026.
 
 </div>
 

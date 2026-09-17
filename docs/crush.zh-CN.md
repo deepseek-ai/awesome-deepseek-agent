@@ -38,15 +38,8 @@ Crush 支持通过 OpenAI 兼容 API 添加自定义供应商。在配置文件�
       "api_key": "$DEEPSEEK_API_KEY",
       "models": [
         {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek-V4-Pro",
-          "context_window": 1048576,
-          "default_max_tokens": 32768,
-          "can_reason": true
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek-V4-Flash",
+          "id": "deepseek-flash",
+          "name": "DeepSeek-V4.1-Flash",
           "context_window": 1048576,
           "default_max_tokens": 32768,
           "can_reason": true
@@ -83,5 +76,5 @@ crush
 ```
 
 - 按 `Ctrl+L`（或输入 `/model`）打开模型切换器。
-- 选择 **DeepSeek** 供应商，然后选择 `DeepSeek-V4-Pro` 或 `DeepSeek-V4-Flash`。
+- 选择 **DeepSeek** 供应商，然后选择 `DeepSeek-V4.1-Flash`。
 - 开始与你的终端编程新搭档一起编码 💘

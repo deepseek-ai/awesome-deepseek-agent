@@ -36,7 +36,7 @@ Cline is an AI coding assistant that runs as a VS Code extension, supporting mul
 - Enter your [DeepSeek API Key](https://platform.deepseek.com/api_keys).
 - Select the model you want to use.
 
-> **Note:** `deepseek-reasoner` and `deepseek-chat` models will be deprecated soon. Please wait for Cline to officially add `deepseek-v4-pro` and `deepseek-v4-flash` models.
+> **Note:** `deepseek-reasoner` and `deepseek-chat` are retired. If Cline's built-in DeepSeek provider does not list `deepseek-flash` yet, use the OpenAI-compatible setup below.
 
 <div align="center">
 <img src="./assets/cline_step_4_a.png" width="250" border="1" />
@@ -53,7 +53,7 @@ After configuration, you can start using Cline:
 - Select **API Provider** as **OpenAI Compatible**.
 - Set **Base URL** to `https://api.deepseek.com`.
 - Enter your [DeepSeek API Key](https://platform.deepseek.com/api_keys).
-- Enter **Model ID**, e.g. `deepseek-v4-pro`.
+- Enter **Model ID**, e.g. `deepseek-flash`.
 - (Optional) Click **Model Configuration** to adjust window size, temperature, pricing, and limits.
 
 <div align="center">

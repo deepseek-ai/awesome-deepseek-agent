@@ -38,15 +38,8 @@ Crush supports custom providers via OpenAI-compatible APIs. Add DeepSeek to your
       "api_key": "$DEEPSEEK_API_KEY",
       "models": [
         {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek-V4-Pro",
-          "context_window": 1048576,
-          "default_max_tokens": 32768,
-          "can_reason": true
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek-V4-Flash",
+          "id": "deepseek-flash",
+          "name": "DeepSeek-V4.1-Flash",
           "context_window": 1048576,
           "default_max_tokens": 32768,
           "can_reason": true
@@ -83,5 +76,5 @@ crush
 ```
 
 - Press `Ctrl+L` (or type `/model`) to open the model switcher.
-- Select the **DeepSeek** provider and choose `DeepSeek-V4-Pro` or `DeepSeek-V4-Flash`.
+- Select the **DeepSeek** provider and choose `DeepSeek-V4.1-Flash`.
 - Start coding with your new terminal bestie 💘

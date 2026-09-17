@@ -49,10 +49,10 @@ Configuration file content:
   "env": {
     "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
     "ANTHROPIC_AUTH_TOKEN": "<your DeepSeek API Key>",
-    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash[1m]",
+    "ANTHROPIC_MODEL": "deepseek-flash[1m]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-flash[1m]",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-flash[1m]",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-flash[1m]",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max"
   }
@@ -66,10 +66,10 @@ Linux / Mac users, run the following commands to configure environment variables
 ```
 export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
 export ANTHROPIC_AUTH_TOKEN=<your DeepSeek API Key>
-export ANTHROPIC_MODEL=deepseek-v4-pro[1m]
-export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro[1m]
-export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-pro[1m]
-export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash[1m]
+export ANTHROPIC_MODEL=deepseek-flash[1m]
+export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-flash[1m]
+export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-flash[1m]
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-flash[1m]
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 export CLAUDE_CODE_EFFORT_LEVEL=max
 ```
@@ -79,10 +79,10 @@ Windows users, run:
 ```
 $env:ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
 $env:ANTHROPIC_AUTH_TOKEN="<your DeepSeek API Key>"
-$env:ANTHROPIC_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash[1m]"
+$env:ANTHROPIC_MODEL="deepseek-flash[1m]"
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-flash[1m]"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-flash[1m]"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-flash[1m]"
 $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 $env:CLAUDE_CODE_EFFORT_LEVEL="max"
 ```

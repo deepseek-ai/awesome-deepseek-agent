@@ -20,7 +20,7 @@ cd /path/to/my-project
 npx reasonix code
 ```
 
-无需全局安装。Reasonix 默认使用 **DeepSeek-V4-Flash** 跑日常迭代以控制成本。在 TUI 中输入 `/pro` 可在下一轮切换到 **DeepSeek-V4-Pro**，`/preset max` 则整个 session 都走 Pro。输入 `/help` 查看完整 slash 命令参考。
+无需全局安装。Reasonix 默认使用 **DeepSeek-V4.1-Flash**。旧有的 Pro 选项将在 2026 年 9 月 14 日后路由到 V4.1 Flash。输入 `/help` 查看完整 slash 命令参考。
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/esengine/reasonix/main/docs/logo.svg" width='640' />

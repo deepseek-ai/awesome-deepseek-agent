@@ -26,37 +26,14 @@ providers:
     apiKey: DEEPSEEK_API_KEY
     authHeader: true
     models:
-      - id: deepseek-v4-pro
-        name: DeepSeek V4 Pro
+      - id: deepseek-flash
+        name: DeepSeek V4.1 Flash
         reasoning: true
         thinking:
           minLevel: high
           maxLevel: xhigh
           mode: effort
-        input: [text]
-        contextWindow: 1000000
-        maxTokens: 384000
-        compat:
-          supportsDeveloperRole: false
-          supportsReasoningEffort: true
-          maxTokensField: max_tokens
-          reasoningEffortMap:
-            high: high
-            xhigh: max
-          supportsToolChoice: false
-          requiresReasoningContentForToolCalls: true
-          requiresAssistantContentForToolCalls: true
-          extraBody:
-            thinking:
-              type: enabled
-      - id: deepseek-v4-flash
-        name: DeepSeek V4 Flash
-        reasoning: true
-        thinking:
-          minLevel: high
-          maxLevel: xhigh
-          mode: effort
-        input: [text]
+        input: [text, image]
         contextWindow: 1000000
         maxTokens: 384000
         compat:
@@ -109,20 +86,14 @@ These three fields are essential. Without them, DeepSeek V4 will return 400 erro
 
 ```sh
 cd /path/to/your-project
-omp --model deepseek/deepseek-v4-pro
-```
-
-For faster responses:
-
-```sh
-omp --model deepseek/deepseek-v4-flash
+omp --model deepseek/deepseek-flash
 ```
 
 Switch models inside Oh My Pi with `/model` or `Ctrl+L`.
 
 ## Known issues
 
-**Do not rely on the built-in model entries.** Recent builds list `deepseek-v4-pro` and `deepseek-v4-flash` via `omp --list-models deepseek`, but they lack the three critical compat fields above. Long thinking-mode conversations with tool calls will 400. Always use the `models.yml` configuration shown above.
+**Do not rely on the built-in model entries.** Recent builds list `deepseek-flash` via `omp --list-models deepseek`, but they lack the three critical compat fields above. Long thinking-mode conversations with tool calls will 400. Always use the `models.yml` configuration shown above.
 
 Oh My Pi does not currently have a DeepSeek OAuth `/login` entry. API keys must be provided via the `DEEPSEEK_API_KEY` environment variable or the `apiKey` field in `models.yml`.
 

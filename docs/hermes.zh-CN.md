@@ -29,5 +29,5 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 - 当提示选择模型提供商时，选择 **DeepSeek**
 - 输入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)
 - Base URL 填写 `https://api.deepseek.com`
-- 选择 `deepseek-v4-pro` 模型
+- 选择 `deepseek-flash` 模型
 - 继续完成其余配置选项

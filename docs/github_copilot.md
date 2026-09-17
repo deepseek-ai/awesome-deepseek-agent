@@ -2,7 +2,7 @@
 
 # Integrate with GitHub Copilot
 
-**DeepSeek V4 for Copilot Chat** is a VS Code extension that adds DeepSeek V4 Pro & Flash directly into the GitHub Copilot Chat model picker. You keep Copilot's agent mode, tool calling, skills, and MCP — all powered by DeepSeek.
+**DeepSeek V4 for Copilot Chat** is a VS Code extension that adds DeepSeek V4.1 Flash directly to the GitHub Copilot Chat model picker. You keep Copilot's agent mode, tool calling, skills, and MCP — all powered by DeepSeek.
 
 #### 1. Install the Extension
 
@@ -25,7 +25,7 @@
 
 - Open Copilot Chat (`Cmd+Shift+I` / `Ctrl+Shift+I`).
 - Click the model picker at the top-right of the chat panel.
-- Choose **DeepSeek V4 Pro** or **DeepSeek V4 Flash**.
+- Choose **DeepSeek V4.1 Flash**.
 - Start chatting — agent mode, tool calling, and all Copilot features work out of the box.
 
 #### Optional: Configure Thinking Effort
@@ -37,7 +37,7 @@ In the model picker, click the gear icon next to a DeepSeek model to choose the 
 
 #### Optional: Vision Support
 
-DeepSeek V4 is text-only, but the extension handles images automatically. Drop a screenshot into chat and it proxies through another installed Copilot model (Claude, GPT-4o) to describe the image before sending to DeepSeek. Run **DeepSeek: Set Vision Proxy Model** to pick which model handles image descriptions.
+DeepSeek V4.1 Flash natively understands images; the extension can pass screenshots directly when its current release supports the new model capability. Drop a screenshot into chat and it proxies through another installed Copilot model (Claude, GPT-4o) to describe the image before sending to DeepSeek. Run **DeepSeek: Set Vision Proxy Model** to pick which model handles image descriptions.
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/Vizards/deepseek-v4-for-copilot/main/resources/screenshots/01-picker.png" width='1024' border='1'  />

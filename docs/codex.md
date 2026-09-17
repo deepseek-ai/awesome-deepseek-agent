@@ -43,7 +43,7 @@ server:
   addr: "127.0.0.1:38440"
 
 models:
-  deepseek-v4-pro:
+  deepseek-flash:
     context_window: 1000000
     max_output_tokens: 384000
     default_reasoning_level: "high"
@@ -57,32 +57,16 @@ models:
     extensions:
       deepseek_v4:
         enabled: true
-  deepseek-v4-flash:
-    context_window: 1000000
-    max_output_tokens: 384000
-    default_reasoning_level: "high"
-    supported_reasoning_levels:
-      - effort: "high"
-        description: "High reasoning effort"
-      - effort: "xhigh"
-        description: "Extra high reasoning effort"
-    supports_reasoning_summaries: true
-    default_reasoning_summary: "auto"
-    extensions:
-      deepseek_v4:
-        enabled: true
-
 providers:
   deepseek:
     base_url: "https://api.deepseek.com/anthropic"
     api_key: "sk-your-deepseek-api-key"
     offers:
-      - model: deepseek-v4-pro
-      - model: deepseek-v4-flash
+      - model: deepseek-flash
 
 routes:
   moonbridge:
-    model: deepseek-v4-pro
+    model: deepseek-flash
     provider: deepseek
 
 defaults:
@@ -90,7 +74,7 @@ defaults:
   max_tokens: 65536
 ```
 
-This minimal config uses the current Moon Bridge configuration structure and enables DeepSeek V4 Pro / Flash, Codex model metadata, and the DeepSeek V4 compatibility extension. **For image input, Web Search, or multi-provider routing**, extend it with the options from Moon Bridge's `config.example.yml`.
+This minimal config uses the current Moon Bridge configuration structure and enables DeepSeek V4.1 Flash, Codex model metadata, and the DeepSeek V4 compatibility extension. **For image input, Web Search, or multi-provider routing**, extend it with the options from Moon Bridge's `config.example.yml`.
 
 #### 4. Start Moon Bridge
 

@@ -27,7 +27,7 @@ Linux / Mac:
 export COPILOT_PROVIDER_TYPE=anthropic
 export COPILOT_PROVIDER_BASE_URL=https://api.deepseek.com/anthropic
 export COPILOT_PROVIDER_API_KEY=sk-your-deepseek-api-key
-export COPILOT_MODEL=deepseek-v4-pro
+export COPILOT_MODEL=deepseek-flash
 ```
 
 Windows (PowerShell):
@@ -36,10 +36,10 @@ Windows (PowerShell):
 $env:COPILOT_PROVIDER_TYPE="anthropic"
 $env:COPILOT_PROVIDER_BASE_URL="https://api.deepseek.com/anthropic"
 $env:COPILOT_PROVIDER_API_KEY="sk-your-deepseek-api-key"
-$env:COPILOT_MODEL="deepseek-v4-pro"
+$env:COPILOT_MODEL="deepseek-flash"
 ```
 
-Available models: `deepseek-v4-pro`, `deepseek-v4-flash`. Switch by changing `COPILOT_MODEL`.
+Available models: `deepseek-flash`. Switch by changing `COPILOT_MODEL`.
 
 #### 4. Start Copilot CLI
 
@@ -51,7 +51,7 @@ Full agent mode, tool calling, and MCP support — all powered by DeepSeek.
 
 #### Optional: Token Limits
 
-Since `deepseek-v4-pro` is not in Copilot CLI's built-in model catalog, configure the token limits explicitly:
+Since `deepseek-flash` is not in Copilot CLI's built-in model catalog, configure the token limits explicitly:
 
 Linux / Mac:
 

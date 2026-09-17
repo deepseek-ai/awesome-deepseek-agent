@@ -6,7 +6,9 @@
 
 精选的 **DeepSeek** 模型接入指南合集，帮助你将 DeepSeek 接入主流 AI Agent 与编程助手工具。
 
-每份指南都包含安装、配置与首次运行的完整步骤，几分钟即可在你喜爱的工具中用上 DeepSeek-V4-Pro 或 DeepSeek-V4-Flash。
+每份指南都包含安装、配置与首次运行的完整步骤，几分钟即可在你喜爱的工具中用上 DeepSeek-V4.1-Flash。
+
+> **2026 年 9 月更新：** 请使用 `deepseek-flash` 调用最新的 V4.1 Flash 模型；该模型原生支持视觉理解。已退役的 `deepseek-v4-flash` 与 `deepseek-v4-flash-vision-exp` 暂时路由到 V4.1 Flash；`deepseek-v4-pro` 也将从 2026 年 9 月 14 日起路由到该模型。
 
 </div>
 

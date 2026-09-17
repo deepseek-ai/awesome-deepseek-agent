@@ -7,10 +7,10 @@
 
 | 模型                         | 提供商       | Base URL                             |
 | -------------------------- | --------- | ------------------------------------ |
-| DeepSeek V4 Pro            | Anthropic | `https://api.deepseek.com/anthropic` |
-| DeepSeek V4 Flash          | Anthropic | `https://api.deepseek.com/anthropic` |
-| DeepSeek V4 Pro (OpenAI)   | OpenAI    | `https://api.deepseek.com`           |
-| DeepSeek V4 Flash (OpenAI) | OpenAI    | `https://api.deepseek.com`           |
+| DeepSeek V4.1 Flash            | Anthropic | `https://api.deepseek.com/anthropic` |
+| DeepSeek V4.1 Flash          | Anthropic | `https://api.deepseek.com/anthropic` |
+| DeepSeek V4.1 Flash (OpenAI)   | OpenAI    | `https://api.deepseek.com`           |
+| DeepSeek V4.1 Flash (OpenAI) | OpenAI    | `https://api.deepseek.com`           |
 
 
 ## 配置
@@ -21,23 +21,12 @@
 
 ```json
 {
-  "model": "deepseek-v4-pro",
-  "id": "custom:deepseek-v4-pro---Anthropic",
+  "model": "deepseek-flash",
+  "id": "custom:deepseek-flash---Anthropic",
   "index": 1,
   "baseUrl": "https://api.deepseek.com/anthropic",
   "apiKey": "<your DeepSeek API Key>",
-  "displayName": "DeepSeek V4 Pro",
-  "maxOutputTokens": 384000,
-  "noImageSupport": false,
-  "provider": "anthropic"
-},
-{
-  "model": "deepseek-v4-flash",
-  "id": "custom:deepseek-v4-flash---Anthropic",
-  "index": 2,
-  "baseUrl": "https://api.deepseek.com/anthropic",
-  "apiKey": "<your DeepSeek API Key>",
-  "displayName": "DeepSeek V4 Flash",
+  "displayName": "DeepSeek V4.1 Flash",
   "maxOutputTokens": 384000,
   "noImageSupport": false,
   "provider": "anthropic"
@@ -48,23 +37,12 @@
 
 ```json
 {
-  "model": "deepseek-v4-pro",
-  "id": "custom:deepseek-v4-pro---OpenAI",
+  "model": "deepseek-flash",
+  "id": "custom:deepseek-flash---OpenAI",
   "index": 1,
   "baseUrl": "https://api.deepseek.com",
   "apiKey": "<your DeepSeek API Key>",
-  "displayName": "DeepSeek V4 Pro (OpenAI)",
-  "maxOutputTokens": 384000,
-  "noImageSupport": false,
-  "provider": "openai"
-},
-{
-  "model": "deepseek-v4-flash",
-  "id": "custom:deepseek-v4-flash---OpenAI",
-  "index": 2,
-  "baseUrl": "https://api.deepseek.com",
-  "apiKey": "<your DeepSeek API Key>",
-  "displayName": "DeepSeek V4 Flash (OpenAI)",
+  "displayName": "DeepSeek V4.1 Flash (OpenAI)",
   "maxOutputTokens": 384000,
   "noImageSupport": false,
   "provider": "openai"
@@ -77,9 +55,9 @@
 
 ```json
 "missionModelSettings": {
-  "workerModel": "custom:deepseek-v4-pro---Anthropic",
+  "workerModel": "custom:deepseek-flash---Anthropic",
   "workerReasoningEffort": "none",
-  "validationWorkerModel": "custom:deepseek-v4-flash---Anthropic",
+  "validationWorkerModel": "custom:deepseek-flash---Anthropic",
   "validationWorkerReasoningEffort": "none",
   "skipUserTesting": true,
   "skipScrutiny": true
@@ -98,7 +76,7 @@ Factory 支持三种 Provider 类型，决定 API 兼容性：
 | `generic-chat-completion-api` | OpenAI Chat Completions API          | OpenRouter、Fireworks、Together AI、Ollama、vLLM 及大多数开源 providers     | [OpenAI Chat Completions API](https://platform.openai.com/docs/api-reference/chat) |
 
 
-DeepSeek V4 Pro 和 V4 Flash 支持 `anthropic` 和 `openai` 两种 Provider 类型。
+DeepSeek V4.1 Flash 支持 `anthropic` 和 `openai` 两种 Provider 类型。
 
 ## 注意事项
 
