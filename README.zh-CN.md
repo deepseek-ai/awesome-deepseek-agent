@@ -25,6 +25,7 @@
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
+| **Harness Desktop** | 面向官方 DeepSeek Harness 工作台的社区 Windows 桌面版，支持换肤、应用内插件市场和桌面更新。 | [指南](./docs/harness_desktop.zh-CN.md) |
 | **Hermes**      | 开源自我进化 AI 助手。                                                | [指南](./docs/hermes.zh-CN.md)      |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **Langcli** | 100% 兼容 Claude Code、支持 DeepSeek V4 等主流 LLM 模型的开源 AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
