@@ -34,9 +34,10 @@ Cline is an AI coding assistant that runs as a VS Code extension, supporting mul
 
 - Select **API Provider** as **DeepSeek**.
 - Enter your [DeepSeek API Key](https://platform.deepseek.com/api_keys).
-- Select the model you want to use.
+- Select `deepseek-v4-pro` for the strongest coding performance, or `deepseek-v4-flash` for faster responses.
+- Set **Reasoning Effort** to **High**. This is the highest effort currently supported by both Cline and DeepSeek V4.
 
-> **Note:** `deepseek-reasoner` and `deepseek-chat` models will be deprecated soon. Please wait for Cline to officially add `deepseek-v4-pro` and `deepseek-v4-flash` models.
+> **Note:** Cline's built-in DeepSeek provider currently defaults to `deepseek-v4-flash` and supports both V4 models.
 
 <div align="center">
 <img src="./assets/cline_step_4_a.png" width="250" border="1" />
@@ -53,8 +54,9 @@ After configuration, you can start using Cline:
 - Select **API Provider** as **OpenAI Compatible**.
 - Set **Base URL** to `https://api.deepseek.com`.
 - Enter your [DeepSeek API Key](https://platform.deepseek.com/api_keys).
-- Enter **Model ID**, e.g. `deepseek-v4-pro`.
-- (Optional) Click **Model Configuration** to adjust window size, temperature, pricing, and limits.
+- Enter **Model ID** as `deepseek-v4-pro` or `deepseek-v4-flash`.
+- Open **Model Configuration**, leave **Supports Images** unchecked, set **Context Window Size** to `1000000`, and set **Max Output Tokens** to `384000`.
+- Set **Reasoning Effort** to **High**.
 
 <div align="center">
 <img src="./assets/cline_step_4_b.png" width="250" border="1" />
