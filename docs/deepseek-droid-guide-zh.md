@@ -28,7 +28,7 @@
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Pro",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "anthropic"
 },
 {
@@ -39,7 +39,7 @@
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Flash",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "anthropic"
 }
 ```
@@ -55,7 +55,7 @@
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Pro (OpenAI)",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "openai"
 },
 {
@@ -66,7 +66,7 @@
   "apiKey": "<your DeepSeek API Key>",
   "displayName": "DeepSeek V4 Flash (OpenAI)",
   "maxOutputTokens": 384000,
-  "noImageSupport": false,
+  "noImageSupport": true,
   "provider": "openai"
 }
 ```
@@ -78,11 +78,11 @@
 ```json
 "missionModelSettings": {
   "workerModel": "custom:deepseek-v4-pro---Anthropic",
-  "workerReasoningEffort": "none",
+  "workerReasoningEffort": "high",
   "validationWorkerModel": "custom:deepseek-v4-flash---Anthropic",
-  "validationWorkerReasoningEffort": "none",
-  "skipUserTesting": true,
-  "skipScrutiny": true
+  "validationWorkerReasoningEffort": "high",
+  "skipUserTesting": false,
+  "skipScrutiny": false
 }
 ```
 
@@ -94,7 +94,7 @@ Factory 支持三种 Provider 类型，决定 API 兼容性：
 | Provider                      | API 格式                               | 适用场景                                                              | 文档                                                                                 |
 | ----------------------------- | ------------------------------------ | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `anthropic`                   | Anthropic Messages API (v1/messages) | Anthropic 官方 API 或兼容代理上的 Anthropic 模型                             | [Anthropic Messages API](https://docs.anthropic.com/en/api/messages)               |
-| `openai`                      | OpenAI Responses API                 | OpenAI 官方 API 或兼容代理上的 OpenAI 模型。新模型如 GPT-5 和 GPT-5-Codex 必须使用此类型。 | [OpenAI Responses API](https://platform.openai.com/docs/api/responses)             |
+| `openai`                      | OpenAI Responses API                 | OpenAI 官方 API 或兼容代理上的 OpenAI 模型。新模型如 GPT-5 和 GPT-5-Codex 必须使用此类型。 | [OpenAI Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create) |
 | `generic-chat-completion-api` | OpenAI Chat Completions API          | OpenRouter、Fireworks、Together AI、Ollama、vLLM 及大多数开源 providers     | [OpenAI Chat Completions API](https://platform.openai.com/docs/api-reference/chat) |
 
 
@@ -104,6 +104,8 @@ DeepSeek V4 Pro 和 V4 Flash 支持 `anthropic` 和 `openai` 两种 Provider 类
 
 - 将 `<your DeepSeek API Key>` 替换为您的实际 DeepSeek API Key，或使用环境变量语法：`"apiKey": "${DEEPSEEK_API_KEY}"`
 - 最大输出 tokens：384,000
+- DeepSeek V4 的上下文窗口为 100 万 tokens，且仅接受文本输入，因此
+  `noImageSupport` 必须设为 `true`
 - Model indices 在所有 custom models 中必须唯一
 - 启动 Droid 前设置环境变量：`export DEEPSEEK_API_KEY=your_key_here`
 
@@ -130,4 +132,3 @@ DeepSeek V4 Pro 和 V4 Flash 支持 `anthropic` 和 `openai` 两种 Provider 类
 
 - 检查您的 provider 的速率限制和配额
 - 通过 provider 的仪表板监控使用情况
-
