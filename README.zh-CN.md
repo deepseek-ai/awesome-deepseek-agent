@@ -15,6 +15,7 @@
 
 | 工具            | 简介                                                                  | 指南                                |
 | --------------- | --------------------------------------------------------------------- | ----------------------------------- |
+| **AFK** | 基于浏览器的编程 Agent 平台，支持连接 daemon、持久会话、子 Agent、Skills、MCP 工具以及 DeepSeek 连接。 | [指南](./docs/afk.zh-CN.md) |
 | **AstrBot** | 开源的 Agent 助手，支持接入 QQ、微信、飞书等消息平台，并可通过 Skill、插件和 MCP 扩展能力。 | [指南](./docs/astrbot.zh-CN.md) |
 | **Cherry Studio** | 开源跨平台桌面 AI 客户端，内置 300+ 助手、MCP、知识库与多模型对话。 | [指南](./docs/cherry_studio.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
