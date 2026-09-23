@@ -52,7 +52,7 @@ Claude Code 可以通过配置文件或环境变量的方法进行配置。在�
     "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash[1m]",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max"
   }
@@ -69,7 +69,7 @@ export ANTHROPIC_AUTH_TOKEN=<你的 DeepSeek API Key>
 export ANTHROPIC_MODEL=deepseek-v4-pro[1m]
 export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro[1m]
 export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-pro[1m]
-export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash[1m]
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 export CLAUDE_CODE_EFFORT_LEVEL=max
 ```
@@ -82,7 +82,7 @@ $env:ANTHROPIC_AUTH_TOKEN="<你的 DeepSeek API Key>"
 $env:ANTHROPIC_MODEL="deepseek-v4-pro[1m]"
 $env:ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-v4-pro[1m]"
 $env:ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash[1m]"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash"
 $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 $env:CLAUDE_CODE_EFFORT_LEVEL="max"
 ```
