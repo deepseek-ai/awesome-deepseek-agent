@@ -31,6 +31,8 @@ Before submitting, verify these items. PRs missing any of them will be flagged d
 ✅ deepseek-v4-pro / deepseek-v4-flash                   (current)
 ```
 
+The current release versions are `DeepSeek-V4-Flash-0731` for `deepseek-v4-flash` and `DeepSeek-V4-Pro-0813` for `deepseek-v4-pro`. Keep the API model IDs in configuration examples; use the release versions only when documenting or identifying a deployed model.
+
 DeepSeek renamed its models in April 2026. All code examples, config snippets, and prose must use the current names. Search your diff for `deepseek-chat` — if you find it, fix it.
 
 ### 2. 1M Context Window
