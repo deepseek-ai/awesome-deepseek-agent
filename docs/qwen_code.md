@@ -9,7 +9,7 @@ Qwen Code is an open-source AI agent that lives in your terminal, built by the Q
 
 #### 1. Install Qwen Code
 
-- Install [Node.js](https://nodejs.org/en/download/) 20 or later.
+- Install [Node.js](https://nodejs.org/en/download/) 22 or later.
 - Install Qwen Code:
 
 ```bash

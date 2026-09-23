@@ -9,7 +9,7 @@ Qwen Code 是阿里巴巴通义千问团队开发的开源 AI 终端助手。Dee
 
 #### 1. 安装 Qwen Code
 
-- 安装 [Node.js](https://nodejs.org/zh-cn/download/) 20 或更高版本。
+- 安装 [Node.js](https://nodejs.org/zh-cn/download/) 22 或更高版本。
 - 安装 Qwen Code：
 
 ```bash
