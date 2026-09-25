@@ -22,6 +22,7 @@
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
+| **deepclaude** | 轻量启动器，让 Claude Code 的自主 agent 循环跑在 DeepSeek V4 Pro（或任意 Anthropic 兼容后端）上——同样体验，成本只是零头。 | [指南](./docs/deepclaude.zh-CN.md) |
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
