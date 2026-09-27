@@ -10,12 +10,24 @@ Claude Code can be used via CLI or VSCode Extension. Choose whichever you prefer
 
 #### Option 1: Install Claude Code CLI
 
-- Install [Node.js](https://nodejs.org/en/download/) 18+.
-- Windows users need to install [Git for Windows](https://git-scm.com/download/win).
-- Run the following command in your terminal to install Claude Code:
+Run the appropriate command for your platform:
+
+**macOS, Linux, WSL:**
 
 ```
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows PowerShell:**
+
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+**Windows CMD:**
+
+```
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
 - After installation, run the following command. If the version number is displayed, the installation is successful:

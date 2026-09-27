@@ -10,12 +10,24 @@ Claude Code 可以通过 CLI 或者 VSCode Extension 的方式运行，按照使
 
 #### 选项一：安装 Claude Code CLI
 
-- 安装 [Node.js](https://nodejs.org/zh-cn/download/) 18+。
-- Windows 用户需安装 [Git for Windows](https://git-scm.com/download/win)。
-- 在命令行界面，执行以下命令安装 Claude Code：
+根据你的平台执行对应的命令：
+
+**macOS、Linux、WSL：**
 
 ```
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows PowerShell：**
+
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+**Windows CMD：**
+
+```
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
 - 安装结束后，执行以下命令，若显示版本号则安装成功：
