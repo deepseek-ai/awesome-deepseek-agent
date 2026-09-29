@@ -232,6 +232,7 @@ curl http://127.0.0.1:38440/v1/responses \
 - `401` or authentication errors: check the DeepSeek API key in `config.yml`.
 - `402` or payment errors: check your DeepSeek Platform balance.
 - Image input fails: if you enabled the Visual extension, configure a separate visual provider (e.g., Kimi) with its API key. You can configure that provider, or remove `visual.enabled: true` to disable the Visual extension.
+- Auto-review fails with `The supported API model names are ..., but you passed codex-auto-review`: Codex's automatic approval reviewer defaults to the built-in model id `codex-auto-review`, which the DeepSeek API does not serve. In every entry of the generated `models_catalog.json`, set `"auto_review_model_override"` to the model id Codex uses (for example `moonbridge`). In the desktop app, run `codex app-server daemon restart` afterwards: the daemon reads the catalog once at startup, so restarting the app does not reload it. If you'd rather skip that, set `approvals_reviewer = "user"` and keep approvals manual.
 
 #### Resources
 
