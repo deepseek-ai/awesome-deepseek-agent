@@ -232,6 +232,7 @@ curl http://127.0.0.1:38440/v1/responses \
 - `401` 或认证失败：检查 `config.yml` 中的 DeepSeek API Key 是否正确。
 - `402` 或余额错误：检查 DeepSeek 开放平台账户余额。
 - 图片输入失败：如果启用了 Visual 扩展，需要单独配置视觉 Provider（如 Kimi）的 API Key。你可以配置该 Provider，或移除 `visual.enabled: true` 来禁用 Visual 扩展。
+- 自动审批（auto-review）报错 `The supported API model names are ..., but you passed codex-auto-review`：Codex 的自动审批默认使用内置模型名 `codex-auto-review`，DeepSeek API 并不提供该模型。请在生成的 `models_catalog.json` 的每个模型条目中，将 `"auto_review_model_override"` 设置为 Codex 实际使用的模型 id（例如 `moonbridge`）。桌面应用还需在之后执行 `codex app-server daemon restart`：app-server 守护进程只在启动时读取一次模型目录，仅重启应用不会重新加载。也可以将 `approvals_reviewer` 设为 `"user"`，改用人工审批。
 
 #### 相关资源
 
