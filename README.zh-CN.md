@@ -21,6 +21,7 @@
 | **Cline** | 运行在 VS Code 中的 AI 编程助手扩展，支持多种 API 供应商。 | [指南](./docs/cline.zh-CN.md) |
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
+| **Dao Code** | 面向 DeepSeek-V4 的开源 TypeScript 终端编码 agent —— 充分发挥 DeepSeek 的高性价比与极低缓存定价，通过工程化的字节稳定前缀与缓存复用 fork，让跨会话记忆与全程自我纠错几乎不增加 token 开销；1M 上下文、分层权限安全沙箱、Skills/MCP/Hooks，兼容 Claude Code 配置。 | [指南](./docs/dao_code.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
 | **DeepSeek-TUI** | 面向 DeepSeek-V4 的开源 Rust 终端编程助手 —— Codex 风格架构，沙箱化工具执行，内置 MCP 客户端与服务器，支持 100 万 token 上下文。 | [指南](./docs/deepseek-tui.zh-CN.md) |
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
