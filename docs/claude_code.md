@@ -87,6 +87,17 @@ $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 $env:CLAUDE_CODE_EFFORT_LEVEL="max"
 ```
 
+#### Optine 3: Using CC Switch
+Go to the official [CC Switch](https://github.com/farion1231/cc-switch/releases) GitHub repository and download the version corresponding to your system.
+
+After installation, add DeepSeek as a provider.
+
+![Provider page](./assets/cc_switch_step_1.png)
+
+Edit the configuration, enter your API KEY, which can be obtained from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
+
+Once the configuration is complete, you can start using it normally.
+
 ### Using Claude Code
 
 #### Using Claude Code CLI
