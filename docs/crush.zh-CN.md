@@ -2,24 +2,23 @@
 
 # 接入 Crush
 
-Crush 是由 Charm 开发的华丽开源 AI 编程 Agent，运行在终端中。支持多模型切换、LSP 集成、MCP 服务器和代理式编码工作流。
+Crush 是由 Charm 使用 Go 开发的华丽开源 AI 编程 Agent，运行在终端中。支持多模型切换、LSP 集成、MCP 服务器和代理式编码工作流。
 
 #### 1. 安装 Crush
 
-- 安装 [Node.js](https://nodejs.org/zh-cn/download/)。
-- 在命令行界面，执行以下命令安装 Crush：
+- Crush 以独立二进制文件的形式分发，无需安装 Node.js。在 macOS 或 Linux 上，可通过 Homebrew 安装：
 
 ```bash
-npm install -g @charmland/crush
+brew install charmbracelet/tap/crush
 ```
+
+- 其他平台和包管理器请参阅[官方安装说明](https://github.com/charmbracelet/crush#installation)。
 
 - 安装结束后，执行以下命令，若显示版本号则安装成功：
 
 ```bash
 crush --version
 ```
-
-> **注意：** macOS 用户也可以通过 Homebrew 安装：`brew install charmbracelet/tap/crush`。
 
 #### 2. 配置 DeepSeek 供应商
 
