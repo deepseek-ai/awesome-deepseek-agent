@@ -175,6 +175,26 @@ codex
 
 Codex App 也可以使用同一份生成的 Codex 配置。
 
+#### 允许写文件（`sandbox_mode`）
+
+如果 Codex 会话运行在 `read-only` 模式，沙箱会阻止创建和修改文件，包括 `apply_patch` 与 shell 写入（`echo > file`）。这是权限设置，与模型能力无关。实际模式取决于配置、启动参数和工作区信任状态；未设置 `sandbox_mode` 并不总是意味着会话只读。
+
+在本配置中，可以将 `sandbox_mode` 加到 `$CODEX_HOME_DIR/config.toml` 的顶层、所有 `[table]` 配置段之前，明确允许工作区写入。配置项名称是 `sandbox_mode`（不是 `sandbox`）：
+
+```toml
+sandbox_mode = "workspace-write"
+```
+
+可选值：
+
+- `read-only`——工具无法在沙箱内写文件。
+- `workspace-write`——允许写入工作区和配置允许的临时目录；受保护的元数据路径仍受限制。
+- `danger-full-access`——不限制磁盘写入，请谨慎使用。
+
+修改配置后请重启 Codex，并用 `/status` 检查会话的可写目录。CLI 会话也可以在启动时指定模式：`codex --sandbox workspace-write`。
+
+第 5 步的命令会重新生成 `config.toml`，因此每次重新生成后都要再次加上 `sandbox_mode`（或恢复你自己保存的副本）。工作区信任状态和受保护路径详见 [Codex 沙箱文档](https://learn.chatgpt.com/docs/agent-approvals-security)。
+
 #### 一键启动脚本
 
 Moon Bridge 提供了面向 Codex CLI 的辅助脚本，可以一键构建并启动代理、生成 Codex 配置并启动 Codex：
@@ -231,6 +251,7 @@ curl http://127.0.0.1:38440/v1/responses \
 - 配置加载失败且提示 `field provider not found`：你使用的是旧版 `provider.providers` 配置；当前格式是顶层 `providers`、`models`、`routes`、`defaults`。
 - `401` 或认证失败：检查 `config.yml` 中的 DeepSeek API Key 是否正确。
 - `402` 或余额错误：检查 DeepSeek 开放平台账户余额。
+- 提示 `The filesystem is read-only` 或 `apply_patch` 无法写项目文件：先用 `/status` 检查实际沙箱模式。如果会话只读，请在配置顶层或启动参数中明确选择 `workspace-write`（见 [允许写文件](#允许写文件sandbox_mode)）。受保护路径和管理策略仍可能限制写入。
 - 图片输入失败：如果启用了 Visual 扩展，需要单独配置视觉 Provider（如 Kimi）的 API Key。你可以配置该 Provider，或移除 `visual.enabled: true` 来禁用 Visual 扩展。
 
 #### 相关资源

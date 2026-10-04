@@ -175,6 +175,26 @@ Codex now sends OpenAI Responses requests to Moon Bridge, and Moon Bridge routes
 
 Codex App can use the same generated Codex configuration.
 
+#### Allow File Writes (`sandbox_mode`)
+
+If Codex starts a session in `read-only` mode, its sandbox blocks file creation and edits, including `apply_patch` and shell writes (`echo > file`). This is a permission setting, not a model limitation. The effective mode depends on your configuration, launch options, and workspace trust; an unset `sandbox_mode` does not always mean the session is read-only.
+
+For this setup, you can explicitly allow workspace writes by adding `sandbox_mode` at the top level of `$CODEX_HOME_DIR/config.toml`, before any `[table]` sections. The key is `sandbox_mode` (not `sandbox`):
+
+```toml
+sandbox_mode = "workspace-write"
+```
+
+Valid values:
+
+- `read-only` — tools cannot write files inside the sandbox.
+- `workspace-write` — allow writes in the workspace and configured temporary directories; protected metadata paths remain restricted.
+- `danger-full-access` — unrestricted disk writes; use with care.
+
+Restart Codex after changing the config and use `/status` to check the session's writable directories. For a CLI session, you can also select the mode when launching: `codex --sandbox workspace-write`.
+
+The step 5 commands regenerate `config.toml`, so re-add `sandbox_mode` (or restore your saved copy) each time you regenerate it. See the [Codex sandbox documentation](https://learn.chatgpt.com/docs/agent-approvals-security) for workspace trust and protected paths.
+
 #### One-Command Launcher
 
 Moon Bridge provides a helper script for Codex CLI that can build and start the proxy, generate the Codex config, and launch Codex in one command:
@@ -231,6 +251,7 @@ curl http://127.0.0.1:38440/v1/responses \
 - Config loading fails with `field provider not found`: you are using the old `provider.providers` format. The current format uses top-level `providers`, `models`, `routes`, and `defaults`.
 - `401` or authentication errors: check the DeepSeek API key in `config.yml`.
 - `402` or payment errors: check your DeepSeek Platform balance.
+- `The filesystem is read-only` or `apply_patch` cannot write project files: check the effective sandbox mode with `/status`. If the session is read-only, explicitly select `workspace-write` in the top-level config or at launch (see [Allow File Writes](#allow-file-writes-sandbox_mode)). Protected paths and managed policies can still restrict writes.
 - Image input fails: if you enabled the Visual extension, configure a separate visual provider (e.g., Kimi) with its API key. You can configure that provider, or remove `visual.enabled: true` to disable the Visual extension.
 
 #### Resources
