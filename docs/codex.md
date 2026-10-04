@@ -81,9 +81,16 @@ providers:
       - model: deepseek-v4-flash
 
 routes:
+  # Add more routes here for Codex-recognizable model ID alias (e.g., gpt-5.5, gpt-5.2)
   moonbridge:
     model: deepseek-v4-pro
     provider: deepseek
+  # gpt-5.5:
+  #   model: deepseek-v4-pro
+  #   provider: deepseek
+  # gpt-5.2:
+  #   model: deepseek-v4-flash
+  #   provider: deepseek
 
 defaults:
   model: moonbridge
@@ -227,7 +234,16 @@ curl http://127.0.0.1:38440/v1/responses \
 #### Troubleshooting
 
 - `connection refused`: Moon Bridge is not running, or `server.addr` in `config.yml` uses a different port.
-- Codex cannot see the model: rerun step 5; Codex needs `models_catalog.json` in `CODEX_HOME`.
+- Codex cannot see the model: rerun step 5; Codex needs `models_catalog.json` in `CODEX_HOME`. If it still doesn't appear, add Codex-recognizable model IDs (e.g., `gpt-5.5`, `gpt-5.2`) to the `routes` section in `config.yml`, for example:
+  ```yaml
+  routes:
+    gpt-5.4:
+      model: deepseek-v4-pro
+      provider: deepseek
+    gpt-5.2:
+      model: deepseek-v4-flash
+      provider: deepseek
+  ```
 - Config loading fails with `field provider not found`: you are using the old `provider.providers` format. The current format uses top-level `providers`, `models`, `routes`, and `defaults`.
 - `401` or authentication errors: check the DeepSeek API key in `config.yml`.
 - `402` or payment errors: check your DeepSeek Platform balance.
