@@ -38,6 +38,10 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
       "baseUrl": "https://api.deepseek.com",
       "api": "openai-completions",
       "apiKey": "$DEEPSEEK_API_KEY",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "thinkingFormat": "deepseek"
+      },
       "models": [
         {
           "id": "deepseek-v4-pro",
@@ -53,16 +57,15 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
             "cacheRead": 0.145,
             "cacheWrite": 0
           },
+          "thinkingLevelMap": {
+            "minimal": "high",
+            "low": "high",
+            "medium": "high",
+            "high": "high",
+            "xhigh": "max"
+          },
           "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
+            "requiresReasoningContentOnAssistantMessages": true
           }
         },
         {
@@ -79,16 +82,15 @@ Pi 通过 `models.json` 支持自定义供应商。将 DeepSeek 添加为 OpenAI
             "cacheRead": 0.028,
             "cacheWrite": 0
           },
+          "thinkingLevelMap": {
+            "minimal": "high",
+            "low": "high",
+            "medium": "high",
+            "high": "high",
+            "xhigh": "max"
+          },
           "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
+            "requiresReasoningContentOnAssistantMessages": true
           }
         }
       ]
