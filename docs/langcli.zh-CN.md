@@ -38,6 +38,6 @@ npm i -g langcli-com
 # 启动Langcli
 langcli
 
-# 之后在回话中输入:
+# 之后在会话中输入:
 hi
 ```
