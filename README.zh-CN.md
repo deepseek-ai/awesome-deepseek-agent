@@ -19,6 +19,7 @@
 | **Cherry Studio** | 开源跨平台桌面 AI 客户端，内置 300+ 助手、MCP、知识库与多模型对话。 | [指南](./docs/cherry_studio.zh-CN.md) |
 | **Claude Code** | 运行在终端内的 AI 编程助手。                                          | [指南](./docs/claude_code.zh-CN.md) |
 | **Cline** | 运行在 VS Code 中的 AI 编程助手扩展，支持多种 API 供应商。 | [指南](./docs/cline.zh-CN.md) |
+| **CodeCraft** | 基于 AI Agent 的桌面端智能编程助手，支持 19 个工具和子 Agent 并行协作，Electron 跨平台桌面应用内置 JRE 开箱即用。 | [指南](./docs/codecraft.zh-CN.md) |
 | **Codex** | OpenAI 的编程 Agent。 | [指南](./docs/codex.zh-CN.md) |
 | **Crush** | 华丽的开源终端 AI 编程 Agent，支持多模型与 LSP 集成。 | [指南](./docs/crush.zh-CN.md) |
 | **Deep Code** | 开源的终端 AI 编程助手，专为 DeepSeek-V4 系列模型适配，支持深度思考、推理强度控制与 Agent Skills。 | [指南](./docs/deepcode.zh-CN.md) |
