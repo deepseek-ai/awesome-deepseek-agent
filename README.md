@@ -22,6 +22,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
 | **Crush**       | Glamorous open-source AI coding agent for the terminal with multi-model support and LSP integration.        | [Guide](./docs/crush.md)       |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
+| **DeepSeekFathom** | Open-source DeepSeek-first coding agent with a Windows desktop app, cross-platform CLI, MCP, plugins, Hooks, Skills, resumable sessions, 1M context, and native max reasoning. | [Guide](./docs/deepseekfathom.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
 | **GitHub Copilot** | AI peer programmer built into VS Code. | [Guide](./docs/github_copilot.md) |
 | **GitHub Copilot CLI** | Terminal-native AI coding assistant with agentic capabilities. | [Guide](./docs/copilot_cli.md) |
