@@ -17,6 +17,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | --------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | **AstrBot** | Open-source agent assistant for Feishu, Telegram and more, extensible with skills, plugins, and MCPs. | [Guide](./docs/astrbot.md) |
 | **Cherry Studio** | Open-source cross-platform desktop AI client with 300+ assistants, MCP support, knowledge bases, and multi-model chat. | [Guide](./docs/cherry_studio.md) |
+| **GenericAgent** | Minimal self-evolving autonomous agent framework — ~3K lines core, 9 atomic tools, multi-level memory (L0–L4), auto-crystallizes tasks into reusable Skills. DeepSeek V4 ready. | [Guide](./docs/genericagent.md) |
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
 | **Cline** | AI coding assistant extension for VS Code supporting multiple API providers. | [Guide](./docs/cline.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
