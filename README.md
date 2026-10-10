@@ -28,6 +28,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Hermes**      | Open-source self-improving AI agent built by Nous Research.                                                 | [Guide](./docs/hermes.md)      |
 | **Kilo Code** | AI coding assistant available as a CLI and editor extension. | [Guide](./docs/kilo_code.md) |
 | **Langcli** | Open-source AI coding assistant that is 100% compatible with Claude Code and supports mainstream LLM models | [Guide](./docs/langcli.md) |
+| **LingXi** | Multi-model AI coding agent with built-in skills, MCP support, and rich tool ecosystem — runs in the terminal. | [Guide](./docs/lingxi.md) |
 | **LobeHub** | LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team. | [Guide](./docs/lobehub.md) |
 | **nanobot** | Open-source lightweight AI agent with chat platform integration, memory, MCP, and more. | [Guide](./docs/nanobot.md) |
 | **Oh My Pi** | Terminal AI coding agent forked from Pi with OMP-specific tools, model roles, MCP, plugins, and agent workflows. | [Guide](./docs/oh-my-pi.md) |
