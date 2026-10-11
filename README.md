@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/deepseek-ai-awesome-deepseek-agent-badge.png)](https://mseep.ai/app/deepseek-ai-awesome-deepseek-agent)
+
 <div align="center">
 
 # Awesome DeepSeek Agent
