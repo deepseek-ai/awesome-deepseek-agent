@@ -26,6 +26,7 @@
 | **GitHub Copilot** | 内置于 VS Code 的 AI 编程助手。 | [指南](./docs/github_copilot.zh-CN.md) |
 | **GitHub Copilot CLI** | 终端原生的 AI 编程助手，支持 Agent 能力。 | [指南](./docs/copilot_cli.zh-CN.md) |
 | **Hermes**      | 开源自我进化 AI 助手。                                                | [指南](./docs/hermes.zh-CN.md)      |
+| **Jify** | 自我进化的 harness Agent，内置 Claude Code 风格工具体循环、Skill 系统、MCP 支持，以及用于安全任务的 Docker 沙箱。 | [指南](./docs/jify.zh-CN.md) |
 | **Kilo Code** | 支持 CLI 和编辑器扩展的 AI 编程助手。 | [指南](./docs/kilo_code.zh-CN.md) |
 | **Langcli** | 100% 兼容 Claude Code、支持 DeepSeek V4 等主流 LLM 模型的开源 AI 编程助手。 | [指南](./docs/langcli.zh-CN.md) |
 | **LobeHub** | LobeHub 是你的 Chief Agent Operator，通过招聘、排班并报告整个 AI 团队，将你的 Agent 组织成 7×24 小时运作。 | [指南](./docs/lobehub.zh-CN.md) |
