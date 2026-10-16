@@ -20,6 +20,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Claude Code** | AI coding assistant that runs in the terminal.                                                              | [Guide](./docs/claude_code.md) |
 | **Cline** | AI coding assistant extension for VS Code supporting multiple API providers. | [Guide](./docs/cline.md) |
 | **Codex** | OpenAI's coding agent. | [Guide](./docs/codex.md) |
+| **Crawshrimp Harness** | Open-source, local-first ecommerce operations desktop agent built on DeepSeek Harness, with browser automation, Office tools, and permission approvals. | [Guide](./docs/crawshrimp_harness.md) |
 | **Crush**       | Glamorous open-source AI coding agent for the terminal with multi-model support and LSP integration.        | [Guide](./docs/crush.md)       |
 | **Deep Code** | Open-source terminal AI coding assistant for the DeepSeek-V4 model with deep thinking, reasoning effort control, and Agent Skills. | [Guide](./docs/deepcode.md) |
 | **DeepSeek-TUI** | Open-source Rust terminal coding assistant for DeepSeek-V4 — Codex-style architecture, sandboxed tools, MCP client + server, 1M context. | [Guide](./docs/deepseek-tui.md) |
