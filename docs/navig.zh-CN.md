@@ -25,11 +25,11 @@ navig doctor
 #### 2. 连接 DeepSeek
 
 ```bash
-navig ai connect deepseek
+navig ai providers --add deepseek
 ```
 
-向导会要求输入 DeepSeek API Key，并将其存入 NAVIG 的保险库。如果你更习惯环境变量，直接导出
-`DEEPSEEK_API_KEY` 即可，NAVIG 会自动发现。
+NAVIG 会以隐藏输入询问你的 DeepSeek API Key（不会出现在命令行上），并将其随提供商配置一起保存。
+如果你更习惯环境变量，直接导出 `DEEPSEEK_API_KEY` 即可，NAVIG 会自动发现。
 
 两种端点形态都受支持，使用同一个 Key：
 
@@ -41,7 +41,7 @@ navig ai connect deepseek
 #### 3. 首次运行
 
 ```bash
-navig ai ask "总结这个仓库里失败的测试"
+navig ask "总结这个仓库里失败的测试"
 navig cost history
 ```
 
@@ -51,6 +51,9 @@ navig cost history
 
 `navig serve` 把 NAVIG 的模型供应商暴露在一个仅本机回环地址的 OpenAI 兼容端点上，因此 Kilo Code、
 Cline、opencode、crush、goose、Continue、Aider、OpenHands 都能使用 DeepSeek，而无需持有密钥：
+
+> **先确认再操作。** 发布版可能尚未包含 `navig serve` —— 先运行 `navig serve --help`，若命令不存在，
+> 请等待包含它的版本发布后再按本节操作。
 
 ```bash
 navig serve token new --label crush --budget 5   # 只显示一次的 nv_… 令牌

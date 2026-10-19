@@ -25,11 +25,12 @@ navig doctor
 #### 2. Connect DeepSeek
 
 ```bash
-navig ai connect deepseek
+navig ai providers --add deepseek
 ```
 
-The wizard asks for your DeepSeek API key and stores it in NAVIG's vault. If you prefer environment
-variables, export `DEEPSEEK_API_KEY` instead — NAVIG discovers it automatically.
+NAVIG prompts for your DeepSeek API key (it never appears on the command line) and stores it with
+your provider profile. If you prefer environment variables, export `DEEPSEEK_API_KEY` instead —
+NAVIG discovers it automatically.
 
 Both DeepSeek endpoint shapes are supported, with the same key:
 
@@ -41,7 +42,7 @@ Both DeepSeek endpoint shapes are supported, with the same key:
 #### 3. First run
 
 ```bash
-navig ai ask "summarise the failing tests in this repo"
+navig ask "summarise the failing tests in this repo"
 navig cost history
 ```
 
@@ -52,6 +53,9 @@ audited price table.
 
 `navig serve` exposes NAVIG's providers on a loopback OpenAI-compatible endpoint, so Kilo Code,
 Cline, opencode, crush, goose, Continue, Aider or OpenHands can use DeepSeek without holding the key:
+
+> **Check before you follow this section.** `navig serve` may not be in the released package yet —
+> run `navig serve --help` first, and if the command is missing, wait for the release that ships it.
 
 ```bash
 navig serve token new --label crush --budget 5   # prints an nv_… token once
