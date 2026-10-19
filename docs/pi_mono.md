@@ -2,128 +2,153 @@
 
 # Integrate with Pi
 
-Pi (pi-mono) is a minimal, aggressively extensible terminal coding harness. It adapts to your workflows through TypeScript extensions, skills, prompt templates, and themes — with tree-structured sessions and 15+ built-in providers.
+[Pi](https://github.com/earendil-works/pi) is a minimal, extensible terminal coding agent with tree-structured sessions, skills, and extensions. Current releases ship a **built-in DeepSeek provider**, so connecting DeepSeek only takes an API key — no `models.json`, custom provider block, or compatibility proxy.
 
 #### 1. Install Pi
 
-- Install [Node.js](https://nodejs.org/en/download/).
-- Run the following command in your terminal to install Pi:
+- Install [Node.js](https://nodejs.org/en/download/) 22.19 or newer.
+- Install Pi from npm:
 
 ```bash
-npm install -g @earendil-works/pi-coding-agent
+npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 ```
 
-- After installation, run the following command. If the version number is displayed, the installation is successful:
+On Windows, use the npm command above. macOS / Linux users can also use the official installer, which pins dependencies and updates with `pi update`:
+
+```bash
+curl -fsSL https://pi.dev/install.sh | sh
+```
+
+- Verify the installation:
 
 ```bash
 pi --version
 ```
 
-> **Note:** Linux / macOS users can also install via the official script:
-> ```bash
-> curl -fsSL https://pi.dev/install.sh | sh
-> ```
+#### 2. Connect your DeepSeek API key
 
-#### 2. Configure DeepSeek Provider
+Create an API key on the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
 
-Pi supports custom providers via `models.json`. Add DeepSeek as an OpenAI-compatible provider:
+**Option A — sign in from Pi (recommended):**
 
-- **Linux / macOS**: `~/.pi/agent/models.json`
-- **Windows**: `%USERPROFILE%\.pi\agent\models.json`
+Start Pi, run `/login deepseek`, then paste the key:
 
-```json
-{
-  "providers": {
-    "deepseek": {
-      "baseUrl": "https://api.deepseek.com",
-      "api": "openai-completions",
-      "apiKey": "$DEEPSEEK_API_KEY",
-      "models": [
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
-          "cost": {
-            "input": 1.74,
-            "output": 3.48,
-            "cacheRead": 0.145,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": { "minimal": null, "low": null, "medium": null, "high": "high", "xhigh": "max" },
-          "cost": {
-            "input": 0.14,
-            "output": 0.28,
-            "cacheRead": 0.028,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
-        }
-      ]
-    }
-  }
-}
+```text
+$ pi
+/login deepseek
 ```
 
-Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com/api_keys).
+Pi stores the credential in `~/.pi/agent/auth.json`.
 
-Set the environment variable:
+![Pi prompting for a DeepSeek API key](./assets/pi_deepseek_login.png)
 
-Linux / Mac users:
+**Option B — environment variable:**
+
+Linux / macOS:
 
 ```bash
-export DEEPSEEK_API_KEY="<your DeepSeek API Key>"
+export DEEPSEEK_API_KEY="<your DeepSeek API key>"
 ```
 
-Windows users:
+Windows PowerShell:
 
 ```powershell
-$env:DEEPSEEK_API_KEY="<your DeepSeek API Key>"
+$env:DEEPSEEK_API_KEY="<your DeepSeek API key>"
 ```
 
-#### 3. Run and Select Model
+Check that Pi can see the credential:
 
-- Enter the project directory and execute the `pi` command:
+```bash
+pi auth check --provider deepseek --json
+# {"status":"ready","provider":"deepseek","authType":"api_key"}
+```
+
+#### 3. Select a DeepSeek model
+
+Start Pi in your project and open the model picker with `/model`, then type `deepseek` to filter:
 
 ```bash
 cd /path/to/my-project
 pi
 ```
 
-- Type `/model` to open the model switcher.
-- Select **deepseek** and choose `DeepSeek-V4-Pro` or `DeepSeek-V4-Flash`.
-- Start coding with your minimal terminal harness.
+![Pi model picker showing the built-in DeepSeek models](./assets/pi_deepseek_model_picker.png)
 
-For more configuration options, see the [Pi models documentation](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent/docs/models.md).
+| Model ID        | Model                 | Best for                | Context | Max output |
+| --------------- | --------------------- | ----------------------- | ------- | ---------- |
+| `deepseek-v4-pro` | DeepSeek V4 Pro     | Hard coding and reasoning | 1M    | 384K       |
+| `deepseek-flash`  | DeepSeek V4.1 Flash | Fast, inexpensive, vision | 1M    | 384K       |
+
+When DeepSeek is the only configured provider, Pi selects `deepseek-v4-pro` by default. Press `Ctrl+S` in the picker to make it the startup default.
+
+Pi's model catalog already declares the 1M context window and the 384K output limit, so there is no `context_window` or `max_tokens` field to set.
+
+You can also pin the model and thinking level for a single run:
+
+```bash
+pi --model deepseek/deepseek-v4-pro:max
+```
+
+> Use the current model IDs. The API still accepts the legacy names `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp`, but those models are retired: requests are served by DeepSeek-V4.1-Flash, which is `deepseek-flash` in Pi.
+
+#### 4. Set the thinking level
+
+DeepSeek V4 models use thinking mode by default. Run `/thinking` to inspect or change it:
+
+![Pi thinking level selector with off, high, and max](./assets/pi_deepseek_thinking_level.png)
+
+- `off` — no reasoning
+- `high` — Pi's default for this model
+- `max` — maximum reasoning for hard problems
+
+`Shift+Tab` cycles thinking levels in-session, and `Ctrl+S` saves the starting level. If you logged in during the current session, run `/thinking` once and pick `high` or `max`.
+
+#### 5. First run
+
+Ask Pi to work on the project. It reads and edits files, runs commands, and records the session as a tree you can rewind.
+
+![Pi running a DeepSeek V4 Pro session](./assets/pi_deepseek_first_run.png)
+
+The status line shows the active model, thinking level, context usage, and an estimated cost.
+
+#### Configuration reference
+
+| Item            | Value                                                        |
+| --------------- | ------------------------------------------------------------ |
+| Provider ID     | `deepseek` (built in)                                        |
+| Base URL        | `https://api.deepseek.com`                                   |
+| API format      | OpenAI-compatible (`openai-completions`)                     |
+| Credential      | `/login deepseek`, `DEEPSEEK_API_KEY`, or `--api-key`        |
+| Context window  | 1,000,000 tokens                                             |
+| Max output      | 384,000 tokens                                               |
+| Thinking levels | `off`, `high`, `max`                                         |
+
+No `models.json` entry is required. If you need a gateway or a self-hosted endpoint, add a separate provider in `~/.pi/agent/models.json` rather than overriding the built-in `deepseek` provider.
+
+#### Pricing
+
+Per 1M tokens in USD, from the [DeepSeek pricing page](https://api-docs.deepseek.com/quick_start/pricing). Peak hours are 01:00–04:00 and 06:00–10:00 UTC, Monday–Friday, excluding Chinese public holidays; all other hours are off-peak.
+
+| Model                        | Cache hit | Cache miss | Output |
+| ---------------------------- | --------- | ---------- | ------ |
+| `deepseek-v4-pro` (off-peak) | $0.022    | $0.66      | $1.98  |
+| `deepseek-v4-pro` (peak)     | $0.044    | $1.32      | $3.96  |
+| `deepseek-flash` (off-peak)  | $0.003    | $0.15      | $0.60  |
+| `deepseek-flash` (peak)      | $0.006    | $0.30      | $1.20  |
+
+Pi's in-session cost estimate uses the catalog's peak rates, so off-peak usage is billed at roughly half of the displayed number.
+
+#### Troubleshooting
+
+| Symptom                                                       | Fix                                                                                                  |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `/model` is empty, or shows "Only showing models from configured providers" | No credential is configured. Run `/login deepseek` or export `DEEPSEEK_API_KEY`, then reopen `/model`. |
+| `401` or another authentication error                         | Check the key on the DeepSeek Platform and run `/login deepseek` again.                               |
+| Model not found                                               | Use `deepseek-v4-pro` or `deepseek-flash`; `deepseek-chat` and `deepseek-reasoner` no longer exist.    |
+| An older Pi build without DeepSeek                            | Update with `pi update`, or reinstall from npm.                                                       |
+
+#### Learn more
+
+- [Pi documentation](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/docs)
+- [Pi model configuration](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/models.md)
+- [DeepSeek API docs](https://api-docs.deepseek.com/)
