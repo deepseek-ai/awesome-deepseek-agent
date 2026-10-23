@@ -1,4 +1,4 @@
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines.
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for full guidelines.
 
 ## Checklist
 
