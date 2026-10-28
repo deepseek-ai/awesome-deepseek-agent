@@ -37,6 +37,7 @@ Each guide walks through installation, configuration, and first run — so you c
 | **Qoder** | Agentic coding product available as IDE, CLI, and JetBrains Plugin, with built-in DeepSeek models and custom-model support via API keys. | [Guide](./docs/qoder.md) |
 | **Qwen Code** | Coding agent CLI by the Alibaba Qwen team — now with built-in DeepSeek provider support. | [Guide](./docs/qwen_code.md) |
 | **Reasonix**    | DeepSeek-native coding agent that runs in the terminal — cache-first loop, MCP-native.                      | [Guide](./docs/reasonix.md)    |
+| **TealKit CLI** | Autonomous terminal AI coding agent and AgentSkills runner with native tools, MCP support, and local RAG. | [Guide](./docs/tealkit.md) |
 | **WorkBuddy/CodeBuddy** | AI agent and coding assistant with custom OpenAI-compatible model configuration. | [Guide](./docs/workbuddy.md) |
 
 ## Resources
