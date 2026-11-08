@@ -113,22 +113,6 @@ You can also switch models directly:
 You can now interact with DeepSeek through the Inference Gateway CLI.
 
 
-### DeepSeek API Pricing
-
-The following prices are per 1 million tokens (USD):
-
-| Model | Pricing | Cache Hit Input | Cache Miss Input | Output |
-|---|---|---:|---:|---:|
-| deepseek-v4-pro | Off-peak | $0.022 | $0.66 | $1.98 |
-| deepseek-v4-pro | Peak | $0.044 | $1.32 | $3.96 |
-| deepseek-flash | Off-peak | $0.003 | $0.15 | $0.60 |
-| deepseek-flash | Peak | $0.006 | $0.30 | $1.20 |
-
-Off-peak rates are half of peak rates. Peak hours are 01:00–04:00 and 06:00–10:00 UTC, Monday through Friday, excluding Chinese public holidays.
-
-Prices may change. Check the [official DeepSeek pricing page](https://api-docs.deepseek.com/quick_start/pricing/) for the latest rates.
-
-
 ### 4. Troubleshooting
 
 If the CLI cannot connect to DeepSeek:

@@ -111,21 +111,6 @@ infer config get agent.reasoning_effort
 DeepSeek V4 模型支持高达 100 万个 Token 的上下文窗口。具体限制取决于所选模型和 API 配置。
 
 
-### DeepSeek API 定价
-
-以下价格单位为美元，每百万 Token：
-
-| 模型 | 时段 | 缓存命中输入 | 缓存未命中输入 | 输出 |
-|---|---|---:|---:|---:|
-| deepseek-v4-pro | 非高峰时段 | $0.022 | $0.66 | $1.98 |
-| deepseek-v4-pro | 高峰时段 | $0.044 | $1.32 | $3.96 |
-| deepseek-flash | 非高峰时段 | $0.003 | $0.15 | $0.60 |
-| deepseek-flash | 高峰时段 | $0.006 | $0.30 | $1.20 |
-
-非高峰时段价格为高峰时段价格的一半。高峰时段为 UTC 时间周一至周五的 01:00–04:00 和 06:00–10:00，中国法定节假日除外。周末和中国法定节假日全天均为非高峰时段。
-
-价格可能发生变化。请访问 [DeepSeek 官方定价页面](https://api-docs.deepseek.com/quick_start/pricing/) 查看最新价格。
-
 ### 4. 故障排除
 
 如果 CLI 无法连接 DeepSeek：
