@@ -37,6 +37,7 @@
 | **Qoder** | 提供 IDE、CLI 与 JetBrains Plugin 三种形态的 Agentic Coding 产品，内置 DeepSeek 模型，也支持通过 API 密钥接入。 | [指南](./docs/qoder.zh-CN.md) |
 | **Qwen Code** | 阿里巴巴通义千问团队推出的 Coding Agent CLI，现已全面支持 DeepSeek 提供商。 | [指南](./docs/qwen_code.zh-CN.md) |
 | **Reasonix** | 运行在终端内的 DeepSeek 原生编程 Agent —— Cache-First 循环，原生支持 MCP。 | [指南](./docs/reasonix.zh-CN.md) |
+| **VAF** | 开源 Agent 框架与运行环境，带有持久记忆以及网页、代码和文件工具；可作为桌面应用、服务器、终端应用或 Python 库使用。 | [指南](./docs/vaf.zh-CN.md) |
 | **WorkBuddy/CodeBuddy** | 支持自定义 OpenAI 兼容模型配置的 AI Agent 与编程助手。 | [指南](./docs/workbuddy.zh-CN.md) |
 
 ## 相关资源
