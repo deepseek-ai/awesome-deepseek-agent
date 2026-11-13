@@ -31,3 +31,6 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 - Base URL 填写 `https://api.deepseek.com`
 - 选择 `deepseek-v4-pro` 模型
 - 继续完成其余配置选项
+
+DeepSeek V4 支持最高 **100 万 token 上下文**。Hermes 使用提供商公布的模型窗口；如果设置向导或模型配置界面提供上下文窗口字段，填 `1000000`。DeepSeek V4 Pro 默认开启深度思考；如果 Hermes 提供推理强度选项，选择最高档（`max`）。
+

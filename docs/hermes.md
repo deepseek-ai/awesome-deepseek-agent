@@ -31,3 +31,6 @@ Reload your shell and start Hermes configuration:
 - Enter the Base URL as `https://api.deepseek.com`
 - Select the `deepseek-v4-pro` model
 - Continue with the remaining options
+
+DeepSeek V4 supports up to **1 million tokens of context**. Hermes uses the model window published by the provider; if a setup or model configuration screen exposes a context-window field, set it to `1000000`. DeepSeek V4 Pro runs with deep thinking enabled by default; if Hermes exposes a reasoning-effort option, choose the maximum level (`max`).
+
