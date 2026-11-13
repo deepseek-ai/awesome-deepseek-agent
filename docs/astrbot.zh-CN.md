@@ -52,6 +52,8 @@ http://localhost:6185 # 如果 AstrBot 运行在服务器上，则访问 http://
 
 在左侧边栏进入 `模型提供商` 页面，点击 `+ 新增`，选择 `DeepSeek`，将你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys) 粘贴到 `API Key` 输入框中，然后点击 `保存配置`。
 
+模型选择 **`deepseek-v4-pro`**（复杂编码与推理）或 **`deepseek-v4-flash`**（更快、更便宜）。这是当前 DeepSeek V4 的模型 ID，不要使用已弃用的 `deepseek-chat` / `deepseek-reasoner`。DeepSeek V4 支持最高 **100 万 token 上下文**；如果 AstrBot 的供应商表单提供上下文窗口字段，填 `1000000`，否则使用模型公布的窗口。V4 Pro 默认开启深度思考；如果 AstrBot 提供推理强度选项，选择 **`max`** 以获得最强推理。
+
 接着在左侧边栏进入 `配置文件（普通配置）` 页面，将 `默认对话模型` 设置为刚刚配置的模型，确认选择后，点击右下角的保存按钮。
 
 其余设置，例如消息平台和技能等，可以按需配置。更多信息请参考 [AstrBot 文档](https://docs.astrbot.app/)。

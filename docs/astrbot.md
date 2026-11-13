@@ -52,6 +52,8 @@ http://localhost:6185 # Or http://<server-ip>:6185 if AstrBot runs on a server
 
 In the left sidebar, open the `Providers` page, click `+ Add`, select `DeepSeek`, paste your [DeepSeek API Key](https://platform.deepseek.com/api_keys) into the `API Key` field, and click `Save Configuration`.
 
+Choose **`deepseek-v4-pro`** for complex coding and reasoning, or **`deepseek-v4-flash`** for faster and cheaper turns. These are the current DeepSeek V4 model IDs; do not use the deprecated `deepseek-chat` / `deepseek-reasoner` names. DeepSeek V4 supports up to **1 million tokens of context**; if AstrBot's provider form exposes a context-window field, set it to `1000000`, otherwise the model's published window is used. V4 Pro runs with deep thinking enabled by default; if AstrBot exposes a reasoning-effort option, choose **`max`** for the strongest reasoning.
+
 Next, open the `Config(Normal Config)` page, set `Default Chat Model` to the model you just configured, confirm the selection, and click the save button in the bottom-right corner.
 
 For the remaining settings, such as messaging platforms and skills, configure them as needed. See the [AstrBot Docs](https://docs.astrbot.app/) for details.
