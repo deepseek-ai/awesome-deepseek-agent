@@ -71,7 +71,11 @@ Then add the following configuration:
 
 Save `models.json` as UTF-8 without BOM. Some desktop versions may fail to read local model configuration files saved with a UTF-8 BOM header.
 
-#### 3. Restart and Select the Model
+#### 3. Context and reasoning notes
+
+DeepSeek V4 supports up to **1 million tokens of context**. The sample above keeps `maxInputTokens` at `128000` for compatibility with WorkBuddy/CodeBuddy builds that cap this field; if your build accepts a larger value, raise it to `1000000` and adjust `maxOutputTokens` to the model's published limit. DeepSeek V4 Pro runs with deep thinking enabled by default; where the model selector exposes a reasoning-effort option, choose the maximum level (`max`).
+
+#### 4. Restart and Select the Model
 
 Fully quit WorkBuddy/CodeBuddy, then open it again.
 
@@ -82,7 +86,7 @@ DeepSeek V4 Pro
 DeepSeek V4 Flash
 ```
 
-#### 4. Optional: Verify the API Key
+#### 5. Optional: Verify the API Key
 
 Windows users can verify the API Key in PowerShell:
 

@@ -71,7 +71,11 @@ setx DEEPSEEK_API_KEY "<your DeepSeek API Key>"
 
 请将 `models.json` 保存为 UTF-8 无 BOM。部分桌面版本在读取带 UTF-8 BOM 文件头的 JSON 时，可能会读取本地模型配置失败。
 
-#### 3. 重启并选择模型
+#### 3. 上下文与推理说明
+
+DeepSeek V4 支持最高 **100 万 token 上下文**。上面的示例将 `maxInputTokens` 保持为 `128000`，以兼容会限制该字段的 WorkBuddy/CodeBuddy 版本；如果你的版本接受更大的值，可将其提高到 `1000000`，并按模型公布的上限调整 `maxOutputTokens`。DeepSeek V4 Pro 默认开启深度思考；如果模型选择器提供推理强度选项，选择最高档（`max`）。
+
+#### 4. 重启并选择模型
 
 完全退出 WorkBuddy/CodeBuddy 后重新打开。
 
@@ -82,7 +86,7 @@ DeepSeek V4 Pro
 DeepSeek V4 Flash
 ```
 
-#### 4. 可选：验证 API Key
+#### 5. 可选：验证 API Key
 
 Windows 用户可以在 PowerShell 中验证 API Key：
 
