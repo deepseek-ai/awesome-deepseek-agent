@@ -43,6 +43,7 @@ Each guide walks through installation, configuration, and first run — so you c
 
 - [DeepSeek Platform](https://platform.deepseek.com/) — get an API key.
 - [DeepSeek API Docs](https://api-docs.deepseek.com/) — API reference and guides.
+- [No Stairs Please MCP](https://nostairsplease.com/mcp) — remote MCP server for searching 2,200+ step-free North American live-music venues, load-in stairs, and drive-time routing.
 
 ## Contributing
 
