@@ -59,5 +59,3 @@ codeaf chat --model deepseek/deepseek-v4-pro --reasoning max
 ```
 
 每个代码任务都在自己的仓库副本中运行，并落在自己的分支上，因此两个任务不会同时修改同一批文件。对于需要无人值守完成的大型、需求明确的改动，可在会话中使用 `/senior-dev <需求>`，或在 shell 中执行 `codeaf senior-dev "<需求>"`（macOS 和 Linux）。
-
-> **注意：** DeepSeek 官方 API 的 `reasoning_effort` 支持自 [Agent-Field/CodeAF#2869](https://github.com/Agent-Field/CodeAF/pull/2869) 起加入 codeaf。在更早的版本中，所有思考强度都会使用 DeepSeek 的默认值；请用上面的安装命令更新。

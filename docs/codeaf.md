@@ -59,5 +59,3 @@ Add input validation to the signup handler, and separately fix the flaky date te
 ```
 
 Each code task runs in its own copy of the repository and ends on its own branch, so two tasks never edit the same files at once. For a large, well-specified change that should run unattended, use `/senior-dev <brief>` in a session, or `codeaf senior-dev "<brief>"` from a shell (macOS and Linux).
-
-> **Note:** `reasoning_effort` support for DeepSeek's first-party API is in codeaf from [Agent-Field/CodeAF#2869](https://github.com/Agent-Field/CodeAF/pull/2869). On an older build, every level runs at DeepSeek's default; update with the install command above.
